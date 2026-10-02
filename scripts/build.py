@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 TITLE = "The AI Price Guide"
+DISCLAIMER = ("Not affiliated with, endorsed by or sponsored by any company listed. Product names and trademarks belong to their owners. Prices, plans and limits change often and may differ from what you see at checkout; always confirm on the company's own site before paying. This guide is general information only, not financial, legal or professional advice, and is provided as is without any guarantee of accuracy.")
 # Update these together when refreshing prices.
 AS_OF = "2 October 2026"
 AS_OF_ISO = "2026-10-02"
@@ -127,6 +128,8 @@ def build_markdown(cats, tools, bench):
     w("**Prices are in Australian dollars first.** **A$** = the company's own Australian price. **≈A$** = our estimate "
       f"for tools that charge in US dollars (US$1 = A${USD_TO_AUD}, plus 10% GST). US$ prices are shown alongside. "
       "Prices are monthly for individual plans unless marked _/yr_ (yearly) or _once_ (hardware).")
+    w("")
+    w(f"> **Disclaimer:** {DISCLAIMER}")
     w("")
     w("**Independent.** No sponsorships, affiliate links or paid placements. Ratings and picks are this guide's own "
       "judgement, explained in [How the ratings work](#how-the-ratings-work). Entries checked more than "
@@ -478,6 +481,10 @@ def build_markdown(cats, tools, bench):
         w(f"| `{k}` | {v} |")
     w("Coding benchmark scores live in `data/benchmarks.json`.")
     w("")
+    w("## Disclaimer")
+    w("")
+    w(DISCLAIMER)
+    w("")
     return "\n".join(out)
 
 
@@ -515,7 +522,7 @@ def build_plans_csv(tools, path):
 
 def page_body(cats, tools, bench):
     template = (ROOT / "scripts" / "template.html").read_text()
-    payload = json.dumps({"title": TITLE, "asOf": AS_OF, "rate": USD_TO_AUD, "gst": GST, "staleDays": STALE_DAYS,
+    payload = json.dumps({"title": TITLE, "disclaimer": DISCLAIMER, "asOf": AS_OF, "rate": USD_TO_AUD, "gst": GST, "staleDays": STALE_DAYS,
                           "categories": cats, "tools": tools, "bench": bench},
                          ensure_ascii=False).replace("</", "<\\/")
     return template.replace("/*__DATA__*/null", payload)

@@ -17,6 +17,10 @@ What every major AI tool costs in Australia, what you get on each plan, and how 
 
 A$ first. **A$** is the company's own Australian price; **≈A$** is an estimate for tools that bill in US dollars (US$ × 1.44 + GST). Entries checked more than 60 days ago are flagged "Needs re-check".
 
+## Disclaimer
+
+Not affiliated with, endorsed by or sponsored by any company listed. Product names and trademarks belong to their owners. Prices, plans and limits change often and may differ from what you see at checkout; always confirm on the company's own site before paying. This guide is general information only, not financial, legal or professional advice, and is provided as is without any guarantee of accuracy.
+
 ## Updating
 
 Edit the files in `data/`, then run:

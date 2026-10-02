@@ -6,6 +6,8 @@ _Last updated 2 October 2026. 101 tools across 18 categories, 81 with a usable f
 
 **Prices are in Australian dollars first.** **A$** = the company's own Australian price. **≈A$** = our estimate for tools that charge in US dollars (US$1 = A$1.44, plus 10% GST). US$ prices are shown alongside. Prices are monthly for individual plans unless marked _/yr_ (yearly) or _once_ (hardware).
 
+> **Disclaimer:** Not affiliated with, endorsed by or sponsored by any company listed. Product names and trademarks belong to their owners. Prices, plans and limits change often and may differ from what you see at checkout; always confirm on the company's own site before paying. This guide is general information only, not financial, legal or professional advice, and is provided as is without any guarantee of accuracy.
+
 **Independent.** No sponsorships, affiliate links or paid placements. Ratings and picks are this guide's own judgement, explained in [How the ratings work](#how-the-ratings-work). Entries checked more than 60 days ago are marked _needs re-check_. AI products change monthly, so treat this as a snapshot.
 
 Generated from [`data/tools.json`](data/tools.json) by `scripts/build.py`. Open [`index.html`](index.html) for the interactive version with search, plan-by-plan comparison, a "help me choose" picker and a shortlist that totals your monthly cost. [`data/tools.csv`](data/tools.csv) opens in any spreadsheet.
@@ -1740,3 +1742,7 @@ No company pays to be included, rated or picked, and there are no affiliate link
 | `plans` | Optional list of plan tiers: `name`, `usd`, `aud` (with `aud_src: official`, or `null` to estimate), `includes`, `limits` |
 | `coding` | Coding tools only: where it runs, agent abilities (`yes` / `partial` / `no`), models, context |
 Coding benchmark scores live in `data/benchmarks.json`.
+
+## Disclaimer
+
+Not affiliated with, endorsed by or sponsored by any company listed. Product names and trademarks belong to their owners. Prices, plans and limits change often and may differ from what you see at checkout; always confirm on the company's own site before paying. This guide is general information only, not financial, legal or professional advice, and is provided as is without any guarantee of accuracy.
