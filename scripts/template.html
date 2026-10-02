@@ -329,7 +329,7 @@ function card(t) {
       <dt>Privacy</dt><dd>${esc(t.privacy)}</dd>
       <dt>Sources</dt><dd>${t.sources.map((s, i) => `<a href="${esc(s)}" target="_blank" rel="noopener">${i + 1}</a>`).join(" · ")}</dd>
     </dl></details>` : ""}
-    ${t.plans ? `<button class="linkbtn" type="button" data-see-plans="${t.id}">See every plan and its limits →</button>` : ""}
+    <div class="row" style="gap:6px 16px">${t.plans ? `<button class="linkbtn" type="button" data-see-plans="${t.id}">Compare its plans →</button>` : ""}<a href="${DATA.siteUrl}tools/${t.id}.html" target="_blank" rel="noopener" style="font-size:14px">Full details page ↗</a></div>
     <div class="card-foot">${live ? `<span class="overall">Rating <b>${overall(t)}</b>/5</span>` : "<span></span>"}${addBtn(t)}</div>
   </article>`;
 }
@@ -466,7 +466,7 @@ function renderPlans() {
       <tr><td>What you get</td>${cols.map(p => `<td>${list(p.includes)}${p.note ? `<p class="maker">${esc(p.note)}</p>` : ""}</td>`).join("")}</tr>
       <tr><td>Limits</td>${cols.map(p => `<td>${list(p.limits)}</td>`).join("")}</tr>
     </tbody></table></div>
-    <p class="hint">Limits use the company's exact numbers where published; otherwise we quote its wording. Sources: ${t.sources.slice(0, 3).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(" · ")}</p>`;
+    <p class="hint"><a href="${DATA.siteUrl}tools/${t.id}.html" target="_blank" rel="noopener">Full ${esc(t.name)} details page ↗</a> · Limits use the company's exact numbers where published; otherwise we quote its wording. Sources: ${t.sources.slice(0, 3).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(" · ")}</p>`;
 }
 const RUNS = {terminal: "Terminal", vscode: "VS Code", jetbrains: "JetBrains", "other-ides": "Other IDEs", "own-editor": "Own editor", desktop: "Desktop app", web: "Web", mobile: "Mobile"};
 const ABIL = [["multi_file", "Multi-file edits"], ["run_commands", "Runs commands & tests"], ["cloud", "Cloud agents"], ["pull_requests", "Opens pull requests"], ["code_review", "Code review"]];
@@ -475,7 +475,23 @@ function renderCoding() {
   const coders = DATA.tools.filter(t => t.coding);
   const tick = v => `<td class="m-${v}">${MARK[v === "yes" ? "yes" : v]}</td>`;
   const B = DATA.bench;
+  const G = B.guide;
+  const CAP = {yes: "✓", no: "✗", unknown: "?"};
   $("coding-out").innerHTML = `
+    <section class="cat"><div class="cat-head"><h2>Which coding setup is right for you?</h2><p>Monthly cost in Australian dollars.</p></div>
+    <div class="grid">${G.personas.map(g => `<div class="card"><span class="award">${esc(g.who)}</span>
+      <div class="card-top"><h3>${esc(g.pick)}</h3><div class="price"><b>${g.aud_note ? "A$155+" : g.aud === 0 ? "Free" : (g.aud_est ? "≈" : "") + "A$" + g.aud}</b><span>per month</span></div></div>
+      <p class="hint">${esc(g.why)}</p>${g.aud_note ? `<p class="maker">${esc(g.aud_note)}</p>` : ""}
+      <div class="row" style="gap:6px 14px">${g.tools.map(id => byId[id].plans ? `<button class="linkbtn" type="button" data-see-plans="${id}">${esc(byId[id].name)}</button>` : `<a href="${DATA.siteUrl}tools/${id}.html" target="_blank" rel="noopener">${esc(byId[id].name)} ↗</a>`).join("")}</div></div>`).join("")}</div></section>
+    <section class="cat"><div class="cat-head"><h2>How usage is counted, and what happens when you run out</h2></div>
+    <div class="matrix-wrap"><table class="cmp"><thead><tr><th>Tool</th><th>How usage is counted</th><th>When you hit the limit</th><th>Spending cap</th></tr></thead><tbody>
+    ${coders.map(t => { const c = t.coding; return `<tr><td><button class="linkbtn" type="button" data-see-plans="${t.id}">${esc(t.name)}</button></td><td>${esc(c.usage_model)}</td><td>${esc(c.at_limit)}</td><td><b>${CAP[c.spend_cap]}</b> ${esc(c.spend_cap_note)}</td></tr>`; }).join("")}
+    </tbody></table></div></section>
+    <section class="cat"><div class="cat-head"><h2>Your code and privacy</h2></div>
+    <div class="panel" style="margin-top:0"><ul class="tight">${G.privacy_tips.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>
+    <div class="matrix-wrap" style="margin-top:14px"><table class="cmp"><thead><tr><th>Tool</th><th>Trains on your code?</th><th>Private option</th><th>Local / offline models</th></tr></thead><tbody>
+    ${coders.map(t => { const c = t.coding; return `<tr><td><button class="linkbtn" type="button" data-see-plans="${t.id}">${esc(t.name)}</button></td><td>${esc(c.trains_on_code)}</td><td>${esc(c.private_option)}</td><td><span class="m-${c.local_models}">${MARK[c.local_models]}</span> ${esc(c.local_note)}</td></tr>`; }).join("")}
+    </tbody></table></div></section>
     <section class="cat"><div class="cat-head"><h2>Cheapest way in</h2><p>Free tier, cheapest paid plan and the heavy-use plan for each coding tool.</p></div>
     <div class="matrix-wrap"><table class="cmp"><thead><tr><th>Tool</th><th>Free tier</th><th>Cheapest paid</th><th>Heavy use</th></tr></thead><tbody>
     ${coders.map(t => { const f = t.plans.find(p => p.usd === 0); const paid = t.plans.filter(p => p.usd); const a = paid[0], z = paid[paid.length - 1];

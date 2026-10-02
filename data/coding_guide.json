@@ -1,0 +1,92 @@
+{
+  "personas": [
+    {
+      "who": "Learning to code",
+      "pick": "GitHub Copilot Free in VS Code, plus ChatGPT Study Mode or Claude free to explain things",
+      "aud": 0,
+      "why": "Free, works in the most popular editor, and the chatbots teach rather than just answer.",
+      "tools": [
+        "github-copilot",
+        "chatgpt-study"
+      ]
+    },
+    {
+      "who": "Student",
+      "pick": "GitHub Copilot Student (free) plus the JetBrains Student Pack",
+      "aud": 0,
+      "why": "Verified students get unlimited completions and 200 AI credits a month free; JetBrains IDEs are free too.",
+      "tools": [
+        "github-copilot"
+      ],
+      "source": "https://rottenwifi.com/updates-to-github-copilot-for-students-in-2026-what-changed-and-how-to-get-it/"
+    },
+    {
+      "who": "Hobbyist on a budget",
+      "pick": "GitHub Copilot Pro",
+      "aud": 16,
+      "aud_est": true,
+      "why": "Unlimited completions and a choice of top models for the price of a lunch. Antigravity is a free alternative.",
+      "tools": [
+        "github-copilot",
+        "antigravity"
+      ]
+    },
+    {
+      "who": "Already pay for ChatGPT or Google AI",
+      "pick": "Use what's included: Codex with ChatGPT Plus (A$30), or Antigravity + Jules with Google AI Pro (A$32.99)",
+      "aud": 0,
+      "why": "No extra cost; try these before adding another subscription.",
+      "tools": [
+        "codex",
+        "antigravity"
+      ]
+    },
+    {
+      "who": "Professional developer",
+      "pick": "Claude Pro (for Claude Code) + GitHub Copilot Pro",
+      "aud": 48,
+      "aud_est": true,
+      "why": "The most common pairing: a strong agent for big changes plus fast autocomplete in your editor.",
+      "tools": [
+        "claude-code",
+        "github-copilot"
+      ]
+    },
+    {
+      "who": "Wants one AI editor",
+      "pick": "Cursor Pro",
+      "aud": 32,
+      "aud_est": true,
+      "why": "Everything in one polished editor with models from several companies.",
+      "tools": [
+        "cursor"
+      ]
+    },
+    {
+      "who": "Heavy daily agent use",
+      "pick": "Claude Max 5x or ChatGPT Pro (Codex)",
+      "aud": 155,
+      "aud_note": "A$155 (ChatGPT Pro) to ≈A$158 (Claude Max 5x)",
+      "why": "Pro tiers stop you hitting 5-hour limits mid-task; ChatGPT Pro currently has no 5-hour Codex limit.",
+      "tools": [
+        "claude-code",
+        "codex"
+      ]
+    },
+    {
+      "who": "Code must stay private",
+      "pick": "Codex CLI with a local model (Ollama), or Cline/OpenCode with local models",
+      "aud": 0,
+      "why": "Nothing leaves your computer. Needs a recent computer with 16–32 GB of memory, and local models are less capable.",
+      "tools": [
+        "codex",
+        "cline-opencode"
+      ]
+    }
+  ],
+  "privacy_tips": [
+    "Most individual plans can use your code for training by default. Check the setting on day one.",
+    "Business and team plans almost always exclude your code from training. Worth it if you code for clients or an employer.",
+    "Turning training off doesn't stop your code being sent to the company's servers; only local models do that."
+  ]
+}

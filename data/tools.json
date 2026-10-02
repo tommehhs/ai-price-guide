@@ -162,7 +162,7 @@
     "strengths": "Claude Opus 5.5 and Fable 5.1; Claude Code included from Pro; Docs, Slides and Design built into chats; lowest hallucination rate in several reviews; ad-free",
     "watch_out": "No native image or video generation; no budget tier below $20",
     "platforms": "Web, Windows, macOS, iOS, Android, Chrome extension",
-    "privacy": "You choose whether chats train models; with training off, deleted chats are gone within 30 days",
+    "privacy": "Trains on chats by default since Aug 2025 (Free/Pro/Max); switch off in privacy settings, which also cuts retention to 30 days",
     "region": "US",
     "features": {
       "search": "yes",
@@ -179,7 +179,7 @@
       "quality": 5,
       "value": 4,
       "ease": 4,
-      "privacy": 4
+      "privacy": 3
     },
     "tags": [
       "agents",
@@ -195,7 +195,8 @@
       "https://www.morphllm.com/claude-code-usage-limits",
       "https://claude.com/pricing",
       "https://felloai.com/ai-pricing-comparison/",
-      "https://support.claude.com/en/articles/12138966-release-notes"
+      "https://support.claude.com/en/articles/12138966-release-notes",
+      "https://www.strac.io/blog/does-claude-train-on-your-data"
     ],
     "plans": [
       {
@@ -3315,7 +3316,9 @@
     "sources": [
       "https://www.morphllm.com/claude-code-usage-limits",
       "https://claude.com/pricing",
-      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
+      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared",
+      "https://code.claude.com/docs/en/data-usage",
+      "https://www.finout.io/blog/claude-code-pricing-2026"
     ],
     "plans": [
       {
@@ -3375,7 +3378,15 @@
       "pull_requests": "yes",
       "code_review": "yes",
       "models": "Claude only (Opus 5.5, Fable 5.1, Sonnet 5, Haiku 4.5)",
-      "context": "Up to 1M tokens"
+      "context": "Up to 1M tokens",
+      "usage_model": "Rolling 5-hour session + weekly cap, shared with Claude chat",
+      "at_limit": "Wait for the reset, or turn on pay-as-you-go extra usage at API rates",
+      "spend_cap": "yes",
+      "spend_cap_note": "Set a monthly spend cap for extra usage",
+      "trains_on_code": "Yes by default on Free/Pro/Max (since Aug 2025); switch off in privacy settings, which also cuts retention to 30 days",
+      "private_option": "Team, Enterprise and API: never used for training",
+      "local_models": "partial",
+      "local_note": "Claude models only; local models only via unofficial workarounds"
     }
   },
   {
@@ -3411,7 +3422,8 @@
     "verified": "2026-10",
     "sources": [
       "https://learn.chatgpt.com/docs/pricing",
-      "https://www.morphllm.com/codex-pricing"
+      "https://www.morphllm.com/codex-pricing",
+      "https://dontpaniclabs.com/blog/post/2026/08/18/running-openais-codex-cli-locally-with-ollama/"
     ],
     "plans": [
       {
@@ -3487,7 +3499,15 @@
       "pull_requests": "yes",
       "code_review": "yes",
       "models": "OpenAI only (GPT-6.1 Sol, GPT-6 Astra/Sol/Luna)",
-      "context": "Not published for Codex"
+      "context": "Not published for Codex",
+      "usage_model": "Rolling 5-hour window + weekly cap, shared with ChatGPT Work (Pro: no 5-hour limit)",
+      "at_limit": "Wait for the reset, buy ChatGPT credits, or use your own API key",
+      "spend_cap": "yes",
+      "spend_cap_note": "Credits are prepaid, so you can't overspend",
+      "trains_on_code": "Follows your ChatGPT setting: on by default for Free/Go/Plus/Pro; switch off 'Improve the model for everyone'",
+      "private_option": "Business and Enterprise: no training by default",
+      "local_models": "yes",
+      "local_note": "Official: codex --oss runs local models through Ollama or LM Studio"
     }
   },
   {
@@ -3509,7 +3529,7 @@
     "strengths": "Unlimited completions on paid plans; choose Claude, GPT, Gemini, Grok; runs Claude Code and Codex agents",
     "watch_out": "Switched to per-token AI Credits on 1 Jun 2026 — heavy agent use can overrun",
     "platforms": "VS Code, JetBrains, Neovim, Xcode, CLI, github.com",
-    "privacy": "Individuals can opt out of training",
+    "privacy": "Trains on Free/Pro/Pro+/Max code by default since 24 Apr 2026; opt out in settings",
     "region": "US",
     "scores": {
       "quality": 4,
@@ -3525,7 +3545,9 @@
     "sources": [
       "https://github.com/features/copilot/plans",
       "https://www.nocode.mba/articles/github-copilot-pricing",
-      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
+      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared",
+      "https://github.com/orgs/community/discussions/188488",
+      "https://www.developersdigest.tech/blog/github-copilot-usage-based-billing-guide-2026"
     ],
     "plans": [
       {
@@ -3599,7 +3621,15 @@
       "pull_requests": "yes",
       "code_review": "yes",
       "models": "Multi-vendor: Claude, GPT, Gemini, Grok, Kimi, Microsoft",
-      "context": "Depends on model"
+      "context": "Depends on model",
+      "usage_model": "Monthly AI Credits in US$ for chat and agents; code completions unlimited on paid plans",
+      "at_limit": "Chat and agents stop unless you allow paid overage (US$0.01 per credit)",
+      "spend_cap": "yes",
+      "spend_cap_note": "Set an additional-usage budget; US$0 means no overage",
+      "trains_on_code": "Yes by default on Free/Pro/Pro+/Max since 24 Apr 2026; opt out in Copilot settings",
+      "private_option": "Business and Enterprise: excluded from training",
+      "local_models": "partial",
+      "local_note": "Bring-your-own-key models in VS Code; not the default"
     }
   },
   {
@@ -3621,7 +3651,7 @@
     "strengths": "Polished VS Code-based editor; many models; background agents; CLI",
     "watch_out": "Usage-based overages after the included allowance",
     "platforms": "Windows, macOS, Linux, CLI",
-    "privacy": "Privacy mode available",
+    "privacy": "Privacy Mode off by default on individual plans; turn it on for no training",
     "region": "US",
     "scores": {
       "quality": 5,
@@ -3636,7 +3666,9 @@
     "verified": "2026-10",
     "sources": [
       "https://cursor.com/pricing",
-      "https://sessionwatcher.com/guides/how-much-does-cursor-cost"
+      "https://sessionwatcher.com/guides/how-much-does-cursor-cost",
+      "https://cursor.com/help/account-and-billing/spend-limits",
+      "https://www.strac.io/blog/cursor-data-privacy"
     ],
     "plans": [
       {
@@ -3707,7 +3739,15 @@
       "pull_requests": "yes",
       "code_review": "partial",
       "models": "Multi-vendor frontier models + Cursor Composer",
-      "context": "Depends on model"
+      "context": "Depends on model",
+      "usage_model": "Monthly included usage, then optional on-demand billing at API rates",
+      "at_limit": "Stops, unless you've turned on on-demand usage (off by default on individual plans)",
+      "spend_cap": "yes",
+      "spend_cap_note": "Set a spend limit for on-demand usage",
+      "trains_on_code": "Possible: Privacy Mode is OFF by default on Free and Pro; turn it on for zero data retention and no training",
+      "private_option": "Teams/Enterprise: Privacy Mode on and enforced",
+      "local_models": "partial",
+      "local_note": "Your own API keys supported; local models not officially"
     }
   },
   {
@@ -3743,7 +3783,8 @@
     "verified": "2026-10",
     "sources": [
       "https://devin.ai/pricing",
-      "https://www.therundown.ai/tools/codeium-windsurf"
+      "https://www.therundown.ai/tools/codeium-windsurf",
+      "https://theaiagentindex.com/agents/windsurf"
     ],
     "plans": [
       {
@@ -3802,7 +3843,15 @@
       "pull_requests": "yes",
       "code_review": "partial",
       "models": "Multi-vendor + SWE-2 + open models",
-      "context": "Depends on model"
+      "context": "Depends on model",
+      "usage_model": "Quota (amount not published)",
+      "at_limit": "Buy extra usage at API prices",
+      "spend_cap": "unknown",
+      "spend_cap_note": "Not published",
+      "trains_on_code": "Yes by default on Free; paid plans can opt out",
+      "private_option": "Teams and Enterprise: zero data retention by default",
+      "local_models": "no",
+      "local_note": "Not supported"
     }
   },
   {
@@ -3838,7 +3887,8 @@
     "verified": "2026-10",
     "sources": [
       "https://kiro.dev/pricing/",
-      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
+      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared",
+      "https://kiro.dev/docs/privacy-and-security/data-protection/"
     ],
     "plans": [
       {
@@ -3918,7 +3968,15 @@
       "pull_requests": "partial",
       "code_review": "partial",
       "models": "Claude and open-weight models",
-      "context": "Depends on model"
+      "context": "Depends on model",
+      "usage_model": "Monthly credits (50 free up to 10,000)",
+      "at_limit": "Optional paid overage at US$0.04 per credit",
+      "spend_cap": "unknown",
+      "spend_cap_note": "Not published",
+      "trains_on_code": "Free tier: code and chats may be used unless you opt out (Settings → Telemetry and Content)",
+      "private_option": "Check terms for paid tiers",
+      "local_models": "no",
+      "local_note": "Not supported"
     }
   },
   {
@@ -3955,7 +4013,8 @@
     "verified": "2026-10",
     "sources": [
       "https://antigravity.google/pricing",
-      "https://pinggy.io/blog/best_ai_tools_for_coding/"
+      "https://pinggy.io/blog/best_ai_tools_for_coding/",
+      "https://discuss.ai.google.dev/t/antigravity-data-training-opt-out/125236"
     ],
     "plans": [
       {
@@ -4010,7 +4069,15 @@
       "pull_requests": "partial",
       "code_review": "partial",
       "models": "Gemini, Claude, gpt-oss",
-      "context": "Gemini 3.1 Pro: 1M tokens"
+      "context": "Gemini 3.1 Pro: 1M tokens",
+      "usage_model": "Weekly rate limit, higher with Google AI Pro or Ultra",
+      "at_limit": "Wait for the weekly reset, or upgrade your Google AI plan",
+      "spend_cap": "yes",
+      "spend_cap_note": "No pay-as-you-go charges on personal plans",
+      "trains_on_code": "Personal Google accounts: may be used for training, with no opt-out setting",
+      "private_option": "Google Workspace or Google Cloud access: excluded",
+      "local_models": "no",
+      "local_note": "Not supported"
     },
     "aud": "Free; limits rise with Google AI Pro A$32.99 / Ultra A$149.99"
   },

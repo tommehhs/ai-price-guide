@@ -15,6 +15,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 TITLE = "The AI Price Guide"
+SITE_URL = "https://tommehhs.github.io/ai-price-guide/"
+DESCRIPTION = ("What every major AI tool costs in Australia: ChatGPT, Claude, Gemini, Copilot and 97 more. "
+               "Plan-by-plan prices in A$, free features, usage limits and coding tools compared. Independent.")
 DISCLAIMER = ("Not affiliated with, endorsed by or sponsored by any company listed. Product names and trademarks belong to their owners. Prices, plans and limits change often and may differ from what you see at checkout; always confirm on the company's own site before paying. This guide is general information only, not financial, legal or professional advice, and is provided as is without any guarantee of accuracy.")
 # Update these together when refreshing prices.
 AS_OF = "2 October 2026"
@@ -57,7 +60,12 @@ def load():
                 assert k in p, f"{t['id']} plan {p.get('name')}: missing {k}"
             assert p["aud_src"] in (None, "official"), f"{t['id']} plan {p['name']}: bad aud_src"
         t["stale"] = is_stale(t["verified"])
+        if t.get("aud_from") is None:  # use the official A$ price of the cheapest paid plan, if published
+            paid = [p for p in t.get("plans", []) if p["usd"] and p["usd"] == t["from"] and p["aud_src"] == "official"]
+            if paid:
+                t["aud_from"] = paid[0]["aud"]
     bench = json.loads((DATA / "benchmarks.json").read_text())
+    bench["guide"] = json.loads((DATA / "coding_guide.json").read_text())
     return cats, tools, bench
 
 
@@ -293,6 +301,34 @@ def build_markdown(cats, tools, bench):
     w("✓ yes · ~ limited, add-on or not clearly documented · ✗ no. Plan-by-plan limits are in "
       "[Plans in detail](#plans-in-detail-what-you-get-on-each-tier).")
     w("")
+    w("### How usage is counted, and what happens when you run out")
+    w("")
+    w("| Tool | How usage is counted | When you hit the limit | Spending cap |")
+    w("|---|---|---|---|")
+    for t in coders:
+        c = t["coding"]
+        cap = {"yes": "✓ ", "unknown": "", "no": "✗ "}[c["spend_cap"]] + c["spend_cap_note"]
+        w(f"| {t['name']} | {c['usage_model']} | {c['at_limit']} | {cap} |")
+    w("")
+    w("### Your code and privacy")
+    w("")
+    for tip in bench["guide"]["privacy_tips"]:
+        w(f"- {tip}")
+    w("")
+    w("| Tool | Trains on your code? | Private option | Local / offline models |")
+    w("|---|---|---|---|")
+    for t in coders:
+        c = t["coding"]
+        w(f"| {t['name']} | {c['trains_on_code']} | {c['private_option']} | {MARK[c['local_models']]} {c['local_note']} |")
+    w("")
+    w("### Which coding setup is right for you?")
+    w("")
+    w("| You are… | Pick | Monthly cost | Why |")
+    w("|---|---|---|---|")
+    for g in bench["guide"]["personas"]:
+        cost = g.get("aud_note") or ("Free" if g["aud"] == 0 else ("≈" if g.get("aud_est") else "") + f"A${g['aud']}")
+        w(f"| **{g['who']}** | {g['pick']} | {cost} | {g['why']} |")
+    w("")
     w("### Cheapest way in")
     w("")
     w("| Tool | Free tier | Cheapest paid | Heavy use |")
@@ -509,6 +545,113 @@ def build_csv(cats, tools, path):
             ])
 
 
+ICON = ("data:image/svg+xml," + __import__("urllib.parse").parse.quote(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1b5e8c"/>'
+    '<text x="32" y="43" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#fff" '
+    'text-anchor="middle">A$</text></svg>'))
+
+
+def h(s):
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;"))
+
+
+def tool_from_text(t):
+    """Short 'from' price, A$ first."""
+    if t["status"] == "discontinued":
+        return "Discontinued"
+    if t.get("aud_from") is not None:
+        return f"A${t['aud_from']:g}"
+    if t["from"] is None:
+        return "Free" if t["free"] else "Pay as you go"
+    return f"≈A${aud_est(t['from'])}{BILLING_SUFFIX[t['billing']]}"
+
+
+def build_tool_pages(cats, tools, bench):
+    out_dir = ROOT / "tools"
+    out_dir.mkdir(exist_ok=True)
+    for old in out_dir.glob("*.html"):
+        old.unlink()
+    tpl = (ROOT / "scripts" / "tool_page.html").read_text()
+    cat = {c["id"]: c for c in cats}
+    month = dt.date.fromisoformat(AS_OF_ISO).strftime("%B %Y")
+    for t in tools:
+        c = cat[t["category"]]
+        frm = tool_from_text(t)
+        free = "free plan available" if t["free"] else "no free plan"
+        title = f"{t['name']} price in Australia ({month}): plans, limits & free tier | The AI Price Guide"
+        if t["status"] == "discontinued":
+            title = f"{t['name']} has been discontinued ({month}) | The AI Price Guide"
+        desc = (f"{t['name']} costs {frm.lower() if frm == 'Free' else 'from ' + frm} a month in Australia ({free}). "
+                f"{t['best_for']}. Every plan, usage limits, privacy and alternatives, checked {t['verified']}.")[:300]
+        facts = [("From", frm), ("Free plan", "Yes" if t["free"] else "No")]
+        if t["status"] != "discontinued":
+            facts.append(("Rating", f"{overall(t)}/5"))
+        facts.append(("Checked", t["verified"] if t["verified"] != "older" else "needs re-check"))
+        facts_html = '<div class="facts">' + "".join(f"<div><span>{k}</span><b>{h(v)}</b></div>" for k, v in facts) + "</div>"
+        b = []
+        if t.get("pick"):
+            b.append(f'<p><span class="award">★ {h(t["pick"])} · {h(c["name"])}</span></p>')
+        if t["status"] != "active":
+            b.append(f'<p class="warn">{h(STATUS_LABEL[t["status"]].strip())}: {h(t["watch_out"])}</p>')
+        if t.get("plans"):
+            b.append("<h2>Every plan</h2>")
+            b.append('<div class="tbl"><table><thead><tr><th>Plan</th><th>A$ / month</th><th>US$</th><th>What you get</th><th>Limits</th></tr></thead><tbody>')
+            for p in t["plans"]:
+                note = f'<p class="small">{h(p["note"])}</p>' if p.get("note") else ""
+                b.append(f"<tr><td><strong>{h(p['name'])}</strong></td><td class=\"price\">{h(plan_aud(p))}</td><td class=\"price\">{h(plan_usd(p))}</td>"
+                         f"<td><ul>{''.join(f'<li>{h(i)}</li>' for i in p['includes'])}</ul>{note}</td>"
+                         f"<td><ul>{''.join(f'<li>{h(i)}</li>' for i in p['limits'])}</ul></td></tr>")
+            b.append("</tbody></table></div>")
+            b.append('<p class="small">Limits use the company\'s exact numbers where published; otherwise we quote its wording.</p>')
+        else:
+            b.append("<h2>Plans and prices</h2>")
+            b.append(f"<p>{h(t['pricing'])}</p>")
+            if t.get("aud"):
+                b.append(f"<p><strong>In Australia:</strong> {h(t['aud'])}</p>")
+            elif t["from"] is not None:
+                b.append(f'<p class="small">Charged in US dollars. Estimated Australian cost from ≈A${aud_est(t["from"])}'
+                         f'{BILLING_SUFFIX[t["billing"]]} including GST; your bank may add a foreign transaction fee.</p>')
+        b.append("<h2>At a glance</h2><dl>")
+        rows = [("Best for", t["best_for"]), ("Free plan", t.get("free_note") if t["free"] else "None"),
+                ("Strengths", t["strengths"]), ("Watch out", t["watch_out"]), ("Australia", t.get("au")),
+                ("Runs on", t["platforms"]), ("Privacy", f"{t['privacy']} (data: {t['region']})"), ("Maker", t["maker"])]
+        for k, v in rows:
+            if v and v != "—":
+                b.append(f"<dt>{k}</dt><dd>{h(v)}</dd>")
+        b.append("</dl>")
+        if t.get("coding"):
+            cd = t["coding"]
+            b.append("<h2>For coders</h2><dl>")
+            for k, v in [("Runs in", ", ".join(RUNS_LABEL[r] for r in cd["runs"])), ("Models", cd["models"]), ("Context", cd["context"]),
+                         ("Usage counted", cd["usage_model"]), ("At the limit", cd["at_limit"]), ("Spending cap", cd["spend_cap_note"]),
+                         ("Trains on your code?", cd["trains_on_code"]), ("Private option", cd["private_option"]), ("Local models", cd["local_note"])]:
+                b.append(f"<dt>{k}</dt><dd>{h(v)}</dd>")
+            b.append("</dl>")
+        if t["status"] != "discontinued":
+            sc = t["scores"]
+            b.append("<h2>Our rating</h2><p>" + " · ".join(f"{k.title()} {sc[k]}/5" for k in SCORE_KEYS)
+                     + f" → <strong>{overall(t)}/5</strong> overall</p>")
+        alts = sorted((a for a in tools if a["category"] == t["category"] and a["id"] != t["id"] and a["status"] != "discontinued"),
+                      key=lambda a: -overall(a))[:6]
+        if alts:
+            b.append(f"<h2>Alternatives in {h(c['name'])}</h2><ul class=\"alts\">"
+                     + "".join(f'<li><a href="{a["id"]}.html">{h(a["name"])} · {h(tool_from_text(a))}</a></li>' for a in alts) + "</ul>")
+        b.append("<h2>Sources</h2><ul class=\"small\">" + "".join(f'<li><a href="{h(u)}" rel="nofollow noopener">{h(u)}</a></li>' for u in t["sources"]) + "</ul>")
+        lede = f"{t['best_for']}. From {frm} a month" if frm not in ("Free", "Discontinued", "Pay as you go") else f"{t['best_for']}."
+        page = (tpl.replace("{{title}}", h(title)).replace("{{description}}", h(desc))
+                .replace("{{canonical}}", f"{SITE_URL}tools/{t['id']}.html").replace("{{icon}}", ICON)
+                .replace("{{category_id}}", c["id"]).replace("{{category}}", h(c["name"]))
+                .replace("{{h1}}", h(f"{t['name']} price in Australia" if t["status"] != "discontinued" else f"{t['name']} (discontinued)"))
+                .replace("{{lede}}", h(lede + (", " + ("with a free plan." if t["free"] else "no free plan.") if lede.endswith("month") else "")))
+                .replace("{{facts}}", facts_html).replace("{{body}}", "\n  ".join(b))
+                .replace("{{rate}}", str(USD_TO_AUD)).replace("{{disclaimer}}", h(DISCLAIMER)).replace("{{count}}", str(len(tools))))
+        (out_dir / f"{t['id']}.html").write_text(page)
+    urls = [SITE_URL] + [f"{SITE_URL}tools/{t['id']}.html" for t in tools]
+    (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                       + "".join(f"  <url><loc>{u}</loc><lastmod>{AS_OF_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n")
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n")
+
+
 def build_plans_csv(tools, path):
     with path.open("w", newline="") as fh:
         wr = csv.writer(fh)
@@ -522,15 +665,23 @@ def build_plans_csv(tools, path):
 
 def page_body(cats, tools, bench):
     template = (ROOT / "scripts" / "template.html").read_text()
-    payload = json.dumps({"title": TITLE, "disclaimer": DISCLAIMER, "asOf": AS_OF, "rate": USD_TO_AUD, "gst": GST, "staleDays": STALE_DAYS,
+    payload = json.dumps({"title": TITLE, "disclaimer": DISCLAIMER, "siteUrl": SITE_URL, "asOf": AS_OF, "rate": USD_TO_AUD, "gst": GST, "staleDays": STALE_DAYS,
                           "categories": cats, "tools": tools, "bench": bench},
                          ensure_ascii=False).replace("</", "<\\/")
     return template.replace("/*__DATA__*/null", payload)
 
 
 def build_html(body, path):
-    head = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
-            '<meta name="viewport" content="width=device-width, initial-scale=1">\n')
+    head = ('<!doctype html>\n<html lang="en-AU">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f'<meta name="description" content="{h(DESCRIPTION)}">\n'
+            f'<link rel="canonical" href="{SITE_URL}">\n'
+            '<meta property="og:type" content="website">\n'
+            f'<meta property="og:title" content="{TITLE}">\n'
+            f'<meta property="og:description" content="{h(DESCRIPTION)}">\n'
+            f'<meta property="og:url" content="{SITE_URL}">\n'
+            '<meta name="twitter:card" content="summary">\n'
+            f'<link rel="icon" href="{ICON}">\n')
     title_end = body.index("</title>") + len("</title>")
     path.write_text(head + body[:title_end] + "\n</head>\n<body>\n" + body[title_end:] + "\n</body>\n</html>\n")
 
@@ -542,6 +693,7 @@ def main():
     build_plans_csv(tools, DATA / "plans.csv")
     body = page_body(cats, tools, bench)
     build_html(body, ROOT / "index.html")
+    build_tool_pages(cats, tools, bench)
     # Optional: page body only (no <html>/<head>), for hosts that add their own skeleton.
     if len(sys.argv) > 2 and sys.argv[1] == "--fragment":
         Path(sys.argv[2]).write_text(body)

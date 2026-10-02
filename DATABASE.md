@@ -283,7 +283,7 @@ _Checked 2026-10. Sources: [1](https://www.morphllm.com/claude-code-usage-limits
 | **Plus** | A$30 | US$20 | Codex on web, CLI, IDE extension and iOS<br>Cloud tasks, GitHub code review, Slack/Linear<br>GPT-6.1 Sol, GPT-6 Sol/Luna, GPT-6 Astra | Per 5 hours (OpenAI estimate): GPT-6.1 Sol 15–160 · Astra 5–45 · Luna 350–3,000 local messages<br>Weekly limits may apply; buy credits for more |
 | **Pro** | A$155 | US$100 | Everything in Plus<br>Astra Ultrafast on the US$500 tier | No 5-hour limit currently; weekly limits may apply |
 
-_Checked 2026-10. Sources: [1](https://learn.chatgpt.com/docs/pricing), [2](https://www.morphllm.com/codex-pricing)_
+_Checked 2026-10. Sources: [1](https://learn.chatgpt.com/docs/pricing), [2](https://www.morphllm.com/codex-pricing), [3](https://dontpaniclabs.com/blog/post/2026/08/18/running-openais-codex-cli-locally-with-ollama/)_
 
 ### GitHub Copilot
 
@@ -305,7 +305,7 @@ _Checked 2026-10. Sources: [1](https://github.com/features/copilot/plans), [2](h
 | **Pro+** | ≈A$95 (est.) | US$60 | Everything in Pro | 3x Pro usage (reported) |
 | **Ultra** | ≈A$317 (est.) | US$200 | Everything in Pro | 20x Pro usage (reported) |
 
-_Checked 2026-10. Sources: [1](https://cursor.com/pricing), [2](https://sessionwatcher.com/guides/how-much-does-cursor-cost)_
+_Checked 2026-10. Sources: [1](https://cursor.com/pricing), [2](https://sessionwatcher.com/guides/how-much-does-cursor-cost), [3](https://cursor.com/help/account-and-billing/spend-limits)_
 
 ### Devin Desktop (ex-Windsurf)
 
@@ -315,7 +315,7 @@ _Checked 2026-10. Sources: [1](https://cursor.com/pricing), [2](https://sessionw
 | **Pro** | ≈A$32 (est.) | US$20 | Frontier models from OpenAI, Anthropic, Google, xAI plus open models<br>Devin Cloud agents<br>SWE-2 free until 16 Oct 2026 | 'Increased quotas'; extra usage at API prices |
 | **Max** | ≈A$317 (est.) | US$200 | Everything in Pro | 'Significantly higher quotas' |
 
-_Checked 2026-10. Sources: [1](https://devin.ai/pricing), [2](https://www.therundown.ai/tools/codeium-windsurf)_
+_Checked 2026-10. Sources: [1](https://devin.ai/pricing), [2](https://www.therundown.ai/tools/codeium-windsurf), [3](https://theaiagentindex.com/agents/windsurf)_
 
 ### Kiro
 
@@ -327,7 +327,7 @@ _Checked 2026-10. Sources: [1](https://devin.ai/pricing), [2](https://www.therun
 | **Pro Max** | ≈A$158 (est.) | US$100 | Premium models | 5,000 credits/month; extra US$0.04/credit |
 | **Power** | ≈A$317 (est.) | US$200 | Premium models | 10,000 credits/month; extra US$0.04/credit |
 
-_Checked 2026-10. Sources: [1](https://kiro.dev/pricing/), [2](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared)_
+_Checked 2026-10. Sources: [1](https://kiro.dev/pricing/), [2](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared), [3](https://kiro.dev/docs/privacy-and-security/data-protection/)_
 
 ### Google Antigravity
 
@@ -337,7 +337,7 @@ _Checked 2026-10. Sources: [1](https://kiro.dev/pricing/), [2](https://aiweekly.
 | **With Google AI Pro** | A$32.99 | US$19.99 | Everything in Free | 'More rate limits' |
 | **With AI Ultra** | A$149.99 | US$99.99 | Everything in Pro | 'Even more rate limits' (20x tier: highest) |
 
-_Checked 2026-10. Sources: [1](https://antigravity.google/pricing), [2](https://pinggy.io/blog/best_ai_tools_for_coding/)_
+_Checked 2026-10. Sources: [1](https://antigravity.google/pricing), [2](https://pinggy.io/blog/best_ai_tools_for_coding/), [3](https://discuss.ai.google.dev/t/antigravity-data-training-opt-out/125236)_
 
 ## What you get free
 
@@ -390,6 +390,47 @@ The free tier of each tool above, side by side.
 | Google Antigravity | ✓ | ✓ | ~ | ~ | ~ | Gemini, Claude, gpt-oss | Gemini 3.1 Pro: 1M tokens |
 
 ✓ yes · ~ limited, add-on or not clearly documented · ✗ no. Plan-by-plan limits are in [Plans in detail](#plans-in-detail-what-you-get-on-each-tier).
+
+### How usage is counted, and what happens when you run out
+
+| Tool | How usage is counted | When you hit the limit | Spending cap |
+|---|---|---|---|
+| Claude Code | Rolling 5-hour session + weekly cap, shared with Claude chat | Wait for the reset, or turn on pay-as-you-go extra usage at API rates | ✓ Set a monthly spend cap for extra usage |
+| OpenAI Codex | Rolling 5-hour window + weekly cap, shared with ChatGPT Work (Pro: no 5-hour limit) | Wait for the reset, buy ChatGPT credits, or use your own API key | ✓ Credits are prepaid, so you can't overspend |
+| GitHub Copilot | Monthly AI Credits in US$ for chat and agents; code completions unlimited on paid plans | Chat and agents stop unless you allow paid overage (US$0.01 per credit) | ✓ Set an additional-usage budget; US$0 means no overage |
+| Cursor | Monthly included usage, then optional on-demand billing at API rates | Stops, unless you've turned on on-demand usage (off by default on individual plans) | ✓ Set a spend limit for on-demand usage |
+| Devin Desktop (ex-Windsurf) | Quota (amount not published) | Buy extra usage at API prices | Not published |
+| Kiro | Monthly credits (50 free up to 10,000) | Optional paid overage at US$0.04 per credit | Not published |
+| Google Antigravity | Weekly rate limit, higher with Google AI Pro or Ultra | Wait for the weekly reset, or upgrade your Google AI plan | ✓ No pay-as-you-go charges on personal plans |
+
+### Your code and privacy
+
+- Most individual plans can use your code for training by default. Check the setting on day one.
+- Business and team plans almost always exclude your code from training. Worth it if you code for clients or an employer.
+- Turning training off doesn't stop your code being sent to the company's servers; only local models do that.
+
+| Tool | Trains on your code? | Private option | Local / offline models |
+|---|---|---|---|
+| Claude Code | Yes by default on Free/Pro/Max (since Aug 2025); switch off in privacy settings, which also cuts retention to 30 days | Team, Enterprise and API: never used for training | ~ Claude models only; local models only via unofficial workarounds |
+| OpenAI Codex | Follows your ChatGPT setting: on by default for Free/Go/Plus/Pro; switch off 'Improve the model for everyone' | Business and Enterprise: no training by default | ✓ Official: codex --oss runs local models through Ollama or LM Studio |
+| GitHub Copilot | Yes by default on Free/Pro/Pro+/Max since 24 Apr 2026; opt out in Copilot settings | Business and Enterprise: excluded from training | ~ Bring-your-own-key models in VS Code; not the default |
+| Cursor | Possible: Privacy Mode is OFF by default on Free and Pro; turn it on for zero data retention and no training | Teams/Enterprise: Privacy Mode on and enforced | ~ Your own API keys supported; local models not officially |
+| Devin Desktop (ex-Windsurf) | Yes by default on Free; paid plans can opt out | Teams and Enterprise: zero data retention by default | ✗ Not supported |
+| Kiro | Free tier: code and chats may be used unless you opt out (Settings → Telemetry and Content) | Check terms for paid tiers | ✗ Not supported |
+| Google Antigravity | Personal Google accounts: may be used for training, with no opt-out setting | Google Workspace or Google Cloud access: excluded | ✗ Not supported |
+
+### Which coding setup is right for you?
+
+| You are… | Pick | Monthly cost | Why |
+|---|---|---|---|
+| **Learning to code** | GitHub Copilot Free in VS Code, plus ChatGPT Study Mode or Claude free to explain things | Free | Free, works in the most popular editor, and the chatbots teach rather than just answer. |
+| **Student** | GitHub Copilot Student (free) plus the JetBrains Student Pack | Free | Verified students get unlimited completions and 200 AI credits a month free; JetBrains IDEs are free too. |
+| **Hobbyist on a budget** | GitHub Copilot Pro | ≈A$16 | Unlimited completions and a choice of top models for the price of a lunch. Antigravity is a free alternative. |
+| **Already pay for ChatGPT or Google AI** | Use what's included: Codex with ChatGPT Plus (A$30), or Antigravity + Jules with Google AI Pro (A$32.99) | Free | No extra cost; try these before adding another subscription. |
+| **Professional developer** | Claude Pro (for Claude Code) + GitHub Copilot Pro | ≈A$48 | The most common pairing: a strong agent for big changes plus fast autocomplete in your editor. |
+| **Wants one AI editor** | Cursor Pro | ≈A$32 | Everything in one polished editor with models from several companies. |
+| **Heavy daily agent use** | Claude Max 5x or ChatGPT Pro (Codex) | A$155 (ChatGPT Pro) to ≈A$158 (Claude Max 5x) | Pro tiers stop you hitting 5-hour limits mid-task; ChatGPT Pro currently has no 5-hour Codex limit. |
+| **Code must stay private** | Codex CLI with a local model (Ollama), or Cline/OpenCode with local models | Free | Nothing leaves your computer. Needs a recent computer with 16–32 GB of memory, and local models are less capable. |
 
 ### Cheapest way in
 
@@ -477,7 +518,7 @@ _Chatbots you talk to for almost anything: questions, writing, planning, files, 
 | Tool | Free? | From (A$) | From (US$) | Typical (US$) | Top (US$) | Rating | Best for |
 |---|---|---|---|---|---|---|---|
 | [ChatGPT](https://chatgpt.com) 🏅 _Best all-rounder_ | ✓ | A$13 | $8 | $20 | $500 | 4.4/5 | All-rounder: writing, images, agents, voice |
-| [Claude](https://claude.ai) 🏅 _Best for writing & coding_ | ✓ | ≈A$32 | $20 | $20 | $200 | 4.4/5 | Long writing, coding, documents and agent tasks |
+| [Claude](https://claude.ai) 🏅 _Best for writing & coding_ | ✓ | ≈A$32 | $20 | $20 | $200 | 4.2/5 | Long writing, coding, documents and agent tasks |
 | [Gemini](https://gemini.google.com) 🏅 _Best value bundle_ | ✓ | A$7.99 | $4.99 | $19.99 | $199.99 | 4.4/5 | Google Workspace / Android users; best value bundle |
 | [Grok](https://grok.com) | ✓ | ≈A$13 | $8 | $30 | $300 | 3.2/5 | Live X/Twitter news; video with sound |
 | [Perplexity](https://www.perplexity.ai) | ✓ | ≈A$32 | $20 | $20 | $200 | 4.0/5 | Researching with citations |
@@ -508,9 +549,9 @@ _Chatbots you talk to for almost anything: questions, writing, planning, files, 
 - Watch out: No native image or video generation; no budget tier below $20
 - Australia: Available; website prices are in US$ and exclude tax
 - Platforms: Web, Windows, macOS, iOS, Android, Chrome extension
-- Privacy: You choose whether chats train models; with training off, deleted chats are gone within 30 days (data: US)
-- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●○ · privacy ●●●●○
-- Checked: 2026-10 · Sources: [1](https://www.morphllm.com/claude-code-usage-limits), [2](https://claude.com/pricing), [3](https://felloai.com/ai-pricing-comparison/), [4](https://support.claude.com/en/articles/12138966-release-notes)
+- Privacy: Trains on chats by default since Aug 2025 (Free/Pro/Max); switch off in privacy settings, which also cuts retention to 30 days (data: US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-10 · Sources: [1](https://www.morphllm.com/claude-code-usage-limits), [2](https://claude.com/pricing), [3](https://felloai.com/ai-pricing-comparison/), [4](https://support.claude.com/en/articles/12138966-release-notes), [5](https://www.strac.io/blog/does-claude-train-on-your-data)
 
 **Gemini** (Google)
 - Plans: AI Plus $4.99 (400 GB) · AI Pro $19.99 (5 TB) · AI Ultra $99.99 (5x, 20 TB, YouTube Premium) · Ultra $199.99 (20x) · Free: Most generous free tier; Gemini Flash with search, image generation
@@ -1271,12 +1312,12 @@ _AI that writes, edits and reviews code in your editor or terminal._
 | Tool | Free? | From (A$) | From (US$) | Typical (US$) | Top (US$) | Rating | Best for |
 |---|---|---|---|---|---|---|---|
 | [Claude Code](https://claude.com/product/claude-code) 🏅 _Most capable_ | ✗ | ≈A$32 | $20 | $20 | $200 | 4.2/5 | Big multi-file changes and long agent tasks |
-| [OpenAI Codex](https://openai.com/codex) | ✓ | ≈A$13 | $8 | $20 | $200 | 4.2/5 | ChatGPT subscribers; cloud sandboxes |
+| [OpenAI Codex](https://openai.com/codex) | ✓ | A$13 | $8 | $20 | $200 | 4.2/5 | ChatGPT subscribers; cloud sandboxes |
 | [GitHub Copilot](https://github.com/features/copilot) 🏅 _Best value_ | ✓ | ≈A$16 | $10 | $10 | $100 | 4.0/5 | Cheapest serious option; works in any editor |
 | [Cursor](https://cursor.com) 🏅 _Best AI editor_ | ✓ | ≈A$32 | $20 | $20 | $200 | 4.0/5 | An AI-first editor for everyday coding |
 | [Devin Desktop (ex-Windsurf)](https://devin.ai) | ✓ | ≈A$32 | $20 | $20 | $200 | 3.6/5 | Cursor alternative with Devin agent built in |
 | [Kiro](https://kiro.dev) | ✓ | ≈A$32 | $20 | $20 | $200 | 3.6/5 | Planning requirements before writing code |
-| [Google Antigravity](https://antigravity.google) | ✓ | ≈A$32 | $19.99 | $19.99 | $199.99 | 3.6/5 | Free agent-first coding with Gemini |
+| [Google Antigravity](https://antigravity.google) | ✓ | A$32.99 | $19.99 | $19.99 | $199.99 | 3.6/5 | Free agent-first coding with Gemini |
 | [Zed](https://zed.dev) | ✓ | ≈A$16 | $10 | $10 | — | 4.0/5 | Fast, lightweight editor with AI |
 | [Cline / OpenCode](https://opencode.ai) | ✓ | Free | — | — | — | 3.8/5 | No subscription; use any model, including local ones |
 
@@ -1289,7 +1330,7 @@ _AI that writes, edits and reviews code in your editor or terminal._
 - Platforms: Terminal, VS Code, JetBrains, web, iOS, Android
 - Privacy: As Claude (data: US)
 - Ratings: quality ●●●●● · value ●●●●○ · ease ●●●○○ · privacy ●●●●○
-- Checked: 2026-10 · Sources: [1](https://www.morphllm.com/claude-code-usage-limits), [2](https://claude.com/pricing), [3](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared)
+- Checked: 2026-10 · Sources: [1](https://www.morphllm.com/claude-code-usage-limits), [2](https://claude.com/pricing), [3](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared), [4](https://code.claude.com/docs/en/data-usage), [5](https://www.finout.io/blog/claude-code-pricing-2026)
 
 **OpenAI Codex** (OpenAI)
 - Plans: Included in ChatGPT Go/Plus/Pro/Business · Free: Limited, with ChatGPT Free
@@ -1298,25 +1339,25 @@ _AI that writes, edits and reviews code in your editor or terminal._
 - Platforms: Terminal, IDE, web, ChatGPT app
 - Privacy: As ChatGPT (data: US)
 - Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
-- Checked: 2026-10 · Sources: [1](https://learn.chatgpt.com/docs/pricing), [2](https://www.morphllm.com/codex-pricing)
+- Checked: 2026-10 · Sources: [1](https://learn.chatgpt.com/docs/pricing), [2](https://www.morphllm.com/codex-pricing), [3](https://dontpaniclabs.com/blog/post/2026/08/18/running-openais-codex-cli-locally-with-ollama/)
 
 **GitHub Copilot** (GitHub (Microsoft))
 - Plans: Pro $10 ($15 credits) · Pro+ $39 ($70) · Max $100 ($200) · Business $19/seat · Free: 2,000 completions + limited chat/month
 - Strengths: Unlimited completions on paid plans; choose Claude, GPT, Gemini, Grok; runs Claude Code and Codex agents
 - Watch out: Switched to per-token AI Credits on 1 Jun 2026 — heavy agent use can overrun
 - Platforms: VS Code, JetBrains, Neovim, Xcode, CLI, github.com
-- Privacy: Individuals can opt out of training (data: US)
+- Privacy: Trains on Free/Pro/Pro+/Max code by default since 24 Apr 2026; opt out in settings (data: US)
 - Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●○ · privacy ●●●○○
-- Checked: 2026-10 · Sources: [1](https://github.com/features/copilot/plans), [2](https://www.nocode.mba/articles/github-copilot-pricing), [3](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared)
+- Checked: 2026-10 · Sources: [1](https://github.com/features/copilot/plans), [2](https://www.nocode.mba/articles/github-copilot-pricing), [3](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared), [4](https://github.com/orgs/community/discussions/188488), [5](https://www.developersdigest.tech/blog/github-copilot-usage-based-billing-guide-2026)
 
 **Cursor** (Anysphere)
 - Plans: Pro $20 · Pro+ $60 (3x) · Ultra $200 (20x) · Teams $40/seat · Free: Hobby: limited agent + tab
 - Strengths: Polished VS Code-based editor; many models; background agents; CLI
 - Watch out: Usage-based overages after the included allowance
 - Platforms: Windows, macOS, Linux, CLI
-- Privacy: Privacy mode available (data: US)
+- Privacy: Privacy Mode off by default on individual plans; turn it on for no training (data: US)
 - Ratings: quality ●●●●● · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
-- Checked: 2026-10 · Sources: [1](https://cursor.com/pricing), [2](https://sessionwatcher.com/guides/how-much-does-cursor-cost)
+- Checked: 2026-10 · Sources: [1](https://cursor.com/pricing), [2](https://sessionwatcher.com/guides/how-much-does-cursor-cost), [3](https://cursor.com/help/account-and-billing/spend-limits), [4](https://www.strac.io/blog/cursor-data-privacy)
 
 **Devin Desktop (ex-Windsurf)** (Cognition)
 - Plans: Pro $20 · Max $200 · Teams $40/seat · Free: Unlimited tab, light agent quota
@@ -1324,7 +1365,7 @@ _AI that writes, edits and reviews code in your editor or terminal._
 - Watch out: Renamed from Windsurf 2 Jun 2026
 - Platforms: Windows, macOS, Linux, JetBrains plugin
 - Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
-- Checked: 2026-10 · Sources: [1](https://devin.ai/pricing), [2](https://www.therundown.ai/tools/codeium-windsurf)
+- Checked: 2026-10 · Sources: [1](https://devin.ai/pricing), [2](https://www.therundown.ai/tools/codeium-windsurf), [3](https://theaiagentindex.com/agents/windsurf)
 
 **Kiro** (Amazon (AWS))
 - Plans: Pro $20 · up to $200 · Free: 50 credits
@@ -1332,7 +1373,7 @@ _AI that writes, edits and reviews code in your editor or terminal._
 - Watch out: AWS-flavoured
 - Platforms: Windows, macOS, Linux
 - Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
-- Checked: 2026-10 · Sources: [1](https://kiro.dev/pricing/), [2](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared)
+- Checked: 2026-10 · Sources: [1](https://kiro.dev/pricing/), [2](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared), [3](https://kiro.dev/docs/privacy-and-security/data-protection/)
 
 **Google Antigravity** (Google)
 - Plans: Free · higher limits with Google AI plans · Free: Free with weekly compute cap
@@ -1341,7 +1382,7 @@ _AI that writes, edits and reviews code in your editor or terminal._
 - Platforms: Windows, macOS, Linux, CLI
 - Privacy: As Google (data: US)
 - Ratings: quality ●●●●○ · value ●●●●● · ease ●●●○○ · privacy ●●○○○
-- Checked: 2026-10 · Sources: [1](https://antigravity.google/pricing), [2](https://pinggy.io/blog/best_ai_tools_for_coding/)
+- Checked: 2026-10 · Sources: [1](https://antigravity.google/pricing), [2](https://pinggy.io/blog/best_ai_tools_for_coding/), [3](https://discuss.ai.google.dev/t/antigravity-data-training-opt-out/125236)
 
 **Zed** (Zed Industries)
 - Plans: Pro $10 · Free: 2,000 edit predictions/month
@@ -1657,7 +1698,7 @@ _Chat characters for company, role-play and practice conversations. Mind the age
 | Assistant | Trains on your chats? | Where data lives |
 |---|---|---|
 | ChatGPT | Trains on chats by default; one-tap opt-out ('Improve the model for everyone'); Temporary Chat not used for training | US |
-| Claude | You choose whether chats train models; with training off, deleted chats are gone within 30 days | US |
+| Claude | Trains on chats by default since Aug 2025 (Free/Pro/Max); switch off in privacy settings, which also cuts retention to 30 days | US |
 | Gemini | Trains by default with human review; turn off 'Keep Activity' to stop | US |
 | Grok | Trains by default, including on public X posts; opt-out in settings | US |
 | Perplexity | 'AI data retention' on by default; switch off in settings | US |

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tommehhs.github.io/ai-price-guide/sitemap.xml
