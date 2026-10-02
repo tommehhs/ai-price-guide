@@ -1,24 +1,28 @@
-# AI Comparison
+# The AI Price Guide
 
-A consumer's database of AI tools: what they cost (including Australian prices), what they're good at, what to watch out for, and how they handle your data. Last updated **2 October 2026**, covering **101 tools in 18 categories**:
+What every major AI tool costs in Australia, what you get on each plan, and how much you can actually use it. **101 tools in 18 categories**, with plan-by-plan breakdowns (features, free features, usage limits) for the 10 main assistants and 7 coding tools. Last updated **2 October 2026**.
 
-Assistants · Agents · Search & research · Images · Photo editing · Video · Music, voice & dictation · Slides & design · Writing, notes & meetings · Learning · Translation · Coding · App builders · AI browsers · Phone & home assistants · AI glasses · Run AI offline · Companions
+**Independent:** no sponsorships, affiliate links or paid placements.
 
 ## Where to look
 
 | File | Use it for |
 |---|---|
-| [DATABASE.md](DATABASE.md) | The readable guide: quick picks, best in each category, 2026 changes, Australian prices, every tool's details and ratings, privacy, ways to pay less, safety tips, jargon buster |
-| [index.html](index.html) | Interactive version: search and filter, **Help me choose** picker, **My shortlist** side-by-side comparison with a monthly cost total in US$ and A$ |
-| [data/tools.csv](data/tools.csv) | Open in Excel / Google Sheets |
-| [data/tools.json](data/tools.json) | The source data — edit this one |
+| [index.html](index.html) | The interactive guide: browse and filter, **Compare plans**, **Coding tools**, **Help me choose**, and **My shortlist** with a monthly cost total |
+| [DATABASE.md](DATABASE.md) | The written guide: quick picks, plans in detail, free features, coding comparison and benchmarks, Australian prices, privacy, ways to pay less, safety tips |
+| [data/tools.csv](data/tools.csv) · [data/plans.csv](data/plans.csv) | Open in Excel / Google Sheets |
+| [data/tools.json](data/tools.json) · [data/benchmarks.json](data/benchmarks.json) | The source data — edit these |
+
+## Prices
+
+A$ first. **A$** is the company's own Australian price; **≈A$** is an estimate for tools that bill in US dollars (US$ × 1.44 + GST). Entries checked more than 60 days ago are flagged "Needs re-check".
 
 ## Updating
 
-Edit `data/tools.json`, then run:
+Edit the files in `data/`, then run:
 
 ```sh
 python3 scripts/build.py
 ```
 
-That validates every entry and regenerates `DATABASE.md`, `data/tools.csv` and `index.html`. See "How to update this database" in DATABASE.md for the field reference.
+That validates every entry and regenerates `DATABASE.md`, the CSVs and `index.html`, and lists anything that needs re-checking.

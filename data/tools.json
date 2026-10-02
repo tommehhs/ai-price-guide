@@ -8,13 +8,13 @@
     "url": "https://chatgpt.com",
     "pick": "Best all-rounder",
     "free": true,
-    "free_note": "GPT-6 Luna; ads in the US and 31 European markets",
+    "free_note": "GPT-5.6 Luna for chat; ads in the US and 31 European markets",
     "billing": "monthly",
     "from": 8,
     "standard": 20,
     "top": 500,
-    "pricing": "Go $8 (ads) · Plus $20 · Pro $100 / $200 / $500 (Pro $200 closed to new sign-ups since 10 Sep 2026) · Business $25/seat",
-    "aud": "Go A$13 · Plus ~A$35 (reported)",
+    "pricing": "Go $8 (ads) · Plus $20 · Pro $100 / $200 / $500 (Pro $200 closed to new sign-ups since 10 Sep 2026)",
+    "aud": "Go A$13 · Plus A$30 · Pro from A$155 (official)",
     "aud_from": 13,
     "au": "Available; ads on Free/Go",
     "best_for": "All-rounder: writing, images, agents, voice",
@@ -50,11 +50,95 @@
       "voice",
       "writing"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://learn.chatgpt.com/docs/pricing",
+      "https://chatgpt.com/pricing",
       "https://felloai.com/ai-pricing-comparison/",
       "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/",
       "https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/"
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "GPT-5.6 Luna for chat",
+          "Search, voice, Study Mode, projects, memory",
+          "Built-in browser, apps and plugins",
+          "Limited image creation, deep research and Codex"
+        ],
+        "limits": [
+          "Text chats unlimited (subject to abuse guardrails)",
+          "Uploads, images, deep research, Codex: 'limited' (numbers not published)",
+          "Context window 27K tokens (Instant)",
+          "Shows ads (US, Europe)"
+        ]
+      },
+      {
+        "name": "Go",
+        "usd": 8,
+        "aud": 13,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Everything in Free",
+          "Voice with video",
+          "Create & share plugins",
+          "More image creation, longer memory"
+        ],
+        "limits": [
+          "'More messages with tools' (number not published)",
+          "Context window 54K (Instant) / 256K (Reasoning)",
+          "Deep research and Codex still 'limited'",
+          "Shows ads"
+        ]
+      },
+      {
+        "name": "Plus",
+        "usd": 20,
+        "aud": 30,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "GPT-6 reasoning models",
+          "Expanded deep research, image generation with Thinking",
+          "ChatGPT Work on desktop, web and mobile",
+          "Codex on web, CLI, IDE and iOS; GitHub code review",
+          "Projects, scheduled tasks, custom GPTs, Sites, record mode"
+        ],
+        "limits": [
+          "Codex (est. per 5 hours): GPT-6.1 Sol 15–160 messages, GPT-6 Astra 5–45, GPT-6 Luna 350–3,000; weekly limits may apply",
+          "Agent mode: 40 messages/month (reported)",
+          "Context window 54K (Instant) / 256K (Reasoning)",
+          "Extra usage: buy credits"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 100,
+        "aud": 155,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Choice of 3 tiers: US$100, US$200 or US$500",
+          "GPT-6 Pro reasoning (GPT-6 Astra)",
+          "Dot, an always-on agent",
+          "Longest Codex and Work sessions",
+          "Astra Ultrafast on the US$500 tier"
+        ],
+        "limits": [
+          "Chat messages unlimited (subject to abuse guardrails)",
+          "Codex: no 5-hour limit currently; weekly limits may apply",
+          "Agent mode: 400 messages/month (reported)",
+          "Context window 128K (Instant) / 400K (Reasoning)",
+          "US$200 tier closed to new sign-ups since 10 Sep 2026"
+        ],
+        "note": "A$155 is the cheapest (US$100) tier"
+      }
     ]
   },
   {
@@ -72,9 +156,8 @@
     "standard": 20,
     "top": 200,
     "pricing": "Pro $20 ($17/mo annual) · Max 5x $100 · Max 20x $200 · Team $25 / Premium $125 per seat",
-    "aud": "Pro A$34 (A$340/yr) · Max A$170 / A$340, incl. GST",
-    "aud_from": 34,
-    "au": "Available",
+    "aud": "Billed in US$ on claude.ai, plus GST (Pro ≈ A$32)",
+    "au": "Available; website prices are in US$ and exclude tax",
     "best_for": "Long writing, coding, documents and agent tasks",
     "strengths": "Claude Opus 5.5 and Fable 5.1; Claude Code included from Pro; Docs, Slides and Design built into chats; lowest hallucination rate in several reviews; ad-free",
     "watch_out": "No native image or video generation; no budget tier below $20",
@@ -107,10 +190,79 @@
       "research",
       "writing"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://www.morphllm.com/claude-code-usage-limits",
+      "https://claude.com/pricing",
       "https://felloai.com/ai-pricing-comparison/",
       "https://support.claude.com/en/articles/12138966-release-notes"
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Chat on web, desktop and mobile",
+          "Web search, create files, run code",
+          "Memory, connectors, Artifacts"
+        ],
+        "limits": [
+          "Usage cap per 5-hour session: not published",
+          "Context: up to 1M tokens, varies by model",
+          "No Claude Code"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 20,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Claude Code included",
+          "Projects; Claude Design, Slides and Docs; Claude Science",
+          "More Claude models (Opus 5.5, Fable 5.1)",
+          "Claude in Chrome and Microsoft 365",
+          "Hand off and schedule tasks"
+        ],
+        "limits": [
+          "At least 5x Free per 5-hour session, plus weekly limits (exact numbers not published)",
+          "Claude Code shares the same allowance; 5-hour Code limits doubled May 2026, weekly +25% since 14 Sep 2026",
+          "US$17/month if paid yearly (US$200)"
+        ]
+      },
+      {
+        "name": "Max 5x",
+        "usd": 100,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro",
+          "Higher output limits",
+          "Priority at busy times",
+          "Early access to new features"
+        ],
+        "limits": [
+          "5x Pro usage per 5-hour session, plus weekly limits"
+        ]
+      },
+      {
+        "name": "Max 20x",
+        "usd": 200,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Max 5x"
+        ],
+        "limits": [
+          "20x Pro usage per 5-hour session, plus weekly limits"
+        ]
+      }
     ]
   },
   {
@@ -127,8 +279,8 @@
     "from": 4.99,
     "standard": 19.99,
     "top": 199.99,
-    "pricing": "AI Plus $4.99 (400 GB) · AI Pro $19.99 (storage + Veo) · AI Ultra $99.99 (5x, 20 TB, YouTube Premium) · Ultra $199.99 (20x)",
-    "aud": "AI Pro A$32.99",
+    "pricing": "AI Plus $4.99 (400 GB) · AI Pro $19.99 (5 TB) · AI Ultra $99.99 (5x, 20 TB, YouTube Premium) · Ultra $199.99 (20x)",
+    "aud": "AI Plus A$7.99 · AI Pro A$32.99 · Ultra A$149.99 / A$329.99 (official)",
     "au": "Available; some agent features US-first",
     "best_for": "Google Workspace / Android users; best value bundle",
     "strengths": "Nano Banana image editing; Veo and Gemini Omni video; Gemini Notebook (ex-NotebookLM); Google storage bundled; now powers Siri on iOS 27",
@@ -163,12 +315,101 @@
       "video",
       "voice"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://gemini.google/au/subscriptions/?hl=en-AU",
+      "https://gemini.google/subscriptions/",
       "https://www.cloudzero.com/blog/gemini-pricing/",
       "https://felloai.com/ai-pricing-comparison/",
       "https://www.tomsguide.com/ai/i-checked-the-privacy-settings-of-every-major-ai-chatbot-heres-how-they-actually-compare"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Gemini 3.6 Flash; some access to 3.1 Pro",
+          "Image generation and editing (Nano Banana)",
+          "Deep Research, Gemini Live, Canvas, Gems",
+          "Gemini Notebook; limited Flow (Nano Banana Pro)",
+          "15 GB storage"
+        ],
+        "limits": [
+          "Baseline limits (numbers not published); paid tiers are quoted as multiples of Free"
+        ]
+      },
+      {
+        "name": "AI Plus",
+        "usd": 4.99,
+        "aud": 7.99,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Everything in Free",
+          "Video generation, Daily Brief",
+          "200 Google Flow credits/month",
+          "Gemini in Gmail, Vids and more",
+          "400 GB storage"
+        ],
+        "limits": [
+          "2x Free usage"
+        ]
+      },
+      {
+        "name": "AI Pro",
+        "usd": 19.99,
+        "aud": 32.99,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Gemini 3.1 Pro with 1M-token context",
+          "1,000 Flow credits/month (Veo 3.1, Gemini Omni Flash)",
+          "Jules coding agent; Antigravity entry limits",
+          "Gemini in Gmail, Docs; Chrome auto browse (US)",
+          "Gemini Notebook with 5x Audio Overviews",
+          "5 TB storage"
+        ],
+        "limits": [
+          "4x Free usage"
+        ]
+      },
+      {
+        "name": "AI Ultra 5x",
+        "usd": 99.99,
+        "aud": 149.99,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Deep Think and Gemini Spark",
+          "10,000 Flow credits/month",
+          "Project Genie (Genie 3 worlds)",
+          "YouTube Premium; Google Home Premium Advanced",
+          "20 TB storage"
+        ],
+        "limits": [
+          "5x AI Pro usage"
+        ]
+      },
+      {
+        "name": "AI Ultra 20x",
+        "usd": 199.99,
+        "aud": 329.99,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Everything in Ultra 5x",
+          "25,000 Flow credits/month",
+          "Highest Antigravity and Jules limits"
+        ],
+        "limits": [
+          "20x AI Pro usage"
+        ]
+      }
+    ],
+    "aud_from": 7.99
   },
   {
     "id": "grok",
@@ -214,10 +455,92 @@
       "news",
       "video"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://www.datastudios.org/post/grok-free-limits-message-limits-reset-times-free-limit-reached-errors-and-current-free-tier-re",
+      "https://grok.com/plans",
       "https://www.ai-toolbox.co/grok-models/grok-pricing-plans-api-2026",
       "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/"
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Basic chat with web and X search",
+          "Voice"
+        ],
+        "limits": [
+          "About 10 messages per 2 hours (user reports; not published)",
+          "No image or video generation since Mar 2026"
+        ]
+      },
+      {
+        "name": "SuperGrok Lite",
+        "usd": 10,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Expert mode (best model)",
+          "Build apps from a prompt, one-tap deploy",
+          "Try image and video creation",
+          "2x longer conversations"
+        ],
+        "limits": [
+          "'Increased limits at regular speed' (numbers not published)"
+        ]
+      },
+      {
+        "name": "SuperGrok",
+        "usd": 30,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Grok Bot",
+          "Higher Expert-mode limits",
+          "HD 720p, 30-second video",
+          "Longer voice conversations, faster replies, more coding tools"
+        ],
+        "limits": [
+          "Higher limits (numbers not published)",
+          "US$300/year"
+        ]
+      },
+      {
+        "name": "SuperGrok Plus",
+        "usd": 100,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "1080p video",
+          "Priority access at peak times",
+          "Early access to features"
+        ],
+        "limits": [
+          "'Significantly higher usage across Chat, Imagine, Voice & Build'"
+        ]
+      },
+      {
+        "name": "SuperGrok Heavy",
+        "usd": 300,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Grok Heavy: team of agents for hard problems",
+          "X Premium+ included",
+          "Dedicated support"
+        ],
+        "limits": [
+          "'Highest usage at the fastest speed'"
+        ]
+      }
     ]
   },
   {
@@ -263,10 +586,65 @@
       "news",
       "research"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://felloai.com/is-perplexity-ai-free/",
+      "https://www.perplexity.ai/pro",
       "https://www.cloudzero.com/blog/perplexity-pricing/",
       "https://releasebot.io/updates/perplexity-ai"
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Unlimited basic searches",
+          "Comet browser and assistant"
+        ],
+        "limits": [
+          "3 Pro Searches/day",
+          "1 Research query/month",
+          "No model choice or image generation"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 20,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Choose between top models (GPT, Claude, Gemini)",
+          "Deep research; Labs for documents and apps",
+          "Expanded Computer (agent) access",
+          "More memory"
+        ],
+        "limits": [
+          "4,000 one-off bonus Computer credits (no monthly allowance)",
+          "Weekly usage limits (numbers not published)",
+          "US$17/month paid yearly (US$200)"
+        ]
+      },
+      {
+        "name": "Max",
+        "usd": 200,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Frontier models and expert-level research",
+          "Brain memory",
+          "Priority access to new features"
+        ],
+        "limits": [
+          "10,000 Computer credits/month + 35,000 one-off bonus",
+          "Highest usage limits",
+          "US$167/month paid yearly (US$2,000)"
+        ]
+      }
     ]
   },
   {
@@ -283,7 +661,7 @@
     "standard": 19.99,
     "top": 19.99,
     "pricing": "M365 Personal $9.99 · Family $12.99 · M365 Premium $19.99 (Office + 6 TB) · Code/Autopilot usage-based from Sep 2026",
-    "aud": "M365 Premium A$33 (A$329/yr)",
+    "aud": "Personal A$16 · Family A$18 · Premium A$33 (official)",
     "au": "Available",
     "best_for": "Word, Excel, PowerPoint and Outlook users",
     "strengths": "Built into Office and Windows; Premium bundles Office + storage for the same $20; new Code and Autopilot (always-on agents) sections",
@@ -315,11 +693,75 @@
       "microsoft",
       "office"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://www.microsoft.com/en-au/microsoft-365/buy/compare-all-microsoft-365-products",
       "https://www.gosearch.ai/blog/microsoft-copilot-pricing/",
       "https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Copilot chat, image creation, voice and vision",
+          "In Windows, Edge and the Copilot app"
+        ],
+        "limits": [
+          "Standard usage (numbers not published)"
+        ]
+      },
+      {
+        "name": "M365 Personal",
+        "usd": 9.99,
+        "aud": 16,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Word, Excel, PowerPoint, Outlook, OneNote with Copilot",
+          "1 TB storage"
+        ],
+        "limits": [
+          "'Higher usage than free' for chat, vision, audio and images",
+          "A$159/year"
+        ]
+      },
+      {
+        "name": "M365 Family",
+        "usd": 12.99,
+        "aud": 18,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Office for up to 6 people",
+          "Up to 6 TB (1 TB each)"
+        ],
+        "limits": [
+          "AI features for the subscription owner only",
+          "A$179/year"
+        ]
+      },
+      {
+        "name": "M365 Premium",
+        "usd": 19.99,
+        "aud": 33,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Everything in Family",
+          "Agentic research and analytics (Researcher, Analyst)",
+          "Up to 6 TB storage"
+        ],
+        "limits": [
+          "'Extensive usage' for chat, vision, audio and images",
+          "A$329/year"
+        ]
+      }
+    ],
+    "aud_from": 16
   },
   {
     "id": "meta-muse",
@@ -365,10 +807,55 @@
       "free",
       "fun"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
       "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/",
       "https://www.cnbc.com/2026/09/21/meta-muse-personal-ai-agent-downloads.html"
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Meta AI in WhatsApp, Instagram, Messenger and the Meta AI app",
+          "Muse agent for errands (US only)",
+          "Image and Vibes video"
+        ],
+        "limits": [
+          "Limits not published; Meta expects most people to stay free"
+        ]
+      },
+      {
+        "name": "Muse Power",
+        "usd": 20,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "More Muse agent usage"
+        ],
+        "limits": [
+          "Usage amount not published",
+          "US only"
+        ]
+      },
+      {
+        "name": "Muse Maximum",
+        "usd": 100,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Most Muse agent usage"
+        ],
+        "limits": [
+          "Usage amount not published",
+          "US only"
+        ]
+      }
     ]
   },
   {
@@ -414,10 +901,29 @@
       "free",
       "maths"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
       "https://en.wikipedia.org/wiki/DeepSeek_(chatbot)",
       "https://www.neoteo.com/en/deepseek-tests-voice-replies-and-four-profiles-for-some-app-users"
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "DeepSeek V4-Pro and V4-Flash",
+          "Thinking modes: low / high / max effort",
+          "Web search, file upload"
+        ],
+        "limits": [
+          "No published message cap",
+          "1M-token context",
+          "No image generation; voice in limited testing"
+        ]
+      }
     ]
   },
   {
@@ -465,10 +971,62 @@
       "privacy",
       "writing"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://mistral.ai/pricing",
       "https://www.heise.de/en/news/Mistral-s-chatbot-is-now-called-Vibe-and-gains-new-capabilities-11311685.html",
       "https://automateall.co/en/blog/mistral-le-chat-vibe/"
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Vibe on web and mobile",
+          "Image generation",
+          "100+ connectors",
+          "US$10/month API credits"
+        ],
+        "limits": [
+          "Limited messages, web searches and coding sessions",
+          "Up to 5 scheduled tasks"
+        ]
+      },
+      {
+        "name": "Student",
+        "usd": 5.99,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro for verified students",
+          "US$15/month API credits"
+        ],
+        "limits": [
+          "Messages up to 6x Free; web searches up to 5x; images up to 40x",
+          "15 GB document library"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 14.99,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "All-day coding in CLI, IDE or web",
+          "Work Mode for long-running tasks",
+          "More extended thinking and deep research",
+          "US$30/month API credits"
+        ],
+        "limits": [
+          "Messages up to 6x Free; web searches up to 5x; images up to 40x",
+          "15 GB document library, 1,000 project folders, unlimited scheduled tasks"
+        ]
+      }
     ]
   },
   {
@@ -513,9 +1071,25 @@
       "coding",
       "free"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
       "https://www.alibabacloud.com/blog/alibaba-launches-qwen-app-to-boost-its-consumer-ai-efforts_602672"
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Qwen 3.8 models",
+          "Deep research, image generation, slides, coding"
+        ],
+        "limits": [
+          "Limits not published"
+        ]
+      }
     ]
   },
   {
@@ -2737,10 +3311,72 @@
       "agents",
       "coding"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://www.morphllm.com/claude-code-usage-limits",
+      "https://claude.com/pricing",
       "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Pro (via Claude)",
+        "usd": 20,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Claude Code in terminal, IDE, desktop, web and mobile",
+          "Claude Opus 5.5, Fable 5.1, Sonnet 5"
+        ],
+        "limits": [
+          "Shares Claude's 5-hour + weekly allowance (numbers not published)",
+          "Anthropic: suited to shorter sessions in small codebases"
+        ]
+      },
+      {
+        "name": "Max 5x",
+        "usd": 100,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro"
+        ],
+        "limits": [
+          "5x Pro usage per 5-hour session"
+        ]
+      },
+      {
+        "name": "Max 20x",
+        "usd": 200,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Max 5x"
+        ],
+        "limits": [
+          "20x Pro usage per 5-hour session"
+        ]
+      }
+    ],
+    "coding": {
+      "runs": [
+        "terminal",
+        "vscode",
+        "jetbrains",
+        "desktop",
+        "web",
+        "mobile"
+      ],
+      "multi_file": "yes",
+      "run_commands": "yes",
+      "cloud": "yes",
+      "pull_requests": "yes",
+      "code_review": "yes",
+      "models": "Claude only (Opus 5.5, Fable 5.1, Sonnet 5, Haiku 4.5)",
+      "context": "Up to 1M tokens"
+    }
   },
   {
     "id": "codex",
@@ -2772,10 +3408,87 @@
       "coding",
       "free"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://learn.chatgpt.com/docs/pricing",
       "https://www.morphllm.com/codex-pricing"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Codex in the ChatGPT desktop app",
+          "GPT-6 Luna"
+        ],
+        "limits": [
+          "'Limited' (numbers not published)"
+        ]
+      },
+      {
+        "name": "Go",
+        "usd": 8,
+        "aud": 13,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Codex in the desktop app for lightweight tasks",
+          "GPT-6 Luna"
+        ],
+        "limits": [
+          "'Limited' (numbers not published)"
+        ]
+      },
+      {
+        "name": "Plus",
+        "usd": 20,
+        "aud": 30,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Codex on web, CLI, IDE extension and iOS",
+          "Cloud tasks, GitHub code review, Slack/Linear",
+          "GPT-6.1 Sol, GPT-6 Sol/Luna, GPT-6 Astra"
+        ],
+        "limits": [
+          "Per 5 hours (OpenAI estimate): GPT-6.1 Sol 15–160 · Astra 5–45 · Luna 350–3,000 local messages",
+          "Weekly limits may apply; buy credits for more"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 100,
+        "aud": 155,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Everything in Plus",
+          "Astra Ultrafast on the US$500 tier"
+        ],
+        "limits": [
+          "No 5-hour limit currently; weekly limits may apply"
+        ]
+      }
+    ],
+    "coding": {
+      "runs": [
+        "terminal",
+        "vscode",
+        "desktop",
+        "web",
+        "mobile"
+      ],
+      "multi_file": "yes",
+      "run_commands": "yes",
+      "cloud": "yes",
+      "pull_requests": "yes",
+      "code_review": "yes",
+      "models": "OpenAI only (GPT-6.1 Sol, GPT-6 Astra/Sol/Luna)",
+      "context": "Not published for Codex"
+    }
   },
   {
     "id": "github-copilot",
@@ -2808,11 +3521,86 @@
       "coding",
       "free"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://github.com/features/copilot/plans",
       "https://www.nocode.mba/articles/github-copilot-pricing",
       "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Works in VS Code, Visual Studio, JetBrains, Xcode, Neovim, Eclipse, Zed",
+          "Choice of Claude, GPT, Gemini, Grok, Kimi models"
+        ],
+        "limits": [
+          "2,000 code completions/month",
+          "Limited chat and agent use"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 10,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Unlimited completions",
+          "Cloud agent and code review"
+        ],
+        "limits": [
+          "US$15/month of AI Credits for chat/agent (US$10 base + US$5 flex)"
+        ]
+      },
+      {
+        "name": "Pro+",
+        "usd": 39,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro",
+          "Third-party agents: Claude and Codex"
+        ],
+        "limits": [
+          "US$70/month of AI Credits"
+        ]
+      },
+      {
+        "name": "Max",
+        "usd": 100,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro+"
+        ],
+        "limits": [
+          "US$200/month of AI Credits"
+        ]
+      }
+    ],
+    "coding": {
+      "runs": [
+        "vscode",
+        "jetbrains",
+        "other-ides",
+        "terminal",
+        "web"
+      ],
+      "multi_file": "yes",
+      "run_commands": "yes",
+      "cloud": "yes",
+      "pull_requests": "yes",
+      "code_review": "yes",
+      "models": "Multi-vendor: Claude, GPT, Gemini, Grok, Kimi, Microsoft",
+      "context": "Depends on model"
+    }
   },
   {
     "id": "cursor",
@@ -2845,10 +3633,82 @@
       "coding",
       "free"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://cursor.com/pricing",
       "https://sessionwatcher.com/guides/how-much-does-cursor-cost"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Hobby",
+        "usd": 0,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Cursor editor",
+          "Composer model"
+        ],
+        "limits": [
+          "Limited agent requests"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 20,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Frontier models",
+          "Cloud agents; MCPs, skills and hooks",
+          "Grok Bot; Bugbot (usage-billed)"
+        ],
+        "limits": [
+          "Included model usage each month, then on-demand billing (amount not stated on pricing page)"
+        ]
+      },
+      {
+        "name": "Pro+",
+        "usd": 60,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro"
+        ],
+        "limits": [
+          "3x Pro usage (reported)"
+        ]
+      },
+      {
+        "name": "Ultra",
+        "usd": 200,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro"
+        ],
+        "limits": [
+          "20x Pro usage (reported)"
+        ]
+      }
+    ],
+    "coding": {
+      "runs": [
+        "own-editor",
+        "terminal",
+        "web"
+      ],
+      "multi_file": "yes",
+      "run_commands": "yes",
+      "cloud": "yes",
+      "pull_requests": "yes",
+      "code_review": "partial",
+      "models": "Multi-vendor frontier models + Cursor Composer",
+      "context": "Depends on model"
+    }
   },
   {
     "id": "devin-desktop",
@@ -2880,10 +3740,70 @@
       "coding",
       "free"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://devin.ai/pricing",
       "https://www.therundown.ai/tools/codeium-windsurf"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Unlimited Tab completions",
+          "Limited models"
+        ],
+        "limits": [
+          "'Light quota' for agents"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 20,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Frontier models from OpenAI, Anthropic, Google, xAI plus open models",
+          "Devin Cloud agents",
+          "SWE-2 free until 16 Oct 2026"
+        ],
+        "limits": [
+          "'Increased quotas'; extra usage at API prices"
+        ]
+      },
+      {
+        "name": "Max",
+        "usd": 200,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro"
+        ],
+        "limits": [
+          "'Significantly higher quotas'"
+        ]
+      }
+    ],
+    "coding": {
+      "runs": [
+        "own-editor",
+        "terminal",
+        "jetbrains",
+        "web"
+      ],
+      "multi_file": "yes",
+      "run_commands": "yes",
+      "cloud": "yes",
+      "pull_requests": "yes",
+      "code_review": "partial",
+      "models": "Multi-vendor + SWE-2 + open models",
+      "context": "Depends on model"
+    }
   },
   {
     "id": "kiro",
@@ -2915,10 +3835,91 @@
       "coding",
       "free"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://kiro.dev/pricing/",
       "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Open-weight models and Claude Sonnet 4.5"
+        ],
+        "limits": [
+          "50 credits/month"
+        ]
+      },
+      {
+        "name": "Pro",
+        "usd": 20,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Premium models"
+        ],
+        "limits": [
+          "1,000 credits/month; extra US$0.04/credit"
+        ]
+      },
+      {
+        "name": "Pro+",
+        "usd": 40,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Premium models"
+        ],
+        "limits": [
+          "2,000 credits/month; extra US$0.04/credit"
+        ]
+      },
+      {
+        "name": "Pro Max",
+        "usd": 100,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Premium models"
+        ],
+        "limits": [
+          "5,000 credits/month; extra US$0.04/credit"
+        ]
+      },
+      {
+        "name": "Power",
+        "usd": 200,
+        "aud": null,
+        "aud_src": null,
+        "billing": "monthly",
+        "includes": [
+          "Premium models"
+        ],
+        "limits": [
+          "10,000 credits/month; extra US$0.04/credit"
+        ]
+      }
+    ],
+    "coding": {
+      "runs": [
+        "own-editor",
+        "terminal"
+      ],
+      "multi_file": "yes",
+      "run_commands": "yes",
+      "cloud": "partial",
+      "pull_requests": "partial",
+      "code_review": "partial",
+      "models": "Claude and open-weight models",
+      "context": "Depends on model"
+    }
   },
   {
     "id": "antigravity",
@@ -2951,10 +3952,67 @@
       "free",
       "google"
     ],
-    "verified": "2026-09",
+    "verified": "2026-10",
     "sources": [
+      "https://antigravity.google/pricing",
       "https://pinggy.io/blog/best_ai_tools_for_coding/"
-    ]
+    ],
+    "plans": [
+      {
+        "name": "Free",
+        "usd": 0,
+        "aud": 0,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Gemini 3.8/3.7/3.6 Flash, Gemini 3.1 Pro",
+          "Claude Sonnet & Opus 4.6, gpt-oss-120b"
+        ],
+        "limits": [
+          "'Basic weekly rate limits'"
+        ]
+      },
+      {
+        "name": "With Google AI Pro",
+        "usd": 19.99,
+        "aud": 32.99,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Everything in Free"
+        ],
+        "limits": [
+          "'More rate limits'"
+        ]
+      },
+      {
+        "name": "With AI Ultra",
+        "usd": 99.99,
+        "aud": 149.99,
+        "aud_src": "official",
+        "billing": "monthly",
+        "includes": [
+          "Everything in Pro"
+        ],
+        "limits": [
+          "'Even more rate limits' (20x tier: highest)"
+        ]
+      }
+    ],
+    "coding": {
+      "runs": [
+        "own-editor",
+        "terminal"
+      ],
+      "multi_file": "yes",
+      "run_commands": "yes",
+      "cloud": "partial",
+      "pull_requests": "partial",
+      "code_review": "partial",
+      "models": "Gemini, Claude, gpt-oss",
+      "context": "Gemini 3.1 Pro: 1M tokens"
+    },
+    "aud": "Free; limits rise with Google AI Pro A$32.99 / Ultra A$149.99"
   },
   {
     "id": "zed",

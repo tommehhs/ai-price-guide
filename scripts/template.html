@@ -1,4 +1,4 @@
-<title>AI Tools Database</title>
+<title>The AI Price Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -126,6 +126,16 @@ tbody tr:last-child td { border-bottom: 0; }
 .m-yes { color: var(--good); }
 .m-partial { color: var(--warn); }
 .m-no { color: var(--muted); }
+.cmp td:first-child .linkbtn { font: 600 14px var(--font-body); text-transform: none; letter-spacing: 0; text-align: left; }
+.tight { margin: 0; padding-left: 18px; display: grid; gap: 3px; }
+.pp { font: 500 1.1rem var(--font-mono); font-variant-numeric: tabular-nums; }
+.bars { display: grid; gap: 7px; }
+.barrow { display: grid; grid-template-columns: minmax(0, 9.5em) 1fr 3.4em; gap: 4px 8px; align-items: center; font-size: 13px; }
+.barrow .bl { overflow-wrap: anywhere; }
+.barrow .bt { height: 8px; border-radius: 4px; background: var(--chip); overflow: hidden; }
+.barrow .bt i { display: block; height: 100%; background: var(--accent); }
+.barrow .bv { font: 500 12px var(--font-mono); text-align: right; font-variant-numeric: tabular-nums; }
+.barrow .bk { grid-column: 2 / 4; font-size: 11px; color: var(--muted); margin-top: -4px; }
 .legend { font-size: 12px; color: var(--muted); margin: -6px 0 16px; }
 .total { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: baseline; }
 .total b { font: 500 1.8rem var(--font-mono); font-variant-numeric: tabular-nums; }
@@ -139,13 +149,15 @@ footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
 
 <div class="wrap">
   <header>
-    <h1>AI Tools Database</h1>
-    <p class="lede">Every major consumer AI tool in one place: what it costs (with Australian prices), what it's good at, what to watch out for, and how it treats your data.</p>
+    <h1>The AI Price Guide</h1>
+    <p class="lede">What every major AI tool costs in Australia, what you get on each plan, and how much you can actually use it. Independent: no sponsorships or affiliate links.</p>
     <div class="meta" id="meta"></div>
   </header>
 
   <div class="tabs" role="tablist" aria-label="Views">
     <button class="tab" role="tab" id="tab-browse" data-view="browse" aria-selected="true">Browse all</button>
+    <button class="tab" role="tab" id="tab-plans" data-view="plans" aria-selected="false">Compare plans</button>
+    <button class="tab" role="tab" id="tab-coding" data-view="coding" aria-selected="false">Coding tools</button>
     <button class="tab" role="tab" id="tab-choose" data-view="choose" aria-selected="false">Help me choose</button>
     <button class="tab" role="tab" id="tab-list" data-view="list" aria-selected="false">My shortlist<span class="n" id="list-n" hidden></span></button>
   </div>
@@ -162,8 +174,8 @@ footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
           <option value="name">Sort: name A–Z</option>
         </select>
         <div class="seg" role="group" aria-label="Currency">
-          <button id="cur-usd" type="button" aria-pressed="true">US$</button>
-          <button id="cur-aud" type="button" aria-pressed="false">A$</button>
+          <button id="cur-aud" type="button" aria-pressed="true">A$</button>
+          <button id="cur-usd" type="button" aria-pressed="false">US$</button>
         </div>
       </div>
       <div class="row cats" id="cats" role="group" aria-label="Category"></div>
@@ -204,6 +216,21 @@ footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
     <div class="results" id="results"></div>
   </div>
 
+  <div id="view-plans" hidden>
+    <div class="bar">
+      <div class="row cats" id="plan-tools" role="group" aria-label="Tool"></div>
+      <div class="row">
+        <label class="toggle"><input id="free-only" type="checkbox"> Show only free plans, side by side</label>
+        <span class="count">A$ = official Australian price · ≈A$ = estimate for US$-billed plans</span>
+      </div>
+    </div>
+    <div id="plans-out"></div>
+  </div>
+
+  <div id="view-coding" hidden>
+    <div id="coding-out"></div>
+  </div>
+
   <div id="view-list" hidden>
     <div id="list-out"></div>
   </div>
@@ -224,7 +251,8 @@ const NEEDS = [
   ["browser","Browse the web"], ["local","Run AI offline"]
 ];
 const ECO = {apple: ["apple"], google: ["google"], microsoft: ["microsoft", "office"]};
-const state = {view:"browse", q:"", cat:"all", free:false, picks:false, hideGone:true, sort:"default", cur:"usd",
+const state = {view:"browse", q:"", cat:"all", free:false, picks:false, hideGone:true, sort:"default", cur:"aud",
+  planTool:"chatgpt", freeOnly:false,
   needs:new Set(["chat"]), budget:25, priv:false, easy:false, eco:"", list:[]};
 try {
   const s = JSON.parse(localStorage.getItem("aidb-prefs") || "{}");
@@ -276,7 +304,8 @@ function card(t) {
   if (t.status === "upcoming") pills.push(`<span class="pill soon">Coming soon</span>`);
   if (t.status === "discontinued") pills.push(`<span class="pill gone">Discontinued</span>`);
   if (t.region && t.region !== "—") pills.push(`<span class="pill">Data: ${esc(t.region)}</span>`);
-  pills.push(t.verified === "older" ? `<span class="pill old">Unverified</span>` : `<span class="pill">Checked ${esc(t.verified)}</span>`);
+  if (t.stale) pills.push(`<span class="pill old">Needs re-check${t.verified === "older" ? "" : ` · checked ${esc(t.verified)}`}</span>`);
+  else pills.push(`<span class="pill">Checked ${esc(t.verified)}</span>`);
   const live = t.status !== "discontinued";
   return `<article class="card${t.pick ? " picked" : ""}${live ? "" : " gone"}">
     ${t.pick ? `<span class="award">★ ${esc(t.pick)}</span>` : ""}
@@ -300,6 +329,7 @@ function card(t) {
       <dt>Privacy</dt><dd>${esc(t.privacy)}</dd>
       <dt>Sources</dt><dd>${t.sources.map((s, i) => `<a href="${esc(s)}" target="_blank" rel="noopener">${i + 1}</a>`).join(" · ")}</dd>
     </dl></details>` : ""}
+    ${t.plans ? `<button class="linkbtn" type="button" data-see-plans="${t.id}">See every plan and its limits →</button>` : ""}
     <div class="card-foot">${live ? `<span class="overall">Rating <b>${overall(t)}</b>/5</span>` : "<span></span>"}${addBtn(t)}</div>
   </article>`;
 }
@@ -412,16 +442,75 @@ function renderList() {
     <tbody>${rows.map(([label, f]) => `<tr><td>${label}</td>${tools.map(t => `<td>${f(t)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
 
+const planned = DATA.tools.filter(t => t.plans);
+const planAud = p => p.aud_src === "official" ? (p.aud === 0 ? "Free" : "A$" + p.aud) : (p.usd === 0 ? "Free" : "≈A$" + Math.round(p.usd * DATA.rate * DATA.gst));
+const planUsd = p => p.usd === 0 ? "Free" : "US$" + p.usd;
+const list = items => `<ul class="tight">${items.map(i => `<li>${esc(i)}</li>`).join("")}</ul>`;
+function renderPlans() {
+  $("plan-tools").innerHTML = planned.map(t => `<button class="chip" type="button" data-plan-tool="${t.id}" aria-pressed="${!state.freeOnly && t.id === state.planTool}">${esc(t.name.replace(/ \(.*\)/, ""))}</button>`).join("");
+  $("free-only").checked = state.freeOnly;
+  if (state.freeOnly) {
+    $("plans-out").innerHTML = `<h2 style="margin:22px 0 6px">What you get free</h2><p class="hint">The free plan of each main assistant and coding tool.</p>
+      <div class="matrix-wrap" style="margin-top:12px"><table class="cmp"><thead><tr><th>Tool</th><th>Free plan includes</th><th>Free limits</th></tr></thead><tbody>
+      ${planned.map(t => { const f = t.plans.find(p => p.usd === 0);
+        return `<tr><td><button class="linkbtn" type="button" data-plan-tool="${t.id}">${esc(t.name)}</button></td><td>${f ? list(f.includes) : "No free plan"}</td><td>${f ? list(f.limits) : "—"}</td></tr>`; }).join("")}
+      </tbody></table></div>`;
+    return;
+  }
+  const t = byId[state.planTool];
+  const cols = t.plans;
+  $("plans-out").innerHTML = `<div class="cat-head" style="margin-top:22px"><h2>${esc(t.name)}</h2><p>${esc(t.best_for)}. Checked ${esc(t.verified)}.</p></div>
+    <div class="matrix-wrap"><table class="cmp"><thead><tr><th></th>${cols.map(p => `<th><strong style="font:600 15px var(--font-body);color:var(--fg)">${esc(p.name)}</strong></th>`).join("")}</tr></thead><tbody>
+      <tr><td>A$ / month</td>${cols.map(p => `<td><b class="pp">${planAud(p)}</b>${p.aud_src !== "official" && p.usd ? `<br><span class="maker">estimate; billed in US$</span>` : ""}</td>`).join("")}</tr>
+      <tr><td>US$ / month</td>${cols.map(p => `<td>${planUsd(p)}</td>`).join("")}</tr>
+      <tr><td>What you get</td>${cols.map(p => `<td>${list(p.includes)}${p.note ? `<p class="maker">${esc(p.note)}</p>` : ""}</td>`).join("")}</tr>
+      <tr><td>Limits</td>${cols.map(p => `<td>${list(p.limits)}</td>`).join("")}</tr>
+    </tbody></table></div>
+    <p class="hint">Limits use the company's exact numbers where published; otherwise we quote its wording. Sources: ${t.sources.slice(0, 3).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(" · ")}</p>`;
+}
+const RUNS = {terminal: "Terminal", vscode: "VS Code", jetbrains: "JetBrains", "other-ides": "Other IDEs", "own-editor": "Own editor", desktop: "Desktop app", web: "Web", mobile: "Mobile"};
+const ABIL = [["multi_file", "Multi-file edits"], ["run_commands", "Runs commands & tests"], ["cloud", "Cloud agents"], ["pull_requests", "Opens pull requests"], ["code_review", "Code review"]];
+const KIND = {vendor: "Company-reported", independent: "Independent", reported: "Published results"};
+function renderCoding() {
+  const coders = DATA.tools.filter(t => t.coding);
+  const tick = v => `<td class="m-${v}">${MARK[v === "yes" ? "yes" : v]}</td>`;
+  const B = DATA.bench;
+  $("coding-out").innerHTML = `
+    <section class="cat"><div class="cat-head"><h2>Cheapest way in</h2><p>Free tier, cheapest paid plan and the heavy-use plan for each coding tool.</p></div>
+    <div class="matrix-wrap"><table class="cmp"><thead><tr><th>Tool</th><th>Free tier</th><th>Cheapest paid</th><th>Heavy use</th></tr></thead><tbody>
+    ${coders.map(t => { const f = t.plans.find(p => p.usd === 0); const paid = t.plans.filter(p => p.usd); const a = paid[0], z = paid[paid.length - 1];
+      return `<tr><td><button class="linkbtn" type="button" data-see-plans="${t.id}">${esc(t.name)}</button></td><td>${f ? esc(f.limits.join("; ")) : "None"}</td>
+      <td><b>${planAud(a)}</b> ${esc(a.name)}<br><span class="maker">${planUsd(a)} · ${esc(a.limits[0] || "")}</span></td>
+      <td><b>${planAud(z)}</b> ${esc(z.name)}<br><span class="maker">${planUsd(z)} · ${esc(z.limits[0] || "")}</span></td></tr>`; }).join("")}
+    </tbody></table></div></section>
+    <section class="cat"><div class="cat-head"><h2>Where it runs</h2></div>
+    <div class="matrix-wrap"><table><thead><tr><th>Tool</th>${Object.values(RUNS).map(r => `<th>${r}</th>`).join("")}</tr></thead><tbody>
+    ${coders.map(t => `<tr><td>${esc(t.name)}</td>${Object.keys(RUNS).map(k => t.coding.runs.includes(k) ? `<td class="m-yes">✓</td>` : `<td class="m-no">·</td>`).join("")}</tr>`).join("")}
+    </tbody></table></div></section>
+    <section class="cat"><div class="cat-head"><h2>What the agent can do</h2></div>
+    <div class="matrix-wrap"><table><thead><tr><th>Tool</th>${ABIL.map(([, l]) => `<th>${l}</th>`).join("")}<th>Models</th><th>Context</th></tr></thead><tbody>
+    ${coders.map(t => `<tr><td>${esc(t.name)}</td>${ABIL.map(([k]) => tick(t.coding[k])).join("")}<td style="white-space:normal;text-align:left;min-width:220px">${esc(t.coding.models)}</td><td style="white-space:normal;text-align:left">${esc(t.coding.context)}</td></tr>`).join("")}
+    </tbody></table></div><p class="legend">✓ yes · ~ limited, add-on or not clearly documented · ✗ no</p></section>
+    <section class="cat"><div class="cat-head"><h2>Coding benchmarks, explained</h2><p>A rough guide to how capable the underlying AI model is at programming.</p></div>
+    <div class="panel" style="margin-top:0"><ul class="tight">${B.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>
+    <div class="grid" style="margin-top:14px">${B.benchmarks.map(b => { const rows = B.scores.filter(r => r.bench === b.id).sort((x, y) => y.score - x.score);
+      return `<div class="card"><h3>${esc(b.name)}</h3><p class="hint">${esc(b.plain)}</p>
+      <div class="bars">${rows.map(r => `<div class="barrow"><span class="bl">${esc(r.model)}</span><span class="bt"><i style="width:${r.score}%"></i></span><span class="bv">${r.score}%</span><a class="bk" href="${esc(r.source)}" target="_blank" rel="noopener">${KIND[r.type]}</a></div>`).join("")}</div></div>`; }).join("")}</div>
+    <p class="hint" style="margin-top:10px">Scores as of ${esc(B.as_of)}. Bars are on a 0–100% scale; don't compare across different benchmarks.</p></section>`;
+}
+
 function render() {
   $("cur-usd").setAttribute("aria-pressed", state.cur === "usd");
   $("cur-aud").setAttribute("aria-pressed", state.cur === "aud");
-  for (const v of ["browse", "choose", "list"]) {
+  for (const v of ["browse", "plans", "coding", "choose", "list"]) {
     $("view-" + v).hidden = state.view !== v;
     $("tab-" + v).setAttribute("aria-selected", state.view === v);
   }
   renderList();
   if (state.view === "browse") renderBrowse();
   if (state.view === "choose") renderChoose();
+  if (state.view === "plans") renderPlans();
+  if (state.view === "coding") renderCoding();
 }
 function setCur(c) { state.cur = c; save(); render(); }
 
@@ -432,6 +521,10 @@ document.addEventListener("click", e => {
     state.list = inList(id) ? state.list.filter(x => x !== id) : [...state.list, id];
     save(); render(); return;
   }
+  const see = e.target.closest("[data-see-plans]");
+  if (see) { state.view = "plans"; state.planTool = see.dataset.seePlans; state.freeOnly = false; render(); window.scrollTo(0, 0); return; }
+  const pt = e.target.closest("[data-plan-tool]");
+  if (pt) { state.planTool = pt.dataset.planTool; state.freeOnly = false; renderPlans(); return; }
   const tab = e.target.closest(".tab");
   if (tab) { state.view = tab.dataset.view; render(); return; }
   const need = e.target.closest("[data-need]");
@@ -441,12 +534,13 @@ document.addEventListener("click", e => {
   if (e.target.id === "clear-list") { state.list = []; save(); render(); }
 });
 $("picker").addEventListener("submit", e => e.preventDefault());
+$("free-only").addEventListener("change", e => { state.freeOnly = e.target.checked; renderPlans(); });
 $("p-priv").addEventListener("change", e => { state.priv = e.target.checked; renderChoose(); });
 $("p-easy").addEventListener("change", e => { state.easy = e.target.checked; renderChoose(); });
 $("p-eco").addEventListener("change", e => { state.eco = e.target.value; renderChoose(); });
 
 const live = DATA.tools.filter(t => t.status !== "discontinued");
-$("meta").innerHTML = `<span>Updated ${esc(DATA.asOf)}</span><span>${DATA.tools.length} tools · ${DATA.categories.length} categories</span><span>${live.filter(t => t.free).length} with a free tier</span><span>US$ · A$ published or ≈ ×${DATA.rate} + GST</span>`;
+$("meta").innerHTML = `<span>Updated ${esc(DATA.asOf)}</span><span>${DATA.tools.length} tools · ${DATA.categories.length} categories</span><span>${live.filter(t => t.free).length} with a free tier</span><span>A$ official, or ≈A$ estimate (US$ × ${DATA.rate} + GST)</span>`;
 $("cats").innerHTML = `<button class="chip" type="button" data-cat="all">All</button>` +
   DATA.categories.map(c => `<button class="chip" type="button" data-cat="${c.id}">${esc(c.name)}</button>`).join("");
 $("cats").addEventListener("click", e => { const b = e.target.closest(".chip"); if (b) { state.cat = b.dataset.cat; renderBrowse(); } });
@@ -457,9 +551,9 @@ $("picks").addEventListener("change", e => { state.picks = e.target.checked; ren
 $("hide-gone").addEventListener("change", e => { state.hideGone = e.target.checked; renderBrowse(); });
 $("cur-usd").addEventListener("click", () => setCur("usd"));
 $("cur-aud").addEventListener("click", () => setCur("aud"));
-$("foot").innerHTML = `Prices are individual plans in US dollars per month unless marked /yr or "once". A$ prices are published Australian prices where shown; otherwise ≈ estimates at US$1 = A$${DATA.rate} plus 10% GST. App-store prices often differ. Ratings are this guide's judgement: quality counts double, then value, ease and privacy. "Unverified" rows weren't re-checked in this update. AI plans change monthly, so check the maker's site before paying.`;
+$("foot").innerHTML = `<strong>Independent.</strong> No company pays to be included, rated or picked, and there are no affiliate links. Prices are per month for individual plans unless marked /yr or "once". <strong>A$</strong> is the company's own Australian price; <strong>≈A$</strong> is an estimate for US$-billed plans at US$1 = A$${DATA.rate} plus 10% GST (your bank may add a foreign transaction fee). Ratings are this guide's judgement: quality counts double, then value, ease and privacy. Entries checked more than ${DATA.staleDays} days ago are marked "Needs re-check". AI plans change monthly, so check the company's site before paying.`;
 const hash = location.hash.slice(1);
-if (["choose", "list"].includes(hash)) state.view = hash;
+if (["plans", "coding", "choose", "list"].includes(hash)) state.view = hash;
 else if (DATA.categories.some(c => c.id === hash)) state.cat = hash;
 render();
 </script>

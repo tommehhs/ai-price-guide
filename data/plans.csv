@@ -1,0 +1,60 @@
+tool,plan,aud,aud_source,usd,billing,includes,limits,verified
+ChatGPT,Free,0,official,0,monthly,"GPT-5.6 Luna for chat; Search, voice, Study Mode, projects, memory; Built-in browser, apps and plugins; Limited image creation, deep research and Codex","Text chats unlimited (subject to abuse guardrails); Uploads, images, deep research, Codex: 'limited' (numbers not published); Context window 27K tokens (Instant); Shows ads (US, Europe)",2026-10
+ChatGPT,Go,13,official,8,monthly,"Everything in Free; Voice with video; Create & share plugins; More image creation, longer memory",'More messages with tools' (number not published); Context window 54K (Instant) / 256K (Reasoning); Deep research and Codex still 'limited'; Shows ads,2026-10
+ChatGPT,Plus,30,official,20,monthly,"GPT-6 reasoning models; Expanded deep research, image generation with Thinking; ChatGPT Work on desktop, web and mobile; Codex on web, CLI, IDE and iOS; GitHub code review; Projects, scheduled tasks, custom GPTs, Sites, record mode","Codex (est. per 5 hours): GPT-6.1 Sol 15–160 messages, GPT-6 Astra 5–45, GPT-6 Luna 350–3,000; weekly limits may apply; Agent mode: 40 messages/month (reported); Context window 54K (Instant) / 256K (Reasoning); Extra usage: buy credits",2026-10
+ChatGPT,Pro,155,official,100,monthly,"Choice of 3 tiers: US$100, US$200 or US$500; GPT-6 Pro reasoning (GPT-6 Astra); Dot, an always-on agent; Longest Codex and Work sessions; Astra Ultrafast on the US$500 tier",Chat messages unlimited (subject to abuse guardrails); Codex: no 5-hour limit currently; weekly limits may apply; Agent mode: 400 messages/month (reported); Context window 128K (Instant) / 400K (Reasoning); US$200 tier closed to new sign-ups since 10 Sep 2026,2026-10
+Claude,Free,0,official,0,monthly,"Chat on web, desktop and mobile; Web search, create files, run code; Memory, connectors, Artifacts","Usage cap per 5-hour session: not published; Context: up to 1M tokens, varies by model; No Claude Code",2026-10
+Claude,Pro,32,estimate,20,monthly,"Claude Code included; Projects; Claude Design, Slides and Docs; Claude Science; More Claude models (Opus 5.5, Fable 5.1); Claude in Chrome and Microsoft 365; Hand off and schedule tasks","At least 5x Free per 5-hour session, plus weekly limits (exact numbers not published); Claude Code shares the same allowance; 5-hour Code limits doubled May 2026, weekly +25% since 14 Sep 2026; US$17/month if paid yearly (US$200)",2026-10
+Claude,Max 5x,158,estimate,100,monthly,Everything in Pro; Higher output limits; Priority at busy times; Early access to new features,"5x Pro usage per 5-hour session, plus weekly limits",2026-10
+Claude,Max 20x,317,estimate,200,monthly,Everything in Max 5x,"20x Pro usage per 5-hour session, plus weekly limits",2026-10
+Gemini,Free,0,official,0,monthly,"Gemini 3.6 Flash; some access to 3.1 Pro; Image generation and editing (Nano Banana); Deep Research, Gemini Live, Canvas, Gems; Gemini Notebook; limited Flow (Nano Banana Pro); 15 GB storage",Baseline limits (numbers not published); paid tiers are quoted as multiples of Free,2026-10
+Gemini,AI Plus,7.99,official,4.99,monthly,"Everything in Free; Video generation, Daily Brief; 200 Google Flow credits/month; Gemini in Gmail, Vids and more; 400 GB storage",2x Free usage,2026-10
+Gemini,AI Pro,32.99,official,19.99,monthly,"Gemini 3.1 Pro with 1M-token context; 1,000 Flow credits/month (Veo 3.1, Gemini Omni Flash); Jules coding agent; Antigravity entry limits; Gemini in Gmail, Docs; Chrome auto browse (US); Gemini Notebook with 5x Audio Overviews; 5 TB storage",4x Free usage,2026-10
+Gemini,AI Ultra 5x,149.99,official,99.99,monthly,"Deep Think and Gemini Spark; 10,000 Flow credits/month; Project Genie (Genie 3 worlds); YouTube Premium; Google Home Premium Advanced; 20 TB storage",5x AI Pro usage,2026-10
+Gemini,AI Ultra 20x,329.99,official,199.99,monthly,"Everything in Ultra 5x; 25,000 Flow credits/month; Highest Antigravity and Jules limits",20x AI Pro usage,2026-10
+Grok,Free,0,estimate,0,monthly,Basic chat with web and X search; Voice,About 10 messages per 2 hours (user reports; not published); No image or video generation since Mar 2026,2026-10
+Grok,SuperGrok Lite,16,estimate,10,monthly,"Expert mode (best model); Build apps from a prompt, one-tap deploy; Try image and video creation; 2x longer conversations",'Increased limits at regular speed' (numbers not published),2026-10
+Grok,SuperGrok,48,estimate,30,monthly,"Grok Bot; Higher Expert-mode limits; HD 720p, 30-second video; Longer voice conversations, faster replies, more coding tools",Higher limits (numbers not published); US$300/year,2026-10
+Grok,SuperGrok Plus,158,estimate,100,monthly,1080p video; Priority access at peak times; Early access to features,"'Significantly higher usage across Chat, Imagine, Voice & Build'",2026-10
+Grok,SuperGrok Heavy,475,estimate,300,monthly,Grok Heavy: team of agents for hard problems; X Premium+ included; Dedicated support,'Highest usage at the fastest speed',2026-10
+Perplexity,Free,0,official,0,monthly,Unlimited basic searches; Comet browser and assistant,3 Pro Searches/day; 1 Research query/month; No model choice or image generation,2026-10
+Perplexity,Pro,32,estimate,20,monthly,"Choose between top models (GPT, Claude, Gemini); Deep research; Labs for documents and apps; Expanded Computer (agent) access; More memory","4,000 one-off bonus Computer credits (no monthly allowance); Weekly usage limits (numbers not published); US$17/month paid yearly (US$200)",2026-10
+Perplexity,Max,317,estimate,200,monthly,Frontier models and expert-level research; Brain memory; Priority access to new features,"10,000 Computer credits/month + 35,000 one-off bonus; Highest usage limits; US$167/month paid yearly (US$2,000)",2026-10
+Microsoft Copilot,Free,0,official,0,monthly,"Copilot chat, image creation, voice and vision; In Windows, Edge and the Copilot app",Standard usage (numbers not published),2026-10
+Microsoft Copilot,M365 Personal,16,official,9.99,monthly,"Word, Excel, PowerPoint, Outlook, OneNote with Copilot; 1 TB storage","'Higher usage than free' for chat, vision, audio and images; A$159/year",2026-10
+Microsoft Copilot,M365 Family,18,official,12.99,monthly,Office for up to 6 people; Up to 6 TB (1 TB each),AI features for the subscription owner only; A$179/year,2026-10
+Microsoft Copilot,M365 Premium,33,official,19.99,monthly,"Everything in Family; Agentic research and analytics (Researcher, Analyst); Up to 6 TB storage","'Extensive usage' for chat, vision, audio and images; A$329/year",2026-10
+Meta AI / Muse,Free,0,official,0,monthly,"Meta AI in WhatsApp, Instagram, Messenger and the Meta AI app; Muse agent for errands (US only); Image and Vibes video",Limits not published; Meta expects most people to stay free,2026-10
+Meta AI / Muse,Muse Power,32,estimate,20,monthly,More Muse agent usage,Usage amount not published; US only,2026-10
+Meta AI / Muse,Muse Maximum,158,estimate,100,monthly,Most Muse agent usage,Usage amount not published; US only,2026-10
+DeepSeek,Free,0,official,0,monthly,"DeepSeek V4-Pro and V4-Flash; Thinking modes: low / high / max effort; Web search, file upload",No published message cap; 1M-token context; No image generation; voice in limited testing,2026-10
+Mistral Vibe (ex-Le Chat),Free,0,official,0,monthly,Vibe on web and mobile; Image generation; 100+ connectors; US$10/month API credits,"Limited messages, web searches and coding sessions; Up to 5 scheduled tasks",2026-10
+Mistral Vibe (ex-Le Chat),Student,9,estimate,5.99,monthly,Everything in Pro for verified students; US$15/month API credits,Messages up to 6x Free; web searches up to 5x; images up to 40x; 15 GB document library,2026-10
+Mistral Vibe (ex-Le Chat),Pro,24,estimate,14.99,monthly,"All-day coding in CLI, IDE or web; Work Mode for long-running tasks; More extended thinking and deep research; US$30/month API credits","Messages up to 6x Free; web searches up to 5x; images up to 40x; 15 GB document library, 1,000 project folders, unlimited scheduled tasks",2026-10
+Qwen,Free,0,official,0,monthly,"Qwen 3.8 models; Deep research, image generation, slides, coding",Limits not published,2026-10
+Claude Code,Pro (via Claude),32,estimate,20,monthly,"Claude Code in terminal, IDE, desktop, web and mobile; Claude Opus 5.5, Fable 5.1, Sonnet 5",Shares Claude's 5-hour + weekly allowance (numbers not published); Anthropic: suited to shorter sessions in small codebases,2026-10
+Claude Code,Max 5x,158,estimate,100,monthly,Everything in Pro,5x Pro usage per 5-hour session,2026-10
+Claude Code,Max 20x,317,estimate,200,monthly,Everything in Max 5x,20x Pro usage per 5-hour session,2026-10
+OpenAI Codex,Free,0,official,0,monthly,Codex in the ChatGPT desktop app; GPT-6 Luna,'Limited' (numbers not published),2026-10
+OpenAI Codex,Go,13,official,8,monthly,Codex in the desktop app for lightweight tasks; GPT-6 Luna,'Limited' (numbers not published),2026-10
+OpenAI Codex,Plus,30,official,20,monthly,"Codex on web, CLI, IDE extension and iOS; Cloud tasks, GitHub code review, Slack/Linear; GPT-6.1 Sol, GPT-6 Sol/Luna, GPT-6 Astra","Per 5 hours (OpenAI estimate): GPT-6.1 Sol 15–160 · Astra 5–45 · Luna 350–3,000 local messages; Weekly limits may apply; buy credits for more",2026-10
+OpenAI Codex,Pro,155,official,100,monthly,Everything in Plus; Astra Ultrafast on the US$500 tier,No 5-hour limit currently; weekly limits may apply,2026-10
+GitHub Copilot,Free,0,estimate,0,monthly,"Works in VS Code, Visual Studio, JetBrains, Xcode, Neovim, Eclipse, Zed; Choice of Claude, GPT, Gemini, Grok, Kimi models","2,000 code completions/month; Limited chat and agent use",2026-10
+GitHub Copilot,Pro,16,estimate,10,monthly,Unlimited completions; Cloud agent and code review,US$15/month of AI Credits for chat/agent (US$10 base + US$5 flex),2026-10
+GitHub Copilot,Pro+,62,estimate,39,monthly,Everything in Pro; Third-party agents: Claude and Codex,US$70/month of AI Credits,2026-10
+GitHub Copilot,Max,158,estimate,100,monthly,Everything in Pro+,US$200/month of AI Credits,2026-10
+Cursor,Hobby,0,estimate,0,monthly,Cursor editor; Composer model,Limited agent requests,2026-10
+Cursor,Pro,32,estimate,20,monthly,"Frontier models; Cloud agents; MCPs, skills and hooks; Grok Bot; Bugbot (usage-billed)","Included model usage each month, then on-demand billing (amount not stated on pricing page)",2026-10
+Cursor,Pro+,95,estimate,60,monthly,Everything in Pro,3x Pro usage (reported),2026-10
+Cursor,Ultra,317,estimate,200,monthly,Everything in Pro,20x Pro usage (reported),2026-10
+Devin Desktop (ex-Windsurf),Free,0,estimate,0,monthly,Unlimited Tab completions; Limited models,'Light quota' for agents,2026-10
+Devin Desktop (ex-Windsurf),Pro,32,estimate,20,monthly,"Frontier models from OpenAI, Anthropic, Google, xAI plus open models; Devin Cloud agents; SWE-2 free until 16 Oct 2026",'Increased quotas'; extra usage at API prices,2026-10
+Devin Desktop (ex-Windsurf),Max,317,estimate,200,monthly,Everything in Pro,'Significantly higher quotas',2026-10
+Kiro,Free,0,estimate,0,monthly,Open-weight models and Claude Sonnet 4.5,50 credits/month,2026-10
+Kiro,Pro,32,estimate,20,monthly,Premium models,"1,000 credits/month; extra US$0.04/credit",2026-10
+Kiro,Pro+,63,estimate,40,monthly,Premium models,"2,000 credits/month; extra US$0.04/credit",2026-10
+Kiro,Pro Max,158,estimate,100,monthly,Premium models,"5,000 credits/month; extra US$0.04/credit",2026-10
+Kiro,Power,317,estimate,200,monthly,Premium models,"10,000 credits/month; extra US$0.04/credit",2026-10
+Google Antigravity,Free,0,official,0,monthly,"Gemini 3.8/3.7/3.6 Flash, Gemini 3.1 Pro; Claude Sonnet & Opus 4.6, gpt-oss-120b",'Basic weekly rate limits',2026-10
+Google Antigravity,With Google AI Pro,32.99,official,19.99,monthly,Everything in Free,'More rate limits',2026-10
+Google Antigravity,With AI Ultra,149.99,official,99.99,monthly,Everything in Pro,'Even more rate limits' (20x tier: highest),2026-10

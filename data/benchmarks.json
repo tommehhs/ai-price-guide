@@ -1,0 +1,148 @@
+{
+  "as_of": "2026-09-28",
+  "notes": [
+    "Benchmarks test models, not apps. The same model can score differently inside different tools.",
+    "Most scores are reported by the company that made the model. Independent re-tests usually come out lower.",
+    "Leaderboards lag: several of the newest models (GPT-6 Astra, Claude Fable 5.1, Grok 4.7) have no entry yet on some boards.",
+    "Different benchmark versions are not comparable with each other."
+  ],
+  "benchmarks": [
+    {
+      "id": "swe-bench-pro",
+      "name": "SWE-bench Pro",
+      "plain": "Can the AI fix real bugs in real software projects? Harder successor to SWE-bench Verified."
+    },
+    {
+      "id": "terminal-bench-4",
+      "name": "Terminal-Bench 4.0",
+      "plain": "Can the AI complete multi-step jobs at a command line, like a developer would?"
+    },
+    {
+      "id": "deepswe",
+      "name": "DeepSWE v1.1",
+      "plain": "Long, multi-file software engineering tasks."
+    }
+  ],
+  "scores": [
+    {
+      "model": "Claude Opus 5.5",
+      "maker": "Anthropic",
+      "bench": "swe-bench-pro",
+      "score": 89.9,
+      "type": "vendor",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "Qwen 3.8 Max",
+      "maker": "Alibaba",
+      "bench": "swe-bench-pro",
+      "score": 67.7,
+      "type": "vendor",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "Grok 4.5",
+      "maker": "xAI",
+      "bench": "swe-bench-pro",
+      "score": 64.7,
+      "type": "vendor",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "GPT-5.6 Sol",
+      "maker": "OpenAI",
+      "bench": "swe-bench-pro",
+      "score": 64.6,
+      "type": "vendor",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "Claude Sonnet 5",
+      "maker": "Anthropic",
+      "bench": "swe-bench-pro",
+      "score": 63.2,
+      "type": "vendor",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "Muse Spark 1.1",
+      "maker": "Meta",
+      "bench": "swe-bench-pro",
+      "score": 61.5,
+      "type": "independent",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "Gemini 3.6 Flash",
+      "maker": "Google",
+      "bench": "swe-bench-pro",
+      "score": 58.7,
+      "type": "vendor",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "DeepSeek V4-Pro (Max)",
+      "maker": "DeepSeek",
+      "bench": "swe-bench-pro",
+      "score": 55.4,
+      "type": "vendor",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "Gemini 3.1 Pro",
+      "maker": "Google",
+      "bench": "swe-bench-pro",
+      "score": 46.1,
+      "type": "independent",
+      "source": "https://www.morphllm.com/swe-bench-pro"
+    },
+    {
+      "model": "GPT-6 Astra",
+      "maker": "OpenAI",
+      "bench": "terminal-bench-4",
+      "score": 57.9,
+      "type": "reported",
+      "source": "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-reasoning-2026/"
+    },
+    {
+      "model": "Claude Fable 5.1",
+      "maker": "Anthropic",
+      "bench": "terminal-bench-4",
+      "score": 55.8,
+      "type": "reported",
+      "source": "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-reasoning-2026/"
+    },
+    {
+      "model": "Gemini 3.8 Flash",
+      "maker": "Google",
+      "bench": "terminal-bench-4",
+      "score": 19.1,
+      "type": "reported",
+      "source": "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-reasoning-2026/"
+    },
+    {
+      "model": "GPT-6 Astra",
+      "maker": "OpenAI",
+      "bench": "deepswe",
+      "score": 74.1,
+      "type": "reported",
+      "source": "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-reasoning-2026/"
+    },
+    {
+      "model": "Grok 4.7",
+      "maker": "xAI",
+      "bench": "deepswe",
+      "score": 71.0,
+      "type": "vendor",
+      "source": "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-reasoning-2026/"
+    },
+    {
+      "model": "Claude Fable 5.1",
+      "maker": "Anthropic",
+      "bench": "deepswe",
+      "score": 67.4,
+      "type": "reported",
+      "source": "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-reasoning-2026/"
+    }
+  ]
+}

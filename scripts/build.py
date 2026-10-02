@@ -6,6 +6,7 @@ Usage:
   python3 scripts/build.py --fragment OUT.html  # also write the page body only
 """
 import csv
+import datetime as dt
 import json
 import sys
 from pathlib import Path
@@ -13,8 +14,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
+TITLE = "The AI Price Guide"
 # Update these together when refreshing prices.
 AS_OF = "2 October 2026"
+AS_OF_ISO = "2026-10-02"
+STALE_DAYS = 60  # entries checked longer ago than this are flagged
 USD_TO_AUD = 1.44  # mid-market, 2 Oct 2026 (1 AUD = 0.695 USD)
 GST = 1.10
 
@@ -24,6 +28,10 @@ STATUS_LABEL = {"active": "", "paused": " ⏸ sign-ups paused", "discontinued": 
                 "upcoming": " ◷ coming soon"}
 SCORE_KEYS = ["quality", "value", "ease", "privacy"]
 BILLING_SUFFIX = {"monthly": "", "yearly": "/yr", "one-off": " once"}
+RUNS_LABEL = {"terminal": "Terminal", "vscode": "VS Code", "jetbrains": "JetBrains", "other-ides": "Other IDEs",
+              "own-editor": "Own editor", "desktop": "Desktop app", "web": "Web", "mobile": "Mobile"}
+CODING_ABILITIES = [("multi_file", "Multi-file edits"), ("run_commands", "Runs commands & tests"),
+                    ("cloud", "Cloud agents"), ("pull_requests", "Opens pull requests"), ("code_review", "Code review")]
 REQUIRED = ["id", "name", "maker", "category", "status", "url", "free", "billing", "pricing", "best_for",
             "strengths", "watch_out", "platforms", "privacy", "region", "scores", "tags", "verified", "sources"]
 
@@ -43,7 +51,33 @@ def load():
         assert all(1 <= t["scores"][k] <= 5 for k in SCORE_KEYS), f"{t['id']}: bad scores"
         for k in ("from", "standard", "top"):
             t.setdefault(k, None)
-    return cats, tools
+        for p in t.get("plans", []):
+            for k in ("name", "usd", "aud", "aud_src", "billing", "includes", "limits"):
+                assert k in p, f"{t['id']} plan {p.get('name')}: missing {k}"
+            assert p["aud_src"] in (None, "official"), f"{t['id']} plan {p['name']}: bad aud_src"
+        t["stale"] = is_stale(t["verified"])
+    bench = json.loads((DATA / "benchmarks.json").read_text())
+    return cats, tools, bench
+
+
+def is_stale(verified):
+    """'older' or a YYYY-MM month more than STALE_DAYS before AS_OF_ISO."""
+    if verified == "older":
+        return True
+    checked = dt.date.fromisoformat(verified + "-28")  # assume late in the month
+    return (dt.date.fromisoformat(AS_OF_ISO) - checked).days > STALE_DAYS
+
+
+def plan_aud(p):
+    if p["aud_src"] == "official":
+        return "Free" if p["aud"] == 0 else f"A${p['aud']:,}".replace(".00", "")
+    if p["usd"] == 0:
+        return "Free"
+    return f"≈A${aud_est(p['usd']):,} (est.)"
+
+
+def plan_usd(p):
+    return "Free" if p["usd"] == 0 else f"US${p['usd']:,}".replace(".00", "")
 
 
 def usd(v, billing="monthly"):
@@ -57,10 +91,10 @@ def aud_est(v):
 
 
 def aud_cell(t):
-    if t.get("aud"):
-        return t["aud"]
-    v = aud_est(t["standard"])
-    return "—" if v is None else f"~A${v:,}{BILLING_SUFFIX[t['billing']]}"
+    if t.get("aud_from") is not None:
+        return f"A${t['aud_from']:,}".replace(".00", "")
+    v = aud_est(t["from"])
+    return ("Free" if t["free"] else "—") if v is None else f"≈A${v:,}{BILLING_SUFFIX[t['billing']]}"
 
 
 def stars(n):
@@ -77,24 +111,29 @@ def anchor(name):
     return keep.replace(" ", "-")
 
 
-def build_markdown(cats, tools):
+def build_markdown(cats, tools, bench):
     out = []
     w = out.append
     by_cat = {c["id"]: [t for t in tools if t["category"] == c["id"]] for c in cats}
     live = [t for t in tools if t["status"] != "discontinued"]
 
-    w("# AI Tools Database for Consumers")
+    w(f"# {TITLE}")
+    w("")
+    w("What every major AI tool costs in Australia, what you get on each plan, and how much you can use it.")
     w("")
     w(f"_Last updated {AS_OF}. {len(tools)} tools across {len(cats)} categories, "
       f"{sum(1 for t in live if t['free'])} with a usable free tier._")
     w("")
-    w("Prices are monthly, in US dollars, for individual plans unless marked _/yr_ (yearly) or _once_ (hardware). "
-      "Where an Australian price has been published it's shown as **A$**; otherwise **~A$** is an estimate "
-      f"(US$1 = A${USD_TO_AUD}, plus 10% GST). Ratings are this guide's own judgement, explained in "
-      "[How the ratings work](#how-the-ratings-work). AI products change monthly, so treat this as a snapshot.")
+    w("**Prices are in Australian dollars first.** **A$** = the company's own Australian price. **≈A$** = our estimate "
+      f"for tools that charge in US dollars (US$1 = A${USD_TO_AUD}, plus 10% GST). US$ prices are shown alongside. "
+      "Prices are monthly for individual plans unless marked _/yr_ (yearly) or _once_ (hardware).")
+    w("")
+    w("**Independent.** No sponsorships, affiliate links or paid placements. Ratings and picks are this guide's own "
+      "judgement, explained in [How the ratings work](#how-the-ratings-work). Entries checked more than "
+      f"{STALE_DAYS} days ago are marked _needs re-check_. AI products change monthly, so treat this as a snapshot.")
     w("")
     w("Generated from [`data/tools.json`](data/tools.json) by `scripts/build.py`. "
-      "Open [`index.html`](index.html) for the interactive version with search, filters, a "
+      "Open [`index.html`](index.html) for the interactive version with search, plan-by-plan comparison, a "
       "\"help me choose\" picker and a shortlist that totals your monthly cost. "
       "[`data/tools.csv`](data/tools.csv) opens in any spreadsheet.")
     w("")
@@ -105,6 +144,10 @@ def build_markdown(cats, tools):
     w("- [Best in each category](#best-in-each-category)")
     w("- [Recent changes (2026)](#recent-changes-2026)")
     w("- [Prices in Australia](#prices-in-australia)")
+    w("- [Plans in detail: what you get on each tier](#plans-in-detail-what-you-get-on-each-tier)")
+    w("- [What you get free](#what-you-get-free)")
+    w("- [Coding tools compared](#coding-tools-compared)")
+    w("- [Coding benchmarks, explained](#coding-benchmarks-explained)")
     w("- Categories:")
     for c in cats:
         w(f"  - [{c['name']}](#{anchor(c['name'])}) ({len(by_cat[c['id']])})")
@@ -119,9 +162,9 @@ def build_markdown(cats, tools):
     w("## Start here: quick picks")
     w("")
     picks = [
-        ("I only want one subscription", "ChatGPT Plus or Claude Pro ($20). Gemini via Google AI Pro if you also want storage"),
+        ("I only want one subscription", "ChatGPT Plus (A$30) or Claude Pro (US$20 + GST, ≈A$32). Google AI Pro (A$32.99) if you also want 5 TB storage"),
         ("I don't want to pay", "Gemini free + ChatGPT free; Gemini Notebook for study; Comet as a free agent browser"),
-        ("Cheapest paid upgrade", "Google AI Plus ($4.99) or ChatGPT Go (A$13, has ads)"),
+        ("Cheapest paid upgrade", "Google AI Plus (A$7.99) or ChatGPT Go (A$13, has ads)"),
         ("I write a lot", "Claude; Grammarly or Wispr Flow alongside"),
         ("I live in Word/Excel/Outlook", "Microsoft 365 Premium (A$33): Office, 6 TB and Copilot in one"),
         ("I'm on iPhone / Android", "Siri in iOS 27 is free and much better; on Android, Gemini is now the assistant"),
@@ -130,11 +173,11 @@ def build_markdown(cats, tools):
         ("Pictures", "ChatGPT Images (quality), Gemini Nano Banana (free), Midjourney (style), Canva (designs)"),
         ("Fix my photos", "Google Photos (free), Photoshop (serious), Topaz (upscaling)"),
         ("Video", "Veo 3.1 via Google AI (realism), Kling 3.0 (value), Runway (control)"),
-        ("Music / voiceovers", "Suno Pro ($10) / ElevenLabs"),
-        ("Coding", "Claude Code (in Claude Pro); GitHub Copilot Pro ($10) as the cheap option; Cursor as an editor"),
-        ("Make an app or website", "Lovable or Bolt.new ($25); Replit to host it too"),
+        ("Music / voiceovers", "Suno Pro (US$10, ≈A$16) / ElevenLabs"),
+        ("Coding", "Claude Code (in Claude Pro); GitHub Copilot Pro (US$10, ≈A$16) as the cheap option; Cursor as an editor. See [Coding tools compared](#coding-tools-compared)"),
+        ("Make an app or website", "Lovable or Bolt.new (US$25, ≈A$40); Replit to host it too"),
         ("Hand off whole tasks", "ChatGPT agent if you're on Plus; Manus for long hands-off jobs"),
-        ("Kids' homework help", "Khanmigo ($4) or ChatGPT Study Mode (free)"),
+        ("Kids' homework help", "Khanmigo (US$4) or ChatGPT Study Mode (free)"),
         ("Travel", "Google Translate (offline, camera), DeepL for documents, Ray-Ban Meta for live translation"),
         ("Smart home", "Alexa+ (free with Prime; Early Access in Australia)"),
     ]
@@ -181,14 +224,103 @@ def build_markdown(cats, tools):
 
     w("## Prices in Australia")
     w("")
-    w("Published or widely reported Australian prices (GST included). Everything else in this guide "
-      f"shows an estimate at US$1 = A${USD_TO_AUD} + GST.")
+    w("Prices from each company's Australian pricing page (GST included). Tools not listed charge in US dollars; "
+      f"this guide estimates those at US$1 = A${USD_TO_AUD} + GST, and your bank may add a foreign transaction fee.")
     w("")
     w("| Tool | Australian price | Notes |")
     w("|---|---|---|")
     for t in tools:
         if t.get("aud") or t.get("au"):
             w(f"| {t['name']} | {t.get('aud', '—')} | {t.get('au', '')} |")
+    w("")
+
+    planned = [t for t in tools if t.get("plans")]
+    w("## Plans in detail: what you get on each tier")
+    w("")
+    w("Every individual plan for the main assistants and coding tools. Limits use the company's exact numbers where "
+      "published; otherwise we quote their wording and say _not published_.")
+    w("")
+    for t in planned:
+        w(f"### {t['name']}")
+        w("")
+        w("| Plan | A$ / month | US$ / month | What you get | Limits |")
+        w("|---|---|---|---|---|")
+        for p in t["plans"]:
+            inc = "<br>".join(p["includes"])
+            lim = "<br>".join(p["limits"])
+            name = p["name"] + (f"<br>_{p['note']}_" if p.get("note") else "")
+            w(f"| **{name}** | {plan_aud(p)} | {plan_usd(p)} | {inc} | {lim} |")
+        w("")
+        w(f"_Checked {t['verified']}. Sources: " + ", ".join(f"[{i + 1}]({u})" for i, u in enumerate(t["sources"][:3])) + "_")
+        w("")
+
+    w("## What you get free")
+    w("")
+    w("The free tier of each tool above, side by side.")
+    w("")
+    w("| Tool | Free plan includes | Free limits |")
+    w("|---|---|---|")
+    for t in planned:
+        free = next((p for p in t["plans"] if p["usd"] == 0), None)
+        if free:
+            w(f"| **{t['name']}** | {'; '.join(free['includes'])} | {'; '.join(free['limits'])} |")
+        else:
+            w(f"| **{t['name']}** | No free plan | — |")
+    w("")
+
+    coders = [t for t in tools if t.get("coding")]
+    w("## Coding tools compared")
+    w("")
+    w("### Where it runs")
+    w("")
+    w("| Tool | " + " | ".join(RUNS_LABEL.values()) + " |")
+    w("|---|" + "---|" * len(RUNS_LABEL))
+    for t in coders:
+        runs = t["coding"]["runs"]
+        w(f"| {t['name']} | " + " | ".join("✓" if k in runs else "" for k in RUNS_LABEL) + " |")
+    w("")
+    w("### What the agent can do")
+    w("")
+    w("| Tool | " + " | ".join(lbl for _, lbl in CODING_ABILITIES) + " | Models | Context |")
+    w("|---|" + "---|" * (len(CODING_ABILITIES) + 2))
+    for t in coders:
+        c = t["coding"]
+        w(f"| {t['name']} | " + " | ".join(MARK[c[k]] for k, _ in CODING_ABILITIES) + f" | {c['models']} | {c['context']} |")
+    w("")
+    w("✓ yes · ~ limited, add-on or not clearly documented · ✗ no. Plan-by-plan limits are in "
+      "[Plans in detail](#plans-in-detail-what-you-get-on-each-tier).")
+    w("")
+    w("### Cheapest way in")
+    w("")
+    w("| Tool | Free tier | Cheapest paid | Heavy use |")
+    w("|---|---|---|---|")
+    for t in coders:
+        paid = [p for p in t["plans"] if p["usd"]]
+        free = next((p for p in t["plans"] if p["usd"] == 0), None)
+        w(f"| {t['name']} | {'; '.join(free['limits']) if free else 'None'} | "
+          f"{paid[0]['name']}: {plan_aud(paid[0])} ({plan_usd(paid[0])}) | {paid[-1]['name']}: {plan_aud(paid[-1])} ({plan_usd(paid[-1])}) |")
+    w("")
+
+    w("## Coding benchmarks, explained")
+    w("")
+    w("Benchmarks give a rough idea of how capable the underlying AI model is at programming. Read them with care:")
+    w("")
+    for n in bench["notes"]:
+        w(f"- {n}")
+    w("")
+    kind = {"vendor": "Company-reported", "independent": "Independent", "reported": "Published results"}
+    for b in bench["benchmarks"]:
+        rows = sorted((r for r in bench["scores"] if r["bench"] == b["id"]), key=lambda r: -r["score"])
+        w(f"### {b['name']}")
+        w("")
+        w(f"_{b['plain']}_")
+        w("")
+        w("| Model | Maker | Score | Source type |")
+        w("|---|---|---|---|")
+        for r in rows:
+            w(f"| {r['model']} | {r['maker']} | {r['score']}% | [{kind[r['type']]}]({r['source']}) |")
+        w("")
+    w(f"_Scores as of {bench['as_of']}._")
     w("")
 
     for c in cats:
@@ -211,7 +343,7 @@ def build_markdown(cats, tools):
             w("")
             w("### Prices and ratings")
             w("")
-        w("| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |")
+        w("| Tool | Free? | From (A$) | From (US$) | Typical (US$) | Top (US$) | Rating | Best for |")
         w("|---|---|---|---|---|---|---|---|")
         for t in items:
             name = f"[{t['name']}]({t['url']}){STATUS_LABEL[t['status']]}"
@@ -219,13 +351,15 @@ def build_markdown(cats, tools):
                 name += f" 🏅 _{t['pick']}_"
             b = t["billing"]
             rating = "—" if t["status"] == "discontinued" else f"{overall(t)}/5"
-            w(f"| {name} | {'✓' if t['free'] else '✗'} | {usd(t['from'], b)} | {usd(t['standard'], b)} | "
-              f"{usd(t['top'], b)} | {aud_cell(t)} | {rating} | {t['best_for']} |")
+            if t["stale"] and t["status"] != "discontinued":
+                name += " ⚠ _needs re-check_"
+            w(f"| {name} | {'✓' if t['free'] else '✗'} | {aud_cell(t)} | {usd(t['from'], b)} | {usd(t['standard'], b)} | "
+              f"{usd(t['top'], b)} | {rating} | {t['best_for']} |")
         w("")
         w("<details><summary>Details for each tool</summary>")
         w("")
         for t in items:
-            tag = "" if t["verified"] != "older" else " _(unverified)_"
+            tag = " _(needs re-check)_" if t["stale"] else ""
             w(f"**{t['name']}** ({t['maker']}){tag}{STATUS_LABEL[t['status']]}")
             w(f"- Plans: {t['pricing']}" + (f" · Free: {t['free_note']}" if t["free"] and t.get("free_note") else ""))
             if t["strengths"] != "—":
@@ -312,12 +446,14 @@ def build_markdown(cats, tools):
     w("")
     w("The overall rating weights quality double: (2×quality + value + ease + privacy) ÷ 5.")
     w("")
+    w("No company pays to be included, rated or picked, and there are no affiliate links.")
+    w("")
 
     w("## How to update this database")
     w("")
     w("1. Edit `data/tools.json` (one object per tool; categories live in `data/categories.json`).")
     w("2. Set `verified` to the month you checked it (e.g. `2026-10`) and add the page you checked to `sources`.")
-    w("3. If the exchange rate has moved, update `USD_TO_AUD` and `AS_OF` in `scripts/build.py`.")
+    w("3. If the exchange rate has moved, update `USD_TO_AUD`, `AS_OF` and `AS_OF_ISO` in `scripts/build.py`.")
     w("4. Run `python3 scripts/build.py`. It checks every entry has the required fields, then regenerates this file, the CSV and `index.html`.")
     w("")
     w("### Field reference")
@@ -335,9 +471,12 @@ def build_markdown(cats, tools):
         ("scores", "`quality`, `value`, `ease`, `privacy`, each 1–5"),
         ("tags", "Use-case keywords that drive the picker and search"),
         ("privacy / region", "Training default and opt-out; where data is stored"),
-        ("verified", "Month the details were last checked; `older` = not re-checked"),
+        ("verified", f"Month the details were last checked (`YYYY-MM`); flagged _needs re-check_ after {STALE_DAYS} days"),
+        ("plans", "Optional list of plan tiers: `name`, `usd`, `aud` (with `aud_src: official`, or `null` to estimate), `includes`, `limits`"),
+        ("coding", "Coding tools only: where it runs, agent abilities (`yes` / `partial` / `no`), models, context"),
     ]:
         w(f"| `{k}` | {v} |")
+    w("Coding benchmark scores live in `data/benchmarks.json`.")
     w("")
     return "\n".join(out)
 
@@ -363,9 +502,21 @@ def build_csv(cats, tools, path):
             ])
 
 
-def page_body(cats, tools):
+def build_plans_csv(tools, path):
+    with path.open("w", newline="") as fh:
+        wr = csv.writer(fh)
+        wr.writerow(["tool", "plan", "aud", "aud_source", "usd", "billing", "includes", "limits", "verified"])
+        for t in tools:
+            for p in t.get("plans", []):
+                aud = p["aud"] if p["aud_src"] == "official" else (0 if p["usd"] == 0 else aud_est(p["usd"]))
+                wr.writerow([t["name"], p["name"], aud, "official" if p["aud_src"] else "estimate", p["usd"], p["billing"],
+                             "; ".join(p["includes"]), "; ".join(p["limits"]), t["verified"]])
+
+
+def page_body(cats, tools, bench):
     template = (ROOT / "scripts" / "template.html").read_text()
-    payload = json.dumps({"asOf": AS_OF, "rate": USD_TO_AUD, "gst": GST, "categories": cats, "tools": tools},
+    payload = json.dumps({"title": TITLE, "asOf": AS_OF, "rate": USD_TO_AUD, "gst": GST, "staleDays": STALE_DAYS,
+                          "categories": cats, "tools": tools, "bench": bench},
                          ensure_ascii=False).replace("</", "<\\/")
     return template.replace("/*__DATA__*/null", payload)
 
@@ -378,15 +529,19 @@ def build_html(body, path):
 
 
 def main():
-    cats, tools = load()
-    (ROOT / "DATABASE.md").write_text(build_markdown(cats, tools))
+    cats, tools, bench = load()
+    (ROOT / "DATABASE.md").write_text(build_markdown(cats, tools, bench))
     build_csv(cats, tools, DATA / "tools.csv")
-    body = page_body(cats, tools)
+    build_plans_csv(tools, DATA / "plans.csv")
+    body = page_body(cats, tools, bench)
     build_html(body, ROOT / "index.html")
     # Optional: page body only (no <html>/<head>), for hosts that add their own skeleton.
     if len(sys.argv) > 2 and sys.argv[1] == "--fragment":
         Path(sys.argv[2]).write_text(body)
-    print(f"Built {len(tools)} tools in {len(cats)} categories.")
+    stale = [t["name"] for t in tools if t["stale"] and t["status"] != "discontinued"]
+    print(f"Built {len(tools)} tools in {len(cats)} categories; "
+          f"{sum(len(t.get('plans', [])) for t in tools)} plans; {len(stale)} need re-checking"
+          + (f": {', '.join(stale)}" if stale else "."))
 
 
 if __name__ == "__main__":
