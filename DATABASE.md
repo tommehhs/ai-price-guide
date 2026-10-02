@@ -1,61 +1,150 @@
 # AI Tools Database for Consumers
 
-_Last updated 2 October 2026. 77 tools across 10 categories._
+_Last updated 2 October 2026. 101 tools across 18 categories, 81 with a usable free tier._
 
-Prices are monthly, in US dollars, for individual plans. The **~A$** figures are rough estimates (US$1 = A$1.44, plus 10% GST); Australian app-store and local prices often differ, so check before you buy. Rows marked _unverified_ come from older sources and weren't re-checked for this update. AI products change monthly, so treat this as a snapshot.
+Prices are monthly, in US dollars, for individual plans unless marked _/yr_ (yearly) or _once_ (hardware). Where an Australian price has been published it's shown as **A$**; otherwise **~A$** is an estimate (US$1 = A$1.44, plus 10% GST). Ratings are this guide's own judgement, explained in [How the ratings work](#how-the-ratings-work). AI products change monthly, so treat this as a snapshot.
 
-Generated from [`data/tools.json`](data/tools.json) by `scripts/build.py`. Open [`index.html`](index.html) for a searchable, filterable version, or [`data/tools.csv`](data/tools.csv) in a spreadsheet.
+Generated from [`data/tools.json`](data/tools.json) by `scripts/build.py`. Open [`index.html`](index.html) for the interactive version with search, filters, a "help me choose" picker and a shortlist that totals your monthly cost. [`data/tools.csv`](data/tools.csv) opens in any spreadsheet.
 
-## Quick picks
+## Contents
 
-| Need | Pick |
+- [Start here: quick picks](#start-here-quick-picks)
+- [Best in each category](#best-in-each-category)
+- [Recent changes (2026)](#recent-changes-2026)
+- [Prices in Australia](#prices-in-australia)
+- Categories:
+  - [General AI assistants](#general-ai-assistants) (13)
+  - [AI agents](#ai-agents) (4)
+  - [Search & research](#search--research) (5)
+  - [Image generation & editing](#image-generation--editing) (10)
+  - [Photo editing & upscaling](#photo-editing--upscaling) (5)
+  - [Video generation](#video-generation) (12)
+  - [Music, voice & dictation](#music-voice--dictation) (5)
+  - [Slides, documents & design](#slides-documents--design) (3)
+  - [Writing, notes & meetings](#writing-notes--meetings) (7)
+  - [Learning & study](#learning--study) (3)
+  - [Translation](#translation) (2)
+  - [Coding assistants](#coding-assistants) (9)
+  - [No-code app & website builders](#no-code-app--website-builders) (5)
+  - [AI browsers](#ai-browsers) (7)
+  - [Phone & home assistants](#phone--home-assistants) (3)
+  - [AI glasses & gadgets](#ai-glasses--gadgets) (3)
+  - [Run AI on your own computer](#run-ai-on-your-own-computer) (3)
+  - [AI companions](#ai-companions) (2)
+- [Privacy at a glance](#privacy-at-a-glance)
+- [Ways to pay less](#ways-to-pay-less)
+- [Staying safe](#staying-safe)
+- [Jargon buster](#jargon-buster)
+- [How the ratings work](#how-the-ratings-work)
+- [How to update this database](#how-to-update-this-database)
+
+## Start here: quick picks
+
+| I want… | Pick |
 |---|---|
-| Best all-rounder | ChatGPT Plus ($20) or Claude Pro ($20) |
-| Best value bundle | Google AI Pro ($19.99): Gemini plus storage, Veo video and Gemini Notebook |
-| Best free assistant | Gemini free tier; DeepSeek for free reasoning (data stored in China) |
-| Cheapest paid assistant | Google AI Plus ($4.99) or ChatGPT Go ($8, has ads) |
-| Writing & long documents | Claude |
-| Research with sources | Perplexity Pro; Gemini Notebook for your own documents |
-| Microsoft Office user | Microsoft 365 Premium ($19.99) — Office, 6 TB and Copilot |
-| Privacy first | Mistral Vibe (EU-hosted), Duck.ai, Brave Leo; Claude with training switched off |
-| Images | ChatGPT Images 2.5 (quality), Nano Banana (free/fast), Midjourney (style), Ideogram (text) |
+| I only want one subscription | ChatGPT Plus or Claude Pro ($20). Gemini via Google AI Pro if you also want storage |
+| I don't want to pay | Gemini free + ChatGPT free; Gemini Notebook for study; Comet as a free agent browser |
+| Cheapest paid upgrade | Google AI Plus ($4.99) or ChatGPT Go (A$13, has ads) |
+| I write a lot | Claude; Grammarly or Wispr Flow alongside |
+| I live in Word/Excel/Outlook | Microsoft 365 Premium (A$33): Office, 6 TB and Copilot in one |
+| I'm on iPhone / Android | Siri in iOS 27 is free and much better; on Android, Gemini is now the assistant |
+| Privacy matters most | Mistral Vibe (EU), Duck.ai, Brave Leo, or LM Studio to run AI offline |
+| Research with sources | Perplexity Pro; Consensus for science; Gemini Notebook for your own files |
+| Pictures | ChatGPT Images (quality), Gemini Nano Banana (free), Midjourney (style), Canva (designs) |
+| Fix my photos | Google Photos (free), Photoshop (serious), Topaz (upscaling) |
 | Video | Veo 3.1 via Google AI (realism), Kling 3.0 (value), Runway (control) |
-| Music | Suno Pro ($10) |
-| Voiceovers | ElevenLabs |
-| Coding | Claude Code (in Claude Pro), GitHub Copilot Pro ($10) as the cheap option, Cursor as an editor |
-| Build an app without coding | Lovable or Bolt.new ($25); Replit to host it too |
-| AI browser | Comet (free agent); Chrome or Edge if you won't switch |
-| Meeting notes | Granola (no bot), Plaud (in-person, needs device) |
+| Music / voiceovers | Suno Pro ($10) / ElevenLabs |
+| Coding | Claude Code (in Claude Pro); GitHub Copilot Pro ($10) as the cheap option; Cursor as an editor |
+| Make an app or website | Lovable or Bolt.new ($25); Replit to host it too |
+| Hand off whole tasks | ChatGPT agent if you're on Plus; Manus for long hands-off jobs |
+| Kids' homework help | Khanmigo ($4) or ChatGPT Study Mode (free) |
+| Travel | Google Translate (offline, camera), DeepL for documents, Ray-Ban Meta for live translation |
+| Smart home | Alexa+ (free with Prime; Early Access in Australia) |
 
-## Recent changes worth knowing (2026)
+## Best in each category
 
-- **OpenAI Sora is gone** — app closed 26 Apr 2026, API 24 Sep 2026. ChatGPT no longer makes video.
+| Category | Pick | Why | From |
+|---|---|---|---|
+| General AI assistants | **ChatGPT** | Best all-rounder | Free, paid from $8 |
+| General AI assistants | **Claude** | Best for writing & coding | Free, paid from $20 |
+| General AI assistants | **Gemini** | Best value bundle | Free, paid from $4.99 |
+| General AI assistants | **Mistral Vibe (ex-Le Chat)** | Most private all-rounder | Free, paid from $5.99 |
+| AI agents | **ChatGPT agent / Work mode** | Easiest to start | $8 |
+| AI agents | **Manus** | Most hands-off | Free, paid from $20 |
+| Search & research | **Gemini Notebook (ex-NotebookLM)** | Best for your own documents | Free, paid from $4.99 |
+| Search & research | **Consensus** | Best for science questions | Free, paid from $20 |
+| Image generation & editing | **ChatGPT Images 2.5** | Best quality | Free, paid from $8 |
+| Image generation & editing | **Nano Banana 2 / Pro (Gemini)** | Best free | Free, paid from $4.99 |
+| Image generation & editing | **Midjourney V8.2** | Best artistic style | $10 |
+| Image generation & editing | **Ideogram 4.0** | Best for text & logos | Free, paid from $20 |
+| Photo editing & upscaling | **Google Photos AI editing** | Best free | Free |
+| Photo editing & upscaling | **Adobe Photoshop** | Most powerful | $19.99 |
+| Photo editing & upscaling | **Topaz Labs** | Best faithful upscaler | $149/yr |
+| Video generation | **Google Veo 3.1 / Flow** | Best realism | $19.99 |
+| Video generation | **Kling 3.0** | Best value | Free, paid from $10 |
+| Video generation | **Runway Gen-4.5** | Most control | Free, paid from $15 |
+| Music, voice & dictation | **Suno v5.5** | Best for songs | Free, paid from $10 |
+| Music, voice & dictation | **ElevenLabs** | Best voices | Free, paid from $6 |
+| Music, voice & dictation | **Wispr Flow** | Best dictation | Free, paid from $15 |
+| Slides, documents & design | **Canva AI** | Best all-round design | Free, paid from $15 |
+| Slides, documents & design | **Gamma** | Fastest decks | Free, paid from $10 |
+| Writing, notes & meetings | **Grammarly** | Best writing help | Free, paid from $12 |
+| Writing, notes & meetings | **Granola** | Best meeting notes | Free, paid from $14 |
+| Learning & study | **Khanmigo** | Best tutor for kids | $4 |
+| Learning & study | **ChatGPT Study Mode** | Best free | Free |
+| Learning & study | **Duolingo Max** | Best for languages | Free, paid from $84/yr |
+| Translation | **DeepL** | Best quality | Free, paid from $8.74 |
+| Translation | **Google Translate** | Best free / travel | Free |
+| Coding assistants | **Claude Code** | Most capable | $20 |
+| Coding assistants | **GitHub Copilot** | Best value | Free, paid from $10 |
+| Coding assistants | **Cursor** | Best AI editor | Free, paid from $20 |
+| No-code app & website builders | **Lovable** | Best-looking apps | Free, paid from $25 |
+| No-code app & website builders | **Replit** | Build and host | Free, paid from $20 |
+| AI browsers | **Comet** | Best free agent | Free |
+| AI browsers | **Brave Leo** | Most private | Free, paid from $14.99 |
+| Phone & home assistants | **Siri (Apple Intelligence, iOS 27)** | Best for iPhone | Free |
+| Phone & home assistants | **Gemini on Android** | Best for Android | Free, paid from $4.99 |
+| Phone & home assistants | **Alexa+** | Best for smart home | Free, paid from $19.99 |
+| AI glasses & gadgets | **Ray-Ban Meta (Gen 2) / Meta Glasses** | Best AI glasses | $299 once |
+| Run AI on your own computer | **LM Studio** | Easiest | Free |
+
+## Recent changes (2026)
+
+- **OpenAI Sora is gone**: app closed 26 Apr 2026, API 24 Sep 2026. ChatGPT no longer makes video.
 - **ChatGPT Atlas browser shut down** 9 Aug 2026; use the ChatGPT Chrome extension instead.
 - **ChatGPT Pro now has $100, $200 and $500 tiers**; $200 closed to new sign-ups since 10 Sep 2026. Free and Go show ads.
 - **Google AI Ultra cut from $249.99 to $99.99** (5x limits); old top tier now $199.99 (20x). AI Plus cut to $4.99.
+- **Gemini fully replaced Google Assistant** on Android phones, watches and cars (from 4 Sep 2026).
 - **NotebookLM is now Gemini Notebook** (Jul 2026).
 - **Siri rebuilt on Gemini-based models** in iOS 27 (14 Sep 2026).
-- **Meta launched Muse**, an errand-running agent, free with $20/$100 tiers (US, Sep 2026).
+- **Alexa+ reached Australia** in Early Access (6 Aug 2026): free with Prime, A$29.99 without after 30 Nov.
+- **Meta launched Muse**, an errand-running agent, free with $20/$100 tiers (US only, Sep 2026). Cheaper Meta Glasses from $299.
 - **Le Chat is now Mistral Vibe**; **Windsurf is now Devin Desktop**.
 - **Microsoft Copilot** dropped consumer Deep Research and moved advanced features to usage-based billing (Sep 2026).
 - **GitHub Copilot** switched to per-token AI Credits (1 Jun 2026).
 - **Kimi** paused new paid subscriptions (20 Jul 2026) due to compute limits.
-- **Suno lost a German copyright (GEMA) case**; Udio paused downloads while moving to licensed models.
+- **Poe** cut its free allowance by ~90% (Mar 2026).
+- **Character.AI** settled wrongful-death lawsuits (Jan 2026) and restricted under-18s.
+- **Suno lost a German (GEMA) copyright case**; Udio paused downloads while moving to licensed models.
 
-## Contents
+## Prices in Australia
 
-- [General AI assistants](#general-ai-assistants) (13)
-- [Search & research](#search--research) (5)
-- [Image generation & editing](#image-generation--editing) (11)
-- [Video generation](#video-generation) (12)
-- [Music, voice & dictation](#music-voice--dictation) (5)
-- [Coding assistants](#coding-assistants) (9)
-- [No-code app & website builders](#no-code-app--website-builders) (5)
-- [AI browsers](#ai-browsers) (7)
-- [Writing, notes & meetings](#writing-notes--meetings) (7)
-- [Phone & home assistants](#phone--home-assistants) (3)
-- [Privacy at a glance](#privacy-at-a-glance)
-- [How to update this database](#how-to-update-this-database)
+Published or widely reported Australian prices (GST included). Everything else in this guide shows an estimate at US$1 = A$1.44 + GST.
+
+| Tool | Australian price | Notes |
+|---|---|---|
+| ChatGPT | Go A$13 · Plus ~A$35 (reported) | Available; ads on Free/Go |
+| Claude | Pro A$34 (A$340/yr) · Max A$170 / A$340, incl. GST | Available |
+| Gemini | AI Pro A$32.99 | Available; some agent features US-first |
+| Microsoft Copilot | M365 Premium A$33 (A$329/yr) | Available |
+| Meta AI / Muse | — | Meta AI works; the Muse agent app is US-only for now |
+| Leonardo.ai | — | Australian company (Sydney), owned by Canva |
+| Google Photos AI editing | — | Help me edit available in Australia since Jan 2026 |
+| Canva AI | — | Australian company (Sydney) |
+| Chrome with Gemini | — | Gemini in Chrome works; the 'auto browse' agent is US-only |
+| Alexa+ | Free with Prime · A$29.99 without | Early Access since 6 Aug 2026 |
+| Ray-Ban Meta (Gen 2) / Meta Glasses | — | Ray-Ban Meta sold in Australia |
+| Meta Ray-Ban Display | — | Not sold in Australia |
 
 ## General AI assistants
 
@@ -79,116 +168,196 @@ _Chatbots you talk to for almost anything: questions, writing, planning, files, 
 
 ✓ yes · ~ limited · ✗ no · ★ standout. _Agent_ = can carry out multi-step tasks for you (browse, book, fill forms).
 
-### Prices
+### Prices and ratings
 
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
 |---|---|---|---|---|---|---|---|
-| [ChatGPT](https://chatgpt.com) | OpenAI | ✓ | $8 | $20 | $500 | ~A$32 | All-rounder: writing, images, agents, voice |
-| [Claude](https://claude.ai) | Anthropic | ✓ | $20 | $20 | $200 | ~A$32 | Long writing, coding, documents and agent tasks |
-| [Gemini](https://gemini.google.com) | Google | ✓ | $4.99 | $19.99 | $199.99 | ~A$32 | Google Workspace / Android users; best value bundle |
-| [Grok](https://grok.com) | xAI | ✓ | $8 | $30 | $300 | ~A$48 | Live X/Twitter news; video with sound |
-| [Perplexity](https://www.perplexity.ai) | Perplexity AI | ✓ | $20 | $20 | $200 | ~A$32 | Researching with citations |
-| [Microsoft Copilot](https://copilot.microsoft.com) | Microsoft | ✓ | $9.99 | $19.99 | $19.99 | ~A$32 | Word, Excel, PowerPoint and Outlook users |
-| [Meta AI / Muse](https://muse.ai) | Meta | ✓ | $20 | $20 | $100 | ~A$32 | Casual use inside WhatsApp/Instagram; everyday errands |
-| [DeepSeek](https://chat.deepseek.com) | DeepSeek | ✓ | — | — | — | — | Free strong reasoning and maths |
-| [Mistral Vibe (ex-Le Chat)](https://chat.mistral.ai) | Mistral AI | ✓ | $5.99 | $14.99 | $29.99 | ~A$24 | Privacy-minded users wanting a cheaper all-rounder |
-| [Qwen](https://chat.qwen.ai) | Alibaba | ✓ | — | — | — | — | Free reports, slides and coding |
-| [Kimi](https://www.kimi.com) ⏸ sign-ups paused | Moonshot AI | ✓ | $19 | $19 | $199 | ~A$30 | Long documents and agentic slides/research (free tier) |
-| [Poe](https://poe.com) | Quora | ✓ | $5 | $20 | $250 | ~A$32 | Trying many models (GPT, Claude, Gemini, Grok, image/video) in one app |
-| [Duck.ai](https://duck.ai) | DuckDuckGo | ✓ | $9.99 | $9.99 | $9.99 | ~A$16 | Private, anonymous chat |
+| [ChatGPT](https://chatgpt.com) 🏅 _Best all-rounder_ | ✓ | $8 | $20 | $500 | Go A$13 · Plus ~A$35 (reported) | 4.4/5 | All-rounder: writing, images, agents, voice |
+| [Claude](https://claude.ai) 🏅 _Best for writing & coding_ | ✓ | $20 | $20 | $200 | Pro A$34 (A$340/yr) · Max A$170 / A$340, incl. GST | 4.4/5 | Long writing, coding, documents and agent tasks |
+| [Gemini](https://gemini.google.com) 🏅 _Best value bundle_ | ✓ | $4.99 | $19.99 | $199.99 | AI Pro A$32.99 | 4.4/5 | Google Workspace / Android users; best value bundle |
+| [Grok](https://grok.com) | ✓ | $8 | $30 | $300 | ~A$48 | 3.2/5 | Live X/Twitter news; video with sound |
+| [Perplexity](https://www.perplexity.ai) | ✓ | $20 | $20 | $200 | ~A$32 | 4.0/5 | Researching with citations |
+| [Microsoft Copilot](https://copilot.microsoft.com) | ✓ | $9.99 | $19.99 | $19.99 | M365 Premium A$33 (A$329/yr) | 3.8/5 | Word, Excel, PowerPoint and Outlook users |
+| [Meta AI / Muse](https://muse.ai) | ✓ | $20 | $20 | $100 | ~A$32 | 3.2/5 | Casual use inside WhatsApp/Instagram; everyday errands |
+| [DeepSeek](https://chat.deepseek.com) | ✓ | — | — | — | — | 3.6/5 | Free strong reasoning and maths |
+| [Mistral Vibe (ex-Le Chat)](https://chat.mistral.ai) 🏅 _Most private all-rounder_ | ✓ | $5.99 | $14.99 | $29.99 | ~A$24 | 4.2/5 | Privacy-minded users wanting a cheaper all-rounder |
+| [Qwen](https://chat.qwen.ai) | ✓ | — | — | — | — | 3.6/5 | Free reports, slides and coding |
+| [Kimi](https://www.kimi.com) ⏸ sign-ups paused | ✓ | $19 | $19 | $199 | ~A$30 | 3.2/5 | Long documents and agentic slides/research (free tier) |
+| [Poe](https://poe.com) | ✓ | $4.99 | $19.99 | $249.99 | ~A$32 | 3.6/5 | Trying many models (GPT, Claude, Gemini, Grok, image/video) in one app |
+| [Duck.ai](https://duck.ai) | ✓ | $9.99 | $9.99 | $19.99 | ~A$16 | 4.2/5 | Private, anonymous chat |
 
 <details><summary>Details for each tool</summary>
 
-**ChatGPT**
+**ChatGPT** (OpenAI)
 - Plans: Go $8 (ads) · Plus $20 · Pro $100 / $200 / $500 (Pro $200 closed to new sign-ups since 10 Sep 2026) · Business $25/seat · Free: GPT-6 Luna; ads in the US and 31 European markets
-- Strengths: GPT-6 family (Astra, Sol, Luna); Images 2.5 is the top-ranked image model; agent mode; Codex for coding included; biggest app ecosystem
+- Strengths: GPT-6 family (Astra, Sol, Luna); Images 2.5 is the top-ranked image model; agent mode; Codex for coding included; biggest app ecosystem; free Study Mode for learning
 - Watch out: No video since Sora shut down (app Apr 2026, API 24 Sep 2026); agent mode capped at 40 msgs/month on Plus; ChatGPT Atlas browser shut down Aug 2026
+- Australia: Available; ads on Free/Go
 - Platforms: Web, Windows, macOS, iOS, Android, Chrome extension
-- Privacy: Trains on chats by default; one-tap opt-out ('Improve the model for everyone'); Temporary Chat not used for training (data region: US)
+- Privacy: Trains on chats by default; one-tap opt-out ('Improve the model for everyone'); Temporary Chat not used for training (data: US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://felloai.com/ai-pricing-comparison/), [2](https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/), [3](https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/)
 
-**Claude**
+**Claude** (Anthropic)
 - Plans: Pro $20 ($17/mo annual) · Max 5x $100 · Max 20x $200 · Team $25 / Premium $125 per seat · Free: Daily caps; the strictest free limits of the big three
 - Strengths: Claude Opus 5.5 and Fable 5.1; Claude Code included from Pro; Docs, Slides and Design built into chats; lowest hallucination rate in several reviews; ad-free
 - Watch out: No native image or video generation; no budget tier below $20
+- Australia: Available
 - Platforms: Web, Windows, macOS, iOS, Android, Chrome extension
-- Privacy: You choose whether chats train models; with training off, deleted chats are gone within 30 days (data region: US)
+- Privacy: You choose whether chats train models; with training off, deleted chats are gone within 30 days (data: US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://felloai.com/ai-pricing-comparison/), [2](https://support.claude.com/en/articles/12138966-release-notes)
 
-**Gemini**
+**Gemini** (Google)
 - Plans: AI Plus $4.99 (400 GB) · AI Pro $19.99 (storage + Veo) · AI Ultra $99.99 (5x, 20 TB, YouTube Premium) · Ultra $199.99 (20x) · Free: Most generous free tier; Gemini Flash with search, image generation
 - Strengths: Nano Banana image editing; Veo and Gemini Omni video; Gemini Notebook (ex-NotebookLM); Google storage bundled; now powers Siri on iOS 27
 - Watch out: Chats reviewed by humans and kept up to 3 years unless you turn activity off; agent features often US-only first
+- Australia: Available; some agent features US-first
 - Platforms: Web, Windows app, Android, iOS, Chrome, Workspace
-- Privacy: Trains by default with human review; turn off 'Keep Activity' to stop (data region: US)
+- Privacy: Trains by default with human review; turn off 'Keep Activity' to stop (data: US)
+- Ratings: quality ●●●●● · value ●●●●● · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://www.cloudzero.com/blog/gemini-pricing/), [2](https://felloai.com/ai-pricing-comparison/), [3](https://www.tomsguide.com/ai/i-checked-the-privacy-settings-of-every-major-ai-chatbot-heres-how-they-actually-compare)
 
-**Grok**
+**Grok** (xAI)
 - Plans: X Premium $8 · SuperGrok Lite $10 · SuperGrok $30 · Plus $100 · Heavy $300 (annual ~17% off) · Free: Basic chat; no image/video generation since Mar 2026
 - Strengths: Real-time X data; Grok Imagine 1080p video with audio; Grok 4.7 (Sep 2026)
 - Watch out: Priciest standard tier ($30); xAI hasn't said which tier gets Grok 4.7; trails rivals on reasoning benchmarks
 - Platforms: Web, iOS, Android, inside X
-- Privacy: Trains by default, including on public X posts; opt-out in settings (data region: US)
+- Privacy: Trains by default, including on public X posts; opt-out in settings (data: US)
+- Ratings: quality ●●●●○ · value ●●○○○ · ease ●●●●○ · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://www.ai-toolbox.co/grok-models/grok-pricing-plans-api-2026), [2](https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/)
 
-**Perplexity**
+**Perplexity** (Perplexity AI)
 - Plans: Pro $20 ($200/yr) · Max $200 ($2,000/yr) · Enterprise Pro $40/seat · Free: 3 Pro searches/day; 1 Research query/month
 - Strengths: Every answer cited; pick between frontier models (GPT, Claude, Gemini); Labs for sheets/dashboards; Comet browser free for all; Perplexity Health
 - Watch out: Moved to weekly usage limits; Computer credits mostly on Max; not great as a general creative chatbot
 - Platforms: Web, Windows, macOS, iOS, Android, Comet browser
-- Privacy: 'AI data retention' on by default; switch off in settings (data region: US)
+- Privacy: 'AI data retention' on by default; switch off in settings (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.cloudzero.com/blog/perplexity-pricing/), [2](https://releasebot.io/updates/perplexity-ai)
 
-**Microsoft Copilot**
+**Microsoft Copilot** (Microsoft)
 - Plans: M365 Personal $9.99 · Family $12.99 · M365 Premium $19.99 (Office + 6 TB) · Code/Autopilot usage-based from Sep 2026 · Free: Free chat, image and voice
 - Strengths: Built into Office and Windows; Premium bundles Office + storage for the same $20; new Code and Autopilot (always-on agents) sections
 - Watch out: Consumer Deep Research, podcasts and group chats removed Aug 2026; usage-based billing for advanced features is new and hard to predict
+- Australia: Available
 - Platforms: Windows, web, iOS, Android, Edge, Office apps
-- Privacy: Opt-out toggle for model training on conversations (data region: US)
+- Privacy: Opt-out toggle for model training on conversations (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.gosearch.ai/blog/microsoft-copilot-pricing/), [2](https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/)
 
-**Meta AI / Muse**
+**Meta AI / Muse** (Meta)
 - Plans: Free · Muse Power $20 · Muse Maximum $100 (more agent usage) · Free: Free in WhatsApp, Instagram, Messenger and the Muse app
 - Strengths: Muse agent (Sep 2026) books appointments, fills forms; Muse Spark model; Vibes video; already in apps you use
 - Watch out: Muse agent US-only at launch; weakest privacy controls of the majors; least suited to serious work
+- Australia: Meta AI works; the Muse agent app is US-only for now
 - Platforms: WhatsApp, Instagram, Messenger, web, iOS, Android, Ray-Ban glasses
-- Privacy: No meaningful conversation-level training opt-out for US users (data region: US)
+- Privacy: No meaningful conversation-level training opt-out for US users (data: US)
+- Ratings: quality ●●●○○ · value ●●●●○ · ease ●●●●● · privacy ●○○○○
+- Checked: 2026-09 · Sources: [1](https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/), [2](https://www.cnbc.com/2026/09/21/meta-muse-personal-ai-agent-downloads.html)
 
-**DeepSeek**
+**DeepSeek** (DeepSeek)
 - Plans: Free app and web; developers pay per token (API) · Free: Completely free, no message cap
 - Strengths: V4-Pro and V4-Flash; 1M-token context; three thinking-effort levels
 - Watch out: No image generation; voice only in limited testing; data stored in China; censors politically sensitive topics
 - Platforms: Web, iOS, Android
-- Privacy: Data stored in China; trains on inputs; limited user controls (data region: China)
+- Privacy: Data stored in China; trains on inputs; limited user controls (data: China)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●○ · privacy ●○○○○
+- Checked: 2026-09 · Sources: [1](https://en.wikipedia.org/wiki/DeepSeek_(chatbot)), [2](https://www.neoteo.com/en/deepseek-tests-voice-replies-and-four-profiles-for-some-app-users)
 
-**Mistral Vibe (ex-Le Chat)**
+**Mistral Vibe (ex-Le Chat)** (Mistral AI)
 - Plans: Student $5.99 · Pro $14.99 (€17.99) · Team €29.99/seat · Free: Generous free tier
 - Strengths: EU-hosted; Work Mode and Code Mode in one agent; deep research, voice, 100+ connectors; cheapest full-featured paid tier
 - Watch out: Models a step behind the US frontier; no video
 - Platforms: Web, iOS, Android
-- Privacy: EU (GDPR) hosting; training opt-out available (data region: EU)
+- Privacy: EU (GDPR) hosting; training opt-out available (data: EU)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://www.heise.de/en/news/Mistral-s-chatbot-is-now-called-Vibe-and-gains-new-capabilities-11311685.html), [2](https://automateall.co/en/blog/mistral-le-chat-vibe/)
 
-**Qwen**
+**Qwen** (Alibaba)
 - Plans: Free · Free: Free
 - Strengths: Capable Qwen 3.8 models; deep research, image, slides; Wan video models from the same lab
 - Watch out: Integrations mostly China-based (Taobao, Alipay, Amap); data stored in China
 - Platforms: Web, iOS, Android
-- Privacy: Data stored in China (data region: China)
+- Privacy: Data stored in China (data: China)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●○ · privacy ●○○○○
+- Checked: 2026-09 · Sources: [1](https://www.alibabacloud.com/blog/alibaba-launches-qwen-app-to-boost-its-consumer-ai-efforts_602672)
 
-**Kimi** ⏸ sign-ups paused
+**Kimi** (Moonshot AI) ⏸ sign-ups paused
 - Plans: Plus / Pro / Max / Ultra $19–$199 (new subscriptions paused since 20 Jul 2026) · Free: Free 'Adagio' tier
 - Strengths: Kimi K3 (Jul 2026), strong at agentic tasks and long context
 - Watch out: New paid sign-ups paused due to compute shortage; data stored in China
 - Platforms: Web, iOS, Android
-- Privacy: Data stored in China (data region: China)
+- Privacy: Data stored in China (data: China)
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●○○○○
+- Checked: 2026-09 · Sources: [1](https://www.pymnts.com/news/artificial-intelligence/2026/moonshot-halts-new-kimi-k3-subscriptions-demand-overwhelms-compute/)
 
-**Poe** _(unverified)_
-- Plans: Points-based subscriptions from about $5 to $250/month · Free: Daily points
+**Poe** (Quora)
+- Plans: Starter $4.99 · Premium $19.99 · Premium Plus $49.99 · Pro $99.99 · Pro Max $249.99 (~17% off yearly) · Free: 300 points/day (cut from ~3,000 in Mar 2026)
 - Strengths: One subscription for dozens of models and image/video generators
 - Watch out: Points burn fast on top models; fewer features than each vendor's own app
 - Platforms: Web, iOS, Android, desktop
-- Privacy: Data passes to each model provider (data region: US)
+- Privacy: Data passes to each model provider (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://aiproductivity.ai/pricing/poe/), [2](https://poe.com/subscription_plans)
 
-**Duck.ai** _(unverified)_
-- Plans: Free · higher limits/models with DuckDuckGo subscription (~$9.99) · Free: Free, no account
+**Duck.ai** (DuckDuckGo)
+- Plans: Free, no account · DuckDuckGo Plus $9.99 (adds VPN + advanced models) · Pro $19.99 (Claude Opus-class models, 2x limits) · Free: Free, no account
 - Strengths: No account; chats anonymised and not used for training
 - Watch out: Smaller models on free tier; few features (no agents, limited files)
 - Platforms: Web, DuckDuckGo browser
-- Privacy: Anonymised; providers contractually barred from training on chats (data region: US)
+- Privacy: Anonymised; providers contractually barred from training on chats (data: US)
+- Ratings: quality ●●●○○ · value ●●●●● · ease ●●●●● · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://spreadprivacy.com/pro-subscription/)
+
+</details>
+
+## AI agents
+
+_Hand over a whole task (research, booking, building a spreadsheet) and get the finished result back._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [ChatGPT agent / Work mode](https://chatgpt.com) 🏅 _Easiest to start_ | ✗ | $8 | $20 | $500 | ~A$32 | 3.8/5 | Easiest way to try an agent if you already pay for ChatGPT |
+| [Manus](https://manus.im) 🏅 _Most hands-off_ | ✓ | $20 | $20 | $200 | ~A$32 | 3.6/5 | Hands-off delegation of long, open-ended tasks |
+| [Genspark](https://www.genspark.ai) | ✓ | $24.99 | $24.99 | — | ~A$40 | 3.6/5 | Polished deliverables: slides, sheets, docs, phone calls on your behalf |
+| [Perplexity Computer](https://www.perplexity.ai) | ✗ | $20 | $200 | $200 | ~A$317 | 3.4/5 | Agent work that needs cited research |
+
+<details><summary>Details for each tool</summary>
+
+**ChatGPT agent / Work mode** (OpenAI)
+- Plans: Included in ChatGPT: Plus 40 agent messages/month · Pro 400
+- Strengths: Returns finished spreadsheets, decks, documents and small web apps; browses and fills forms with your approval
+- Watch out: Only 40 agent runs a month on Plus; asks you to take over for logins and payments
+- Platforms: Web, desktop, mobile
+- Privacy: As ChatGPT (data: US)
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://dreaming.press/posts/best-ai-agents-for-personal-use-september-2026.html)
+
+**Manus** (Manus)
+- Plans: $20 (4,000 credits) · $40 (8,000) · $200 (40,000 + cloud computer) · Free: Small daily credit allowance
+- Strengths: Works on its own cloud computer for hours; research reports, websites, data analysis
+- Watch out: Credits burn unpredictably on big tasks; check its work
+- Platforms: Web, desktop, iOS, Android
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://storyflow.so/blog/best-manus-ai-alternatives-2026), [2](https://manus.im/blog/best-ai-agents-for-desktop)
+
+**Genspark** (Genspark)
+- Plans: Plus $24.99 · Pro higher (pricing page behind sign-in) · Free: Limited daily credits
+- Strengths: Widest range of finished outputs; multi-model
+- Watch out: Opaque credit pricing
+- Platforms: Web, iOS, Android
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.eesel.ai/blog/genspark-ai-alternatives), [2](https://cellcog.ai/blog/best-super-agents/)
+
+**Perplexity Computer** (Perplexity AI)
+- Plans: Pro $20 (one-off 4,000-credit bonus) · Max $200 (10,000 credits/month)
+- Strengths: Citations throughout; runs in Comet or the cloud
+- Watch out: Realistic use needs Max at $200
+- Platforms: Web, Comet browser
+- Privacy: As Perplexity (data: US)
+- Ratings: quality ●●●●○ · value ●●○○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.cloudzero.com/blog/perplexity-pricing/)
 
 </details>
 
@@ -196,48 +365,58 @@ _Chatbots you talk to for almost anything: questions, writing, planning, files, 
 
 _Tools built around finding, citing and working through sources._
 
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
 |---|---|---|---|---|---|---|---|
-| [Gemini Notebook (ex-NotebookLM)](https://notebooklm.google.com) | Google | ✓ | $4.99 | $19.99 | $199.99 | ~A$32 | Studying and summarising your own documents; audio overviews |
-| [Google AI Mode](https://www.google.com/search?udm=50) | Google | ✓ | — | — | — | — | Quick answers with links without leaving Google |
-| [Kagi Assistant](https://kagi.com/assistant) | Kagi | ✗ | $10 | $25 | $25 | ~A$40 | Ad-free search with access to multiple frontier models |
-| [Consensus](https://consensus.app) | Consensus | ✓ | $15 | $15 | $15 | ~A$24 | What do peer-reviewed studies actually say? |
-| [Elicit](https://elicit.com) | Elicit | ✓ | $12 | $12 | $49 | ~A$19 | Literature reviews and extracting data from papers |
+| [Gemini Notebook (ex-NotebookLM)](https://notebooklm.google.com) 🏅 _Best for your own documents_ | ✓ | $4.99 | $19.99 | $199.99 | ~A$32 | 4.8/5 | Studying and summarising your own documents; audio overviews |
+| [Google AI Mode](https://www.google.com/search?udm=50) | ✓ | — | — | — | — | 4.0/5 | Quick answers with links without leaving Google |
+| [Kagi Assistant](https://kagi.com/assistant) | ✗ | $10 | $25 | $25 | ~A$40 | 4.0/5 | Ad-free search with access to multiple frontier models |
+| [Consensus](https://consensus.app) 🏅 _Best for science questions_ | ✓ | $20 | $20 | $20 | ~A$32 | 4.0/5 | What do peer-reviewed studies actually say? |
+| [Elicit](https://elicit.com) | ✓ | $12 | $12 | $49 | ~A$19 | 3.4/5 | Literature reviews and extracting data from papers |
 
 <details><summary>Details for each tool</summary>
 
-**Gemini Notebook (ex-NotebookLM)**
+**Gemini Notebook (ex-NotebookLM)** (Google)
 - Plans: Free · higher limits via Google AI Plus/Pro/Ultra · Free: Free with a Google account
 - Strengths: Answers only from your sources; podcasts, video overviews, 11 output formats; runs code in a cloud computer
 - Watch out: Renamed Jul 2026; compute-based limits since 2 Sep 2026
 - Platforms: Web, iOS, Android
-- Privacy: Google says uploads aren't used to train models (data region: US)
+- Privacy: Google says uploads aren't used to train models (data: US)
+- Ratings: quality ●●●●● · value ●●●●● · ease ●●●●● · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/), [2](https://aitoolsreview.co.uk/insights/gemini-notebook)
 
-**Google AI Mode** _(unverified)_
+**Google AI Mode** (Google) _(unverified)_
 - Plans: Free (higher limits with Google AI Pro/Ultra) · Free: Free in Google Search
 - Strengths: Free, fast, uses Google's index; follow-up questions
 - Watch out: Less transparent citations than Perplexity; ads
 - Platforms: Web, Google app, Chrome
-- Privacy: Tied to Google account activity settings (data region: US)
+- Privacy: Tied to Google account activity settings (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●○○○
+- Checked: older · Sources: [1](https://blog.google/products/search/)
 
-**Kagi Assistant** _(unverified)_
-- Plans: Assistant included with Kagi Ultimate (~$25); search plans from ~$10
+**Kagi Assistant** (Kagi)
+- Plans: Search from ~$10 · Ultimate $25 (premium models in Kagi Assistant)
 - Strengths: No ads, no tracking; choose GPT, Claude, Gemini and others
 - Watch out: Paid only; a niche product
 - Platforms: Web, iOS, Android, browser extensions
-- Privacy: Doesn't train on or sell data (data region: US)
+- Privacy: Doesn't train on or sell data (data: US)
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●●●
+- Checked: 2026-06 · Sources: [1](https://help.kagi.com/kagi/plans/plan-types.html)
 
-**Consensus** _(unverified)_
-- Plans: Free · Pro ~$15/month · Free: Limited Pro searches
+**Consensus** (Consensus)
+- Plans: Free · Pro $20/month or $144/year · Free: Limited Pro searches
 - Strengths: Searches 200M+ academic papers; 'consensus meter' on yes/no questions
 - Watch out: Academic sources only
 - Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://comparedge.com/tools/consensus-ai/pricing)
 
-**Elicit** _(unverified)_
-- Plans: Free · Plus ~$12 · Pro ~$49 · Free: Basic plan
+**Elicit** (Elicit)
+- Plans: Free · Plus $12 ($7 annual) · Pro $49 ($29 annual) · Free: Basic plan
 - Strengths: Systematic-review workflows, tables across many papers
 - Watch out: Overkill for everyday questions
 - Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●○○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://fast.io/resources/elicit-ai-review-2026/)
 
 </details>
 
@@ -245,97 +424,170 @@ _Tools built around finding, citing and working through sources._
 
 _Make or edit pictures from a text description or a reference photo._
 
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
 |---|---|---|---|---|---|---|---|
-| [ChatGPT Images 2.5](https://chatgpt.com/images) | OpenAI | ✓ | $8 | $20 | $200 | ~A$32 | Best overall image quality and prompt-following |
-| [Nano Banana 2 / Pro (Gemini)](https://gemini.google.com) | Google | ✓ | $4.99 | $19.99 | $199.99 | ~A$32 | Fast photo edits and realistic images; best free option |
-| [Midjourney V8.2](https://www.midjourney.com) | Midjourney | ✗ | $10 | $30 | $120 | ~A$48 | Art direction, mood and distinctive style |
-| [Ideogram 4.0](https://ideogram.ai) | Ideogram | ✓ | $20 | $20 | $20 | ~A$32 | Posters, logos, packaging — anything with text |
-| [Adobe Firefly](https://firefly.adobe.com) | Adobe | ✓ | $9.99 | $19.99 | $19.99 | ~A$32 | Photoshop/Express users; commercially safe output |
-| [FLUX.2](https://bfl.ai) | Black Forest Labs | ✗ | — | — | — | — | Tinkerers, local generation, editing with references |
-| [Grok Imagine](https://grok.com/imagine) | xAI | ✗ | $10 | $30 | $300 | ~A$48 | Quick concept batches and short video with sound |
-| [Krea](https://www.krea.ai) | Krea | ✓ | $9 | $9 | — | ~A$14 | One workspace for many image and video models |
-| [Leonardo.ai](https://leonardo.ai) | Canva | ✓ | $10 | $24 | $60 | ~A$38 | Game art and consistent characters |
-| [Canva AI](https://www.canva.com/ai) | Canva | ✓ | $15 | $15 | — | ~A$24 | Social posts, presentations and designs with AI help |
-| [Recraft](https://www.recraft.ai) | Recraft | ✓ | $12 | $12 | — | ~A$19 | Icons, vector illustrations and brand assets |
+| [ChatGPT Images 2.5](https://chatgpt.com/images) 🏅 _Best quality_ | ✓ | $8 | $20 | $200 | ~A$32 | 4.4/5 | Best overall image quality and prompt-following |
+| [Nano Banana 2 / Pro (Gemini)](https://gemini.google.com) 🏅 _Best free_ | ✓ | $4.99 | $19.99 | $199.99 | ~A$32 | 4.4/5 | Fast photo edits and realistic images; best free option |
+| [Midjourney V8.2](https://www.midjourney.com) 🏅 _Best artistic style_ | ✗ | $10 | $30 | $120 | ~A$48 | 3.6/5 | Art direction, mood and distinctive style |
+| [Ideogram 4.0](https://ideogram.ai) 🏅 _Best for text & logos_ | ✓ | $20 | $20 | $20 | ~A$32 | 3.8/5 | Posters, logos, packaging — anything with text |
+| [Adobe Firefly](https://firefly.adobe.com) | ✓ | $9.99 | $19.99 | $19.99 | ~A$32 | 4.0/5 | Photoshop/Express users; commercially safe output |
+| [FLUX.2](https://bfl.ai) | ✗ | — | — | — | — | 3.8/5 | Tinkerers, local generation, editing with references |
+| [Grok Imagine](https://grok.com/imagine) | ✗ | $10 | $30 | $300 | ~A$48 | 3.2/5 | Quick concept batches and short video with sound |
+| [Krea](https://www.krea.ai) | ✓ | $9 | $9 | — | ~A$14 | 3.8/5 | One workspace for many image and video models |
+| [Leonardo.ai](https://leonardo.ai) | ✓ | $12 | $30 | $60 | ~A$48 | 3.6/5 | Game art and consistent characters |
+| [Recraft](https://www.recraft.ai) | ✓ | $12 | $20 | $80 | ~A$32 | 3.8/5 | Icons, vector illustrations and brand assets |
 
 <details><summary>Details for each tool</summary>
 
-**ChatGPT Images 2.5**
+**ChatGPT Images 2.5** (OpenAI)
 - Plans: Included in ChatGPT plans · Free: Limited daily images
 - Strengths: #1 on LMArena text-to-image (Sep 2026); accurate text in images; precise edits by chat
 - Watch out: Slower than Nano Banana; strict content rules
 - Platforms: ChatGPT apps
-- Privacy: As ChatGPT (data region: US)
+- Privacy: As ChatGPT (data: US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.teamday.ai/blog/best-ai-image-models-2026), [2](https://overchat.ai/ai-hub/best-ai-image-generators)
 
-**Nano Banana 2 / Pro (Gemini)**
+**Nano Banana 2 / Pro (Gemini)** (Google)
 - Plans: Free · more with Google AI plans · Free: Free in the Gemini app
 - Strengths: Most convincing photoreal output in tests; consistent characters; 4–30 s per image
 - Watch out: Visible/invisible SynthID watermark
 - Platforms: Gemini apps, Google Photos, Firefly, many third-party apps
-- Privacy: As Gemini (data region: US)
+- Privacy: As Gemini (data: US)
+- Ratings: quality ●●●●● · value ●●●●● · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://www.teamday.ai/blog/best-ai-image-models-2026)
 
-**Midjourney V8.2**
+**Midjourney V8.2** (Midjourney)
 - Plans: Basic $10 · Standard $30 · Pro $60 · Mega $120
 - Strengths: Best aesthetics; personalisation learns your taste; instruction-based edit model (Aug 2026); video mode
 - Watch out: No free tier; no public API; less literal with prompts
 - Platforms: Web, Discord
-- Privacy: Images public by default unless Pro/Mega Stealth mode (data region: US)
+- Privacy: Images public by default unless Pro/Mega Stealth mode (data: US)
+- Ratings: quality ●●●●● · value ●●●○○ · ease ●●●○○ · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://www.teamday.ai/blog/best-ai-image-models-2026), [2](https://overchat.ai/ai-hub/best-ai-image-generators)
 
-**Ideogram 4.0**
+**Ideogram 4.0** (Ideogram)
 - Plans: Free · Plus $20 · Free: Weekly slow credits
 - Strengths: Best typography and layout; open-weights option
 - Watch out: Less photoreal than Nano Banana / ChatGPT
 - Platforms: Web, iOS
-- Privacy: Free-tier images public (data region: US)
+- Privacy: Free-tier images public (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://overchat.ai/ai-hub/best-ai-image-generators)
 
-**Adobe Firefly**
+**Adobe Firefly** (Adobe)
 - Plans: Standard $9.99 (2,000 credits) · Pro $19.99 · included in Creative Cloud · Free: Limited daily generations
 - Strengths: Firefly Image 5 (4 MP) trained on licensed data; also runs Nano Banana, FLUX, Veo; video too
 - Watch out: Partner models cost more credits
 - Platforms: Web, Photoshop, Express, iOS, Android
-- Privacy: Adobe says customer content isn't used to train Firefly (data region: US)
+- Privacy: Adobe says customer content isn't used to train Firefly (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://overchat.ai/ai-hub/best-ai-image-generators), [2](https://openart.ai/blog/best-ai-video-generators/)
 
-**FLUX.2**
+**FLUX.2** (Black Forest Labs)
 - Plans: Pay per image (~$0.07 for Max); open-weight versions free to run locally
 - Strengths: Open-weight models run on your own PC; multi-reference editing up to 4 MP
 - Watch out: No first-party consumer app worth recommending; use via Krea, Firefly, Leonardo etc.
 - Platforms: API, local, third-party apps
-- Privacy: Fully private when run locally (data region: EU)
+- Privacy: Fully private when run locally (data: EU)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●○○○ · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://overchat.ai/ai-hub/best-ai-image-generators)
 
-**Grok Imagine**
+**Grok Imagine** (xAI)
 - Plans: Included in SuperGrok plans
 - Strengths: Fast; image + 1080p video with voice; seven-reference scene control
 - Watch out: Looser content moderation has caused controversy
 - Platforms: Grok apps, X
-- Privacy: As Grok (data region: US)
+- Privacy: As Grok (data: US)
+- Ratings: quality ●●●●○ · value ●●○○○ · ease ●●●●○ · privacy ●●○○○
+- Checked: 2026-08 · Sources: [1](https://www.techtimes.com/articles/322670/20260802/grok-imagine-video-update-adds-1080p-voice-cloning-seven-reference-scene-control.htm)
 
-**Krea**
+**Krea** (Krea)
 - Plans: Free · Basic $9 ($5 annual) · higher tiers · Free: 100 units/day
 - Strengths: Real-time generation, upscaling, 3D, video; runs FLUX, Nano Banana, Kling, Veo
 - Watch out: Credit costs vary by model
 - Platforms: Web, iOS
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/)
 
-**Leonardo.ai** _(unverified)_
-- Plans: Free · paid from ~$10 · Free: Daily tokens
+**Leonardo.ai** (Canva)
+- Plans: Essential $12 · Premium $30 · Ultimate $60 (~20% off yearly); unlimited relaxed generations on paid plans · Free: Daily tokens
 - Strengths: Many fine-tuned styles; owned by Canva
 - Watch out: Interface busy for beginners
+- Australia: Australian company (Sydney), owned by Canva
 - Platforms: Web, iOS, Android
-- Privacy: Free images public (data region: AU)
+- Privacy: Free images public (data: AU)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●○○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.eesel.ai/blog/leonardo-ai-pricing)
 
-**Canva AI** _(unverified)_
-- Plans: Free · Canva Pro ~$15 (more AI uses) · Free: Limited AI uses on free plan
-- Strengths: AI inside a full design tool; templates; Australian company
-- Watch out: Not the best raw image model
-- Platforms: Web, Windows, macOS, iOS, Android
-- Privacy: Training opt-out in settings (data region: AU)
-
-**Recraft** _(unverified)_
-- Plans: Free · paid from ~$12 · Free: Daily credits
+**Recraft** (Recraft)
+- Plans: Free ~50/day (no commercial licence) · Basic $12 · Pro 2K $20 · Pro 4K $40 · Pro 8K $80 · Free: Daily credits
 - Strengths: Exports real SVG vectors; brand style consistency
 - Watch out: Less suited to photos
 - Platforms: Web
-- Privacy: Free images public (data region: US)
+- Privacy: Free images public (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.eesel.ai/blog/recraft-ai-pricing)
+
+</details>
+
+## Photo editing & upscaling
+
+_Fix, retouch, remove objects and upscale your own photos._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [Google Photos AI editing](https://photos.google.com) 🏅 _Best free_ | ✓ | — | — | — | — | 4.0/5 | Quick fixes on phone photos for free |
+| [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) 🏅 _Most powerful_ | ✗ | $19.99 | $22.99 | $69.99 | ~A$36 | 3.8/5 | Serious photo editing and compositing |
+| [Topaz Labs](https://www.topazlabs.com) 🏅 _Best faithful upscaler_ | ✗ | $149/yr | $199/yr | $299/yr | ~A$315/yr | 4.4/5 | Faithful upscaling and sharpening of real photos and old video |
+| [Magnific (Freepik)](https://www.magnific.ai) | ✓ | $14.50 | $33.75 | $210 | ~A$53 | 3.6/5 | Creative upscaling that adds new detail |
+| [Picsart](https://picsart.com) | ✓ | $15 | $15 | $45 | ~A$24 | 3.4/5 | Phone-first editing for social media |
+
+<details><summary>Details for each tool</summary>
+
+**Google Photos AI editing** (Google)
+- Plans: Free (15 GB shared Google storage; more with Google One/AI plans) · Free: Free
+- Strengths: 'Help me edit' by typing what you want (in Australia since Jan 2026); Magic Eraser, Unblur, Nano Banana restyles, Ask Photos
+- Watch out: Edited photos carry an AI-edit label; some tools Pixel-first
+- Australia: Help me edit available in Australia since Jan 2026
+- Platforms: Android, iOS, web
+- Privacy: As Google (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://techcrunch.com/2026/01/27/google-photos-brings-its-prompt-based-editing-feature-to-india-australia-and-japan/)
+
+**Adobe Photoshop** (Adobe)
+- Plans: Photography plan (Photoshop + Lightroom) $19.99 · Photoshop $22.99 · Creative Cloud $69.99; ~250 generative credits/month
+- Strengths: Generative Fill/Expand, Harmonize lighting match; runs Firefly plus partner models
+- Watch out: Generative credits run out; steep learning curve
+- Platforms: Windows, macOS, iPad, web
+- Privacy: Adobe says it doesn't train Firefly on your content (data: US)
+- Ratings: quality ●●●●● · value ●●●○○ · ease ●●○○○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://imagen-ai.com/valuable-tips/adobe-photography-plan-pricing/)
+
+**Topaz Labs** (Topaz Labs)
+- Plans: Gigapixel $149/yr · Photo AI $199/yr · Video AI $299/yr
+- Strengths: Runs on your computer; sharpens without inventing details
+- Watch out: Sold per year, per app
+- Platforms: Windows, macOS
+- Privacy: Processes locally (data: US)
+- Ratings: quality ●●●●● · value ●●●○○ · ease ●●●●○ · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://www.renderahouse.com/blog/topaz-ai-pricing)
+
+**Magnific (Freepik)** (Freepik)
+- Plans: Premium $14.50 · Premium+ $33.75 · Pro $210 (annual rates) · Free: Light, occasional use
+- Strengths: Generative upscaling; bundles image, video and audio generation and stock assets
+- Watch out: Invents detail, so not for faithful restoration
+- Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.renderahouse.com/blog/magnific-ai-pricing), [2](https://openart.ai/blog/best-ai-video-generators/)
+
+**Picsart** (Picsart)
+- Plans: Pro $15 (500 credits) · Ultra $45 · Free: Basic editor
+- Strengths: Background and object removal, batch edits, templates
+- Watch out: Lots of upsell prompts
+- Platforms: iOS, Android, web
+- Ratings: quality ●●●○○ · value ●●●○○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://wizcommerce.com/blog/picsart-pricing-plans-and-subscription-costs-guide/)
 
 </details>
 
@@ -343,97 +595,120 @@ _Make or edit pictures from a text description or a reference photo._
 
 _Short clips from text or images, plus talking-avatar video._
 
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
 |---|---|---|---|---|---|---|---|
-| [Google Veo 3.1 / Flow](https://labs.google/flow) | Google | ✗ | $19.99 | $19.99 | $199.99 | ~A$32 | Cinematic realism with native sound |
-| [Kling 3.0](https://kling.ai) | Kuaishou | ✓ | $10 | $37 | $180 | ~A$59 | Realistic people and motion at a good price |
-| [Runway Gen-4.5](https://runwayml.com) | Runway | ✓ | $15 | $35 | $95 | ~A$55 | Hands-on filmmaking control and editing |
-| [Seedance 2.5 (Dreamina / CapCut)](https://dreamina.capcut.com) | ByteDance | ✓ | $5 | $11 | $70 | ~A$17 | Ads and reference-heavy scenes; longest single clips |
-| [Luma Dream Machine (Ray 3.2)](https://lumalabs.ai) | Luma AI | ✓ | $30 | $30 | $300 | ~A$48 | Fast brainstorming; HDR output |
-| [Pika 2.5](https://pika.art) | Pika | ✓ | $10 | $10 | — | ~A$16 | Fun effects for TikTok/Reels |
-| [Hailuo / MiniMax H3](https://hailuoai.video) | MiniMax | ✓ | $10 | — | — | — | Cheap, fast clips with sound |
-| [Higgsfield](https://higgsfield.ai) | Higgsfield | ✗ | $9 | $43 | $129 | ~A$68 | Many video models under one subscription; ads and UGC-style clips |
-| [OpenArt](https://openart.ai) | OpenArt | ✓ | $14 | $34 | $56 | ~A$54 | Telling a story across many shots with the same characters |
-| [HeyGen](https://www.heygen.com) | HeyGen | ✓ | $29 | $29 | — | ~A$46 | Talking-avatar videos of you; translating videos |
-| [Synthesia](https://www.synthesia.io) | Synthesia | ✓ | $29 | $29 | — | ~A$46 | Training and explainer videos in many languages |
-| [Sora](https://openai.com/sora) ✖ discontinued | OpenAI | ✗ | — | — | — | — | — |
+| [Google Veo 3.1 / Flow](https://labs.google/flow) 🏅 _Best realism_ | ✗ | $19.99 | $19.99 | $199.99 | ~A$32 | 4.0/5 | Cinematic realism with native sound |
+| [Kling 3.0](https://kling.ai) 🏅 _Best value_ | ✓ | $10 | $37 | $180 | ~A$59 | 4.0/5 | Realistic people and motion at a good price |
+| [Runway Gen-4.5](https://runwayml.com) 🏅 _Most control_ | ✓ | $15 | $35 | $95 | ~A$55 | 3.4/5 | Hands-on filmmaking control and editing |
+| [Seedance 2.5 (Dreamina / CapCut)](https://dreamina.capcut.com) | ✓ | $5 | $11 | $70 | ~A$17 | 3.8/5 | Ads and reference-heavy scenes; longest single clips |
+| [Luma Dream Machine (Ray 3.2)](https://lumalabs.ai) | ✓ | $30 | $30 | $300 | ~A$48 | 3.6/5 | Fast brainstorming; HDR output |
+| [Pika 2.5](https://pika.art) | ✓ | $10 | $10 | — | ~A$16 | 3.6/5 | Fun effects for TikTok/Reels |
+| [Hailuo / MiniMax H3](https://hailuoai.video) | ✓ | $10 | — | — | — | 3.6/5 | Cheap, fast clips with sound |
+| [Higgsfield](https://higgsfield.ai) | ✗ | $9 | $43 | $129 | ~A$68 | 3.6/5 | Many video models under one subscription; ads and UGC-style clips |
+| [OpenArt](https://openart.ai) | ✓ | $14 | $34 | $56 | ~A$54 | 3.6/5 | Telling a story across many shots with the same characters |
+| [HeyGen](https://www.heygen.com) | ✓ | $29 | $29 | — | ~A$46 | 3.4/5 | Talking-avatar videos of you; translating videos |
+| [Synthesia](https://www.synthesia.io) | ✓ | $29 | $29 | — | ~A$46 | 3.6/5 | Training and explainer videos in many languages |
+| [Sora](https://openai.com/sora) ✖ discontinued | ✗ | — | — | — | — | — | — |
 
 <details><summary>Details for each tool</summary>
 
-**Google Veo 3.1 / Flow**
+**Google Veo 3.1 / Flow** (Google)
 - Plans: Via Google AI Pro $19.99 (limited) · full access on AI Ultra from $99.99
 - Strengths: Veo 3.1 4K with synced audio; Gemini Omni Flash tops blind-vote leaderboards (Sep 2026); Flow editor
 - Watch out: 8-second clips (extendable); Quality mode eats credits
 - Platforms: Gemini, Flow (web), YouTube Shorts
-- Privacy: As Gemini (data region: US)
+- Privacy: As Gemini (data: US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●○ · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://www.teamday.ai/blog/best-ai-video-models-2026), [2](https://openart.ai/blog/best-ai-video-generators/)
 
-**Kling 3.0**
+**Kling 3.0** (Kuaishou)
 - Plans: Standard ~$10 · Pro ~$37 · Premier ~$92 · Ultra ~$180 · Free: Daily free credits
 - Strengths: Native 4K, up to 15 s, multi-shot storyboards, optional audio
 - Watch out: Chinese company; queue times on free tier
 - Platforms: Web, iOS, Android
-- Privacy: Chinese company (data region: China)
+- Privacy: Chinese company (data: China)
+- Ratings: quality ●●●●● · value ●●●●● · ease ●●●●○ · privacy ●○○○○
+- Checked: 2026-09 · Sources: [1](https://www.layer3labs.io/guides/best-ai-video-generators), [2](https://www.teamday.ai/blog/best-ai-video-models-2026)
 
-**Runway Gen-4.5**
+**Runway Gen-4.5** (Runway)
 - Plans: Standard $15 ($12 annual) · Pro $35 · Max $95 · Free: 125 one-time credits
 - Strengths: Deepest editing toolkit; also runs Seedance, Kling, Veo, Wan
 - Watch out: $15 plan buys only ~52 s of Gen-4.5 video/month
 - Platforms: Web, iOS
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●○○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/)
 
-**Seedance 2.5 (Dreamina / CapCut)**
+**Seedance 2.5 (Dreamina / CapCut)** (ByteDance)
 - Plans: Dreamina Standard ~$5 (promo) · Pro $11 · Max $42 · Advanced $70 · Free: Some free credits
 - Strengths: 30-second clips with sound; up to 50 references; strong prompt adherence
 - Watch out: ByteDance (TikTok) ownership; credit math is confusing
 - Platforms: Web, CapCut, iOS, Android
-- Privacy: ByteDance (data region: China/Singapore)
+- Privacy: ByteDance (data: China/Singapore)
+- Ratings: quality ●●●●● · value ●●●●● · ease ●●●○○ · privacy ●○○○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/), [2](https://higgsfield.ai/blog/best-ai-video-generators-2026)
 
-**Luma Dream Machine (Ray 3.2)**
+**Luma Dream Machine (Ray 3.2)** (Luma AI)
 - Plans: Plus $30 ($25 annual) · Pro $90 · Ultra $300 · Free: Limited monthly generations
 - Strengths: Quick, good physics and skin; keyframes; HDR/EXR export
 - Watch out: No native audio
 - Platforms: Web, iOS
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/), [2](https://www.teamday.ai/blog/best-ai-video-models-2026)
 
-**Pika 2.5**
+**Pika 2.5** (Pika)
 - Plans: Starter $10 ($8 annual) · higher tiers · Free: Free, no monthly credits
 - Strengths: Quick stylised clips, effects, lip sync
 - Watch out: Not for realistic or long footage
 - Platforms: Web, iOS
+- Ratings: quality ●●●○○ · value ●●●●○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/)
 
-**Hailuo / MiniMax H3**
+**Hailuo / MiniMax H3** (MiniMax)
 - Plans: Free · paid from ~$10 · Free: Free credits
 - Strengths: MiniMax H3 is top-4 for video with audio; open weights; quick turnaround
 - Watch out: Chinese company
 - Platforms: Web, iOS, Android
-- Privacy: Chinese company (data region: China)
+- Privacy: Chinese company (data: China)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●○ · privacy ●○○○○
+- Checked: 2026-09 · Sources: [1](https://www.teamday.ai/blog/best-ai-video-models-2026)
 
-**Higgsfield**
+**Higgsfield** (Higgsfield)
 - Plans: Basic $9 · Pro $43 ($23 annual) · Ultra $129
 - Strengths: Runs Seedance, Veo, Kling and 25+ others; character consistency and camera controls
 - Watch out: Aggregator markup; aggressive marketing
 - Platforms: Web, iOS
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/)
 
-**OpenArt**
+**OpenArt** (OpenArt)
 - Plans: Starter $14 · Plus $34 · Pro $56 · Free: 7-day trial
 - Strengths: Director mode builds videos up to 5 minutes; Seedance, Veo, Kling, Wan in one place
 - Watch out: Aggregator; credits vary by model
 - Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/)
 
-**HeyGen**
+**HeyGen** (HeyGen)
 - Plans: Free · Creator $29 ($24 annual) · Free: 3 videos/month
 - Strengths: Avatars, voice cloning and translation into 175+ languages
 - Watch out: Cloning your own likeness needs care
 - Platforms: Web, iOS
-- Privacy: Biometric (face/voice) data (data region: US)
+- Privacy: Biometric (face/voice) data (data: US)
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/)
 
-**Synthesia**
+**Synthesia** (Synthesia)
 - Plans: Free · Starter $29 ($18 annual) · Free: 10 min/month
 - Strengths: 160+ languages from one script; business-grade
 - Watch out: Avatars look corporate
 - Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://openart.ai/blog/best-ai-video-generators/)
 
-**Sora** ✖ discontinued
+**Sora** (OpenAI) ✖ discontinued
 - Plans: Discontinued
 - Watch out: App and web shut 26 Apr 2026; API removed 24 Sep 2026. Use Veo, Kling or Seedance instead
+- Checked: 2026-09 · Sources: [1](https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/)
 
 </details>
 
@@ -441,236 +716,97 @@ _Short clips from text or images, plus talking-avatar video._
 
 _Songs, voiceovers, voice cloning and speech-to-text._
 
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
 |---|---|---|---|---|---|---|---|
-| [Suno v5.5](https://suno.com) | Suno | ✓ | $10 | $10 | $30 | ~A$16 | Full songs with vocals and lyrics |
-| [Udio](https://www.udio.com) | Udio | ✓ | $10 | $10 | $30 | ~A$16 | Polished electronic/ambient tracks; cleanest licensing |
-| [ElevenLabs](https://elevenlabs.io) | ElevenLabs | ✓ | $6 | $22 | $299 | ~A$35 | Voiceovers, audiobooks, voice cloning, licensed music |
-| [AIVA](https://www.aiva.ai) | AIVA | ✓ | $15 | $15 | $49 | ~A$24 | Orchestral and film-style instrumental music |
-| [Wispr Flow](https://wisprflow.ai) | Wispr | ✓ | $15 | $15 | $15 | ~A$24 | Dictating instead of typing, in any app |
+| [Suno v5.5](https://suno.com) 🏅 _Best for songs_ | ✓ | $10 | $10 | $30 | ~A$16 | 4.6/5 | Full songs with vocals and lyrics |
+| [Udio](https://www.udio.com) | ✓ | $10 | $10 | $30 | ~A$16 | 3.6/5 | Polished electronic/ambient tracks; cleanest licensing |
+| [ElevenLabs](https://elevenlabs.io) 🏅 _Best voices_ | ✓ | $6 | $22 | $299 | ~A$35 | 4.2/5 | Voiceovers, audiobooks, voice cloning, licensed music |
+| [AIVA](https://www.aiva.ai) | ✓ | $15 | $15 | $49 | ~A$24 | 3.6/5 | Orchestral and film-style instrumental music |
+| [Wispr Flow](https://wisprflow.ai) 🏅 _Best dictation_ | ✓ | $15 | $15 | $15 | ~A$24 | 4.4/5 | Dictating instead of typing, in any app |
 
 <details><summary>Details for each tool</summary>
 
-**Suno v5.5**
+**Suno v5.5** (Suno)
 - Plans: Pro $10 ($8 annual) · Premier $30 ($24 annual) · Free: 50 credits/day (~10 songs), non-commercial
 - Strengths: Most natural vocals; songs up to 8 min; stems; Suno Studio; voice cloning on Pro
 - Watch out: Lost a German (GEMA) copyright case Jul 2026 — care with commercial release in Europe
 - Platforms: Web, iOS, Android
+- Ratings: quality ●●●●● · value ●●●●● · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://felloai.com/best-ai-music-generators/), [2](https://www.layer3labs.io/guides/suno-explained)
 
-**Udio**
+**Udio** (Udio)
 - Plans: Standard $10 · Pro $30 · Free: 10 credits/day + 100/month
 - Strengths: Licensing deal with UMG
 - Watch out: Song downloads paused while it moves to a licensed model
 - Platforms: Web, iOS
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://felloai.com/best-ai-music-generators/)
 
-**ElevenLabs**
+**ElevenLabs** (ElevenLabs)
 - Plans: Starter $6 · Creator $22 · Pro $99 · Scale $299 · Business $990 · Free: Small monthly allowance
 - Strengths: Most realistic text-to-speech; voice cloning; ElevenLabs Music v2.5 cleared for commercial use; dubbing
 - Watch out: Character credits run out quickly on long audio
 - Platforms: Web, iOS, Android, ElevenReader app
-- Privacy: Voice data is biometric — clone only your own voice (data region: US/UK)
+- Privacy: Voice data is biometric — clone only your own voice (data: US/UK)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://costbench.com/software/ai-voice-tools/elevenlabs/), [2](https://felloai.com/best-ai-music-generators/)
 
-**AIVA**
+**AIVA** (AIVA)
 - Plans: Standard $15 · Pro $49 (full copyright) · Free: Limited rights
 - Strengths: MIDI export; you own the copyright on Pro
 - Watch out: No vocals
 - Platforms: Web, desktop
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://felloai.com/best-ai-music-generators/)
 
-**Wispr Flow**
+**Wispr Flow** (Wispr)
 - Plans: Pro $15 ($12 annual) · Free: 2,000 words/week
 - Strengths: Cleans up filler words and formats as you speak; works everywhere on desktop and phone
 - Watch out: Audio processed in the cloud
 - Platforms: macOS, Windows, iOS, Android
-- Privacy: Cloud processing; privacy mode available (data region: US)
+- Privacy: Cloud processing; privacy mode available (data: US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-08 · Sources: [1](https://zackproser.com/blog/wisprflow-pricing-guide-2026)
 
 </details>
 
-## Coding assistants
+## Slides, documents & design
 
-_AI that writes, edits and reviews code in your editor or terminal._
+_Decks, documents and social graphics generated from a prompt._
 
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
 |---|---|---|---|---|---|---|---|
-| [Claude Code](https://claude.com/product/claude-code) | Anthropic | ✗ | $20 | $20 | $200 | ~A$32 | Big multi-file changes and long agent tasks |
-| [OpenAI Codex](https://openai.com/codex) | OpenAI | ✓ | $8 | $20 | $200 | ~A$32 | ChatGPT subscribers; cloud sandboxes |
-| [GitHub Copilot](https://github.com/features/copilot) | GitHub (Microsoft) | ✓ | $10 | $10 | $100 | ~A$16 | Cheapest serious option; works in any editor |
-| [Cursor](https://cursor.com) | Anysphere | ✓ | $20 | $20 | $200 | ~A$32 | An AI-first editor for everyday coding |
-| [Devin Desktop (ex-Windsurf)](https://devin.ai) | Cognition | ✓ | $20 | $20 | $200 | ~A$32 | Cursor alternative with Devin agent built in |
-| [Kiro](https://kiro.dev) | Amazon (AWS) | ✓ | $20 | $20 | $200 | ~A$32 | Planning requirements before writing code |
-| [Google Antigravity](https://antigravity.google) | Google | ✓ | $19.99 | $19.99 | $199.99 | ~A$32 | Free agent-first coding with Gemini |
-| [Zed](https://zed.dev) | Zed Industries | ✓ | $10 | $10 | — | ~A$16 | Fast, lightweight editor with AI |
-| [Cline / OpenCode](https://opencode.ai) | Open source | ✓ | — | — | — | — | No subscription; use any model, including local ones |
+| [Canva AI](https://www.canva.com/ai) 🏅 _Best all-round design_ | ✓ | $15 | $15 | $25 | ~A$24 | 4.2/5 | Social posts, presentations, documents and designs |
+| [Gamma](https://gamma.app) 🏅 _Fastest decks_ | ✓ | $10 | $20 | $20 | ~A$32 | 4.2/5 | Fastest good-looking deck from a prompt or document |
+| [Beautiful.ai](https://www.beautiful.ai) | ✗ | $12 | $12 | $50 | ~A$19 | 3.6/5 | Tidy, on-brand business slides |
 
 <details><summary>Details for each tool</summary>
 
-**Claude Code**
-- Plans: Included in Claude Pro $20 · Max $100/$200
-- Strengths: Top of most agentic-coding benchmarks; terminal, VS Code, JetBrains, web, mobile
-- Watch out: Pro limits run out fast on heavy use; Claude models only
-- Platforms: Terminal, VS Code, JetBrains, web, iOS, Android
-- Privacy: As Claude (data region: US)
+**Canva AI** (Canva)
+- Plans: Free · Pro $15 ($120/yr; 2,000 standard AI uses/month) · Business $25/user · Free: Limited AI uses on free plan
+- Strengths: AI inside a full design tool; templates; Australian company
+- Watch out: Not the best raw image model
+- Australia: Australian company (Sydney)
+- Platforms: Web, Windows, macOS, iOS, Android
+- Privacy: Training opt-out in settings (data: AU)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.eesel.ai/blog/canva-ai-pricing), [2](https://costbench.com/software/ai-image-generators/canva-ai/)
 
-**OpenAI Codex**
-- Plans: Included in ChatGPT Go/Plus/Pro/Business · Free: Limited, with ChatGPT Free
-- Strengths: GPT-6.1 Sol/Astra; open-source CLI; runs tasks in isolated cloud sandboxes
-- Watch out: Usage metered per 5-hour window
-- Platforms: Terminal, IDE, web, ChatGPT app
-- Privacy: As ChatGPT (data region: US)
-
-**GitHub Copilot**
-- Plans: Pro $10 ($15 credits) · Pro+ $39 ($70) · Max $100 ($200) · Business $19/seat · Free: 2,000 completions + limited chat/month
-- Strengths: Unlimited completions on paid plans; choose Claude, GPT, Gemini, Grok; runs Claude Code and Codex agents
-- Watch out: Switched to per-token AI Credits on 1 Jun 2026 — heavy agent use can overrun
-- Platforms: VS Code, JetBrains, Neovim, Xcode, CLI, github.com
-- Privacy: Individuals can opt out of training (data region: US)
-
-**Cursor**
-- Plans: Pro $20 · Pro+ $60 (3x) · Ultra $200 (20x) · Teams $40/seat · Free: Hobby: limited agent + tab
-- Strengths: Polished VS Code-based editor; many models; background agents; CLI
-- Watch out: Usage-based overages after the included allowance
-- Platforms: Windows, macOS, Linux, CLI
-- Privacy: Privacy mode available (data region: US)
-
-**Devin Desktop (ex-Windsurf)**
-- Plans: Pro $20 · Max $200 · Teams $40/seat · Free: Unlimited tab, light agent quota
-- Strengths: Generous free autocomplete
-- Watch out: Renamed from Windsurf 2 Jun 2026
-- Platforms: Windows, macOS, Linux, JetBrains plugin
-
-**Kiro**
-- Plans: Pro $20 · up to $200 · Free: 50 credits
-- Strengths: Spec-driven development
-- Watch out: AWS-flavoured
-- Platforms: Windows, macOS, Linux
-
-**Google Antigravity**
-- Plans: Free · higher limits with Google AI plans · Free: Free with weekly compute cap
-- Strengths: Multiple agents across your codebase; CLI version
-- Watch out: Gemini Code Assist individual tier closed Jun 2026
-- Platforms: Windows, macOS, Linux, CLI
-- Privacy: As Google (data region: US)
-
-**Zed**
-- Plans: Pro $10 · Free: 2,000 edit predictions/month
-- Strengths: Very fast; open source; bring your own keys
-- Watch out: Smaller extension ecosystem than VS Code
-- Platforms: macOS, Linux, Windows
-- Privacy: Open source (data region: US)
-
-**Cline / OpenCode**
-- Plans: Free (bring your own API key or local model) · Free: Free; pay your model provider
-- Strengths: Open source; provider-independent
-- Watch out: API bills can exceed a flat subscription
-- Platforms: VS Code (Cline), terminal (OpenCode)
-- Privacy: Fully local possible (data region: —)
-
-</details>
-
-## No-code app & website builders
-
-_Describe an app or site in plain English and get a working one._
-
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
-|---|---|---|---|---|---|---|---|
-| [Lovable](https://lovable.dev) | Lovable | ✓ | $25 | $25 | $50 | ~A$40 | Best-looking web app prototypes |
-| [Bolt.new](https://bolt.new) | StackBlitz | ✓ | $25 | $25 | $200 | ~A$40 | Fastest prompt-to-prototype |
-| [Replit](https://replit.com) | Replit | ✓ | $20 | $20 | $100 | ~A$32 | Build and host an app in one place |
-| [v0](https://v0.app) | Vercel | ✓ | $20 | $30 | $100 | ~A$48 | Website and UI design generation |
-| [Base44](https://base44.com) | Wix | ✓ | $16 | $20 | — | ~A$32 | Cheapest capable app builder |
-
-<details><summary>Details for each tool</summary>
-
-**Lovable**
-- Plans: Pro $25 · Business $50 · Free: 5 messages/day
-- Strengths: Polished design out of the box; Supabase backend; GitHub export
-- Watch out: Hosting and in-app AI now share your credit balance
+**Gamma** (Gamma)
+- Plans: Plus ~$10 · Pro ~$20 · Team $20/seat · Free: 400 one-time credits, PowerPoint export
+- Strengths: Decks, documents and one-page websites in about a minute; exports to PowerPoint/Google Slides
+- Watch out: Layouts can feel samey; fine-tuning is fiddlier than PowerPoint
 - Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://zapier.com/blog/best-ai-presentation-maker/)
 
-**Bolt.new**
-- Plans: Pro $25 · up to $200 · Teams $30/member · Free: 1M tokens/month
-- Strengths: Runs full-stack apps in the browser; export or GitHub
-- Watch out: Token usage climbs fast when fixing bugs
+**Beautiful.ai** (Beautiful.ai)
+- Plans: Pro $12 (annual) or $45 month-to-month · Team $40–50/user · one presentation $45
+- Strengths: Smart slides that keep layout rules as you edit
+- Watch out: Monthly billing is almost 4x the annual price
 - Platforms: Web
-
-**Replit**
-- Plans: Core $20 ($18 annual) · Pro $100 · Free: Daily agent credits, 1 published app
-- Strengths: Agent builds, tests and deploys; database and hosting included
-- Watch out: Effort-based agent pricing; heavy users report $100–300/month extra
-- Platforms: Web, iOS, Android
-
-**v0**
-- Plans: Premium $20 · Team $30/user · Business $100/user · Free: $5 credits/month
-- Strengths: Best-in-class React UI; one-click Vercel deploy
-- Watch out: Front-end focused
-- Platforms: Web
-
-**Base44**
-- Plans: From $16 (annual) / $20 monthly · Free: 25 messages/month
-- Strengths: Backend, login and database built in
-- Watch out: Web apps only
-- Platforms: Web
-
-</details>
-
-## AI browsers
-
-_Web browsers with an assistant built in, some able to click around for you._
-
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
-|---|---|---|---|---|---|---|---|
-| [Comet](https://www.perplexity.ai/comet) | Perplexity | ✓ | — | — | — | — | Best free agentic browser |
-| [Chrome with Gemini](https://www.google.com/chrome/) | Google | ✓ | $19.99 | $19.99 | $199.99 | ~A$32 | Staying on Chrome |
-| [Microsoft Edge](https://www.microsoft.com/edge) | Microsoft | ✓ | — | — | — | — | Microsoft 365 users |
-| [Dia](https://www.diabrowser.com) | The Browser Company (Atlassian) | ✓ | $20 | $20 | $20 | ~A$32 | Mac users who want the most polished design |
-| [Brave Leo](https://brave.com/leo/) | Brave | ✓ | $14.99 | $14.99 | $14.99 | ~A$24 | Privacy first |
-| [Opera Neon](https://www.operaneon.com) | Opera | ✗ | $19.90 | $19.90 | $19.90 | ~A$32 | Running several web agents at once |
-| [ChatGPT Atlas](https://chatgpt.com/atlas) ✖ discontinued | OpenAI | ✗ | — | — | — | — | — |
-
-<details><summary>Details for each tool</summary>
-
-**Comet**
-- Plans: Free (more with Perplexity Pro/Max) · Free: Free, including the agent
-- Strengths: Agent clicks through sites for you; research and shopping; Mac, Windows, iOS, Android
-- Watch out: Most-studied for prompt-injection attacks — don't let it near banking
-- Platforms: macOS, Windows, iOS, Android
-- Privacy: As Perplexity (data region: US)
-
-**Chrome with Gemini**
-- Plans: Free · 'auto browse' agent needs AI Pro/Ultra (US only) · Free: Gemini in Chrome free
-- Strengths: Biggest extension ecosystem; Gemini knows your tabs
-- Watch out: The agent that completes tasks is paywalled and US-only
-- Platforms: Windows, macOS, Linux, Android, iOS
-- Privacy: As Google (data region: US)
-
-**Microsoft Edge**
-- Plans: Free · Free: Free
-- Strengths: Copilot built in: multi-tab reasoning, Journeys, voice and vision
-- Watch out: Copilot Mode retired as a separate mode in May 2026; weaker at completing tasks than Comet
-- Platforms: Windows, macOS, Linux, iOS, Android
-- Privacy: As Microsoft (data region: US)
-
-**Dia**
-- Plans: Free · $20 for unlimited AI · Free: Free
-- Strengths: Arc's sidebar and tab features with AI chat and reusable 'Skills'
-- Watch out: macOS only (Windows 'coming soon')
-- Platforms: macOS
-
-**Brave Leo**
-- Plans: Free · Leo Premium $14.99 · Free: Free
-- Strengths: No account needed; chats not stored or used for training
-- Watch out: Doesn't complete tasks for you
-- Platforms: Windows, macOS, Linux, iOS, Android
-- Privacy: Best in category (data region: US)
-
-**Opera Neon**
-- Plans: $19.90/month
-- Strengths: Agentic tasks run in parallel
-- Watch out: Only paid AI browser; desktop only
-- Platforms: Windows, macOS
-
-**ChatGPT Atlas** ✖ discontinued
-- Plans: Discontinued
-- Watch out: Stopped working 9 Aug 2026; replaced by the ChatGPT Chrome extension
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://guptadeepak.com/tools/top-5-ai-presentation-tools-2026/)
 
 </details>
 
@@ -678,64 +814,380 @@ _Web browsers with an assistant built in, some able to click around for you._
 
 _Grammar help, meeting notes, email and note-taking with AI._
 
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
 |---|---|---|---|---|---|---|---|
-| [Grammarly](https://www.grammarly.com) | Superhuman (ex-Grammarly) | ✓ | $12 | $30 | $30 | ~A$48 | Grammar and tone everywhere you type |
-| [Notion AI](https://www.notion.com/product/ai) | Notion | ✓ | $20 | $20 | — | ~A$32 | AI over your own notes, docs and wikis |
-| [Granola](https://www.granola.ai) | Granola | ✓ | $14 | $14 | $35 | ~A$22 | Meeting notes without a bot joining the call |
-| [Otter.ai](https://otter.ai) | Otter.ai | ✓ | $16.99 | $16.99 | $30 | ~A$27 | Live transcripts of Zoom/Teams/Meet |
-| [Fathom](https://fathom.video) | Fathom | ✓ | $20 | $20 | $34 | ~A$32 | Free meeting recorder |
-| [Plaud Note](https://www.plaud.ai) | Plaud | ✓ | $17.99 | $17.99 | $29.99 | ~A$28 | In-person meetings, site visits and phone calls |
-| [Superhuman Mail](https://superhuman.com) | Superhuman | ✗ | $30 | $30 | $40 | ~A$48 | Email power users |
+| [Grammarly](https://www.grammarly.com) 🏅 _Best writing help_ | ✓ | $12 | $30 | $30 | ~A$48 | 3.8/5 | Grammar and tone everywhere you type |
+| [Notion AI](https://www.notion.com/product/ai) | ✓ | $20 | $20 | $20 | ~A$32 | 3.8/5 | AI over your own notes, docs and wikis |
+| [Granola](https://www.granola.ai) 🏅 _Best meeting notes_ | ✓ | $14 | $14 | $35 | ~A$22 | 4.6/5 | Meeting notes without a bot joining the call |
+| [Otter.ai](https://otter.ai) | ✓ | $16.99 | $16.99 | $30 | ~A$27 | 3.8/5 | Live transcripts of Zoom/Teams/Meet |
+| [Fathom](https://fathom.video) | ✓ | $20 | $20 | $34 | ~A$32 | 4.2/5 | Free meeting recorder |
+| [Plaud Note](https://www.plaud.ai) | ✓ | $17.99 | $17.99 | $29.99 | ~A$28 | 3.8/5 | In-person meetings, site visits and phone calls |
+| [Superhuman Mail](https://superhuman.com) | ✗ | $30 | $30 | $40 | ~A$48 | 3.4/5 | Email power users |
 
 <details><summary>Details for each tool</summary>
 
-**Grammarly**
+**Grammarly** (Superhuman (ex-Grammarly))
 - Plans: Pro $30 monthly or $144/yr ($12/mo) · Free: Basic grammar and spelling
 - Strengths: Works in every app and browser; AI rewrites; plagiarism and AI detection
 - Watch out: Monthly billing is 2.5x the annual price
 - Platforms: Windows, macOS, browsers, iOS, Android
-- Privacy: Says it doesn't sell data (data region: US)
+- Privacy: Says it doesn't sell data (data: US)
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.eesel.ai/blog/grammarly-pricing)
 
-**Notion AI** _(unverified)_
-- Plans: Full AI included with Business (~$20/user) · Free: Limited trial
+**Notion AI** (Notion)
+- Plans: Full AI in Business $20/user (~20% off yearly); Free and Plus ($10) get a capped trial; Custom Agents $10 per 1,000 credits · Free: Limited trial
 - Strengths: Search across Notion and connected apps; meeting notes; agents
 - Watch out: Full AI no longer sold as a cheap add-on
 - Platforms: Web, Windows, macOS, iOS, Android
-- Privacy: No training on customer data (data region: US)
+- Privacy: No training on customer data (data: US)
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://www.eesel.ai/blog/notion-pricing)
 
-**Granola**
+**Granola** (Granola)
 - Plans: Business $14/user · Enterprise $35/user · Free: Basic free
 - Strengths: Records from your computer; you add notes, AI fills them in
 - Watch out: You still need participants' consent
 - Platforms: macOS, Windows, iOS, Android, web
-- Privacy: No bot; audio not stored (data region: UK/US)
+- Privacy: No bot; audio not stored (data: UK/US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●● · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://www.meetjamie.ai/blog/best-ai-note-takers-for-students)
 
-**Otter.ai**
+**Otter.ai** (Otter.ai)
 - Plans: Pro $16.99 · Business $30/user · Free: Limited minutes
 - Strengths: Bot joins and transcribes; searchable archive
 - Watch out: Bot in meetings can annoy people
 - Platforms: Web, macOS, Windows, iOS, Android
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.meetjamie.ai/blog/best-ai-note-takers-for-students)
 
-**Fathom**
+**Fathom** (Fathom)
 - Plans: Premium $20 · Team $19 · Business $34 · Free: Generous free plan
 - Strengths: Strong free tier; summaries and action items
 - Watch out: Desktop only (iPhone app on waitlist)
 - Platforms: macOS, Windows
-- Privacy: Shows recording notice (data region: US)
+- Privacy: Shows recording notice (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.meetjamie.ai/blog/best-ai-note-takers-for-students)
 
-**Plaud Note**
+**Plaud Note** (Plaud)
 - Plans: Device from $159 · Pro $17.99 · Unlimited $29.99 · Free: 300 min/month with device
 - Strengths: Pocket hardware recorder; summaries by AI
 - Watch out: Requires buying the device
 - Platforms: Device + iOS, Android, web, desktop
-- Privacy: ISO 27001; EU storage option (data region: US/EU)
+- Privacy: ISO 27001; EU storage option (data: US/EU)
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://www.meetjamie.ai/blog/best-ai-note-takers-for-students)
 
-**Superhuman Mail**
+**Superhuman Mail** (Superhuman)
 - Plans: $30–33/user · Business $40
 - Strengths: AI drafts in your voice; Ask AI over your inbox; very fast
 - Watch out: Expensive for email
 - Platforms: Web, macOS, Windows, iOS, Android
+- Ratings: quality ●●●●○ · value ●●○○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://costbench.com/software/ai-productivity/superhuman/)
+
+</details>
+
+## Learning & study
+
+_Tutors that teach instead of just giving answers, and language practice._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [Khanmigo](https://www.khanmigo.ai) 🏅 _Best tutor for kids_ | ✗ | $4 | $4 | $4 | ~A$6 | 4.2/5 | Kids and teens learning maths and science |
+| [ChatGPT Study Mode](https://chatgpt.com) 🏅 _Best free_ | ✓ | — | — | — | — | 4.2/5 | Free step-by-step help with any subject |
+| [Duolingo Max](https://www.duolingo.com/max) 🏅 _Best for languages_ | ✓ | $84/yr | $168/yr | $168/yr | ~A$266/yr | 3.8/5 | Speaking practice in a new language |
+
+<details><summary>Details for each tool</summary>
+
+**Khanmigo** (Khan Academy)
+- Plans: $4/month for learners and parents (non-profit)
+- Strengths: Socratic tutor that guides rather than gives answers; built on Khan Academy lessons
+- Watch out: US-centric curriculum
+- Platforms: Web, iOS, Android
+- Privacy: Non-profit; child-safety focused (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://aitutor.courses/articles/best-ai-tutor-apps/)
+
+**ChatGPT Study Mode** (OpenAI)
+- Plans: Free (more use with Go/Plus) · Free: Free for everyone
+- Strengths: Asks questions to check understanding; interactive maths and science visuals
+- Watch out: Easy to switch off and just get answers
+- Platforms: ChatGPT apps
+- Privacy: As ChatGPT (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://theairankings.com/best-ai-for-homework/)
+
+**Duolingo Max** (Duolingo)
+- Plans: Super ~$84/yr · Max $168/yr (AI video calls and role-play) · Free: Free app with ads
+- Strengths: Video Call with an AI character; Explain My Answer; roleplay
+- Watch out: Max features limited to some languages
+- Platforms: iOS, Android, web
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://aitutor.courses/articles/best-ai-tutor-apps/)
+
+</details>
+
+## Translation
+
+_Translate text, documents and live conversations._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [DeepL](https://www.deepl.com) 🏅 _Best quality_ | ✓ | $8.74 | $10.49 | $34.49 | ~A$17 | 4.6/5 | Most natural translations of text and documents |
+| [Google Translate](https://translate.google.com) 🏅 _Best free / travel_ | ✓ | — | — | — | — | 4.0/5 | Travel: camera, conversation and offline translation |
+
+<details><summary>Details for each tool</summary>
+
+**DeepL** (DeepL)
+- Plans: Individual from $8.74 (annual) · Starter $10.49 · Advanced $34.49 · Free: 1,500 characters per request, 3 files/month
+- Strengths: Best quality for European languages; keeps document formatting; DeepL Write
+- Watch out: 33 languages vs Google's 130+
+- Platforms: Web, Windows, macOS, iOS, Android
+- Privacy: Paid plans delete texts after translation (data: EU)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●● · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://fast.io/resources/best-ai-translation-apps-2026/), [2](https://checkthat.ai/brands/deepl/pricing)
+
+**Google Translate** (Google)
+- Plans: Free · Free: Free
+- Strengths: 130+ languages; live conversation mode; offline packs; camera translation
+- Watch out: Less natural than DeepL for long text
+- Platforms: Android, iOS, web, Chrome
+- Privacy: As Google (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://translatepress.com/deepl-vs-google-translate-comparison/)
+
+</details>
+
+## Coding assistants
+
+_AI that writes, edits and reviews code in your editor or terminal._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [Claude Code](https://claude.com/product/claude-code) 🏅 _Most capable_ | ✗ | $20 | $20 | $200 | ~A$32 | 4.2/5 | Big multi-file changes and long agent tasks |
+| [OpenAI Codex](https://openai.com/codex) | ✓ | $8 | $20 | $200 | ~A$32 | 4.2/5 | ChatGPT subscribers; cloud sandboxes |
+| [GitHub Copilot](https://github.com/features/copilot) 🏅 _Best value_ | ✓ | $10 | $10 | $100 | ~A$16 | 4.0/5 | Cheapest serious option; works in any editor |
+| [Cursor](https://cursor.com) 🏅 _Best AI editor_ | ✓ | $20 | $20 | $200 | ~A$32 | 4.0/5 | An AI-first editor for everyday coding |
+| [Devin Desktop (ex-Windsurf)](https://devin.ai) | ✓ | $20 | $20 | $200 | ~A$32 | 3.6/5 | Cursor alternative with Devin agent built in |
+| [Kiro](https://kiro.dev) | ✓ | $20 | $20 | $200 | ~A$32 | 3.6/5 | Planning requirements before writing code |
+| [Google Antigravity](https://antigravity.google) | ✓ | $19.99 | $19.99 | $199.99 | ~A$32 | 3.6/5 | Free agent-first coding with Gemini |
+| [Zed](https://zed.dev) | ✓ | $10 | $10 | — | ~A$16 | 4.0/5 | Fast, lightweight editor with AI |
+| [Cline / OpenCode](https://opencode.ai) | ✓ | — | — | — | — | 3.8/5 | No subscription; use any model, including local ones |
+
+<details><summary>Details for each tool</summary>
+
+**Claude Code** (Anthropic)
+- Plans: Included in Claude Pro $20 · Max $100/$200
+- Strengths: Top of most agentic-coding benchmarks; terminal, VS Code, JetBrains, web, mobile
+- Watch out: Pro limits run out fast on heavy use; Claude models only
+- Platforms: Terminal, VS Code, JetBrains, web, iOS, Android
+- Privacy: As Claude (data: US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●○○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared)
+
+**OpenAI Codex** (OpenAI)
+- Plans: Included in ChatGPT Go/Plus/Pro/Business · Free: Limited, with ChatGPT Free
+- Strengths: GPT-6.1 Sol/Astra; open-source CLI; runs tasks in isolated cloud sandboxes
+- Watch out: Usage metered per 5-hour window
+- Platforms: Terminal, IDE, web, ChatGPT app
+- Privacy: As ChatGPT (data: US)
+- Ratings: quality ●●●●● · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.morphllm.com/codex-pricing)
+
+**GitHub Copilot** (GitHub (Microsoft))
+- Plans: Pro $10 ($15 credits) · Pro+ $39 ($70) · Max $100 ($200) · Business $19/seat · Free: 2,000 completions + limited chat/month
+- Strengths: Unlimited completions on paid plans; choose Claude, GPT, Gemini, Grok; runs Claude Code and Codex agents
+- Watch out: Switched to per-token AI Credits on 1 Jun 2026 — heavy agent use can overrun
+- Platforms: VS Code, JetBrains, Neovim, Xcode, CLI, github.com
+- Privacy: Individuals can opt out of training (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.nocode.mba/articles/github-copilot-pricing), [2](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared)
+
+**Cursor** (Anysphere)
+- Plans: Pro $20 · Pro+ $60 (3x) · Ultra $200 (20x) · Teams $40/seat · Free: Hobby: limited agent + tab
+- Strengths: Polished VS Code-based editor; many models; background agents; CLI
+- Watch out: Usage-based overages after the included allowance
+- Platforms: Windows, macOS, Linux, CLI
+- Privacy: Privacy mode available (data: US)
+- Ratings: quality ●●●●● · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://sessionwatcher.com/guides/how-much-does-cursor-cost)
+
+**Devin Desktop (ex-Windsurf)** (Cognition)
+- Plans: Pro $20 · Max $200 · Teams $40/seat · Free: Unlimited tab, light agent quota
+- Strengths: Generous free autocomplete
+- Watch out: Renamed from Windsurf 2 Jun 2026
+- Platforms: Windows, macOS, Linux, JetBrains plugin
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.therundown.ai/tools/codeium-windsurf)
+
+**Kiro** (Amazon (AWS))
+- Plans: Pro $20 · up to $200 · Free: 50 credits
+- Strengths: Spec-driven development
+- Watch out: AWS-flavoured
+- Platforms: Windows, macOS, Linux
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared)
+
+**Google Antigravity** (Google)
+- Plans: Free · higher limits with Google AI plans · Free: Free with weekly compute cap
+- Strengths: Multiple agents across your codebase; CLI version
+- Watch out: Gemini Code Assist individual tier closed Jun 2026
+- Platforms: Windows, macOS, Linux, CLI
+- Privacy: As Google (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●○○ · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://pinggy.io/blog/best_ai_tools_for_coding/)
+
+**Zed** (Zed Industries)
+- Plans: Pro $10 · Free: 2,000 edit predictions/month
+- Strengths: Very fast; open source; bring your own keys
+- Watch out: Smaller extension ecosystem than VS Code
+- Platforms: macOS, Linux, Windows
+- Privacy: Open source (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●●○
+- Checked: 2026-09 · Sources: [1](https://pinggy.io/blog/best_ai_tools_for_coding/)
+
+**Cline / OpenCode** (Open source)
+- Plans: Free (bring your own API key or local model) · Free: Free; pay your model provider
+- Strengths: Open source; provider-independent
+- Watch out: API bills can exceed a flat subscription
+- Platforms: VS Code (Cline), terminal (OpenCode)
+- Privacy: Fully local possible (data: —)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●○○○ · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://pinggy.io/blog/best_ai_tools_for_coding/)
+
+</details>
+
+## No-code app & website builders
+
+_Describe an app or site in plain English and get a working one._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [Lovable](https://lovable.dev) 🏅 _Best-looking apps_ | ✓ | $25 | $25 | $50 | ~A$40 | 3.8/5 | Best-looking web app prototypes |
+| [Bolt.new](https://bolt.new) | ✓ | $25 | $25 | $200 | ~A$40 | 3.6/5 | Fastest prompt-to-prototype |
+| [Replit](https://replit.com) 🏅 _Build and host_ | ✓ | $20 | $20 | $100 | ~A$32 | 3.6/5 | Build and host an app in one place |
+| [v0](https://v0.app) | ✓ | $20 | $30 | $100 | ~A$48 | 3.8/5 | Website and UI design generation |
+| [Base44](https://base44.com) | ✓ | $16 | $20 | — | ~A$32 | 3.6/5 | Cheapest capable app builder |
+
+<details><summary>Details for each tool</summary>
+
+**Lovable** (Lovable)
+- Plans: Pro $25 · Business $50 · Free: 5 messages/day
+- Strengths: Polished design out of the box; Supabase backend; GitHub export
+- Watch out: Hosting and in-app AI now share your credit balance
+- Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.totalum.app/blog/replit-alternative-2026)
+
+**Bolt.new** (StackBlitz)
+- Plans: Pro $25 · up to $200 · Teams $30/member · Free: 1M tokens/month
+- Strengths: Runs full-stack apps in the browser; export or GitHub
+- Watch out: Token usage climbs fast when fixing bugs
+- Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.totalum.app/blog/replit-alternative-2026)
+
+**Replit** (Replit)
+- Plans: Core $20 ($18 annual) · Pro $100 · Free: Daily agent credits, 1 published app
+- Strengths: Agent builds, tests and deploys; database and hosting included
+- Watch out: Effort-based agent pricing; heavy users report $100–300/month extra
+- Platforms: Web, iOS, Android
+- Ratings: quality ●●●●○ · value ●●●○○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.appypie.com/blog/best-ai-app-builders)
+
+**v0** (Vercel)
+- Plans: Premium $20 · Team $30/user · Business $100/user · Free: $5 credits/month
+- Strengths: Best-in-class React UI; one-click Vercel deploy
+- Watch out: Front-end focused
+- Platforms: Web
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.layer3labs.io/comparisons/replit-alternatives)
+
+**Base44** (Wix)
+- Plans: From $16 (annual) / $20 monthly · Free: 25 messages/month
+- Strengths: Backend, login and database built in
+- Watch out: Web apps only
+- Platforms: Web
+- Ratings: quality ●●●○○ · value ●●●●○ · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.appypie.com/blog/best-ai-app-builders)
+
+</details>
+
+## AI browsers
+
+_Web browsers with an assistant built in, some able to click around for you._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [Comet](https://www.perplexity.ai/comet) 🏅 _Best free agent_ | ✓ | — | — | — | — | 4.0/5 | Best free agentic browser |
+| [Chrome with Gemini](https://www.google.com/chrome/) | ✓ | $19.99 | $19.99 | $199.99 | ~A$32 | 3.8/5 | Staying on Chrome |
+| [Microsoft Edge](https://www.microsoft.com/edge) | ✓ | — | — | — | — | 3.8/5 | Microsoft 365 users |
+| [Dia](https://www.diabrowser.com) | ✓ | $20 | $20 | $20 | ~A$32 | 3.8/5 | Mac users who want the most polished design |
+| [Brave Leo](https://brave.com/leo/) 🏅 _Most private_ | ✓ | $14.99 | $14.99 | $14.99 | ~A$24 | 4.2/5 | Privacy first |
+| [Opera Neon](https://www.operaneon.com) | ✗ | $19.90 | $19.90 | $19.90 | ~A$32 | 2.8/5 | Running several web agents at once |
+| [ChatGPT Atlas](https://chatgpt.com/atlas) ✖ discontinued | ✗ | — | — | — | — | — | — |
+
+<details><summary>Details for each tool</summary>
+
+**Comet** (Perplexity)
+- Plans: Free (more with Perplexity Pro/Max) · Free: Free, including the agent
+- Strengths: Agent clicks through sites for you; research and shopping; Mac, Windows, iOS, Android
+- Watch out: Most-studied for prompt-injection attacks — don't let it near banking
+- Platforms: macOS, Windows, iOS, Android
+- Privacy: As Perplexity (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.commercepundit.com/blog/best-ai-browsers/)
+
+**Chrome with Gemini** (Google)
+- Plans: Free · 'auto browse' agent needs AI Pro/Ultra (US only) · Free: Gemini in Chrome free
+- Strengths: Biggest extension ecosystem; Gemini knows your tabs
+- Watch out: The agent that completes tasks is paywalled and US-only
+- Australia: Gemini in Chrome works; the 'auto browse' agent is US-only
+- Platforms: Windows, macOS, Linux, Android, iOS
+- Privacy: As Google (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://www.commercepundit.com/blog/best-ai-browsers/)
+
+**Microsoft Edge** (Microsoft)
+- Plans: Free · Free: Free
+- Strengths: Copilot built in: multi-tab reasoning, Journeys, voice and vision
+- Watch out: Copilot Mode retired as a separate mode in May 2026; weaker at completing tasks than Comet
+- Platforms: Windows, macOS, Linux, iOS, Android
+- Privacy: As Microsoft (data: US)
+- Ratings: quality ●●●○○ · value ●●●●● · ease ●●●●● · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.commercepundit.com/blog/best-ai-browsers/)
+
+**Dia** (The Browser Company (Atlassian))
+- Plans: Free · $20 for unlimited AI · Free: Free
+- Strengths: Arc's sidebar and tab features with AI chat and reusable 'Skills'
+- Watch out: macOS only (Windows 'coming soon')
+- Platforms: macOS
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://efficient.app/best/browser)
+
+**Brave Leo** (Brave)
+- Plans: Free · Leo Premium $14.99 · Free: Free
+- Strengths: No account needed; chats not stored or used for training
+- Watch out: Doesn't complete tasks for you
+- Platforms: Windows, macOS, Linux, iOS, Android
+- Privacy: Best in category (data: US)
+- Ratings: quality ●●●○○ · value ●●●●● · ease ●●●●● · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://www.commercepundit.com/blog/best-ai-browsers/)
+
+**Opera Neon** (Opera)
+- Plans: $19.90/month
+- Strengths: Agentic tasks run in parallel
+- Watch out: Only paid AI browser; desktop only
+- Platforms: Windows, macOS
+- Ratings: quality ●●●○○ · value ●●○○○ · ease ●●●○○ · privacy ●●●○○
+- Checked: 2026-09 · Sources: [1](https://www.commercepundit.com/blog/best-ai-browsers/)
+
+**ChatGPT Atlas** (OpenAI) ✖ discontinued
+- Plans: Discontinued
+- Watch out: Stopped working 9 Aug 2026; replaced by the ChatGPT Chrome extension
+- Checked: 2026-09 · Sources: [1](https://www.commercepundit.com/blog/best-ai-browsers/)
 
 </details>
 
@@ -743,34 +1195,156 @@ _Grammar help, meeting notes, email and note-taking with AI._
 
 _Voice assistants built into your phone or smart speaker._
 
-| Tool | Maker | Free? | Cheapest paid | Typical | Top tier | ~A$ typical | Best for |
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
 |---|---|---|---|---|---|---|---|
-| [Siri (Apple Intelligence, iOS 27)](https://www.apple.com/apple-intelligence/) | Apple | ✓ | — | — | — | — | iPhone users: actions across your apps, messages and photos |
-| [Gemini on Android](https://gemini.google) | Google | ✓ | $4.99 | $19.99 | $199.99 | ~A$32 | Android users |
-| [Alexa+](https://www.amazon.com/alexa-plus) | Amazon | ✗ | $19.99 | $19.99 | $19.99 | ~A$32 | Echo / smart-home households |
+| [Siri (Apple Intelligence, iOS 27)](https://www.apple.com/apple-intelligence/) 🏅 _Best for iPhone_ | ✓ | — | — | — | — | 4.6/5 | iPhone users: actions across your apps, messages and photos |
+| [Gemini on Android](https://gemini.google) 🏅 _Best for Android_ | ✓ | $4.99 | $19.99 | $199.99 | ~A$32 | 4.0/5 | Android users |
+| [Alexa+](https://www.amazon.com/alexa-plus) 🏅 _Best for smart home_ | ✓ | $19.99 | $19.99 | $19.99 | Free with Prime · A$29.99 without | 3.8/5 | Echo / smart-home households |
 
 <details><summary>Details for each tool</summary>
 
-**Siri (Apple Intelligence, iOS 27)**
+**Siri (Apple Intelligence, iOS 27)** (Apple)
 - Plans: Free (iPhone 15 Pro or newer, M-series Macs/iPads) · Free: Free on supported devices
 - Strengths: Rebuilt Siri (14 Sep 2026) on Gemini-based models; personal context, on-screen awareness, app actions
 - Watch out: Third-party Siri Extensions (Claude, Gemini) not live yet; older iPhones excluded
 - Platforms: iPhone, iPad, Mac
-- Privacy: Apple: on-device or Private Cloud Compute (data region: US)
+- Privacy: Apple: on-device or Private Cloud Compute (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://www.digitaltrends.com/phones/siri-ai-ios-27-launch/), [2](https://assindo.com/news/ios-27-siri-extensions-best-ai-assistant-iphone)
 
-**Gemini on Android** _(unverified)_
+**Gemini on Android** (Google)
 - Plans: Free · Google AI plans for more · Free: Free
-- Strengths: Replaces Google Assistant; Gemini Live camera/screen sharing; controls apps
-- Watch out: Some old Assistant routines missing
+- Strengths: Fully replaced Google Assistant on phones, Wear OS and Android Auto (Sep 2026); Gemini Live camera/screen sharing; controls apps
+- Watch out: No way back to the old Assistant; Nest speakers still run Assistant for now
 - Platforms: Android, Wear OS, Google TV, Nest
-- Privacy: As Gemini (data region: US)
+- Privacy: As Gemini (data: US)
+- Ratings: quality ●●●●○ · value ●●●●● · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://www.androidheadlines.com/2026/09/google-assistant-killed-android-gemini.html)
 
-**Alexa+** _(unverified)_
-- Plans: Free with Amazon Prime · $19.99/month without
+**Alexa+** (Amazon)
+- Plans: Free with Amazon Prime · US$19.99 or A$29.99/month without Prime · Free: Free with Prime; free for everyone in Australia during Early Access (to 30 Nov 2026)
 - Strengths: Natural conversation; books services; controls smart home
-- Watch out: Limited outside the US; check availability in Australia
+- Watch out: Australian Early Access ends 30 Nov 2026; Prime (A$9.99/mo) is cheaper than Alexa+ alone
+- Australia: Early Access since 6 Aug 2026
 - Platforms: Echo devices, Alexa app, web
-- Privacy: Voice recordings processed in the cloud (data region: US)
+- Privacy: Voice recordings processed in the cloud (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-08 · Sources: [1](https://www.pickr.com.au/news/2026/alexa-arrives-in-australia-with-more-ai-at-home/), [2](https://www.mediaweek.com.au/alexa-lands-in-australia-with-29-99-non-prime-price)
+
+</details>
+
+## AI glasses & gadgets
+
+_Hardware with an assistant built in._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [Ray-Ban Meta (Gen 2) / Meta Glasses](https://www.meta.com/ai-glasses/) 🏅 _Best AI glasses_ | ✗ | $299 once | $379 once | $379 once | ~A$600 once | 3.8/5 | Hands-free photos, music, calls and 'what am I looking at?' |
+| [Meta Ray-Ban Display](https://www.meta.com/ai-glasses/meta-ray-ban-display/) | ✗ | $799 once | $799 once | $799 once | ~A$1,266 once | 3.2/5 | Seeing messages, maps and translations in your lens |
+| [Android XR glasses (Google × Samsung)](https://www.android.com/xr/) ◷ coming soon | ✗ | — | — | — | — | 3.0/5 | Gemini on your face, Android-first |
+
+<details><summary>Details for each tool</summary>
+
+**Ray-Ban Meta (Gen 2) / Meta Glasses** (Meta × EssilorLuxottica)
+- Plans: Meta Glasses $299 (Jun 2026) · Ray-Ban Meta Gen 2 $379; Meta AI free
+- Strengths: Camera + Meta AI; live translation; best-selling AI glasses (7M+ sold in 2025)
+- Watch out: Camera glasses raise privacy issues for people around you
+- Australia: Ray-Ban Meta sold in Australia
+- Platforms: Pairs with iOS/Android
+- Privacy: As Meta AI (data: US)
+- Ratings: quality ●●●●○ · value ●●●●○ · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://treeview.studio/blog/best-smart-glasses), [2](https://memeburn.com/meta-new-299-ai-smart-glasses-2026/)
+
+**Meta Ray-Ban Display** (Meta)
+- Plans: $799 including the Neural Band wristband
+- Strengths: In-lens display; controlled by finger gestures via EMG wristband
+- Watch out: Not sold in Australia (US, Canada, UK, France, Italy)
+- Australia: Not sold in Australia
+- Platforms: Pairs with iOS/Android
+- Privacy: As Meta AI (data: US)
+- Ratings: quality ●●●●○ · value ●●○○○ · ease ●●●●○ · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://the-gadgeteer.com/2026/06/13/smart-glasses-worth-buying-2026/)
+
+**Android XR glasses (Google × Samsung)** (Google / Samsung) ◷ coming soon
+- Plans: Price not announced; launching fall 2026
+- Strengths: Gemini assistant; Warby Parker and Gentle Monster frames
+- Watch out: First generation is audio-only (no display); not yet on sale
+- Platforms: Android
+- Privacy: As Gemini (data: US)
+- Ratings: quality ●●●○○ · value ●●●○○ · ease ●●●●○ · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://dymesty.com/blogs/articles/google-smart-glasses-vs-ray-ban-meta-2026)
+
+</details>
+
+## Run AI on your own computer
+
+_Free apps that run open models offline, so nothing leaves your machine._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [LM Studio](https://lmstudio.ai) 🏅 _Easiest_ | ✓ | — | — | — | — | 4.0/5 | Easiest way to chat with AI fully offline |
+| [Ollama](https://ollama.com) | ✓ | — | — | — | — | 3.8/5 | Running local models behind other apps |
+| [Jan](https://jan.ai) | ✓ | — | — | — | — | 4.0/5 | An open-source ChatGPT-style app that stays local |
+
+<details><summary>Details for each tool</summary>
+
+**LM Studio** (LM Studio)
+- Plans: Free · Free: Free
+- Strengths: Point-and-click model downloads; runs Qwen, Llama, Gemma, Phi; no terminal needed
+- Watch out: Needs 16 GB RAM for good models; slower and less capable than cloud AI
+- Platforms: Windows, macOS, Linux
+- Privacy: Runs entirely on your computer (data: Your computer)
+- Ratings: quality ●●●○○ · value ●●●●● · ease ●●●●○ · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://www.unite.ai/best-llm-tools-to-run-models-locally/)
+
+**Ollama** (Ollama)
+- Plans: Free (optional cloud models) · Free: Free
+- Strengths: Most widely supported; simple app and API
+- Watch out: Mostly used from the command line
+- Platforms: Windows, macOS, Linux
+- Privacy: Runs entirely on your computer (data: Your computer)
+- Ratings: quality ●●●○○ · value ●●●●● · ease ●●●○○ · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://www.storagereview.com/best/local-llm-tools)
+
+**Jan** (Menlo Research)
+- Plans: Free · Free: Free, open source
+- Strengths: Local or cloud models; projects, file uploads, agents
+- Watch out: Smaller community than LM Studio
+- Platforms: Windows, macOS, Linux
+- Privacy: Data stored locally (data: Your computer)
+- Ratings: quality ●●●○○ · value ●●●●● · ease ●●●●○ · privacy ●●●●●
+- Checked: 2026-09 · Sources: [1](https://www.unite.ai/best-llm-tools-to-run-models-locally/)
+
+</details>
+
+## AI companions
+
+_Chat characters for company, role-play and practice conversations. Mind the age limits._
+
+| Tool | Free? | From | Typical | Top | A$ | Rating | Best for |
+|---|---|---|---|---|---|---|---|
+| [Character.AI](https://character.ai) | ✓ | $9.99 | $9.99 | $9.99 | ~A$16 | 3.4/5 | Role-play and chatting with fictional characters |
+| [Replika](https://replika.com) | ✓ | $19.99 | $19.99 | $19.99 | ~A$32 | 3.2/5 | A single long-term companion with memory |
+
+<details><summary>Details for each tool</summary>
+
+**Character.AI** (Character Technologies)
+- Plans: c.ai+ $9.99/month or $94.99/year · Free: Free with ads
+- Strengths: Huge character catalogue; strongest content filters of the companions
+- Watch out: Settled wrongful-death lawsuits (Jan 2026); under-18 access now restricted
+- Platforms: Web, iOS, Android
+- Privacy: Chats used to improve service (data: US)
+- Ratings: quality ●●●○○ · value ●●●●○ · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://101aitools.com/guides/compare-character-ai-vs-replika), [2](https://aicompanionguides.com/blog/best-ai-companion-apps-2026/)
+
+**Replika** (Luka)
+- Plans: Pro ~$19.99/month or ~$69.99/year (in-app) · Free: Basic friend chat
+- Strengths: Most established; wellness features and crisis resources
+- Watch out: 18+ only; in-app purchases; emotional dependence risk
+- Platforms: iOS, Android, web
+- Privacy: Sensitive personal data (data: US)
+- Ratings: quality ●●●○○ · value ●●●○○ · ease ●●●●● · privacy ●●○○○
+- Checked: 2026-09 · Sources: [1](https://zplatform.ai/best-ai-tools/best-ai-companion-apps/)
 
 </details>
 
@@ -792,86 +1366,70 @@ _Voice assistants built into your phone or smart speaker._
 | Poe | Data passes to each model provider | US |
 | Duck.ai | Anonymised; providers contractually barred from training on chats | US |
 
-Turning training off stops _future_ use only. Never paste passwords, ID numbers, or client data you aren't allowed to share into any consumer chatbot.
+Most privacy-friendly overall: **LM Studio / Ollama / Jan** (nothing leaves your computer), **Duck.ai** and **Brave Leo** (anonymised, no training), **Mistral Vibe** (EU law), and **Claude** with training switched off. Turning training off stops _future_ use only.
+
+## Ways to pay less
+
+- **Pay yearly** when you're sure: Claude Pro is A$340/yr vs A$34/mo; Beautiful.ai and Grammarly are 2.5–4x dearer month-to-month.
+- **Count the bundle**: Google AI Pro includes extra Google storage; Microsoft 365 Premium includes Office and 6 TB; Alexa+ is free with Prime (A$9.99/mo). If you already pay for storage or Office, the AI is close to free.
+- **One assistant, not three**: the $20 assistants overlap heavily. Use free tiers of the others for second opinions.
+- **Try budget tiers first**: Google AI Plus ($4.99), ChatGPT Go (A$13), Mistral Vibe Student ($5.99).
+- **Creators: use an aggregator** (Krea, OpenArt, Higgsfield, Poe) if you'd otherwise pay for several image/video tools.
+- **Watch credit systems**: video, agents and app builders charge per use. Set spending caps where offered.
+- **Cancel trials** on the day you sign up; app-store subscriptions are cancelled in your phone's settings, not the app.
+- **Apple App Store / Google Play prices** are often higher than paying on the website.
+
+## Staying safe
+
+- Don't paste passwords, tax file numbers, Medicare or bank details into any chatbot.
+- AI makes things up confidently. Check anything medical, legal, financial or safety-related with a real source or professional.
+- Agents and AI browsers can be tricked by hidden text on web pages (prompt injection). Don't give them access to banking or let them pay without checking.
+- Voice-clone scams are common: agree a family code word for urgent money requests.
+- Companion apps: check age ratings, and watch for emotional over-reliance, especially for teens.
+- Commercial use: free tiers of image, music and video tools usually don't allow selling what you make.
+
+## Jargon buster
+
+- **Agent**: AI that carries out a multi-step task for you (browsing, filling forms, building a file) rather than just replying.
+- **Credits / points / tokens**: Usage units. Bigger models, longer videos and agent runs use more of them.
+- **Context window**: How much text the AI can keep in mind at once. 1M tokens ≈ 750,000 words.
+- **Deep research**: The AI searches dozens of sources for several minutes and writes a cited report.
+- **Model**: The underlying AI (e.g. GPT-6, Claude Opus 5.5, Gemini 3.5). Apps often let you pick one.
+- **Open weights / local**: Models you can download and run on your own computer, offline.
+- **BYOK**: Bring your own key: you pay the AI company directly per use instead of a subscription.
+- **Prompt injection**: Hidden instructions on a web page or file that trick an AI into doing something you didn't ask.
+- **Hallucination**: When AI states something false as fact.
+
+## How the ratings work
+
+Each tool gets 1–5 on four things. These are this guide's judgement from the sources listed, not lab tests.
+
+- **Quality**: how good the results are compared with the best in its category.
+- **Value**: what you get for the money, including the free tier.
+- **Ease**: how quickly a non-technical person gets good results.
+- **Privacy**: training defaults, opt-outs, data location (5 = stays on your device or anonymised; 1 = no real opt-out or stored where you have little legal recourse).
+
+The overall rating weights quality double: (2×quality + value + ease + privacy) ÷ 5.
 
 ## How to update this database
 
-1. Edit `data/tools.json` (one object per tool; add categories in `data/categories.json`).
+1. Edit `data/tools.json` (one object per tool; categories live in `data/categories.json`).
 2. Set `verified` to the month you checked it (e.g. `2026-10`) and add the page you checked to `sources`.
 3. If the exchange rate has moved, update `USD_TO_AUD` and `AS_OF` in `scripts/build.py`.
-4. Run `python3 scripts/build.py` to regenerate this file, the CSV and `index.html`.
+4. Run `python3 scripts/build.py`. It checks every entry has the required fields, then regenerates this file, the CSV and `index.html`.
 
 ### Field reference
 
 | Field | Meaning |
 |---|---|
-| `status` | `active`, `paused` (new sign-ups closed) or `discontinued` |
+| `status` | `active`, `paused` (new sign-ups closed), `upcoming` or `discontinued` |
+| `pick` | Optional award label shown as the category's recommendation |
 | `free / free_note` | Whether there's a usable free tier, and its main limit |
-| `from / standard / top` | Cheapest paid, most common, and most expensive individual plan in USD/month (`null` = none) |
+| `billing` | `monthly` (default), `yearly` or `one-off` (hardware) |
+| `from / standard / top` | Cheapest paid, most common and most expensive individual plan in USD (`null` = none) |
+| `aud / aud_from / au` | Published Australian prices (text, and the cheapest plan as a number); Australian availability notes |
 | `features` | Assistants only: `yes`, `star`, `partial` or `no` for each capability |
-| `privacy / region` | Training default and opt-out; where the company stores data |
+| `scores` | `quality`, `value`, `ease`, `privacy`, each 1–5 |
+| `tags` | Use-case keywords that drive the picker and search |
+| `privacy / region` | Training default and opt-out; where data is stored |
 | `verified` | Month the details were last checked; `older` = not re-checked |
-
-## Sources
-
-- https://aitoolsreview.co.uk/insights/gemini-notebook
-- https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared
-- https://assindo.com/news/ios-27-siri-extensions-best-ai-assistant-iphone
-- https://automateall.co/en/blog/mistral-le-chat-vibe/
-- https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/
-- https://blog.google/products/search/
-- https://consensus.app/pricing/
-- https://costbench.com/software/ai-productivity/superhuman/
-- https://costbench.com/software/ai-voice-tools/elevenlabs/
-- https://duckduckgo.com/duckduckgo-help-pages/duckai/
-- https://efficient.app/best/browser
-- https://elicit.com/pricing
-- https://en.wikipedia.org/wiki/DeepSeek_(chatbot)
-- https://felloai.com/ai-pricing-comparison/
-- https://felloai.com/best-ai-music-generators/
-- https://gemini.google/release-notes/
-- https://higgsfield.ai/blog/best-ai-video-generators-2026
-- https://kagi.com/pricing
-- https://leonardo.ai/pricing
-- https://openart.ai/blog/best-ai-video-generators/
-- https://overchat.ai/ai-hub/best-ai-image-generators
-- https://pinggy.io/blog/best_ai_tools_for_coding/
-- https://poe.com
-- https://releasebot.io/updates/perplexity-ai
-- https://sessionwatcher.com/guides/how-much-does-cursor-cost
-- https://support.claude.com/en/articles/12138966-release-notes
-- https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/
-- https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/
-- https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/
-- https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/
-- https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/
-- https://www.aboutamazon.com/news/devices/new-alexa-generative-artificial-intelligence
-- https://www.ai-toolbox.co/grok-models/grok-pricing-plans-api-2026
-- https://www.alibabacloud.com/blog/alibaba-launches-qwen-app-to-boost-its-consumer-ai-efforts_602672
-- https://www.appypie.com/blog/best-ai-app-builders
-- https://www.canva.com/pricing/
-- https://www.cloudzero.com/blog/gemini-pricing/
-- https://www.cloudzero.com/blog/perplexity-pricing/
-- https://www.cnbc.com/2026/09/21/meta-muse-personal-ai-agent-downloads.html
-- https://www.commercepundit.com/blog/best-ai-browsers/
-- https://www.digitaltrends.com/phones/siri-ai-ios-27-launch/
-- https://www.eesel.ai/blog/grammarly-pricing
-- https://www.gosearch.ai/blog/microsoft-copilot-pricing/
-- https://www.heise.de/en/news/Mistral-s-chatbot-is-now-called-Vibe-and-gains-new-capabilities-11311685.html
-- https://www.layer3labs.io/comparisons/replit-alternatives
-- https://www.layer3labs.io/guides/best-ai-video-generators
-- https://www.layer3labs.io/guides/suno-explained
-- https://www.meetjamie.ai/blog/best-ai-note-takers-for-students
-- https://www.morphllm.com/codex-pricing
-- https://www.neoteo.com/en/deepseek-tests-voice-replies-and-four-profiles-for-some-app-users
-- https://www.nocode.mba/articles/github-copilot-pricing
-- https://www.notion.com/pricing
-- https://www.pymnts.com/news/artificial-intelligence/2026/moonshot-halts-new-kimi-k3-subscriptions-demand-overwhelms-compute/
-- https://www.recraft.ai/pricing
-- https://www.teamday.ai/blog/best-ai-image-models-2026
-- https://www.teamday.ai/blog/best-ai-video-models-2026
-- https://www.techtimes.com/articles/322670/20260802/grok-imagine-video-update-adds-1080p-voice-cloning-seven-reference-scene-control.htm
-- https://www.therundown.ai/tools/codeium-windsurf
-- https://www.tomsguide.com/ai/i-checked-the-privacy-settings-of-every-major-ai-chatbot-heres-how-they-actually-compare
-- https://www.totalum.app/blog/replit-alternative-2026
-- https://zackproser.com/blog/wisprflow-pricing-guide-2026

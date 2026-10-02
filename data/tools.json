@@ -1,57 +1,188 @@
 [
   {
-    "id": "chatgpt", "name": "ChatGPT", "maker": "OpenAI", "category": "assistant", "status": "active",
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "maker": "OpenAI",
+    "category": "assistant",
+    "status": "active",
     "url": "https://chatgpt.com",
-    "free": true, "free_note": "GPT-6 Luna; ads in the US and 31 European markets",
-    "from": 8, "standard": 20, "top": 500,
+    "pick": "Best all-rounder",
+    "free": true,
+    "free_note": "GPT-6 Luna; ads in the US and 31 European markets",
+    "billing": "monthly",
+    "from": 8,
+    "standard": 20,
+    "top": 500,
     "pricing": "Go $8 (ads) · Plus $20 · Pro $100 / $200 / $500 (Pro $200 closed to new sign-ups since 10 Sep 2026) · Business $25/seat",
+    "aud": "Go A$13 · Plus ~A$35 (reported)",
+    "aud_from": 13,
+    "au": "Available; ads on Free/Go",
     "best_for": "All-rounder: writing, images, agents, voice",
-    "strengths": "GPT-6 family (Astra, Sol, Luna); Images 2.5 is the top-ranked image model; agent mode; Codex for coding included; biggest app ecosystem",
+    "strengths": "GPT-6 family (Astra, Sol, Luna); Images 2.5 is the top-ranked image model; agent mode; Codex for coding included; biggest app ecosystem; free Study Mode for learning",
     "watch_out": "No video since Sora shut down (app Apr 2026, API 24 Sep 2026); agent mode capped at 40 msgs/month on Plus; ChatGPT Atlas browser shut down Aug 2026",
     "platforms": "Web, Windows, macOS, iOS, Android, Chrome extension",
     "privacy": "Trains on chats by default; one-tap opt-out ('Improve the model for everyone'); Temporary Chat not used for training",
     "region": "US",
-    "features": {"search": "yes", "research": "yes", "image": "star", "video": "no", "voice": "yes", "code": "yes", "files": "yes", "memory": "yes", "agent": "yes"},
+    "features": {
+      "search": "yes",
+      "research": "yes",
+      "image": "star",
+      "video": "no",
+      "voice": "yes",
+      "code": "yes",
+      "files": "yes",
+      "memory": "yes",
+      "agent": "yes"
+    },
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "agents",
+      "chat",
+      "coding",
+      "free",
+      "images",
+      "study",
+      "voice",
+      "writing"
+    ],
     "verified": "2026-09",
-    "sources": ["https://felloai.com/ai-pricing-comparison/", "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/", "https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/"]
+    "sources": [
+      "https://felloai.com/ai-pricing-comparison/",
+      "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/",
+      "https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/"
+    ]
   },
   {
-    "id": "claude", "name": "Claude", "maker": "Anthropic", "category": "assistant", "status": "active",
+    "id": "claude",
+    "name": "Claude",
+    "maker": "Anthropic",
+    "category": "assistant",
+    "status": "active",
     "url": "https://claude.ai",
-    "free": true, "free_note": "Daily caps; the strictest free limits of the big three",
-    "from": 20, "standard": 20, "top": 200,
+    "pick": "Best for writing & coding",
+    "free": true,
+    "free_note": "Daily caps; the strictest free limits of the big three",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 200,
     "pricing": "Pro $20 ($17/mo annual) · Max 5x $100 · Max 20x $200 · Team $25 / Premium $125 per seat",
+    "aud": "Pro A$34 (A$340/yr) · Max A$170 / A$340, incl. GST",
+    "aud_from": 34,
+    "au": "Available",
     "best_for": "Long writing, coding, documents and agent tasks",
     "strengths": "Claude Opus 5.5 and Fable 5.1; Claude Code included from Pro; Docs, Slides and Design built into chats; lowest hallucination rate in several reviews; ad-free",
     "watch_out": "No native image or video generation; no budget tier below $20",
     "platforms": "Web, Windows, macOS, iOS, Android, Chrome extension",
     "privacy": "You choose whether chats train models; with training off, deleted chats are gone within 30 days",
     "region": "US",
-    "features": {"search": "yes", "research": "yes", "image": "no", "video": "no", "voice": "yes", "code": "star", "files": "star", "memory": "yes", "agent": "yes"},
+    "features": {
+      "search": "yes",
+      "research": "yes",
+      "image": "no",
+      "video": "no",
+      "voice": "yes",
+      "code": "star",
+      "files": "star",
+      "memory": "yes",
+      "agent": "yes"
+    },
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 4,
+      "privacy": 4
+    },
+    "tags": [
+      "agents",
+      "chat",
+      "coding",
+      "documents",
+      "free",
+      "research",
+      "writing"
+    ],
     "verified": "2026-09",
-    "sources": ["https://felloai.com/ai-pricing-comparison/", "https://support.claude.com/en/articles/12138966-release-notes"]
+    "sources": [
+      "https://felloai.com/ai-pricing-comparison/",
+      "https://support.claude.com/en/articles/12138966-release-notes"
+    ]
   },
   {
-    "id": "gemini", "name": "Gemini", "maker": "Google", "category": "assistant", "status": "active",
+    "id": "gemini",
+    "name": "Gemini",
+    "maker": "Google",
+    "category": "assistant",
+    "status": "active",
     "url": "https://gemini.google.com",
-    "free": true, "free_note": "Most generous free tier; Gemini Flash with search, image generation",
-    "from": 4.99, "standard": 19.99, "top": 199.99,
+    "pick": "Best value bundle",
+    "free": true,
+    "free_note": "Most generous free tier; Gemini Flash with search, image generation",
+    "billing": "monthly",
+    "from": 4.99,
+    "standard": 19.99,
+    "top": 199.99,
     "pricing": "AI Plus $4.99 (400 GB) · AI Pro $19.99 (storage + Veo) · AI Ultra $99.99 (5x, 20 TB, YouTube Premium) · Ultra $199.99 (20x)",
+    "aud": "AI Pro A$32.99",
+    "au": "Available; some agent features US-first",
     "best_for": "Google Workspace / Android users; best value bundle",
     "strengths": "Nano Banana image editing; Veo and Gemini Omni video; Gemini Notebook (ex-NotebookLM); Google storage bundled; now powers Siri on iOS 27",
     "watch_out": "Chats reviewed by humans and kept up to 3 years unless you turn activity off; agent features often US-only first",
     "platforms": "Web, Windows app, Android, iOS, Chrome, Workspace",
     "privacy": "Trains by default with human review; turn off 'Keep Activity' to stop",
     "region": "US",
-    "features": {"search": "yes", "research": "yes", "image": "yes", "video": "yes", "voice": "yes", "code": "yes", "files": "yes", "memory": "yes", "agent": "yes"},
+    "features": {
+      "search": "yes",
+      "research": "yes",
+      "image": "yes",
+      "video": "yes",
+      "voice": "yes",
+      "code": "yes",
+      "files": "yes",
+      "memory": "yes",
+      "agent": "yes"
+    },
+    "scores": {
+      "quality": 5,
+      "value": 5,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "chat",
+      "free",
+      "google",
+      "images",
+      "research",
+      "storage",
+      "video",
+      "voice"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.cloudzero.com/blog/gemini-pricing/", "https://felloai.com/ai-pricing-comparison/", "https://www.tomsguide.com/ai/i-checked-the-privacy-settings-of-every-major-ai-chatbot-heres-how-they-actually-compare"]
+    "sources": [
+      "https://www.cloudzero.com/blog/gemini-pricing/",
+      "https://felloai.com/ai-pricing-comparison/",
+      "https://www.tomsguide.com/ai/i-checked-the-privacy-settings-of-every-major-ai-chatbot-heres-how-they-actually-compare"
+    ]
   },
   {
-    "id": "grok", "name": "Grok", "maker": "xAI", "category": "assistant", "status": "active",
+    "id": "grok",
+    "name": "Grok",
+    "maker": "xAI",
+    "category": "assistant",
+    "status": "active",
     "url": "https://grok.com",
-    "free": true, "free_note": "Basic chat; no image/video generation since Mar 2026",
-    "from": 8, "standard": 30, "top": 300,
+    "free": true,
+    "free_note": "Basic chat; no image/video generation since Mar 2026",
+    "billing": "monthly",
+    "from": 8,
+    "standard": 30,
+    "top": 300,
     "pricing": "X Premium $8 · SuperGrok Lite $10 · SuperGrok $30 · Plus $100 · Heavy $300 (annual ~17% off)",
     "best_for": "Live X/Twitter news; video with sound",
     "strengths": "Real-time X data; Grok Imagine 1080p video with audio; Grok 4.7 (Sep 2026)",
@@ -59,15 +190,49 @@
     "platforms": "Web, iOS, Android, inside X",
     "privacy": "Trains by default, including on public X posts; opt-out in settings",
     "region": "US",
-    "features": {"search": "star", "research": "yes", "image": "yes", "video": "yes", "voice": "yes", "code": "partial", "files": "yes", "memory": "yes", "agent": "partial"},
+    "features": {
+      "search": "star",
+      "research": "yes",
+      "image": "yes",
+      "video": "yes",
+      "voice": "yes",
+      "code": "partial",
+      "files": "yes",
+      "memory": "yes",
+      "agent": "partial"
+    },
+    "scores": {
+      "quality": 4,
+      "value": 2,
+      "ease": 4,
+      "privacy": 2
+    },
+    "tags": [
+      "chat",
+      "free",
+      "images",
+      "news",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.ai-toolbox.co/grok-models/grok-pricing-plans-api-2026", "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/"]
+    "sources": [
+      "https://www.ai-toolbox.co/grok-models/grok-pricing-plans-api-2026",
+      "https://tech-insider.org/chatgpt-vs-claude-vs-gemini-vs-grok-subscription-pricing-2026/"
+    ]
   },
   {
-    "id": "perplexity", "name": "Perplexity", "maker": "Perplexity AI", "category": "assistant", "status": "active",
+    "id": "perplexity",
+    "name": "Perplexity",
+    "maker": "Perplexity AI",
+    "category": "assistant",
+    "status": "active",
     "url": "https://www.perplexity.ai",
-    "free": true, "free_note": "3 Pro searches/day; 1 Research query/month",
-    "from": 20, "standard": 20, "top": 200,
+    "free": true,
+    "free_note": "3 Pro searches/day; 1 Research query/month",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 200,
     "pricing": "Pro $20 ($200/yr) · Max $200 ($2,000/yr) · Enterprise Pro $40/seat",
     "best_for": "Researching with citations",
     "strengths": "Every answer cited; pick between frontier models (GPT, Claude, Gemini); Labs for sheets/dashboards; Comet browser free for all; Perplexity Health",
@@ -75,47 +240,150 @@
     "platforms": "Web, Windows, macOS, iOS, Android, Comet browser",
     "privacy": "'AI data retention' on by default; switch off in settings",
     "region": "US",
-    "features": {"search": "star", "research": "star", "image": "yes", "video": "partial", "voice": "yes", "code": "no", "files": "yes", "memory": "yes", "agent": "yes"},
+    "features": {
+      "search": "star",
+      "research": "star",
+      "image": "yes",
+      "video": "partial",
+      "voice": "yes",
+      "code": "no",
+      "files": "yes",
+      "memory": "yes",
+      "agent": "yes"
+    },
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "chat",
+      "free",
+      "news",
+      "research"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.cloudzero.com/blog/perplexity-pricing/", "https://releasebot.io/updates/perplexity-ai"]
+    "sources": [
+      "https://www.cloudzero.com/blog/perplexity-pricing/",
+      "https://releasebot.io/updates/perplexity-ai"
+    ]
   },
   {
-    "id": "copilot", "name": "Microsoft Copilot", "maker": "Microsoft", "category": "assistant", "status": "active",
+    "id": "copilot",
+    "name": "Microsoft Copilot",
+    "maker": "Microsoft",
+    "category": "assistant",
+    "status": "active",
     "url": "https://copilot.microsoft.com",
-    "free": true, "free_note": "Free chat, image and voice",
-    "from": 9.99, "standard": 19.99, "top": 19.99,
+    "free": true,
+    "free_note": "Free chat, image and voice",
+    "billing": "monthly",
+    "from": 9.99,
+    "standard": 19.99,
+    "top": 19.99,
     "pricing": "M365 Personal $9.99 · Family $12.99 · M365 Premium $19.99 (Office + 6 TB) · Code/Autopilot usage-based from Sep 2026",
+    "aud": "M365 Premium A$33 (A$329/yr)",
+    "au": "Available",
     "best_for": "Word, Excel, PowerPoint and Outlook users",
     "strengths": "Built into Office and Windows; Premium bundles Office + storage for the same $20; new Code and Autopilot (always-on agents) sections",
     "watch_out": "Consumer Deep Research, podcasts and group chats removed Aug 2026; usage-based billing for advanced features is new and hard to predict",
     "platforms": "Windows, web, iOS, Android, Edge, Office apps",
     "privacy": "Opt-out toggle for model training on conversations",
     "region": "US",
-    "features": {"search": "yes", "research": "partial", "image": "yes", "video": "no", "voice": "yes", "code": "partial", "files": "star", "memory": "yes", "agent": "yes"},
+    "features": {
+      "search": "yes",
+      "research": "partial",
+      "image": "yes",
+      "video": "no",
+      "voice": "yes",
+      "code": "partial",
+      "files": "star",
+      "memory": "yes",
+      "agent": "yes"
+    },
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "chat",
+      "documents",
+      "free",
+      "microsoft",
+      "office"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.gosearch.ai/blog/microsoft-copilot-pricing/", "https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/"]
+    "sources": [
+      "https://www.gosearch.ai/blog/microsoft-copilot-pricing/",
+      "https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/"
+    ]
   },
   {
-    "id": "meta-muse", "name": "Meta AI / Muse", "maker": "Meta", "category": "assistant", "status": "active",
+    "id": "meta-muse",
+    "name": "Meta AI / Muse",
+    "maker": "Meta",
+    "category": "assistant",
+    "status": "active",
     "url": "https://muse.ai",
-    "free": true, "free_note": "Free in WhatsApp, Instagram, Messenger and the Muse app",
-    "from": 20, "standard": 20, "top": 100,
+    "free": true,
+    "free_note": "Free in WhatsApp, Instagram, Messenger and the Muse app",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 100,
     "pricing": "Free · Muse Power $20 · Muse Maximum $100 (more agent usage)",
+    "au": "Meta AI works; the Muse agent app is US-only for now",
     "best_for": "Casual use inside WhatsApp/Instagram; everyday errands",
     "strengths": "Muse agent (Sep 2026) books appointments, fills forms; Muse Spark model; Vibes video; already in apps you use",
     "watch_out": "Muse agent US-only at launch; weakest privacy controls of the majors; least suited to serious work",
     "platforms": "WhatsApp, Instagram, Messenger, web, iOS, Android, Ray-Ban glasses",
     "privacy": "No meaningful conversation-level training opt-out for US users",
     "region": "US",
-    "features": {"search": "yes", "research": "partial", "image": "yes", "video": "yes", "voice": "yes", "code": "no", "files": "partial", "memory": "yes", "agent": "yes"},
+    "features": {
+      "search": "yes",
+      "research": "partial",
+      "image": "yes",
+      "video": "yes",
+      "voice": "yes",
+      "code": "no",
+      "files": "partial",
+      "memory": "yes",
+      "agent": "yes"
+    },
+    "scores": {
+      "quality": 3,
+      "value": 4,
+      "ease": 5,
+      "privacy": 1
+    },
+    "tags": [
+      "agents",
+      "chat",
+      "free",
+      "fun"
+    ],
     "verified": "2026-09",
-    "sources": ["https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/", "https://www.cnbc.com/2026/09/21/meta-muse-personal-ai-agent-downloads.html"]
+    "sources": [
+      "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/",
+      "https://www.cnbc.com/2026/09/21/meta-muse-personal-ai-agent-downloads.html"
+    ]
   },
   {
-    "id": "deepseek", "name": "DeepSeek", "maker": "DeepSeek", "category": "assistant", "status": "active",
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "maker": "DeepSeek",
+    "category": "assistant",
+    "status": "active",
     "url": "https://chat.deepseek.com",
-    "free": true, "free_note": "Completely free, no message cap",
-    "from": null, "standard": null, "top": null,
+    "free": true,
+    "free_note": "Completely free, no message cap",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
     "pricing": "Free app and web; developers pay per token (API)",
     "best_for": "Free strong reasoning and maths",
     "strengths": "V4-Pro and V4-Flash; 1M-token context; three thinking-effort levels",
@@ -123,15 +391,49 @@
     "platforms": "Web, iOS, Android",
     "privacy": "Data stored in China; trains on inputs; limited user controls",
     "region": "China",
-    "features": {"search": "yes", "research": "partial", "image": "no", "video": "no", "voice": "partial", "code": "yes", "files": "partial", "memory": "no", "agent": "no"},
+    "features": {
+      "search": "yes",
+      "research": "partial",
+      "image": "no",
+      "video": "no",
+      "voice": "partial",
+      "code": "yes",
+      "files": "partial",
+      "memory": "no",
+      "agent": "no"
+    },
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 4,
+      "privacy": 1
+    },
+    "tags": [
+      "chat",
+      "coding",
+      "free",
+      "maths"
+    ],
     "verified": "2026-09",
-    "sources": ["https://en.wikipedia.org/wiki/DeepSeek_(chatbot)", "https://www.neoteo.com/en/deepseek-tests-voice-replies-and-four-profiles-for-some-app-users"]
+    "sources": [
+      "https://en.wikipedia.org/wiki/DeepSeek_(chatbot)",
+      "https://www.neoteo.com/en/deepseek-tests-voice-replies-and-four-profiles-for-some-app-users"
+    ]
   },
   {
-    "id": "mistral-vibe", "name": "Mistral Vibe (ex-Le Chat)", "maker": "Mistral AI", "category": "assistant", "status": "active",
+    "id": "mistral-vibe",
+    "name": "Mistral Vibe (ex-Le Chat)",
+    "maker": "Mistral AI",
+    "category": "assistant",
+    "status": "active",
     "url": "https://chat.mistral.ai",
-    "free": true, "free_note": "Generous free tier",
-    "from": 5.99, "standard": 14.99, "top": 29.99,
+    "pick": "Most private all-rounder",
+    "free": true,
+    "free_note": "Generous free tier",
+    "billing": "monthly",
+    "from": 5.99,
+    "standard": 14.99,
+    "top": 29.99,
     "pricing": "Student $5.99 · Pro $14.99 (€17.99) · Team €29.99/seat",
     "best_for": "Privacy-minded users wanting a cheaper all-rounder",
     "strengths": "EU-hosted; Work Mode and Code Mode in one agent; deep research, voice, 100+ connectors; cheapest full-featured paid tier",
@@ -139,15 +441,49 @@
     "platforms": "Web, iOS, Android",
     "privacy": "EU (GDPR) hosting; training opt-out available",
     "region": "EU",
-    "features": {"search": "yes", "research": "yes", "image": "yes", "video": "no", "voice": "yes", "code": "yes", "files": "yes", "memory": "yes", "agent": "yes"},
+    "features": {
+      "search": "yes",
+      "research": "yes",
+      "image": "yes",
+      "video": "no",
+      "voice": "yes",
+      "code": "yes",
+      "files": "yes",
+      "memory": "yes",
+      "agent": "yes"
+    },
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 4,
+      "privacy": 4
+    },
+    "tags": [
+      "chat",
+      "coding",
+      "free",
+      "privacy",
+      "writing"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.heise.de/en/news/Mistral-s-chatbot-is-now-called-Vibe-and-gains-new-capabilities-11311685.html", "https://automateall.co/en/blog/mistral-le-chat-vibe/"]
+    "sources": [
+      "https://www.heise.de/en/news/Mistral-s-chatbot-is-now-called-Vibe-and-gains-new-capabilities-11311685.html",
+      "https://automateall.co/en/blog/mistral-le-chat-vibe/"
+    ]
   },
   {
-    "id": "qwen", "name": "Qwen", "maker": "Alibaba", "category": "assistant", "status": "active",
+    "id": "qwen",
+    "name": "Qwen",
+    "maker": "Alibaba",
+    "category": "assistant",
+    "status": "active",
     "url": "https://chat.qwen.ai",
-    "free": true, "free_note": "Free",
-    "from": null, "standard": null, "top": null,
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
     "pricing": "Free",
     "best_for": "Free reports, slides and coding",
     "strengths": "Capable Qwen 3.8 models; deep research, image, slides; Wan video models from the same lab",
@@ -155,15 +491,46 @@
     "platforms": "Web, iOS, Android",
     "privacy": "Data stored in China",
     "region": "China",
-    "features": {"search": "yes", "research": "yes", "image": "yes", "video": "partial", "voice": "yes", "code": "yes", "files": "yes", "memory": "yes", "agent": "partial"},
+    "features": {
+      "search": "yes",
+      "research": "yes",
+      "image": "yes",
+      "video": "partial",
+      "voice": "yes",
+      "code": "yes",
+      "files": "yes",
+      "memory": "yes",
+      "agent": "partial"
+    },
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 4,
+      "privacy": 1
+    },
+    "tags": [
+      "chat",
+      "coding",
+      "free"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.alibabacloud.com/blog/alibaba-launches-qwen-app-to-boost-its-consumer-ai-efforts_602672"]
+    "sources": [
+      "https://www.alibabacloud.com/blog/alibaba-launches-qwen-app-to-boost-its-consumer-ai-efforts_602672"
+    ]
   },
   {
-    "id": "kimi", "name": "Kimi", "maker": "Moonshot AI", "category": "assistant", "status": "paused",
+    "id": "kimi",
+    "name": "Kimi",
+    "maker": "Moonshot AI",
+    "category": "assistant",
+    "status": "paused",
     "url": "https://www.kimi.com",
-    "free": true, "free_note": "Free 'Adagio' tier",
-    "from": 19, "standard": 19, "top": 199,
+    "free": true,
+    "free_note": "Free 'Adagio' tier",
+    "billing": "monthly",
+    "from": 19,
+    "standard": 19,
+    "top": 199,
     "pricing": "Plus / Pro / Max / Ultra $19–$199 (new subscriptions paused since 20 Jul 2026)",
     "best_for": "Long documents and agentic slides/research (free tier)",
     "strengths": "Kimi K3 (Jul 2026), strong at agentic tasks and long context",
@@ -171,46 +538,272 @@
     "platforms": "Web, iOS, Android",
     "privacy": "Data stored in China",
     "region": "China",
-    "features": {"search": "yes", "research": "yes", "image": "partial", "video": "no", "voice": "partial", "code": "yes", "files": "yes", "memory": "partial", "agent": "yes"},
+    "features": {
+      "search": "yes",
+      "research": "yes",
+      "image": "partial",
+      "video": "no",
+      "voice": "partial",
+      "code": "yes",
+      "files": "yes",
+      "memory": "partial",
+      "agent": "yes"
+    },
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 1
+    },
+    "tags": [
+      "chat",
+      "documents",
+      "free",
+      "research"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.pymnts.com/news/artificial-intelligence/2026/moonshot-halts-new-kimi-k3-subscriptions-demand-overwhelms-compute/"]
+    "sources": [
+      "https://www.pymnts.com/news/artificial-intelligence/2026/moonshot-halts-new-kimi-k3-subscriptions-demand-overwhelms-compute/"
+    ]
   },
   {
-    "id": "poe", "name": "Poe", "maker": "Quora", "category": "assistant", "status": "active",
+    "id": "poe",
+    "name": "Poe",
+    "maker": "Quora",
+    "category": "assistant",
+    "status": "active",
     "url": "https://poe.com",
-    "free": true, "free_note": "Daily points",
-    "from": 5, "standard": 20, "top": 250,
-    "pricing": "Points-based subscriptions from about $5 to $250/month",
+    "free": true,
+    "free_note": "300 points/day (cut from ~3,000 in Mar 2026)",
+    "billing": "monthly",
+    "from": 4.99,
+    "standard": 19.99,
+    "top": 249.99,
+    "pricing": "Starter $4.99 · Premium $19.99 · Premium Plus $49.99 · Pro $99.99 · Pro Max $249.99 (~17% off yearly)",
     "best_for": "Trying many models (GPT, Claude, Gemini, Grok, image/video) in one app",
     "strengths": "One subscription for dozens of models and image/video generators",
     "watch_out": "Points burn fast on top models; fewer features than each vendor's own app",
     "platforms": "Web, iOS, Android, desktop",
     "privacy": "Data passes to each model provider",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://poe.com"]
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 2
+    },
+    "tags": [
+      "chat",
+      "free",
+      "images",
+      "multi-model",
+      "video"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://aiproductivity.ai/pricing/poe/",
+      "https://poe.com/subscription_plans"
+    ]
   },
   {
-    "id": "duck-ai", "name": "Duck.ai", "maker": "DuckDuckGo", "category": "assistant", "status": "active",
+    "id": "duck-ai",
+    "name": "Duck.ai",
+    "maker": "DuckDuckGo",
+    "category": "assistant",
+    "status": "active",
     "url": "https://duck.ai",
-    "free": true, "free_note": "Free, no account",
-    "from": 9.99, "standard": 9.99, "top": 9.99,
-    "pricing": "Free · higher limits/models with DuckDuckGo subscription (~$9.99)",
+    "free": true,
+    "free_note": "Free, no account",
+    "billing": "monthly",
+    "from": 9.99,
+    "standard": 9.99,
+    "top": 19.99,
+    "pricing": "Free, no account · DuckDuckGo Plus $9.99 (adds VPN + advanced models) · Pro $19.99 (Claude Opus-class models, 2x limits)",
     "best_for": "Private, anonymous chat",
     "strengths": "No account; chats anonymised and not used for training",
     "watch_out": "Smaller models on free tier; few features (no agents, limited files)",
     "platforms": "Web, DuckDuckGo browser",
     "privacy": "Anonymised; providers contractually barred from training on chats",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://duckduckgo.com/duckduckgo-help-pages/duckai/"]
+    "scores": {
+      "quality": 3,
+      "value": 5,
+      "ease": 5,
+      "privacy": 5
+    },
+    "tags": [
+      "chat",
+      "free",
+      "privacy"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://spreadprivacy.com/pro-subscription/"
+    ]
   },
-
   {
-    "id": "gemini-notebook", "name": "Gemini Notebook (ex-NotebookLM)", "maker": "Google", "category": "research", "status": "active",
+    "id": "chatgpt-agent",
+    "name": "ChatGPT agent / Work mode",
+    "maker": "OpenAI",
+    "category": "agent",
+    "status": "active",
+    "url": "https://chatgpt.com",
+    "pick": "Easiest to start",
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": 8,
+    "standard": 20,
+    "top": 500,
+    "pricing": "Included in ChatGPT: Plus 40 agent messages/month · Pro 400",
+    "best_for": "Easiest way to try an agent if you already pay for ChatGPT",
+    "strengths": "Returns finished spreadsheets, decks, documents and small web apps; browses and fills forms with your approval",
+    "watch_out": "Only 40 agent runs a month on Plus; asks you to take over for logins and payments",
+    "platforms": "Web, desktop, mobile",
+    "privacy": "As ChatGPT",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "agents",
+      "documents",
+      "office"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://dreaming.press/posts/best-ai-agents-for-personal-use-september-2026.html"
+    ]
+  },
+  {
+    "id": "manus",
+    "name": "Manus",
+    "maker": "Manus",
+    "category": "agent",
+    "status": "active",
+    "url": "https://manus.im",
+    "pick": "Most hands-off",
+    "free": true,
+    "free_note": "Small daily credit allowance",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 200,
+    "pricing": "$20 (4,000 credits) · $40 (8,000) · $200 (40,000 + cloud computer)",
+    "best_for": "Hands-off delegation of long, open-ended tasks",
+    "strengths": "Works on its own cloud computer for hours; research reports, websites, data analysis",
+    "watch_out": "Credits burn unpredictably on big tasks; check its work",
+    "platforms": "Web, desktop, iOS, Android",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "agents",
+      "apps",
+      "free",
+      "research"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://storyflow.so/blog/best-manus-ai-alternatives-2026",
+      "https://manus.im/blog/best-ai-agents-for-desktop"
+    ]
+  },
+  {
+    "id": "genspark",
+    "name": "Genspark",
+    "maker": "Genspark",
+    "category": "agent",
+    "status": "active",
+    "url": "https://www.genspark.ai",
+    "free": true,
+    "free_note": "Limited daily credits",
+    "billing": "monthly",
+    "from": 24.99,
+    "standard": 24.99,
+    "top": null,
+    "pricing": "Plus $24.99 · Pro higher (pricing page behind sign-in)",
+    "best_for": "Polished deliverables: slides, sheets, docs, phone calls on your behalf",
+    "strengths": "Widest range of finished outputs; multi-model",
+    "watch_out": "Opaque credit pricing",
+    "platforms": "Web, iOS, Android",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "agents",
+      "documents",
+      "free",
+      "slides"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.eesel.ai/blog/genspark-ai-alternatives",
+      "https://cellcog.ai/blog/best-super-agents/"
+    ]
+  },
+  {
+    "id": "perplexity-computer",
+    "name": "Perplexity Computer",
+    "maker": "Perplexity AI",
+    "category": "agent",
+    "status": "active",
+    "url": "https://www.perplexity.ai",
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 200,
+    "top": 200,
+    "pricing": "Pro $20 (one-off 4,000-credit bonus) · Max $200 (10,000 credits/month)",
+    "best_for": "Agent work that needs cited research",
+    "strengths": "Citations throughout; runs in Comet or the cloud",
+    "watch_out": "Realistic use needs Max at $200",
+    "platforms": "Web, Comet browser",
+    "privacy": "As Perplexity",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 2,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "agents",
+      "research"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.cloudzero.com/blog/perplexity-pricing/"
+    ]
+  },
+  {
+    "id": "gemini-notebook",
+    "name": "Gemini Notebook (ex-NotebookLM)",
+    "maker": "Google",
+    "category": "research",
+    "status": "active",
     "url": "https://notebooklm.google.com",
-    "free": true, "free_note": "Free with a Google account",
-    "from": 4.99, "standard": 19.99, "top": 199.99,
+    "pick": "Best for your own documents",
+    "free": true,
+    "free_note": "Free with a Google account",
+    "billing": "monthly",
+    "from": 4.99,
+    "standard": 19.99,
+    "top": 199.99,
     "pricing": "Free · higher limits via Google AI Plus/Pro/Ultra",
     "best_for": "Studying and summarising your own documents; audio overviews",
     "strengths": "Answers only from your sources; podcasts, video overviews, 11 output formats; runs code in a cloud computer",
@@ -218,14 +811,37 @@
     "platforms": "Web, iOS, Android",
     "privacy": "Google says uploads aren't used to train models",
     "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 5,
+      "ease": 5,
+      "privacy": 4
+    },
+    "tags": [
+      "documents",
+      "free",
+      "research",
+      "study"
+    ],
     "verified": "2026-09",
-    "sources": ["https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/", "https://aitoolsreview.co.uk/insights/gemini-notebook"]
+    "sources": [
+      "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+      "https://aitoolsreview.co.uk/insights/gemini-notebook"
+    ]
   },
   {
-    "id": "google-ai-mode", "name": "Google AI Mode", "maker": "Google", "category": "research", "status": "active",
+    "id": "google-ai-mode",
+    "name": "Google AI Mode",
+    "maker": "Google",
+    "category": "research",
+    "status": "active",
     "url": "https://www.google.com/search?udm=50",
-    "free": true, "free_note": "Free in Google Search",
-    "from": null, "standard": null, "top": null,
+    "free": true,
+    "free_note": "Free in Google Search",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
     "pricing": "Free (higher limits with Google AI Pro/Ultra)",
     "best_for": "Quick answers with links without leaving Google",
     "strengths": "Free, fast, uses Google's index; follow-up questions",
@@ -233,60 +849,146 @@
     "platforms": "Web, Google app, Chrome",
     "privacy": "Tied to Google account activity settings",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "free",
+      "google",
+      "research"
+    ],
     "verified": "older",
-    "sources": ["https://blog.google/products/search/"]
+    "sources": [
+      "https://blog.google/products/search/"
+    ]
   },
   {
-    "id": "kagi", "name": "Kagi Assistant", "maker": "Kagi", "category": "research", "status": "active",
+    "id": "kagi",
+    "name": "Kagi Assistant",
+    "maker": "Kagi",
+    "category": "research",
+    "status": "active",
     "url": "https://kagi.com/assistant",
-    "free": false, "free_note": "Trial searches only",
-    "from": 10, "standard": 25, "top": 25,
-    "pricing": "Assistant included with Kagi Ultimate (~$25); search plans from ~$10",
+    "free": false,
+    "free_note": "Trial searches only",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 25,
+    "top": 25,
+    "pricing": "Search from ~$10 · Ultimate $25 (premium models in Kagi Assistant)",
     "best_for": "Ad-free search with access to multiple frontier models",
     "strengths": "No ads, no tracking; choose GPT, Claude, Gemini and others",
     "watch_out": "Paid only; a niche product",
     "platforms": "Web, iOS, Android, browser extensions",
     "privacy": "Doesn't train on or sell data",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://kagi.com/pricing"]
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 5
+    },
+    "tags": [
+      "privacy",
+      "research"
+    ],
+    "verified": "2026-06",
+    "sources": [
+      "https://help.kagi.com/kagi/plans/plan-types.html"
+    ]
   },
   {
-    "id": "consensus", "name": "Consensus", "maker": "Consensus", "category": "research", "status": "active",
+    "id": "consensus",
+    "name": "Consensus",
+    "maker": "Consensus",
+    "category": "research",
+    "status": "active",
     "url": "https://consensus.app",
-    "free": true, "free_note": "Limited Pro searches",
-    "from": 15, "standard": 15, "top": 15,
-    "pricing": "Free · Pro ~$15/month",
+    "pick": "Best for science questions",
+    "free": true,
+    "free_note": "Limited Pro searches",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 20,
+    "pricing": "Free · Pro $20/month or $144/year",
     "best_for": "What do peer-reviewed studies actually say?",
     "strengths": "Searches 200M+ academic papers; 'consensus meter' on yes/no questions",
     "watch_out": "Academic sources only",
     "platforms": "Web",
     "privacy": "Standard",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://consensus.app/pricing/"]
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "research",
+      "science",
+      "study"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://comparedge.com/tools/consensus-ai/pricing"
+    ]
   },
   {
-    "id": "elicit", "name": "Elicit", "maker": "Elicit", "category": "research", "status": "active",
+    "id": "elicit",
+    "name": "Elicit",
+    "maker": "Elicit",
+    "category": "research",
+    "status": "active",
     "url": "https://elicit.com",
-    "free": true, "free_note": "Basic plan",
-    "from": 12, "standard": 12, "top": 49,
-    "pricing": "Free · Plus ~$12 · Pro ~$49",
+    "free": true,
+    "free_note": "Basic plan",
+    "billing": "monthly",
+    "from": 12,
+    "standard": 12,
+    "top": 49,
+    "pricing": "Free · Plus $12 ($7 annual) · Pro $49 ($29 annual)",
     "best_for": "Literature reviews and extracting data from papers",
     "strengths": "Systematic-review workflows, tables across many papers",
     "watch_out": "Overkill for everyday questions",
     "platforms": "Web",
     "privacy": "Standard",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://elicit.com/pricing"]
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 3,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "research",
+      "science",
+      "study"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://fast.io/resources/elicit-ai-review-2026/"
+    ]
   },
-
   {
-    "id": "chatgpt-images", "name": "ChatGPT Images 2.5", "maker": "OpenAI", "category": "image", "status": "active",
+    "id": "chatgpt-images",
+    "name": "ChatGPT Images 2.5",
+    "maker": "OpenAI",
+    "category": "image",
+    "status": "active",
     "url": "https://chatgpt.com/images",
-    "free": true, "free_note": "Limited daily images",
-    "from": 8, "standard": 20, "top": 200,
+    "pick": "Best quality",
+    "free": true,
+    "free_note": "Limited daily images",
+    "billing": "monthly",
+    "from": 8,
+    "standard": 20,
+    "top": 200,
     "pricing": "Included in ChatGPT plans",
     "best_for": "Best overall image quality and prompt-following",
     "strengths": "#1 on LMArena text-to-image (Sep 2026); accurate text in images; precise edits by chat",
@@ -294,14 +996,37 @@
     "platforms": "ChatGPT apps",
     "privacy": "As ChatGPT",
     "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "design",
+      "free",
+      "images"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.teamday.ai/blog/best-ai-image-models-2026", "https://overchat.ai/ai-hub/best-ai-image-generators"]
+    "sources": [
+      "https://www.teamday.ai/blog/best-ai-image-models-2026",
+      "https://overchat.ai/ai-hub/best-ai-image-generators"
+    ]
   },
   {
-    "id": "nano-banana", "name": "Nano Banana 2 / Pro (Gemini)", "maker": "Google", "category": "image", "status": "active",
+    "id": "nano-banana",
+    "name": "Nano Banana 2 / Pro (Gemini)",
+    "maker": "Google",
+    "category": "image",
+    "status": "active",
     "url": "https://gemini.google.com",
-    "free": true, "free_note": "Free in the Gemini app",
-    "from": 4.99, "standard": 19.99, "top": 199.99,
+    "pick": "Best free",
+    "free": true,
+    "free_note": "Free in the Gemini app",
+    "billing": "monthly",
+    "from": 4.99,
+    "standard": 19.99,
+    "top": 199.99,
     "pricing": "Free · more with Google AI plans",
     "best_for": "Fast photo edits and realistic images; best free option",
     "strengths": "Most convincing photoreal output in tests; consistent characters; 4–30 s per image",
@@ -309,14 +1034,37 @@
     "platforms": "Gemini apps, Google Photos, Firefly, many third-party apps",
     "privacy": "As Gemini",
     "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 5,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "free",
+      "google",
+      "images",
+      "photos"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.teamday.ai/blog/best-ai-image-models-2026"]
+    "sources": [
+      "https://www.teamday.ai/blog/best-ai-image-models-2026"
+    ]
   },
   {
-    "id": "midjourney", "name": "Midjourney V8.2", "maker": "Midjourney", "category": "image", "status": "active",
+    "id": "midjourney",
+    "name": "Midjourney V8.2",
+    "maker": "Midjourney",
+    "category": "image",
+    "status": "active",
     "url": "https://www.midjourney.com",
-    "free": false, "free_note": "No free trial",
-    "from": 10, "standard": 30, "top": 120,
+    "pick": "Best artistic style",
+    "free": false,
+    "free_note": "No free trial",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 30,
+    "top": 120,
     "pricing": "Basic $10 · Standard $30 · Pro $60 · Mega $120",
     "best_for": "Art direction, mood and distinctive style",
     "strengths": "Best aesthetics; personalisation learns your taste; instruction-based edit model (Aug 2026); video mode",
@@ -324,14 +1072,36 @@
     "platforms": "Web, Discord",
     "privacy": "Images public by default unless Pro/Mega Stealth mode",
     "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 3,
+      "ease": 3,
+      "privacy": 2
+    },
+    "tags": [
+      "art",
+      "images"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.teamday.ai/blog/best-ai-image-models-2026", "https://overchat.ai/ai-hub/best-ai-image-generators"]
+    "sources": [
+      "https://www.teamday.ai/blog/best-ai-image-models-2026",
+      "https://overchat.ai/ai-hub/best-ai-image-generators"
+    ]
   },
   {
-    "id": "ideogram", "name": "Ideogram 4.0", "maker": "Ideogram", "category": "image", "status": "active",
+    "id": "ideogram",
+    "name": "Ideogram 4.0",
+    "maker": "Ideogram",
+    "category": "image",
+    "status": "active",
     "url": "https://ideogram.ai",
-    "free": true, "free_note": "Weekly slow credits",
-    "from": 20, "standard": 20, "top": 20,
+    "pick": "Best for text & logos",
+    "free": true,
+    "free_note": "Weekly slow credits",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 20,
     "pricing": "Free · Plus $20",
     "best_for": "Posters, logos, packaging — anything with text",
     "strengths": "Best typography and layout; open-weights option",
@@ -339,14 +1109,36 @@
     "platforms": "Web, iOS",
     "privacy": "Free-tier images public",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "design",
+      "free",
+      "images",
+      "text"
+    ],
     "verified": "2026-09",
-    "sources": ["https://overchat.ai/ai-hub/best-ai-image-generators"]
+    "sources": [
+      "https://overchat.ai/ai-hub/best-ai-image-generators"
+    ]
   },
   {
-    "id": "firefly", "name": "Adobe Firefly", "maker": "Adobe", "category": "image", "status": "active",
+    "id": "firefly",
+    "name": "Adobe Firefly",
+    "maker": "Adobe",
+    "category": "image",
+    "status": "active",
     "url": "https://firefly.adobe.com",
-    "free": true, "free_note": "Limited daily generations",
-    "from": 9.99, "standard": 19.99, "top": 19.99,
+    "free": true,
+    "free_note": "Limited daily generations",
+    "billing": "monthly",
+    "from": 9.99,
+    "standard": 19.99,
+    "top": 19.99,
     "pricing": "Standard $9.99 (2,000 credits) · Pro $19.99 · included in Creative Cloud",
     "best_for": "Photoshop/Express users; commercially safe output",
     "strengths": "Firefly Image 5 (4 MP) trained on licensed data; also runs Nano Banana, FLUX, Veo; video too",
@@ -354,14 +1146,39 @@
     "platforms": "Web, Photoshop, Express, iOS, Android",
     "privacy": "Adobe says customer content isn't used to train Firefly",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 4
+    },
+    "tags": [
+      "commercial",
+      "design",
+      "free",
+      "images",
+      "photos",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://overchat.ai/ai-hub/best-ai-image-generators", "https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://overchat.ai/ai-hub/best-ai-image-generators",
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "flux", "name": "FLUX.2", "maker": "Black Forest Labs", "category": "image", "status": "active",
+    "id": "flux",
+    "name": "FLUX.2",
+    "maker": "Black Forest Labs",
+    "category": "image",
+    "status": "active",
     "url": "https://bfl.ai",
-    "free": false, "free_note": "Depends on the app you use it through",
-    "from": null, "standard": null, "top": null,
+    "free": false,
+    "free_note": "Depends on the app you use it through",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
     "pricing": "Pay per image (~$0.07 for Max); open-weight versions free to run locally",
     "best_for": "Tinkerers, local generation, editing with references",
     "strengths": "Open-weight models run on your own PC; multi-reference editing up to 4 MP",
@@ -369,14 +1186,34 @@
     "platforms": "API, local, third-party apps",
     "privacy": "Fully private when run locally",
     "region": "EU",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 2,
+      "privacy": 5
+    },
+    "tags": [
+      "images",
+      "local"
+    ],
     "verified": "2026-09",
-    "sources": ["https://overchat.ai/ai-hub/best-ai-image-generators"]
+    "sources": [
+      "https://overchat.ai/ai-hub/best-ai-image-generators"
+    ]
   },
   {
-    "id": "grok-imagine", "name": "Grok Imagine", "maker": "xAI", "category": "image", "status": "active",
+    "id": "grok-imagine",
+    "name": "Grok Imagine",
+    "maker": "xAI",
+    "category": "image",
+    "status": "active",
     "url": "https://grok.com/imagine",
-    "free": false, "free_note": "Removed from free tier Mar 2026",
-    "from": 10, "standard": 30, "top": 300,
+    "free": false,
+    "free_note": "Removed from free tier Mar 2026",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 30,
+    "top": 300,
     "pricing": "Included in SuperGrok plans",
     "best_for": "Quick concept batches and short video with sound",
     "strengths": "Fast; image + 1080p video with voice; seven-reference scene control",
@@ -384,14 +1221,34 @@
     "platforms": "Grok apps, X",
     "privacy": "As Grok",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 2,
+      "ease": 4,
+      "privacy": 2
+    },
+    "tags": [
+      "images",
+      "video"
+    ],
     "verified": "2026-08",
-    "sources": ["https://www.techtimes.com/articles/322670/20260802/grok-imagine-video-update-adds-1080p-voice-cloning-seven-reference-scene-control.htm"]
+    "sources": [
+      "https://www.techtimes.com/articles/322670/20260802/grok-imagine-video-update-adds-1080p-voice-cloning-seven-reference-scene-control.htm"
+    ]
   },
   {
-    "id": "krea", "name": "Krea", "maker": "Krea", "category": "image", "status": "active",
+    "id": "krea",
+    "name": "Krea",
+    "maker": "Krea",
+    "category": "image",
+    "status": "active",
     "url": "https://www.krea.ai",
-    "free": true, "free_note": "100 units/day",
-    "from": 9, "standard": 9, "top": null,
+    "free": true,
+    "free_note": "100 units/day",
+    "billing": "monthly",
+    "from": 9,
+    "standard": 9,
+    "top": null,
     "pricing": "Free · Basic $9 ($5 annual) · higher tiers",
     "best_for": "One workspace for many image and video models",
     "strengths": "Real-time generation, upscaling, 3D, video; runs FLUX, Nano Banana, Kling, Veo",
@@ -399,60 +1256,297 @@
     "platforms": "Web, iOS",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "images",
+      "multi-model",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "leonardo", "name": "Leonardo.ai", "maker": "Canva", "category": "image", "status": "active",
+    "id": "leonardo",
+    "name": "Leonardo.ai",
+    "maker": "Canva",
+    "category": "image",
+    "status": "active",
     "url": "https://leonardo.ai",
-    "free": true, "free_note": "Daily tokens",
-    "from": 10, "standard": 24, "top": 60,
-    "pricing": "Free · paid from ~$10",
+    "free": true,
+    "free_note": "Daily tokens",
+    "billing": "monthly",
+    "from": 12,
+    "standard": 30,
+    "top": 60,
+    "pricing": "Essential $12 · Premium $30 · Ultimate $60 (~20% off yearly); unlimited relaxed generations on paid plans",
+    "au": "Australian company (Sydney), owned by Canva",
     "best_for": "Game art and consistent characters",
     "strengths": "Many fine-tuned styles; owned by Canva",
     "watch_out": "Interface busy for beginners",
     "platforms": "Web, iOS, Android",
     "privacy": "Free images public",
     "region": "AU",
-    "verified": "older",
-    "sources": ["https://leonardo.ai/pricing"]
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 3,
+      "privacy": 3
+    },
+    "tags": [
+      "art",
+      "free",
+      "games",
+      "images"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.eesel.ai/blog/leonardo-ai-pricing"
+    ]
   },
   {
-    "id": "canva-ai", "name": "Canva AI", "maker": "Canva", "category": "image", "status": "active",
-    "url": "https://www.canva.com/ai",
-    "free": true, "free_note": "Limited AI uses on free plan",
-    "from": 15, "standard": 15, "top": null,
-    "pricing": "Free · Canva Pro ~$15 (more AI uses)",
-    "best_for": "Social posts, presentations and designs with AI help",
-    "strengths": "AI inside a full design tool; templates; Australian company",
-    "watch_out": "Not the best raw image model",
-    "platforms": "Web, Windows, macOS, iOS, Android",
-    "privacy": "Training opt-out in settings",
-    "region": "AU",
-    "verified": "older",
-    "sources": ["https://www.canva.com/pricing/"]
-  },
-  {
-    "id": "recraft", "name": "Recraft", "maker": "Recraft", "category": "image", "status": "active",
+    "id": "recraft",
+    "name": "Recraft",
+    "maker": "Recraft",
+    "category": "image",
+    "status": "active",
     "url": "https://www.recraft.ai",
-    "free": true, "free_note": "Daily credits",
-    "from": 12, "standard": 12, "top": null,
-    "pricing": "Free · paid from ~$12",
+    "free": true,
+    "free_note": "Daily credits",
+    "billing": "monthly",
+    "from": 12,
+    "standard": 20,
+    "top": 80,
+    "pricing": "Free ~50/day (no commercial licence) · Basic $12 · Pro 2K $20 · Pro 4K $40 · Pro 8K $80",
     "best_for": "Icons, vector illustrations and brand assets",
     "strengths": "Exports real SVG vectors; brand style consistency",
     "watch_out": "Less suited to photos",
     "platforms": "Web",
     "privacy": "Free images public",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://www.recraft.ai/pricing"]
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "design",
+      "free",
+      "images",
+      "vectors"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.eesel.ai/blog/recraft-ai-pricing"
+    ]
   },
-
   {
-    "id": "veo-flow", "name": "Google Veo 3.1 / Flow", "maker": "Google", "category": "video", "status": "active",
+    "id": "google-photos",
+    "name": "Google Photos AI editing",
+    "maker": "Google",
+    "category": "photo",
+    "status": "active",
+    "url": "https://photos.google.com",
+    "pick": "Best free",
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free (15 GB shared Google storage; more with Google One/AI plans)",
+    "au": "Help me edit available in Australia since Jan 2026",
+    "best_for": "Quick fixes on phone photos for free",
+    "strengths": "'Help me edit' by typing what you want (in Australia since Jan 2026); Magic Eraser, Unblur, Nano Banana restyles, Ask Photos",
+    "watch_out": "Edited photos carry an AI-edit label; some tools Pixel-first",
+    "platforms": "Android, iOS, web",
+    "privacy": "As Google",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "free",
+      "google",
+      "photos"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://techcrunch.com/2026/01/27/google-photos-brings-its-prompt-based-editing-feature-to-india-australia-and-japan/"
+    ]
+  },
+  {
+    "id": "photoshop",
+    "name": "Adobe Photoshop",
+    "maker": "Adobe",
+    "category": "photo",
+    "status": "active",
+    "url": "https://www.adobe.com/products/photoshop.html",
+    "pick": "Most powerful",
+    "free": false,
+    "free_note": "7-day trial",
+    "billing": "monthly",
+    "from": 19.99,
+    "standard": 22.99,
+    "top": 69.99,
+    "pricing": "Photography plan (Photoshop + Lightroom) $19.99 · Photoshop $22.99 · Creative Cloud $69.99; ~250 generative credits/month",
+    "best_for": "Serious photo editing and compositing",
+    "strengths": "Generative Fill/Expand, Harmonize lighting match; runs Firefly plus partner models",
+    "watch_out": "Generative credits run out; steep learning curve",
+    "platforms": "Windows, macOS, iPad, web",
+    "privacy": "Adobe says it doesn't train Firefly on your content",
+    "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 3,
+      "ease": 2,
+      "privacy": 4
+    },
+    "tags": [
+      "design",
+      "photos"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://imagen-ai.com/valuable-tips/adobe-photography-plan-pricing/"
+    ]
+  },
+  {
+    "id": "topaz",
+    "name": "Topaz Labs",
+    "maker": "Topaz Labs",
+    "category": "photo",
+    "status": "active",
+    "url": "https://www.topazlabs.com",
+    "pick": "Best faithful upscaler",
+    "free": false,
+    "free_note": "",
+    "billing": "yearly",
+    "from": 149,
+    "standard": 199,
+    "top": 299,
+    "pricing": "Gigapixel $149/yr · Photo AI $199/yr · Video AI $299/yr",
+    "best_for": "Faithful upscaling and sharpening of real photos and old video",
+    "strengths": "Runs on your computer; sharpens without inventing details",
+    "watch_out": "Sold per year, per app",
+    "platforms": "Windows, macOS",
+    "privacy": "Processes locally",
+    "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 3,
+      "ease": 4,
+      "privacy": 5
+    },
+    "tags": [
+      "photos",
+      "upscaling",
+      "video"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.renderahouse.com/blog/topaz-ai-pricing"
+    ]
+  },
+  {
+    "id": "magnific",
+    "name": "Magnific (Freepik)",
+    "maker": "Freepik",
+    "category": "photo",
+    "status": "active",
+    "url": "https://www.magnific.ai",
+    "free": true,
+    "free_note": "Light, occasional use",
+    "billing": "monthly",
+    "from": 14.5,
+    "standard": 33.75,
+    "top": 210,
+    "pricing": "Premium $14.50 · Premium+ $33.75 · Pro $210 (annual rates)",
+    "best_for": "Creative upscaling that adds new detail",
+    "strengths": "Generative upscaling; bundles image, video and audio generation and stock assets",
+    "watch_out": "Invents detail, so not for faithful restoration",
+    "platforms": "Web",
+    "privacy": "Standard",
+    "region": "EU",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "images",
+      "photos",
+      "upscaling"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.renderahouse.com/blog/magnific-ai-pricing",
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
+  },
+  {
+    "id": "picsart",
+    "name": "Picsart",
+    "maker": "Picsart",
+    "category": "photo",
+    "status": "active",
+    "url": "https://picsart.com",
+    "free": true,
+    "free_note": "Basic editor",
+    "billing": "monthly",
+    "from": 15,
+    "standard": 15,
+    "top": 45,
+    "pricing": "Pro $15 (500 credits) · Ultra $45",
+    "best_for": "Phone-first editing for social media",
+    "strengths": "Background and object removal, batch edits, templates",
+    "watch_out": "Lots of upsell prompts",
+    "platforms": "iOS, Android, web",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 3,
+      "value": 3,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "photos",
+      "social"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://wizcommerce.com/blog/picsart-pricing-plans-and-subscription-costs-guide/"
+    ]
+  },
+  {
+    "id": "veo-flow",
+    "name": "Google Veo 3.1 / Flow",
+    "maker": "Google",
+    "category": "video",
+    "status": "active",
     "url": "https://labs.google/flow",
-    "free": false, "free_note": "Some free tries in Gemini",
-    "from": 19.99, "standard": 19.99, "top": 199.99,
+    "pick": "Best realism",
+    "free": false,
+    "free_note": "Some free tries in Gemini",
+    "billing": "monthly",
+    "from": 19.99,
+    "standard": 19.99,
+    "top": 199.99,
     "pricing": "Via Google AI Pro $19.99 (limited) · full access on AI Ultra from $99.99",
     "best_for": "Cinematic realism with native sound",
     "strengths": "Veo 3.1 4K with synced audio; Gemini Omni Flash tops blind-vote leaderboards (Sep 2026); Flow editor",
@@ -460,14 +1554,36 @@
     "platforms": "Gemini, Flow (web), YouTube Shorts",
     "privacy": "As Gemini",
     "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 4,
+      "privacy": 2
+    },
+    "tags": [
+      "google",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.teamday.ai/blog/best-ai-video-models-2026", "https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://www.teamday.ai/blog/best-ai-video-models-2026",
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "kling", "name": "Kling 3.0", "maker": "Kuaishou", "category": "video", "status": "active",
+    "id": "kling",
+    "name": "Kling 3.0",
+    "maker": "Kuaishou",
+    "category": "video",
+    "status": "active",
     "url": "https://kling.ai",
-    "free": true, "free_note": "Daily free credits",
-    "from": 10, "standard": 37, "top": 180,
+    "pick": "Best value",
+    "free": true,
+    "free_note": "Daily free credits",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 37,
+    "top": 180,
     "pricing": "Standard ~$10 · Pro ~$37 · Premier ~$92 · Ultra ~$180",
     "best_for": "Realistic people and motion at a good price",
     "strengths": "Native 4K, up to 15 s, multi-shot storyboards, optional audio",
@@ -475,14 +1591,36 @@
     "platforms": "Web, iOS, Android",
     "privacy": "Chinese company",
     "region": "China",
+    "scores": {
+      "quality": 5,
+      "value": 5,
+      "ease": 4,
+      "privacy": 1
+    },
+    "tags": [
+      "free",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.layer3labs.io/guides/best-ai-video-generators", "https://www.teamday.ai/blog/best-ai-video-models-2026"]
+    "sources": [
+      "https://www.layer3labs.io/guides/best-ai-video-generators",
+      "https://www.teamday.ai/blog/best-ai-video-models-2026"
+    ]
   },
   {
-    "id": "runway", "name": "Runway Gen-4.5", "maker": "Runway", "category": "video", "status": "active",
+    "id": "runway",
+    "name": "Runway Gen-4.5",
+    "maker": "Runway",
+    "category": "video",
+    "status": "active",
     "url": "https://runwayml.com",
-    "free": true, "free_note": "125 one-time credits",
-    "from": 15, "standard": 35, "top": 95,
+    "pick": "Most control",
+    "free": true,
+    "free_note": "125 one-time credits",
+    "billing": "monthly",
+    "from": 15,
+    "standard": 35,
+    "top": 95,
     "pricing": "Standard $15 ($12 annual) · Pro $35 · Max $95",
     "best_for": "Hands-on filmmaking control and editing",
     "strengths": "Deepest editing toolkit; also runs Seedance, Kling, Veo, Wan",
@@ -490,14 +1628,35 @@
     "platforms": "Web, iOS",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 3,
+      "privacy": 3
+    },
+    "tags": [
+      "editing",
+      "free",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "seedance-dreamina", "name": "Seedance 2.5 (Dreamina / CapCut)", "maker": "ByteDance", "category": "video", "status": "active",
+    "id": "seedance-dreamina",
+    "name": "Seedance 2.5 (Dreamina / CapCut)",
+    "maker": "ByteDance",
+    "category": "video",
+    "status": "active",
     "url": "https://dreamina.capcut.com",
-    "free": true, "free_note": "Some free credits",
-    "from": 5, "standard": 11, "top": 70,
+    "free": true,
+    "free_note": "Some free credits",
+    "billing": "monthly",
+    "from": 5,
+    "standard": 11,
+    "top": 70,
     "pricing": "Dreamina Standard ~$5 (promo) · Pro $11 · Max $42 · Advanced $70",
     "best_for": "Ads and reference-heavy scenes; longest single clips",
     "strengths": "30-second clips with sound; up to 50 references; strong prompt adherence",
@@ -505,14 +1664,36 @@
     "platforms": "Web, CapCut, iOS, Android",
     "privacy": "ByteDance",
     "region": "China/Singapore",
+    "scores": {
+      "quality": 5,
+      "value": 5,
+      "ease": 3,
+      "privacy": 1
+    },
+    "tags": [
+      "free",
+      "social",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/", "https://higgsfield.ai/blog/best-ai-video-generators-2026"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/",
+      "https://higgsfield.ai/blog/best-ai-video-generators-2026"
+    ]
   },
   {
-    "id": "luma", "name": "Luma Dream Machine (Ray 3.2)", "maker": "Luma AI", "category": "video", "status": "active",
+    "id": "luma",
+    "name": "Luma Dream Machine (Ray 3.2)",
+    "maker": "Luma AI",
+    "category": "video",
+    "status": "active",
     "url": "https://lumalabs.ai",
-    "free": true, "free_note": "Limited monthly generations",
-    "from": 30, "standard": 30, "top": 300,
+    "free": true,
+    "free_note": "Limited monthly generations",
+    "billing": "monthly",
+    "from": 30,
+    "standard": 30,
+    "top": 300,
     "pricing": "Plus $30 ($25 annual) · Pro $90 · Ultra $300",
     "best_for": "Fast brainstorming; HDR output",
     "strengths": "Quick, good physics and skin; keyframes; HDR/EXR export",
@@ -520,14 +1701,35 @@
     "platforms": "Web, iOS",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/", "https://www.teamday.ai/blog/best-ai-video-models-2026"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/",
+      "https://www.teamday.ai/blog/best-ai-video-models-2026"
+    ]
   },
   {
-    "id": "pika", "name": "Pika 2.5", "maker": "Pika", "category": "video", "status": "active",
+    "id": "pika",
+    "name": "Pika 2.5",
+    "maker": "Pika",
+    "category": "video",
+    "status": "active",
     "url": "https://pika.art",
-    "free": true, "free_note": "Free, no monthly credits",
-    "from": 10, "standard": 10, "top": null,
+    "free": true,
+    "free_note": "Free, no monthly credits",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 10,
+    "top": null,
     "pricing": "Starter $10 ($8 annual) · higher tiers",
     "best_for": "Fun effects for TikTok/Reels",
     "strengths": "Quick stylised clips, effects, lip sync",
@@ -535,14 +1737,36 @@
     "platforms": "Web, iOS",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 3,
+      "value": 4,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "fun",
+      "social",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "hailuo", "name": "Hailuo / MiniMax H3", "maker": "MiniMax", "category": "video", "status": "active",
+    "id": "hailuo",
+    "name": "Hailuo / MiniMax H3",
+    "maker": "MiniMax",
+    "category": "video",
+    "status": "active",
     "url": "https://hailuoai.video",
-    "free": true, "free_note": "Free credits",
-    "from": 10, "standard": null, "top": null,
+    "free": true,
+    "free_note": "Free credits",
+    "billing": "monthly",
+    "from": 10,
+    "standard": null,
+    "top": null,
     "pricing": "Free · paid from ~$10",
     "best_for": "Cheap, fast clips with sound",
     "strengths": "MiniMax H3 is top-4 for video with audio; open weights; quick turnaround",
@@ -550,14 +1774,34 @@
     "platforms": "Web, iOS, Android",
     "privacy": "Chinese company",
     "region": "China",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 4,
+      "privacy": 1
+    },
+    "tags": [
+      "free",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.teamday.ai/blog/best-ai-video-models-2026"]
+    "sources": [
+      "https://www.teamday.ai/blog/best-ai-video-models-2026"
+    ]
   },
   {
-    "id": "higgsfield", "name": "Higgsfield", "maker": "Higgsfield", "category": "video", "status": "active",
+    "id": "higgsfield",
+    "name": "Higgsfield",
+    "maker": "Higgsfield",
+    "category": "video",
+    "status": "active",
     "url": "https://higgsfield.ai",
-    "free": false, "free_note": "",
-    "from": 9, "standard": 43, "top": 129,
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": 9,
+    "standard": 43,
+    "top": 129,
     "pricing": "Basic $9 · Pro $43 ($23 annual) · Ultra $129",
     "best_for": "Many video models under one subscription; ads and UGC-style clips",
     "strengths": "Runs Seedance, Veo, Kling and 25+ others; character consistency and camera controls",
@@ -565,14 +1809,35 @@
     "platforms": "Web, iOS",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "ads",
+      "multi-model",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "openart", "name": "OpenArt", "maker": "OpenArt", "category": "video", "status": "active",
+    "id": "openart",
+    "name": "OpenArt",
+    "maker": "OpenArt",
+    "category": "video",
+    "status": "active",
     "url": "https://openart.ai",
-    "free": true, "free_note": "7-day trial",
-    "from": 14, "standard": 34, "top": 56,
+    "free": true,
+    "free_note": "7-day trial",
+    "billing": "monthly",
+    "from": 14,
+    "standard": 34,
+    "top": 56,
     "pricing": "Starter $14 · Plus $34 · Pro $56",
     "best_for": "Telling a story across many shots with the same characters",
     "strengths": "Director mode builds videos up to 5 minutes; Seedance, Veo, Kling, Wan in one place",
@@ -580,14 +1845,36 @@
     "platforms": "Web",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "images",
+      "story",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "heygen", "name": "HeyGen", "maker": "HeyGen", "category": "video", "status": "active",
+    "id": "heygen",
+    "name": "HeyGen",
+    "maker": "HeyGen",
+    "category": "video",
+    "status": "active",
     "url": "https://www.heygen.com",
-    "free": true, "free_note": "3 videos/month",
-    "from": 29, "standard": 29, "top": null,
+    "free": true,
+    "free_note": "3 videos/month",
+    "billing": "monthly",
+    "from": 29,
+    "standard": 29,
+    "top": null,
     "pricing": "Free · Creator $29 ($24 annual)",
     "best_for": "Talking-avatar videos of you; translating videos",
     "strengths": "Avatars, voice cloning and translation into 175+ languages",
@@ -595,14 +1882,36 @@
     "platforms": "Web, iOS",
     "privacy": "Biometric (face/voice) data",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 2
+    },
+    "tags": [
+      "avatars",
+      "free",
+      "translation",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "synthesia", "name": "Synthesia", "maker": "Synthesia", "category": "video", "status": "active",
+    "id": "synthesia",
+    "name": "Synthesia",
+    "maker": "Synthesia",
+    "category": "video",
+    "status": "active",
     "url": "https://www.synthesia.io",
-    "free": true, "free_note": "10 min/month",
-    "from": 29, "standard": 29, "top": null,
+    "free": true,
+    "free_note": "10 min/month",
+    "billing": "monthly",
+    "from": 29,
+    "standard": 29,
+    "top": null,
     "pricing": "Free · Starter $29 ($18 annual)",
     "best_for": "Training and explainer videos in many languages",
     "strengths": "160+ languages from one script; business-grade",
@@ -610,14 +1919,36 @@
     "platforms": "Web",
     "privacy": "Standard",
     "region": "UK",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "avatars",
+      "free",
+      "training",
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://openart.ai/blog/best-ai-video-generators/"]
+    "sources": [
+      "https://openart.ai/blog/best-ai-video-generators/"
+    ]
   },
   {
-    "id": "sora", "name": "Sora", "maker": "OpenAI", "category": "video", "status": "discontinued",
+    "id": "sora",
+    "name": "Sora",
+    "maker": "OpenAI",
+    "category": "video",
+    "status": "discontinued",
     "url": "https://openai.com/sora",
-    "free": false, "free_note": "",
-    "from": null, "standard": null, "top": null,
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
     "pricing": "Discontinued",
     "best_for": "—",
     "strengths": "—",
@@ -625,15 +1956,34 @@
     "platforms": "—",
     "privacy": "—",
     "region": "US",
+    "scores": {
+      "quality": 1,
+      "value": 1,
+      "ease": 1,
+      "privacy": 1
+    },
+    "tags": [
+      "video"
+    ],
     "verified": "2026-09",
-    "sources": ["https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/"]
+    "sources": [
+      "https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/"
+    ]
   },
-
   {
-    "id": "suno", "name": "Suno v5.5", "maker": "Suno", "category": "audio", "status": "active",
+    "id": "suno",
+    "name": "Suno v5.5",
+    "maker": "Suno",
+    "category": "audio",
+    "status": "active",
     "url": "https://suno.com",
-    "free": true, "free_note": "50 credits/day (~10 songs), non-commercial",
-    "from": 10, "standard": 10, "top": 30,
+    "pick": "Best for songs",
+    "free": true,
+    "free_note": "50 credits/day (~10 songs), non-commercial",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 10,
+    "top": 30,
     "pricing": "Pro $10 ($8 annual) · Premier $30 ($24 annual)",
     "best_for": "Full songs with vocals and lyrics",
     "strengths": "Most natural vocals; songs up to 8 min; stems; Suno Studio; voice cloning on Pro",
@@ -641,14 +1991,35 @@
     "platforms": "Web, iOS, Android",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 5,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "music"
+    ],
     "verified": "2026-09",
-    "sources": ["https://felloai.com/best-ai-music-generators/", "https://www.layer3labs.io/guides/suno-explained"]
+    "sources": [
+      "https://felloai.com/best-ai-music-generators/",
+      "https://www.layer3labs.io/guides/suno-explained"
+    ]
   },
   {
-    "id": "udio", "name": "Udio", "maker": "Udio", "category": "audio", "status": "active",
+    "id": "udio",
+    "name": "Udio",
+    "maker": "Udio",
+    "category": "audio",
+    "status": "active",
     "url": "https://www.udio.com",
-    "free": true, "free_note": "10 credits/day + 100/month",
-    "from": 10, "standard": 10, "top": 30,
+    "free": true,
+    "free_note": "10 credits/day + 100/month",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 10,
+    "top": 30,
     "pricing": "Standard $10 · Pro $30",
     "best_for": "Polished electronic/ambient tracks; cleanest licensing",
     "strengths": "Licensing deal with UMG",
@@ -656,14 +2027,35 @@
     "platforms": "Web, iOS",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "music"
+    ],
     "verified": "2026-09",
-    "sources": ["https://felloai.com/best-ai-music-generators/"]
+    "sources": [
+      "https://felloai.com/best-ai-music-generators/"
+    ]
   },
   {
-    "id": "elevenlabs", "name": "ElevenLabs", "maker": "ElevenLabs", "category": "audio", "status": "active",
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "maker": "ElevenLabs",
+    "category": "audio",
+    "status": "active",
     "url": "https://elevenlabs.io",
-    "free": true, "free_note": "Small monthly allowance",
-    "from": 6, "standard": 22, "top": 299,
+    "pick": "Best voices",
+    "free": true,
+    "free_note": "Small monthly allowance",
+    "billing": "monthly",
+    "from": 6,
+    "standard": 22,
+    "top": 299,
     "pricing": "Starter $6 · Creator $22 · Pro $99 · Scale $299 · Business $990",
     "best_for": "Voiceovers, audiobooks, voice cloning, licensed music",
     "strengths": "Most realistic text-to-speech; voice cloning; ElevenLabs Music v2.5 cleared for commercial use; dubbing",
@@ -671,14 +2063,37 @@
     "platforms": "Web, iOS, Android, ElevenReader app",
     "privacy": "Voice data is biometric — clone only your own voice",
     "region": "US/UK",
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "audio",
+      "free",
+      "music",
+      "voice"
+    ],
     "verified": "2026-09",
-    "sources": ["https://costbench.com/software/ai-voice-tools/elevenlabs/", "https://felloai.com/best-ai-music-generators/"]
+    "sources": [
+      "https://costbench.com/software/ai-voice-tools/elevenlabs/",
+      "https://felloai.com/best-ai-music-generators/"
+    ]
   },
   {
-    "id": "aiva", "name": "AIVA", "maker": "AIVA", "category": "audio", "status": "active",
+    "id": "aiva",
+    "name": "AIVA",
+    "maker": "AIVA",
+    "category": "audio",
+    "status": "active",
     "url": "https://www.aiva.ai",
-    "free": true, "free_note": "Limited rights",
-    "from": 15, "standard": 15, "top": 49,
+    "free": true,
+    "free_note": "Limited rights",
+    "billing": "monthly",
+    "from": 15,
+    "standard": 15,
+    "top": 49,
     "pricing": "Standard $15 · Pro $49 (full copyright)",
     "best_for": "Orchestral and film-style instrumental music",
     "strengths": "MIDI export; you own the copyright on Pro",
@@ -686,14 +2101,35 @@
     "platforms": "Web, desktop",
     "privacy": "Standard",
     "region": "EU",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "music"
+    ],
     "verified": "2026-09",
-    "sources": ["https://felloai.com/best-ai-music-generators/"]
+    "sources": [
+      "https://felloai.com/best-ai-music-generators/"
+    ]
   },
   {
-    "id": "wispr-flow", "name": "Wispr Flow", "maker": "Wispr", "category": "audio", "status": "active",
+    "id": "wispr-flow",
+    "name": "Wispr Flow",
+    "maker": "Wispr",
+    "category": "audio",
+    "status": "active",
     "url": "https://wisprflow.ai",
-    "free": true, "free_note": "2,000 words/week",
-    "from": 15, "standard": 15, "top": 15,
+    "pick": "Best dictation",
+    "free": true,
+    "free_note": "2,000 words/week",
+    "billing": "monthly",
+    "from": 15,
+    "standard": 15,
+    "top": 15,
     "pricing": "Pro $15 ($12 annual)",
     "best_for": "Dictating instead of typing, in any app",
     "strengths": "Cleans up filler words and formats as you speak; works everywhere on desktop and phone",
@@ -701,333 +2137,150 @@
     "platforms": "macOS, Windows, iOS, Android",
     "privacy": "Cloud processing; privacy mode available",
     "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "dictation",
+      "free",
+      "voice",
+      "writing"
+    ],
     "verified": "2026-08",
-    "sources": ["https://zackproser.com/blog/wisprflow-pricing-guide-2026"]
+    "sources": [
+      "https://zackproser.com/blog/wisprflow-pricing-guide-2026"
+    ]
   },
-
   {
-    "id": "claude-code", "name": "Claude Code", "maker": "Anthropic", "category": "coding", "status": "active",
-    "url": "https://claude.com/product/claude-code",
-    "free": false, "free_note": "Needs Claude Pro or API",
-    "from": 20, "standard": 20, "top": 200,
-    "pricing": "Included in Claude Pro $20 · Max $100/$200",
-    "best_for": "Big multi-file changes and long agent tasks",
-    "strengths": "Top of most agentic-coding benchmarks; terminal, VS Code, JetBrains, web, mobile",
-    "watch_out": "Pro limits run out fast on heavy use; Claude models only",
-    "platforms": "Terminal, VS Code, JetBrains, web, iOS, Android",
-    "privacy": "As Claude",
-    "region": "US",
+    "id": "canva-ai",
+    "name": "Canva AI",
+    "maker": "Canva",
+    "category": "presentation",
+    "status": "active",
+    "url": "https://www.canva.com/ai",
+    "pick": "Best all-round design",
+    "free": true,
+    "free_note": "Limited AI uses on free plan",
+    "billing": "monthly",
+    "from": 15,
+    "standard": 15,
+    "top": 25,
+    "pricing": "Free · Pro $15 ($120/yr; 2,000 standard AI uses/month) · Business $25/user",
+    "au": "Australian company (Sydney)",
+    "best_for": "Social posts, presentations, documents and designs",
+    "strengths": "AI inside a full design tool; templates; Australian company",
+    "watch_out": "Not the best raw image model",
+    "platforms": "Web, Windows, macOS, iOS, Android",
+    "privacy": "Training opt-out in settings",
+    "region": "AU",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "design",
+      "free",
+      "images",
+      "slides",
+      "social"
+    ],
     "verified": "2026-09",
-    "sources": ["https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"]
+    "sources": [
+      "https://www.eesel.ai/blog/canva-ai-pricing",
+      "https://costbench.com/software/ai-image-generators/canva-ai/"
+    ]
   },
   {
-    "id": "codex", "name": "OpenAI Codex", "maker": "OpenAI", "category": "coding", "status": "active",
-    "url": "https://openai.com/codex",
-    "free": true, "free_note": "Limited, with ChatGPT Free",
-    "from": 8, "standard": 20, "top": 200,
-    "pricing": "Included in ChatGPT Go/Plus/Pro/Business",
-    "best_for": "ChatGPT subscribers; cloud sandboxes",
-    "strengths": "GPT-6.1 Sol/Astra; open-source CLI; runs tasks in isolated cloud sandboxes",
-    "watch_out": "Usage metered per 5-hour window",
-    "platforms": "Terminal, IDE, web, ChatGPT app",
-    "privacy": "As ChatGPT",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.morphllm.com/codex-pricing"]
-  },
-  {
-    "id": "github-copilot", "name": "GitHub Copilot", "maker": "GitHub (Microsoft)", "category": "coding", "status": "active",
-    "url": "https://github.com/features/copilot",
-    "free": true, "free_note": "2,000 completions + limited chat/month",
-    "from": 10, "standard": 10, "top": 100,
-    "pricing": "Pro $10 ($15 credits) · Pro+ $39 ($70) · Max $100 ($200) · Business $19/seat",
-    "best_for": "Cheapest serious option; works in any editor",
-    "strengths": "Unlimited completions on paid plans; choose Claude, GPT, Gemini, Grok; runs Claude Code and Codex agents",
-    "watch_out": "Switched to per-token AI Credits on 1 Jun 2026 — heavy agent use can overrun",
-    "platforms": "VS Code, JetBrains, Neovim, Xcode, CLI, github.com",
-    "privacy": "Individuals can opt out of training",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.nocode.mba/articles/github-copilot-pricing", "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"]
-  },
-  {
-    "id": "cursor", "name": "Cursor", "maker": "Anysphere", "category": "coding", "status": "active",
-    "url": "https://cursor.com",
-    "free": true, "free_note": "Hobby: limited agent + tab",
-    "from": 20, "standard": 20, "top": 200,
-    "pricing": "Pro $20 · Pro+ $60 (3x) · Ultra $200 (20x) · Teams $40/seat",
-    "best_for": "An AI-first editor for everyday coding",
-    "strengths": "Polished VS Code-based editor; many models; background agents; CLI",
-    "watch_out": "Usage-based overages after the included allowance",
-    "platforms": "Windows, macOS, Linux, CLI",
-    "privacy": "Privacy mode available",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://sessionwatcher.com/guides/how-much-does-cursor-cost"]
-  },
-  {
-    "id": "devin-desktop", "name": "Devin Desktop (ex-Windsurf)", "maker": "Cognition", "category": "coding", "status": "active",
-    "url": "https://devin.ai",
-    "free": true, "free_note": "Unlimited tab, light agent quota",
-    "from": 20, "standard": 20, "top": 200,
-    "pricing": "Pro $20 · Max $200 · Teams $40/seat",
-    "best_for": "Cursor alternative with Devin agent built in",
-    "strengths": "Generous free autocomplete",
-    "watch_out": "Renamed from Windsurf 2 Jun 2026",
-    "platforms": "Windows, macOS, Linux, JetBrains plugin",
-    "privacy": "Standard",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.therundown.ai/tools/codeium-windsurf"]
-  },
-  {
-    "id": "kiro", "name": "Kiro", "maker": "Amazon (AWS)", "category": "coding", "status": "active",
-    "url": "https://kiro.dev",
-    "free": true, "free_note": "50 credits",
-    "from": 20, "standard": 20, "top": 200,
-    "pricing": "Pro $20 · up to $200",
-    "best_for": "Planning requirements before writing code",
-    "strengths": "Spec-driven development",
-    "watch_out": "AWS-flavoured",
-    "platforms": "Windows, macOS, Linux",
-    "privacy": "Standard",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"]
-  },
-  {
-    "id": "antigravity", "name": "Google Antigravity", "maker": "Google", "category": "coding", "status": "active",
-    "url": "https://antigravity.google",
-    "free": true, "free_note": "Free with weekly compute cap",
-    "from": 19.99, "standard": 19.99, "top": 199.99,
-    "pricing": "Free · higher limits with Google AI plans",
-    "best_for": "Free agent-first coding with Gemini",
-    "strengths": "Multiple agents across your codebase; CLI version",
-    "watch_out": "Gemini Code Assist individual tier closed Jun 2026",
-    "platforms": "Windows, macOS, Linux, CLI",
-    "privacy": "As Google",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://pinggy.io/blog/best_ai_tools_for_coding/"]
-  },
-  {
-    "id": "zed", "name": "Zed", "maker": "Zed Industries", "category": "coding", "status": "active",
-    "url": "https://zed.dev",
-    "free": true, "free_note": "2,000 edit predictions/month",
-    "from": 10, "standard": 10, "top": null,
-    "pricing": "Pro $10",
-    "best_for": "Fast, lightweight editor with AI",
-    "strengths": "Very fast; open source; bring your own keys",
-    "watch_out": "Smaller extension ecosystem than VS Code",
-    "platforms": "macOS, Linux, Windows",
-    "privacy": "Open source",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://pinggy.io/blog/best_ai_tools_for_coding/"]
-  },
-  {
-    "id": "cline-opencode", "name": "Cline / OpenCode", "maker": "Open source", "category": "coding", "status": "active",
-    "url": "https://opencode.ai",
-    "free": true, "free_note": "Free; pay your model provider",
-    "from": null, "standard": null, "top": null,
-    "pricing": "Free (bring your own API key or local model)",
-    "best_for": "No subscription; use any model, including local ones",
-    "strengths": "Open source; provider-independent",
-    "watch_out": "API bills can exceed a flat subscription",
-    "platforms": "VS Code (Cline), terminal (OpenCode)",
-    "privacy": "Fully local possible",
-    "region": "—",
-    "verified": "2026-09",
-    "sources": ["https://pinggy.io/blog/best_ai_tools_for_coding/"]
-  },
-
-  {
-    "id": "lovable", "name": "Lovable", "maker": "Lovable", "category": "builder", "status": "active",
-    "url": "https://lovable.dev",
-    "free": true, "free_note": "5 messages/day",
-    "from": 25, "standard": 25, "top": 50,
-    "pricing": "Pro $25 · Business $50",
-    "best_for": "Best-looking web app prototypes",
-    "strengths": "Polished design out of the box; Supabase backend; GitHub export",
-    "watch_out": "Hosting and in-app AI now share your credit balance",
-    "platforms": "Web",
-    "privacy": "Standard",
-    "region": "EU",
-    "verified": "2026-09",
-    "sources": ["https://www.totalum.app/blog/replit-alternative-2026"]
-  },
-  {
-    "id": "bolt", "name": "Bolt.new", "maker": "StackBlitz", "category": "builder", "status": "active",
-    "url": "https://bolt.new",
-    "free": true, "free_note": "1M tokens/month",
-    "from": 25, "standard": 25, "top": 200,
-    "pricing": "Pro $25 · up to $200 · Teams $30/member",
-    "best_for": "Fastest prompt-to-prototype",
-    "strengths": "Runs full-stack apps in the browser; export or GitHub",
-    "watch_out": "Token usage climbs fast when fixing bugs",
+    "id": "gamma",
+    "name": "Gamma",
+    "maker": "Gamma",
+    "category": "presentation",
+    "status": "active",
+    "url": "https://gamma.app",
+    "pick": "Fastest decks",
+    "free": true,
+    "free_note": "400 one-time credits, PowerPoint export",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 20,
+    "top": 20,
+    "pricing": "Plus ~$10 · Pro ~$20 · Team $20/seat",
+    "best_for": "Fastest good-looking deck from a prompt or document",
+    "strengths": "Decks, documents and one-page websites in about a minute; exports to PowerPoint/Google Slides",
+    "watch_out": "Layouts can feel samey; fine-tuning is fiddlier than PowerPoint",
     "platforms": "Web",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "documents",
+      "free",
+      "slides"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.totalum.app/blog/replit-alternative-2026"]
+    "sources": [
+      "https://zapier.com/blog/best-ai-presentation-maker/"
+    ]
   },
   {
-    "id": "replit", "name": "Replit", "maker": "Replit", "category": "builder", "status": "active",
-    "url": "https://replit.com",
-    "free": true, "free_note": "Daily agent credits, 1 published app",
-    "from": 20, "standard": 20, "top": 100,
-    "pricing": "Core $20 ($18 annual) · Pro $100",
-    "best_for": "Build and host an app in one place",
-    "strengths": "Agent builds, tests and deploys; database and hosting included",
-    "watch_out": "Effort-based agent pricing; heavy users report $100–300/month extra",
-    "platforms": "Web, iOS, Android",
-    "privacy": "Standard",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.appypie.com/blog/best-ai-app-builders"]
-  },
-  {
-    "id": "v0", "name": "v0", "maker": "Vercel", "category": "builder", "status": "active",
-    "url": "https://v0.app",
-    "free": true, "free_note": "$5 credits/month",
-    "from": 20, "standard": 30, "top": 100,
-    "pricing": "Premium $20 · Team $30/user · Business $100/user",
-    "best_for": "Website and UI design generation",
-    "strengths": "Best-in-class React UI; one-click Vercel deploy",
-    "watch_out": "Front-end focused",
+    "id": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "maker": "Beautiful.ai",
+    "category": "presentation",
+    "status": "active",
+    "url": "https://www.beautiful.ai",
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": 12,
+    "standard": 12,
+    "top": 50,
+    "pricing": "Pro $12 (annual) or $45 month-to-month · Team $40–50/user · one presentation $45",
+    "best_for": "Tidy, on-brand business slides",
+    "strengths": "Smart slides that keep layout rules as you edit",
+    "watch_out": "Monthly billing is almost 4x the annual price",
     "platforms": "Web",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "office",
+      "slides"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.layer3labs.io/comparisons/replit-alternatives"]
+    "sources": [
+      "https://guptadeepak.com/tools/top-5-ai-presentation-tools-2026/"
+    ]
   },
   {
-    "id": "base44", "name": "Base44", "maker": "Wix", "category": "builder", "status": "active",
-    "url": "https://base44.com",
-    "free": true, "free_note": "25 messages/month",
-    "from": 16, "standard": 20, "top": null,
-    "pricing": "From $16 (annual) / $20 monthly",
-    "best_for": "Cheapest capable app builder",
-    "strengths": "Backend, login and database built in",
-    "watch_out": "Web apps only",
-    "platforms": "Web",
-    "privacy": "Standard",
-    "region": "US/Israel",
-    "verified": "2026-09",
-    "sources": ["https://www.appypie.com/blog/best-ai-app-builders"]
-  },
-
-  {
-    "id": "comet", "name": "Comet", "maker": "Perplexity", "category": "browser", "status": "active",
-    "url": "https://www.perplexity.ai/comet",
-    "free": true, "free_note": "Free, including the agent",
-    "from": null, "standard": null, "top": null,
-    "pricing": "Free (more with Perplexity Pro/Max)",
-    "best_for": "Best free agentic browser",
-    "strengths": "Agent clicks through sites for you; research and shopping; Mac, Windows, iOS, Android",
-    "watch_out": "Most-studied for prompt-injection attacks — don't let it near banking",
-    "platforms": "macOS, Windows, iOS, Android",
-    "privacy": "As Perplexity",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.commercepundit.com/blog/best-ai-browsers/"]
-  },
-  {
-    "id": "chrome-gemini", "name": "Chrome with Gemini", "maker": "Google", "category": "browser", "status": "active",
-    "url": "https://www.google.com/chrome/",
-    "free": true, "free_note": "Gemini in Chrome free",
-    "from": 19.99, "standard": 19.99, "top": 199.99,
-    "pricing": "Free · 'auto browse' agent needs AI Pro/Ultra (US only)",
-    "best_for": "Staying on Chrome",
-    "strengths": "Biggest extension ecosystem; Gemini knows your tabs",
-    "watch_out": "The agent that completes tasks is paywalled and US-only",
-    "platforms": "Windows, macOS, Linux, Android, iOS",
-    "privacy": "As Google",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.commercepundit.com/blog/best-ai-browsers/"]
-  },
-  {
-    "id": "edge", "name": "Microsoft Edge", "maker": "Microsoft", "category": "browser", "status": "active",
-    "url": "https://www.microsoft.com/edge",
-    "free": true, "free_note": "Free",
-    "from": null, "standard": null, "top": null,
-    "pricing": "Free",
-    "best_for": "Microsoft 365 users",
-    "strengths": "Copilot built in: multi-tab reasoning, Journeys, voice and vision",
-    "watch_out": "Copilot Mode retired as a separate mode in May 2026; weaker at completing tasks than Comet",
-    "platforms": "Windows, macOS, Linux, iOS, Android",
-    "privacy": "As Microsoft",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.commercepundit.com/blog/best-ai-browsers/"]
-  },
-  {
-    "id": "dia", "name": "Dia", "maker": "The Browser Company (Atlassian)", "category": "browser", "status": "active",
-    "url": "https://www.diabrowser.com",
-    "free": true, "free_note": "Free",
-    "from": 20, "standard": 20, "top": 20,
-    "pricing": "Free · $20 for unlimited AI",
-    "best_for": "Mac users who want the most polished design",
-    "strengths": "Arc's sidebar and tab features with AI chat and reusable 'Skills'",
-    "watch_out": "macOS only (Windows 'coming soon')",
-    "platforms": "macOS",
-    "privacy": "Standard",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://efficient.app/best/browser"]
-  },
-  {
-    "id": "brave-leo", "name": "Brave Leo", "maker": "Brave", "category": "browser", "status": "active",
-    "url": "https://brave.com/leo/",
-    "free": true, "free_note": "Free",
-    "from": 14.99, "standard": 14.99, "top": 14.99,
-    "pricing": "Free · Leo Premium $14.99",
-    "best_for": "Privacy first",
-    "strengths": "No account needed; chats not stored or used for training",
-    "watch_out": "Doesn't complete tasks for you",
-    "platforms": "Windows, macOS, Linux, iOS, Android",
-    "privacy": "Best in category",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.commercepundit.com/blog/best-ai-browsers/"]
-  },
-  {
-    "id": "opera-neon", "name": "Opera Neon", "maker": "Opera", "category": "browser", "status": "active",
-    "url": "https://www.operaneon.com",
-    "free": false, "free_note": "",
-    "from": 19.9, "standard": 19.9, "top": 19.9,
-    "pricing": "$19.90/month",
-    "best_for": "Running several web agents at once",
-    "strengths": "Agentic tasks run in parallel",
-    "watch_out": "Only paid AI browser; desktop only",
-    "platforms": "Windows, macOS",
-    "privacy": "Standard",
-    "region": "EU",
-    "verified": "2026-09",
-    "sources": ["https://www.commercepundit.com/blog/best-ai-browsers/"]
-  },
-  {
-    "id": "chatgpt-atlas", "name": "ChatGPT Atlas", "maker": "OpenAI", "category": "browser", "status": "discontinued",
-    "url": "https://chatgpt.com/atlas",
-    "free": false, "free_note": "",
-    "from": null, "standard": null, "top": null,
-    "pricing": "Discontinued",
-    "best_for": "—",
-    "strengths": "—",
-    "watch_out": "Stopped working 9 Aug 2026; replaced by the ChatGPT Chrome extension",
-    "platforms": "—",
-    "privacy": "—",
-    "region": "US",
-    "verified": "2026-09",
-    "sources": ["https://www.commercepundit.com/blog/best-ai-browsers/"]
-  },
-
-  {
-    "id": "grammarly", "name": "Grammarly", "maker": "Superhuman (ex-Grammarly)", "category": "productivity", "status": "active",
+    "id": "grammarly",
+    "name": "Grammarly",
+    "maker": "Superhuman (ex-Grammarly)",
+    "category": "productivity",
+    "status": "active",
     "url": "https://www.grammarly.com",
-    "free": true, "free_note": "Basic grammar and spelling",
-    "from": 12, "standard": 30, "top": 30,
+    "pick": "Best writing help",
+    "free": true,
+    "free_note": "Basic grammar and spelling",
+    "billing": "monthly",
+    "from": 12,
+    "standard": 30,
+    "top": 30,
     "pricing": "Pro $30 monthly or $144/yr ($12/mo)",
     "best_for": "Grammar and tone everywhere you type",
     "strengths": "Works in every app and browser; AI rewrites; plagiarism and AI detection",
@@ -1035,29 +2288,72 @@
     "platforms": "Windows, macOS, browsers, iOS, Android",
     "privacy": "Says it doesn't sell data",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "writing"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.eesel.ai/blog/grammarly-pricing"]
+    "sources": [
+      "https://www.eesel.ai/blog/grammarly-pricing"
+    ]
   },
   {
-    "id": "notion-ai", "name": "Notion AI", "maker": "Notion", "category": "productivity", "status": "active",
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "maker": "Notion",
+    "category": "productivity",
+    "status": "active",
     "url": "https://www.notion.com/product/ai",
-    "free": true, "free_note": "Limited trial",
-    "from": 20, "standard": 20, "top": null,
-    "pricing": "Full AI included with Business (~$20/user)",
+    "free": true,
+    "free_note": "Limited trial",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 20,
+    "pricing": "Full AI in Business $20/user (~20% off yearly); Free and Plus ($10) get a capped trial; Custom Agents $10 per 1,000 credits",
     "best_for": "AI over your own notes, docs and wikis",
     "strengths": "Search across Notion and connected apps; meeting notes; agents",
     "watch_out": "Full AI no longer sold as a cheap add-on",
     "platforms": "Web, Windows, macOS, iOS, Android",
     "privacy": "No training on customer data",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://www.notion.com/pricing"]
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 4
+    },
+    "tags": [
+      "documents",
+      "free",
+      "notes",
+      "office"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.eesel.ai/blog/notion-pricing"
+    ]
   },
   {
-    "id": "granola", "name": "Granola", "maker": "Granola", "category": "productivity", "status": "active",
+    "id": "granola",
+    "name": "Granola",
+    "maker": "Granola",
+    "category": "productivity",
+    "status": "active",
     "url": "https://www.granola.ai",
-    "free": true, "free_note": "Basic free",
-    "from": 14, "standard": 14, "top": 35,
+    "pick": "Best meeting notes",
+    "free": true,
+    "free_note": "Basic free",
+    "billing": "monthly",
+    "from": 14,
+    "standard": 14,
+    "top": 35,
     "pricing": "Business $14/user · Enterprise $35/user",
     "best_for": "Meeting notes without a bot joining the call",
     "strengths": "Records from your computer; you add notes, AI fills them in",
@@ -1065,14 +2361,35 @@
     "platforms": "macOS, Windows, iOS, Android, web",
     "privacy": "No bot; audio not stored",
     "region": "UK/US",
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 5,
+      "privacy": 4
+    },
+    "tags": [
+      "free",
+      "meetings",
+      "notes"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.meetjamie.ai/blog/best-ai-note-takers-for-students"]
+    "sources": [
+      "https://www.meetjamie.ai/blog/best-ai-note-takers-for-students"
+    ]
   },
   {
-    "id": "otter", "name": "Otter.ai", "maker": "Otter.ai", "category": "productivity", "status": "active",
+    "id": "otter",
+    "name": "Otter.ai",
+    "maker": "Otter.ai",
+    "category": "productivity",
+    "status": "active",
     "url": "https://otter.ai",
-    "free": true, "free_note": "Limited minutes",
-    "from": 16.99, "standard": 16.99, "top": 30,
+    "free": true,
+    "free_note": "Limited minutes",
+    "billing": "monthly",
+    "from": 16.99,
+    "standard": 16.99,
+    "top": 30,
     "pricing": "Pro $16.99 · Business $30/user",
     "best_for": "Live transcripts of Zoom/Teams/Meet",
     "strengths": "Bot joins and transcribes; searchable archive",
@@ -1080,14 +2397,35 @@
     "platforms": "Web, macOS, Windows, iOS, Android",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "meetings",
+      "notes"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.meetjamie.ai/blog/best-ai-note-takers-for-students"]
+    "sources": [
+      "https://www.meetjamie.ai/blog/best-ai-note-takers-for-students"
+    ]
   },
   {
-    "id": "fathom", "name": "Fathom", "maker": "Fathom", "category": "productivity", "status": "active",
+    "id": "fathom",
+    "name": "Fathom",
+    "maker": "Fathom",
+    "category": "productivity",
+    "status": "active",
     "url": "https://fathom.video",
-    "free": true, "free_note": "Generous free plan",
-    "from": 20, "standard": 20, "top": 34,
+    "free": true,
+    "free_note": "Generous free plan",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 34,
     "pricing": "Premium $20 · Team $19 · Business $34",
     "best_for": "Free meeting recorder",
     "strengths": "Strong free tier; summaries and action items",
@@ -1095,14 +2433,35 @@
     "platforms": "macOS, Windows",
     "privacy": "Shows recording notice",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "meetings",
+      "notes"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.meetjamie.ai/blog/best-ai-note-takers-for-students"]
+    "sources": [
+      "https://www.meetjamie.ai/blog/best-ai-note-takers-for-students"
+    ]
   },
   {
-    "id": "plaud", "name": "Plaud Note", "maker": "Plaud", "category": "productivity", "status": "active",
+    "id": "plaud",
+    "name": "Plaud Note",
+    "maker": "Plaud",
+    "category": "productivity",
+    "status": "active",
     "url": "https://www.plaud.ai",
-    "free": true, "free_note": "300 min/month with device",
-    "from": 17.99, "standard": 17.99, "top": 29.99,
+    "free": true,
+    "free_note": "300 min/month with device",
+    "billing": "monthly",
+    "from": 17.99,
+    "standard": 17.99,
+    "top": 29.99,
     "pricing": "Device from $159 · Pro $17.99 · Unlimited $29.99",
     "best_for": "In-person meetings, site visits and phone calls",
     "strengths": "Pocket hardware recorder; summaries by AI",
@@ -1110,14 +2469,36 @@
     "platforms": "Device + iOS, Android, web, desktop",
     "privacy": "ISO 27001; EU storage option",
     "region": "US/EU",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 4
+    },
+    "tags": [
+      "free",
+      "in-person",
+      "meetings",
+      "notes"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.meetjamie.ai/blog/best-ai-note-takers-for-students"]
+    "sources": [
+      "https://www.meetjamie.ai/blog/best-ai-note-takers-for-students"
+    ]
   },
   {
-    "id": "superhuman", "name": "Superhuman Mail", "maker": "Superhuman", "category": "productivity", "status": "active",
+    "id": "superhuman",
+    "name": "Superhuman Mail",
+    "maker": "Superhuman",
+    "category": "productivity",
+    "status": "active",
     "url": "https://superhuman.com",
-    "free": false, "free_note": "",
-    "from": 30, "standard": 30, "top": 40,
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": 30,
+    "standard": 30,
+    "top": 40,
     "pricing": "$30–33/user · Business $40",
     "best_for": "Email power users",
     "strengths": "AI drafts in your voice; Ask AI over your inbox; very fast",
@@ -1125,15 +2506,978 @@
     "platforms": "Web, macOS, Windows, iOS, Android",
     "privacy": "Standard",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 2,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "email",
+      "writing"
+    ],
     "verified": "2026-09",
-    "sources": ["https://costbench.com/software/ai-productivity/superhuman/"]
+    "sources": [
+      "https://costbench.com/software/ai-productivity/superhuman/"
+    ]
   },
-
   {
-    "id": "siri", "name": "Siri (Apple Intelligence, iOS 27)", "maker": "Apple", "category": "device", "status": "active",
+    "id": "khanmigo",
+    "name": "Khanmigo",
+    "maker": "Khan Academy",
+    "category": "learning",
+    "status": "active",
+    "url": "https://www.khanmigo.ai",
+    "pick": "Best tutor for kids",
+    "free": false,
+    "free_note": "Free for teachers",
+    "billing": "monthly",
+    "from": 4,
+    "standard": 4,
+    "top": 4,
+    "pricing": "$4/month for learners and parents (non-profit)",
+    "best_for": "Kids and teens learning maths and science",
+    "strengths": "Socratic tutor that guides rather than gives answers; built on Khan Academy lessons",
+    "watch_out": "US-centric curriculum",
+    "platforms": "Web, iOS, Android",
+    "privacy": "Non-profit; child-safety focused",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 4,
+      "privacy": 4
+    },
+    "tags": [
+      "kids",
+      "maths",
+      "study"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://aitutor.courses/articles/best-ai-tutor-apps/"
+    ]
+  },
+  {
+    "id": "chatgpt-study",
+    "name": "ChatGPT Study Mode",
+    "maker": "OpenAI",
+    "category": "learning",
+    "status": "active",
+    "url": "https://chatgpt.com",
+    "pick": "Best free",
+    "free": true,
+    "free_note": "Free for everyone",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free (more use with Go/Plus)",
+    "best_for": "Free step-by-step help with any subject",
+    "strengths": "Asks questions to check understanding; interactive maths and science visuals",
+    "watch_out": "Easy to switch off and just get answers",
+    "platforms": "ChatGPT apps",
+    "privacy": "As ChatGPT",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "study"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://theairankings.com/best-ai-for-homework/"
+    ]
+  },
+  {
+    "id": "duolingo-max",
+    "name": "Duolingo Max",
+    "maker": "Duolingo",
+    "category": "learning",
+    "status": "active",
+    "url": "https://www.duolingo.com/max",
+    "pick": "Best for languages",
+    "free": true,
+    "free_note": "Free app with ads",
+    "billing": "yearly",
+    "from": 84,
+    "standard": 168,
+    "top": 168,
+    "pricing": "Super ~$84/yr · Max $168/yr (AI video calls and role-play)",
+    "best_for": "Speaking practice in a new language",
+    "strengths": "Video Call with an AI character; Explain My Answer; roleplay",
+    "watch_out": "Max features limited to some languages",
+    "platforms": "iOS, Android, web",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "free",
+      "languages",
+      "study"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://aitutor.courses/articles/best-ai-tutor-apps/"
+    ]
+  },
+  {
+    "id": "deepl",
+    "name": "DeepL",
+    "maker": "DeepL",
+    "category": "translation",
+    "status": "active",
+    "url": "https://www.deepl.com",
+    "pick": "Best quality",
+    "free": true,
+    "free_note": "1,500 characters per request, 3 files/month",
+    "billing": "monthly",
+    "from": 8.74,
+    "standard": 10.49,
+    "top": 34.49,
+    "pricing": "Individual from $8.74 (annual) · Starter $10.49 · Advanced $34.49",
+    "best_for": "Most natural translations of text and documents",
+    "strengths": "Best quality for European languages; keeps document formatting; DeepL Write",
+    "watch_out": "33 languages vs Google's 130+",
+    "platforms": "Web, Windows, macOS, iOS, Android",
+    "privacy": "Paid plans delete texts after translation",
+    "region": "EU",
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 5,
+      "privacy": 4
+    },
+    "tags": [
+      "free",
+      "translation",
+      "writing"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://fast.io/resources/best-ai-translation-apps-2026/",
+      "https://checkthat.ai/brands/deepl/pricing"
+    ]
+  },
+  {
+    "id": "google-translate",
+    "name": "Google Translate",
+    "maker": "Google",
+    "category": "translation",
+    "status": "active",
+    "url": "https://translate.google.com",
+    "pick": "Best free / travel",
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free",
+    "best_for": "Travel: camera, conversation and offline translation",
+    "strengths": "130+ languages; live conversation mode; offline packs; camera translation",
+    "watch_out": "Less natural than DeepL for long text",
+    "platforms": "Android, iOS, web, Chrome",
+    "privacy": "As Google",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "free",
+      "translation",
+      "travel"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://translatepress.com/deepl-vs-google-translate-comparison/"
+    ]
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "maker": "Anthropic",
+    "category": "coding",
+    "status": "active",
+    "url": "https://claude.com/product/claude-code",
+    "pick": "Most capable",
+    "free": false,
+    "free_note": "Needs Claude Pro or API",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 200,
+    "pricing": "Included in Claude Pro $20 · Max $100/$200",
+    "best_for": "Big multi-file changes and long agent tasks",
+    "strengths": "Top of most agentic-coding benchmarks; terminal, VS Code, JetBrains, web, mobile",
+    "watch_out": "Pro limits run out fast on heavy use; Claude models only",
+    "platforms": "Terminal, VS Code, JetBrains, web, iOS, Android",
+    "privacy": "As Claude",
+    "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 3,
+      "privacy": 4
+    },
+    "tags": [
+      "agents",
+      "coding"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
+    ]
+  },
+  {
+    "id": "codex",
+    "name": "OpenAI Codex",
+    "maker": "OpenAI",
+    "category": "coding",
+    "status": "active",
+    "url": "https://openai.com/codex",
+    "free": true,
+    "free_note": "Limited, with ChatGPT Free",
+    "billing": "monthly",
+    "from": 8,
+    "standard": 20,
+    "top": 200,
+    "pricing": "Included in ChatGPT Go/Plus/Pro/Business",
+    "best_for": "ChatGPT subscribers; cloud sandboxes",
+    "strengths": "GPT-6.1 Sol/Astra; open-source CLI; runs tasks in isolated cloud sandboxes",
+    "watch_out": "Usage metered per 5-hour window",
+    "platforms": "Terminal, IDE, web, ChatGPT app",
+    "privacy": "As ChatGPT",
+    "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "coding",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.morphllm.com/codex-pricing"
+    ]
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "maker": "GitHub (Microsoft)",
+    "category": "coding",
+    "status": "active",
+    "url": "https://github.com/features/copilot",
+    "pick": "Best value",
+    "free": true,
+    "free_note": "2,000 completions + limited chat/month",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 10,
+    "top": 100,
+    "pricing": "Pro $10 ($15 credits) · Pro+ $39 ($70) · Max $100 ($200) · Business $19/seat",
+    "best_for": "Cheapest serious option; works in any editor",
+    "strengths": "Unlimited completions on paid plans; choose Claude, GPT, Gemini, Grok; runs Claude Code and Codex agents",
+    "watch_out": "Switched to per-token AI Credits on 1 Jun 2026 — heavy agent use can overrun",
+    "platforms": "VS Code, JetBrains, Neovim, Xcode, CLI, github.com",
+    "privacy": "Individuals can opt out of training",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "coding",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.nocode.mba/articles/github-copilot-pricing",
+      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
+    ]
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "maker": "Anysphere",
+    "category": "coding",
+    "status": "active",
+    "url": "https://cursor.com",
+    "pick": "Best AI editor",
+    "free": true,
+    "free_note": "Hobby: limited agent + tab",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 200,
+    "pricing": "Pro $20 · Pro+ $60 (3x) · Ultra $200 (20x) · Teams $40/seat",
+    "best_for": "An AI-first editor for everyday coding",
+    "strengths": "Polished VS Code-based editor; many models; background agents; CLI",
+    "watch_out": "Usage-based overages after the included allowance",
+    "platforms": "Windows, macOS, Linux, CLI",
+    "privacy": "Privacy mode available",
+    "region": "US",
+    "scores": {
+      "quality": 5,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "coding",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://sessionwatcher.com/guides/how-much-does-cursor-cost"
+    ]
+  },
+  {
+    "id": "devin-desktop",
+    "name": "Devin Desktop (ex-Windsurf)",
+    "maker": "Cognition",
+    "category": "coding",
+    "status": "active",
+    "url": "https://devin.ai",
+    "free": true,
+    "free_note": "Unlimited tab, light agent quota",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 200,
+    "pricing": "Pro $20 · Max $200 · Teams $40/seat",
+    "best_for": "Cursor alternative with Devin agent built in",
+    "strengths": "Generous free autocomplete",
+    "watch_out": "Renamed from Windsurf 2 Jun 2026",
+    "platforms": "Windows, macOS, Linux, JetBrains plugin",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "coding",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.therundown.ai/tools/codeium-windsurf"
+    ]
+  },
+  {
+    "id": "kiro",
+    "name": "Kiro",
+    "maker": "Amazon (AWS)",
+    "category": "coding",
+    "status": "active",
+    "url": "https://kiro.dev",
+    "free": true,
+    "free_note": "50 credits",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 200,
+    "pricing": "Pro $20 · up to $200",
+    "best_for": "Planning requirements before writing code",
+    "strengths": "Spec-driven development",
+    "watch_out": "AWS-flavoured",
+    "platforms": "Windows, macOS, Linux",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "coding",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://aiweekly.co/learning-ai/generative-ai/best-ai-coding-tools-compared"
+    ]
+  },
+  {
+    "id": "antigravity",
+    "name": "Google Antigravity",
+    "maker": "Google",
+    "category": "coding",
+    "status": "active",
+    "url": "https://antigravity.google",
+    "free": true,
+    "free_note": "Free with weekly compute cap",
+    "billing": "monthly",
+    "from": 19.99,
+    "standard": 19.99,
+    "top": 199.99,
+    "pricing": "Free · higher limits with Google AI plans",
+    "best_for": "Free agent-first coding with Gemini",
+    "strengths": "Multiple agents across your codebase; CLI version",
+    "watch_out": "Gemini Code Assist individual tier closed Jun 2026",
+    "platforms": "Windows, macOS, Linux, CLI",
+    "privacy": "As Google",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 3,
+      "privacy": 2
+    },
+    "tags": [
+      "coding",
+      "free",
+      "google"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://pinggy.io/blog/best_ai_tools_for_coding/"
+    ]
+  },
+  {
+    "id": "zed",
+    "name": "Zed",
+    "maker": "Zed Industries",
+    "category": "coding",
+    "status": "active",
+    "url": "https://zed.dev",
+    "free": true,
+    "free_note": "2,000 edit predictions/month",
+    "billing": "monthly",
+    "from": 10,
+    "standard": 10,
+    "top": null,
+    "pricing": "Pro $10",
+    "best_for": "Fast, lightweight editor with AI",
+    "strengths": "Very fast; open source; bring your own keys",
+    "watch_out": "Smaller extension ecosystem than VS Code",
+    "platforms": "macOS, Linux, Windows",
+    "privacy": "Open source",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 4
+    },
+    "tags": [
+      "coding",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://pinggy.io/blog/best_ai_tools_for_coding/"
+    ]
+  },
+  {
+    "id": "cline-opencode",
+    "name": "Cline / OpenCode",
+    "maker": "Open source",
+    "category": "coding",
+    "status": "active",
+    "url": "https://opencode.ai",
+    "free": true,
+    "free_note": "Free; pay your model provider",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free (bring your own API key or local model)",
+    "best_for": "No subscription; use any model, including local ones",
+    "strengths": "Open source; provider-independent",
+    "watch_out": "API bills can exceed a flat subscription",
+    "platforms": "VS Code (Cline), terminal (OpenCode)",
+    "privacy": "Fully local possible",
+    "region": "—",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 2,
+      "privacy": 5
+    },
+    "tags": [
+      "coding",
+      "free",
+      "local",
+      "privacy"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://pinggy.io/blog/best_ai_tools_for_coding/"
+    ]
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "maker": "Lovable",
+    "category": "builder",
+    "status": "active",
+    "url": "https://lovable.dev",
+    "pick": "Best-looking apps",
+    "free": true,
+    "free_note": "5 messages/day",
+    "billing": "monthly",
+    "from": 25,
+    "standard": 25,
+    "top": 50,
+    "pricing": "Pro $25 · Business $50",
+    "best_for": "Best-looking web app prototypes",
+    "strengths": "Polished design out of the box; Supabase backend; GitHub export",
+    "watch_out": "Hosting and in-app AI now share your credit balance",
+    "platforms": "Web",
+    "privacy": "Standard",
+    "region": "EU",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "apps",
+      "free",
+      "websites"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.totalum.app/blog/replit-alternative-2026"
+    ]
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt.new",
+    "maker": "StackBlitz",
+    "category": "builder",
+    "status": "active",
+    "url": "https://bolt.new",
+    "free": true,
+    "free_note": "1M tokens/month",
+    "billing": "monthly",
+    "from": 25,
+    "standard": 25,
+    "top": 200,
+    "pricing": "Pro $25 · up to $200 · Teams $30/member",
+    "best_for": "Fastest prompt-to-prototype",
+    "strengths": "Runs full-stack apps in the browser; export or GitHub",
+    "watch_out": "Token usage climbs fast when fixing bugs",
+    "platforms": "Web",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "apps",
+      "free",
+      "websites"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.totalum.app/blog/replit-alternative-2026"
+    ]
+  },
+  {
+    "id": "replit",
+    "name": "Replit",
+    "maker": "Replit",
+    "category": "builder",
+    "status": "active",
+    "url": "https://replit.com",
+    "pick": "Build and host",
+    "free": true,
+    "free_note": "Daily agent credits, 1 published app",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 100,
+    "pricing": "Core $20 ($18 annual) · Pro $100",
+    "best_for": "Build and host an app in one place",
+    "strengths": "Agent builds, tests and deploys; database and hosting included",
+    "watch_out": "Effort-based agent pricing; heavy users report $100–300/month extra",
+    "platforms": "Web, iOS, Android",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 3,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "apps",
+      "free",
+      "hosting",
+      "websites"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.appypie.com/blog/best-ai-app-builders"
+    ]
+  },
+  {
+    "id": "v0",
+    "name": "v0",
+    "maker": "Vercel",
+    "category": "builder",
+    "status": "active",
+    "url": "https://v0.app",
+    "free": true,
+    "free_note": "$5 credits/month",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 30,
+    "top": 100,
+    "pricing": "Premium $20 · Team $30/user · Business $100/user",
+    "best_for": "Website and UI design generation",
+    "strengths": "Best-in-class React UI; one-click Vercel deploy",
+    "watch_out": "Front-end focused",
+    "platforms": "Web",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "apps",
+      "design",
+      "free",
+      "websites"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.layer3labs.io/comparisons/replit-alternatives"
+    ]
+  },
+  {
+    "id": "base44",
+    "name": "Base44",
+    "maker": "Wix",
+    "category": "builder",
+    "status": "active",
+    "url": "https://base44.com",
+    "free": true,
+    "free_note": "25 messages/month",
+    "billing": "monthly",
+    "from": 16,
+    "standard": 20,
+    "top": null,
+    "pricing": "From $16 (annual) / $20 monthly",
+    "best_for": "Cheapest capable app builder",
+    "strengths": "Backend, login and database built in",
+    "watch_out": "Web apps only",
+    "platforms": "Web",
+    "privacy": "Standard",
+    "region": "US/Israel",
+    "scores": {
+      "quality": 3,
+      "value": 4,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "apps",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.appypie.com/blog/best-ai-app-builders"
+    ]
+  },
+  {
+    "id": "comet",
+    "name": "Comet",
+    "maker": "Perplexity",
+    "category": "browser",
+    "status": "active",
+    "url": "https://www.perplexity.ai/comet",
+    "pick": "Best free agent",
+    "free": true,
+    "free_note": "Free, including the agent",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free (more with Perplexity Pro/Max)",
+    "best_for": "Best free agentic browser",
+    "strengths": "Agent clicks through sites for you; research and shopping; Mac, Windows, iOS, Android",
+    "watch_out": "Most-studied for prompt-injection attacks — don't let it near banking",
+    "platforms": "macOS, Windows, iOS, Android",
+    "privacy": "As Perplexity",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "agents",
+      "browser",
+      "free",
+      "research"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.commercepundit.com/blog/best-ai-browsers/"
+    ]
+  },
+  {
+    "id": "chrome-gemini",
+    "name": "Chrome with Gemini",
+    "maker": "Google",
+    "category": "browser",
+    "status": "active",
+    "url": "https://www.google.com/chrome/",
+    "free": true,
+    "free_note": "Gemini in Chrome free",
+    "billing": "monthly",
+    "from": 19.99,
+    "standard": 19.99,
+    "top": 199.99,
+    "pricing": "Free · 'auto browse' agent needs AI Pro/Ultra (US only)",
+    "au": "Gemini in Chrome works; the 'auto browse' agent is US-only",
+    "best_for": "Staying on Chrome",
+    "strengths": "Biggest extension ecosystem; Gemini knows your tabs",
+    "watch_out": "The agent that completes tasks is paywalled and US-only",
+    "platforms": "Windows, macOS, Linux, Android, iOS",
+    "privacy": "As Google",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "browser",
+      "free",
+      "google"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.commercepundit.com/blog/best-ai-browsers/"
+    ]
+  },
+  {
+    "id": "edge",
+    "name": "Microsoft Edge",
+    "maker": "Microsoft",
+    "category": "browser",
+    "status": "active",
+    "url": "https://www.microsoft.com/edge",
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free",
+    "best_for": "Microsoft 365 users",
+    "strengths": "Copilot built in: multi-tab reasoning, Journeys, voice and vision",
+    "watch_out": "Copilot Mode retired as a separate mode in May 2026; weaker at completing tasks than Comet",
+    "platforms": "Windows, macOS, Linux, iOS, Android",
+    "privacy": "As Microsoft",
+    "region": "US",
+    "scores": {
+      "quality": 3,
+      "value": 5,
+      "ease": 5,
+      "privacy": 3
+    },
+    "tags": [
+      "browser",
+      "free",
+      "microsoft"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.commercepundit.com/blog/best-ai-browsers/"
+    ]
+  },
+  {
+    "id": "dia",
+    "name": "Dia",
+    "maker": "The Browser Company (Atlassian)",
+    "category": "browser",
+    "status": "active",
+    "url": "https://www.diabrowser.com",
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": 20,
+    "standard": 20,
+    "top": 20,
+    "pricing": "Free · $20 for unlimited AI",
+    "best_for": "Mac users who want the most polished design",
+    "strengths": "Arc's sidebar and tab features with AI chat and reusable 'Skills'",
+    "watch_out": "macOS only (Windows 'coming soon')",
+    "platforms": "macOS",
+    "privacy": "Standard",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 4,
+      "privacy": 3
+    },
+    "tags": [
+      "apple",
+      "browser",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://efficient.app/best/browser"
+    ]
+  },
+  {
+    "id": "brave-leo",
+    "name": "Brave Leo",
+    "maker": "Brave",
+    "category": "browser",
+    "status": "active",
+    "url": "https://brave.com/leo/",
+    "pick": "Most private",
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": 14.99,
+    "standard": 14.99,
+    "top": 14.99,
+    "pricing": "Free · Leo Premium $14.99",
+    "best_for": "Privacy first",
+    "strengths": "No account needed; chats not stored or used for training",
+    "watch_out": "Doesn't complete tasks for you",
+    "platforms": "Windows, macOS, Linux, iOS, Android",
+    "privacy": "Best in category",
+    "region": "US",
+    "scores": {
+      "quality": 3,
+      "value": 5,
+      "ease": 5,
+      "privacy": 5
+    },
+    "tags": [
+      "browser",
+      "free",
+      "privacy"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.commercepundit.com/blog/best-ai-browsers/"
+    ]
+  },
+  {
+    "id": "opera-neon",
+    "name": "Opera Neon",
+    "maker": "Opera",
+    "category": "browser",
+    "status": "active",
+    "url": "https://www.operaneon.com",
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": 19.9,
+    "standard": 19.9,
+    "top": 19.9,
+    "pricing": "$19.90/month",
+    "best_for": "Running several web agents at once",
+    "strengths": "Agentic tasks run in parallel",
+    "watch_out": "Only paid AI browser; desktop only",
+    "platforms": "Windows, macOS",
+    "privacy": "Standard",
+    "region": "EU",
+    "scores": {
+      "quality": 3,
+      "value": 2,
+      "ease": 3,
+      "privacy": 3
+    },
+    "tags": [
+      "agents",
+      "browser"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.commercepundit.com/blog/best-ai-browsers/"
+    ]
+  },
+  {
+    "id": "chatgpt-atlas",
+    "name": "ChatGPT Atlas",
+    "maker": "OpenAI",
+    "category": "browser",
+    "status": "discontinued",
+    "url": "https://chatgpt.com/atlas",
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Discontinued",
+    "best_for": "—",
+    "strengths": "—",
+    "watch_out": "Stopped working 9 Aug 2026; replaced by the ChatGPT Chrome extension",
+    "platforms": "—",
+    "privacy": "—",
+    "region": "US",
+    "scores": {
+      "quality": 1,
+      "value": 1,
+      "ease": 1,
+      "privacy": 1
+    },
+    "tags": [
+      "browser"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.commercepundit.com/blog/best-ai-browsers/"
+    ]
+  },
+  {
+    "id": "siri",
+    "name": "Siri (Apple Intelligence, iOS 27)",
+    "maker": "Apple",
+    "category": "device",
+    "status": "active",
     "url": "https://www.apple.com/apple-intelligence/",
-    "free": true, "free_note": "Free on supported devices",
-    "from": null, "standard": null, "top": null,
+    "pick": "Best for iPhone",
+    "free": true,
+    "free_note": "Free on supported devices",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
     "pricing": "Free (iPhone 15 Pro or newer, M-series Macs/iPads)",
     "best_for": "iPhone users: actions across your apps, messages and photos",
     "strengths": "Rebuilt Siri (14 Sep 2026) on Gemini-based models; personal context, on-screen awareness, app actions",
@@ -1141,37 +3485,392 @@
     "platforms": "iPhone, iPad, Mac",
     "privacy": "Apple: on-device or Private Cloud Compute",
     "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 5
+    },
+    "tags": [
+      "apple",
+      "free",
+      "phone",
+      "voice"
+    ],
     "verified": "2026-09",
-    "sources": ["https://www.digitaltrends.com/phones/siri-ai-ios-27-launch/", "https://assindo.com/news/ios-27-siri-extensions-best-ai-assistant-iphone"]
+    "sources": [
+      "https://www.digitaltrends.com/phones/siri-ai-ios-27-launch/",
+      "https://assindo.com/news/ios-27-siri-extensions-best-ai-assistant-iphone"
+    ]
   },
   {
-    "id": "gemini-android", "name": "Gemini on Android", "maker": "Google", "category": "device", "status": "active",
+    "id": "gemini-android",
+    "name": "Gemini on Android",
+    "maker": "Google",
+    "category": "device",
+    "status": "active",
     "url": "https://gemini.google",
-    "free": true, "free_note": "Free",
-    "from": 4.99, "standard": 19.99, "top": 199.99,
+    "pick": "Best for Android",
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": 4.99,
+    "standard": 19.99,
+    "top": 199.99,
     "pricing": "Free · Google AI plans for more",
     "best_for": "Android users",
-    "strengths": "Replaces Google Assistant; Gemini Live camera/screen sharing; controls apps",
-    "watch_out": "Some old Assistant routines missing",
+    "strengths": "Fully replaced Google Assistant on phones, Wear OS and Android Auto (Sep 2026); Gemini Live camera/screen sharing; controls apps",
+    "watch_out": "No way back to the old Assistant; Nest speakers still run Assistant for now",
     "platforms": "Android, Wear OS, Google TV, Nest",
     "privacy": "As Gemini",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://gemini.google/release-notes/"]
+    "scores": {
+      "quality": 4,
+      "value": 5,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "free",
+      "google",
+      "phone",
+      "voice"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.androidheadlines.com/2026/09/google-assistant-killed-android-gemini.html"
+    ]
   },
   {
-    "id": "alexa-plus", "name": "Alexa+", "maker": "Amazon", "category": "device", "status": "active",
+    "id": "alexa-plus",
+    "name": "Alexa+",
+    "maker": "Amazon",
+    "category": "device",
+    "status": "active",
     "url": "https://www.amazon.com/alexa-plus",
-    "free": false, "free_note": "Free with Prime",
-    "from": 19.99, "standard": 19.99, "top": 19.99,
-    "pricing": "Free with Amazon Prime · $19.99/month without",
+    "pick": "Best for smart home",
+    "free": true,
+    "free_note": "Free with Prime; free for everyone in Australia during Early Access (to 30 Nov 2026)",
+    "billing": "monthly",
+    "from": 19.99,
+    "standard": 19.99,
+    "top": 19.99,
+    "pricing": "Free with Amazon Prime · US$19.99 or A$29.99/month without Prime",
+    "aud": "Free with Prime · A$29.99 without",
+    "au": "Early Access since 6 Aug 2026",
     "best_for": "Echo / smart-home households",
     "strengths": "Natural conversation; books services; controls smart home",
-    "watch_out": "Limited outside the US; check availability in Australia",
+    "watch_out": "Australian Early Access ends 30 Nov 2026; Prime (A$9.99/mo) is cheaper than Alexa+ alone",
     "platforms": "Echo devices, Alexa app, web",
     "privacy": "Voice recordings processed in the cloud",
     "region": "US",
-    "verified": "older",
-    "sources": ["https://www.aboutamazon.com/news/devices/new-alexa-generative-artificial-intelligence"]
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "free",
+      "home",
+      "smart-home",
+      "voice"
+    ],
+    "verified": "2026-08",
+    "sources": [
+      "https://www.pickr.com.au/news/2026/alexa-arrives-in-australia-with-more-ai-at-home/",
+      "https://www.mediaweek.com.au/alexa-lands-in-australia-with-29-99-non-prime-price"
+    ]
+  },
+  {
+    "id": "ray-ban-meta",
+    "name": "Ray-Ban Meta (Gen 2) / Meta Glasses",
+    "maker": "Meta × EssilorLuxottica",
+    "category": "wearable",
+    "status": "active",
+    "url": "https://www.meta.com/ai-glasses/",
+    "pick": "Best AI glasses",
+    "free": false,
+    "free_note": "",
+    "billing": "one-off",
+    "from": 299,
+    "standard": 379,
+    "top": 379,
+    "pricing": "Meta Glasses $299 (Jun 2026) · Ray-Ban Meta Gen 2 $379; Meta AI free",
+    "au": "Ray-Ban Meta sold in Australia",
+    "best_for": "Hands-free photos, music, calls and 'what am I looking at?'",
+    "strengths": "Camera + Meta AI; live translation; best-selling AI glasses (7M+ sold in 2025)",
+    "watch_out": "Camera glasses raise privacy issues for people around you",
+    "platforms": "Pairs with iOS/Android",
+    "privacy": "As Meta AI",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 4,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "photos",
+      "translation",
+      "wearable"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://treeview.studio/blog/best-smart-glasses",
+      "https://memeburn.com/meta-new-299-ai-smart-glasses-2026/"
+    ]
+  },
+  {
+    "id": "meta-ray-ban-display",
+    "name": "Meta Ray-Ban Display",
+    "maker": "Meta",
+    "category": "wearable",
+    "status": "active",
+    "url": "https://www.meta.com/ai-glasses/meta-ray-ban-display/",
+    "free": false,
+    "free_note": "",
+    "billing": "one-off",
+    "from": 799,
+    "standard": 799,
+    "top": 799,
+    "pricing": "$799 including the Neural Band wristband",
+    "au": "Not sold in Australia",
+    "best_for": "Seeing messages, maps and translations in your lens",
+    "strengths": "In-lens display; controlled by finger gestures via EMG wristband",
+    "watch_out": "Not sold in Australia (US, Canada, UK, France, Italy)",
+    "platforms": "Pairs with iOS/Android",
+    "privacy": "As Meta AI",
+    "region": "US",
+    "scores": {
+      "quality": 4,
+      "value": 2,
+      "ease": 4,
+      "privacy": 2
+    },
+    "tags": [
+      "wearable"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://the-gadgeteer.com/2026/06/13/smart-glasses-worth-buying-2026/"
+    ]
+  },
+  {
+    "id": "android-xr-glasses",
+    "name": "Android XR glasses (Google × Samsung)",
+    "maker": "Google / Samsung",
+    "category": "wearable",
+    "status": "upcoming",
+    "url": "https://www.android.com/xr/",
+    "free": false,
+    "free_note": "",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Price not announced; launching fall 2026",
+    "best_for": "Gemini on your face, Android-first",
+    "strengths": "Gemini assistant; Warby Parker and Gentle Monster frames",
+    "watch_out": "First generation is audio-only (no display); not yet on sale",
+    "platforms": "Android",
+    "privacy": "As Gemini",
+    "region": "US",
+    "scores": {
+      "quality": 3,
+      "value": 3,
+      "ease": 4,
+      "privacy": 2
+    },
+    "tags": [
+      "google",
+      "wearable"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://dymesty.com/blogs/articles/google-smart-glasses-vs-ray-ban-meta-2026"
+    ]
+  },
+  {
+    "id": "lm-studio",
+    "name": "LM Studio",
+    "maker": "LM Studio",
+    "category": "local",
+    "status": "active",
+    "url": "https://lmstudio.ai",
+    "pick": "Easiest",
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free",
+    "best_for": "Easiest way to chat with AI fully offline",
+    "strengths": "Point-and-click model downloads; runs Qwen, Llama, Gemma, Phi; no terminal needed",
+    "watch_out": "Needs 16 GB RAM for good models; slower and less capable than cloud AI",
+    "platforms": "Windows, macOS, Linux",
+    "privacy": "Runs entirely on your computer",
+    "region": "Your computer",
+    "scores": {
+      "quality": 3,
+      "value": 5,
+      "ease": 4,
+      "privacy": 5
+    },
+    "tags": [
+      "free",
+      "local",
+      "privacy"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.unite.ai/best-llm-tools-to-run-models-locally/"
+    ]
+  },
+  {
+    "id": "ollama",
+    "name": "Ollama",
+    "maker": "Ollama",
+    "category": "local",
+    "status": "active",
+    "url": "https://ollama.com",
+    "free": true,
+    "free_note": "Free",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free (optional cloud models)",
+    "best_for": "Running local models behind other apps",
+    "strengths": "Most widely supported; simple app and API",
+    "watch_out": "Mostly used from the command line",
+    "platforms": "Windows, macOS, Linux",
+    "privacy": "Runs entirely on your computer",
+    "region": "Your computer",
+    "scores": {
+      "quality": 3,
+      "value": 5,
+      "ease": 3,
+      "privacy": 5
+    },
+    "tags": [
+      "coding",
+      "free",
+      "local",
+      "privacy"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.storagereview.com/best/local-llm-tools"
+    ]
+  },
+  {
+    "id": "jan",
+    "name": "Jan",
+    "maker": "Menlo Research",
+    "category": "local",
+    "status": "active",
+    "url": "https://jan.ai",
+    "free": true,
+    "free_note": "Free, open source",
+    "billing": "monthly",
+    "from": null,
+    "standard": null,
+    "top": null,
+    "pricing": "Free",
+    "best_for": "An open-source ChatGPT-style app that stays local",
+    "strengths": "Local or cloud models; projects, file uploads, agents",
+    "watch_out": "Smaller community than LM Studio",
+    "platforms": "Windows, macOS, Linux",
+    "privacy": "Data stored locally",
+    "region": "Your computer",
+    "scores": {
+      "quality": 3,
+      "value": 5,
+      "ease": 4,
+      "privacy": 5
+    },
+    "tags": [
+      "free",
+      "local",
+      "privacy"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://www.unite.ai/best-llm-tools-to-run-models-locally/"
+    ]
+  },
+  {
+    "id": "character-ai",
+    "name": "Character.AI",
+    "maker": "Character Technologies",
+    "category": "companion",
+    "status": "active",
+    "url": "https://character.ai",
+    "free": true,
+    "free_note": "Free with ads",
+    "billing": "monthly",
+    "from": 9.99,
+    "standard": 9.99,
+    "top": 9.99,
+    "pricing": "c.ai+ $9.99/month or $94.99/year",
+    "best_for": "Role-play and chatting with fictional characters",
+    "strengths": "Huge character catalogue; strongest content filters of the companions",
+    "watch_out": "Settled wrongful-death lawsuits (Jan 2026); under-18 access now restricted",
+    "platforms": "Web, iOS, Android",
+    "privacy": "Chats used to improve service",
+    "region": "US",
+    "scores": {
+      "quality": 3,
+      "value": 4,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "companion",
+      "free",
+      "fun"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://101aitools.com/guides/compare-character-ai-vs-replika",
+      "https://aicompanionguides.com/blog/best-ai-companion-apps-2026/"
+    ]
+  },
+  {
+    "id": "replika",
+    "name": "Replika",
+    "maker": "Luka",
+    "category": "companion",
+    "status": "active",
+    "url": "https://replika.com",
+    "free": true,
+    "free_note": "Basic friend chat",
+    "billing": "monthly",
+    "from": 19.99,
+    "standard": 19.99,
+    "top": 19.99,
+    "pricing": "Pro ~$19.99/month or ~$69.99/year (in-app)",
+    "best_for": "A single long-term companion with memory",
+    "strengths": "Most established; wellness features and crisis resources",
+    "watch_out": "18+ only; in-app purchases; emotional dependence risk",
+    "platforms": "iOS, Android, web",
+    "privacy": "Sensitive personal data",
+    "region": "US",
+    "scores": {
+      "quality": 3,
+      "value": 3,
+      "ease": 5,
+      "privacy": 2
+    },
+    "tags": [
+      "companion",
+      "free"
+    ],
+    "verified": "2026-09",
+    "sources": [
+      "https://zplatform.ai/best-ai-tools/best-ai-companion-apps/"
+    ]
   }
 ]

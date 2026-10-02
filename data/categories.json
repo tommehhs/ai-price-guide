@@ -1,12 +1,92 @@
 [
-  {"id": "assistant", "name": "General AI assistants", "blurb": "Chatbots you talk to for almost anything: questions, writing, planning, files, images."},
-  {"id": "research", "name": "Search & research", "blurb": "Tools built around finding, citing and working through sources."},
-  {"id": "image", "name": "Image generation & editing", "blurb": "Make or edit pictures from a text description or a reference photo."},
-  {"id": "video", "name": "Video generation", "blurb": "Short clips from text or images, plus talking-avatar video."},
-  {"id": "audio", "name": "Music, voice & dictation", "blurb": "Songs, voiceovers, voice cloning and speech-to-text."},
-  {"id": "coding", "name": "Coding assistants", "blurb": "AI that writes, edits and reviews code in your editor or terminal."},
-  {"id": "builder", "name": "No-code app & website builders", "blurb": "Describe an app or site in plain English and get a working one."},
-  {"id": "browser", "name": "AI browsers", "blurb": "Web browsers with an assistant built in, some able to click around for you."},
-  {"id": "productivity", "name": "Writing, notes & meetings", "blurb": "Grammar help, meeting notes, email and note-taking with AI."},
-  {"id": "device", "name": "Phone & home assistants", "blurb": "Voice assistants built into your phone or smart speaker."}
+  {
+    "id": "assistant",
+    "name": "General AI assistants",
+    "blurb": "Chatbots you talk to for almost anything: questions, writing, planning, files, images."
+  },
+  {
+    "id": "agent",
+    "name": "AI agents",
+    "blurb": "Hand over a whole task (research, booking, building a spreadsheet) and get the finished result back."
+  },
+  {
+    "id": "research",
+    "name": "Search & research",
+    "blurb": "Tools built around finding, citing and working through sources."
+  },
+  {
+    "id": "image",
+    "name": "Image generation & editing",
+    "blurb": "Make or edit pictures from a text description or a reference photo."
+  },
+  {
+    "id": "photo",
+    "name": "Photo editing & upscaling",
+    "blurb": "Fix, retouch, remove objects and upscale your own photos."
+  },
+  {
+    "id": "video",
+    "name": "Video generation",
+    "blurb": "Short clips from text or images, plus talking-avatar video."
+  },
+  {
+    "id": "audio",
+    "name": "Music, voice & dictation",
+    "blurb": "Songs, voiceovers, voice cloning and speech-to-text."
+  },
+  {
+    "id": "presentation",
+    "name": "Slides, documents & design",
+    "blurb": "Decks, documents and social graphics generated from a prompt."
+  },
+  {
+    "id": "productivity",
+    "name": "Writing, notes & meetings",
+    "blurb": "Grammar help, meeting notes, email and note-taking with AI."
+  },
+  {
+    "id": "learning",
+    "name": "Learning & study",
+    "blurb": "Tutors that teach instead of just giving answers, and language practice."
+  },
+  {
+    "id": "translation",
+    "name": "Translation",
+    "blurb": "Translate text, documents and live conversations."
+  },
+  {
+    "id": "coding",
+    "name": "Coding assistants",
+    "blurb": "AI that writes, edits and reviews code in your editor or terminal."
+  },
+  {
+    "id": "builder",
+    "name": "No-code app & website builders",
+    "blurb": "Describe an app or site in plain English and get a working one."
+  },
+  {
+    "id": "browser",
+    "name": "AI browsers",
+    "blurb": "Web browsers with an assistant built in, some able to click around for you."
+  },
+  {
+    "id": "device",
+    "name": "Phone & home assistants",
+    "blurb": "Voice assistants built into your phone or smart speaker."
+  },
+  {
+    "id": "wearable",
+    "name": "AI glasses & gadgets",
+    "blurb": "Hardware with an assistant built in."
+  },
+  {
+    "id": "local",
+    "name": "Run AI on your own computer",
+    "blurb": "Free apps that run open models offline, so nothing leaves your machine."
+  },
+  {
+    "id": "companion",
+    "name": "AI companions",
+    "blurb": "Chat characters for company, role-play and practice conversations. Mind the age limits."
+  }
 ]
