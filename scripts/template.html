@@ -1,0 +1,232 @@
+<title>AI Tools Database</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a buyer's spec sheet — sticky filter bar, then a grid of tool cards grouped by category; assistants get a feature matrix. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --fg: #17212b;
+  --muted: #5b6875;
+  --line: #d9dfe5;
+  --accent: #1b5e8c;
+  --accent-soft: #e2edf5;
+  --good: #1f7a4d;
+  --warn: #9a6200;
+  --bad: #b3261e;
+  --chip: #e9edf1;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11171d; --surface: #182129; --fg: #e4eaf0; --muted: #98a6b3; --line: #2a3640;
+    --accent: #7db8e3; --accent-soft: #1c3346; --good: #6fcf9a; --warn: #e3b25a; --bad: #f08a80; --chip: #222d37;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11171d; --surface: #182129; --fg: #e4eaf0; --muted: #98a6b3; --line: #2a3640;
+  --accent: #7db8e3; --accent-soft: #1c3346; --good: #6fcf9a; --warn: #e3b25a; --bad: #f08a80; --chip: #222d37;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--font-body); margin: 0; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+h2 { font-size: 1.45rem; font-weight: 800; letter-spacing: -0.01em; }
+h3 { font-size: 1.08rem; font-weight: 600; }
+a { color: var(--accent); }
+.lede { color: var(--muted); max-width: 68ch; margin: 10px 0 0; }
+.meta { font: 12px/1.4 var(--font-mono); color: var(--muted); letter-spacing: 0.02em; margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 14px; border-bottom: 1px solid var(--line); margin-top: 22px; display: grid; gap: 10px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.search { flex: 1 1 260px; min-width: 0; font: inherit; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); }
+.search:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+select { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); }
+.chip { font: 500 13px/1 var(--font-body); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); cursor: pointer; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { font: 500 13px/1 var(--font-mono); padding: 8px 10px; border: 0; background: var(--surface); color: var(--fg); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.count { font: 12px var(--font-mono); color: var(--muted); margin-left: auto; }
+
+section.cat { margin-top: 36px; }
+.cat-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; margin-bottom: 14px; }
+.cat-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card.gone { opacity: 0.72; }
+.card-top { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+.card-top h3 a { color: var(--fg); text-decoration: none; }
+.card-top h3 a:hover { text-decoration: underline; }
+.maker { font-size: 12px; color: var(--muted); }
+.price { text-align: right; flex: none; }
+.price b { font: 500 1.15rem/1.1 var(--font-mono); font-variant-numeric: tabular-nums; display: block; }
+.price span { font: 11px var(--font-mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.best { font-weight: 500; margin: 0; }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill { font: 500 11px/1 var(--font-mono); padding: 5px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); letter-spacing: 0.03em; }
+.pill.free { background: var(--accent-soft); color: var(--accent); }
+.pill.paused { color: var(--warn); }
+.pill.gone { color: var(--bad); }
+.pill.old { color: var(--warn); }
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 10px; font-size: 13.5px; }
+dt { color: var(--muted); font: 11px/1.9 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; }
+dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+details summary { cursor: pointer; font-size: 13px; color: var(--accent); }
+details[open] summary { margin-bottom: 8px; }
+
+.matrix-wrap { overflow-x: auto; margin-bottom: 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--surface); }
+thead th { font: 500 11px var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+tbody tr:last-child td { border-bottom: 0; }
+.m-star { color: var(--accent); font-weight: 600; }
+.m-yes { color: var(--good); }
+.m-partial { color: var(--warn); }
+.m-no { color: var(--muted); }
+.legend { font-size: 12px; color: var(--muted); margin: -6px 0 16px; }
+.empty { padding: 40px 0; color: var(--muted); text-align: center; }
+footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>AI Tools Database</h1>
+    <p class="lede">Every major consumer AI tool in one place: what it costs, what it's good at, what to watch out for, and how it treats your data. Filter by what you need.</p>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <div class="bar">
+    <div class="row">
+      <input id="q" class="search" type="search" placeholder="Search tools, makers or uses (e.g. music, privacy, Excel)" aria-label="Search tools">
+      <select id="sort" aria-label="Sort">
+        <option value="default">Sort: editor's order</option>
+        <option value="price">Sort: cheapest paid first</option>
+        <option value="name">Sort: name A–Z</option>
+      </select>
+      <div class="seg" role="group" aria-label="Currency">
+        <button id="cur-usd" type="button" aria-pressed="true">US$</button>
+        <button id="cur-aud" type="button" aria-pressed="false">~A$</button>
+      </div>
+    </div>
+    <div class="row" id="cats" role="group" aria-label="Category"></div>
+    <div class="row">
+      <label class="toggle"><input id="free" type="checkbox"> Free tier only</label>
+      <label class="toggle"><input id="hide-gone" type="checkbox" checked> Hide discontinued</label>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+
+  <main id="out"></main>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const FEATS = ["search","research","image","video","voice","code","files","memory","agent"];
+const MARK = {star:"★", yes:"✓", partial:"~", no:"✗"};
+const state = {q:"", cat:"all", free:false, hideGone:true, sort:"default", cur:"usd"};
+try { const s = JSON.parse(localStorage.getItem("aidb-prefs") || "{}"); if (s.cur) state.cur = s.cur; } catch (e) {}
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function money(v) {
+  if (v == null) return null;
+  if (state.cur === "aud") return "A$" + Math.round(v * DATA.rate * DATA.gst);
+  return "$" + (Number.isInteger(v) ? v : v.toFixed(2));
+}
+function priceBlock(t) {
+  if (t.status === "discontinued") return `<b>—</b><span>closed</span>`;
+  if (t.from == null) return `<b>${t.free ? "Free" : "Per use"}</b><span>${t.free ? "no paid plan" : "pay as you go"}</span>`;
+  return `<b>${money(t.from)}</b><span>from /mo</span>`;
+}
+function matches(t) {
+  if (state.cat !== "all" && t.category !== state.cat) return false;
+  if (state.free && !t.free) return false;
+  if (state.hideGone && t.status === "discontinued") return false;
+  if (!state.q) return true;
+  const hay = [t.name, t.maker, t.best_for, t.strengths, t.watch_out, t.pricing, t.platforms, t.privacy, t.region].join(" ").toLowerCase();
+  return state.q.toLowerCase().split(/\s+/).every(w => hay.includes(w));
+}
+function card(t) {
+  const pills = [];
+  if (t.free) pills.push(`<span class="pill free">Free tier</span>`);
+  if (t.status === "paused") pills.push(`<span class="pill paused">Sign-ups paused</span>`);
+  if (t.status === "discontinued") pills.push(`<span class="pill gone">Discontinued</span>`);
+  if (t.region && t.region !== "—") pills.push(`<span class="pill">Data: ${esc(t.region)}</span>`);
+  if (t.verified === "older") pills.push(`<span class="pill old">Unverified</span>`);
+  else pills.push(`<span class="pill">Checked ${esc(t.verified)}</span>`);
+  const typ = money(t.standard);
+  return `<article class="card${t.status === "discontinued" ? " gone" : ""}">
+    <div class="card-top">
+      <div><h3><a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.name)}</a></h3><div class="maker">${esc(t.maker)}</div></div>
+      <div class="price">${priceBlock(t)}</div>
+    </div>
+    <p class="best">${esc(t.best_for)}</p>
+    <div class="pills">${pills.join("")}</div>
+    <dl>
+      <dt>Plans</dt><dd>${esc(t.pricing)}${typ && state.cur === "aud" ? ` <span class="maker">(typical ≈ ${typ})</span>` : ""}</dd>
+      ${t.free && t.free_note ? `<dt>Free</dt><dd>${esc(t.free_note)}</dd>` : ""}
+      <dt>Watch</dt><dd>${esc(t.watch_out)}</dd>
+    </dl>
+    ${t.strengths !== "—" ? `<details><summary>Strengths, platforms, privacy</summary><dl>
+      <dt>Good at</dt><dd>${esc(t.strengths)}</dd>
+      <dt>Runs on</dt><dd>${esc(t.platforms)}</dd>
+      <dt>Privacy</dt><dd>${esc(t.privacy)}</dd>
+      <dt>Sources</dt><dd>${t.sources.map((s, i) => `<a href="${esc(s)}" target="_blank" rel="noopener">${i + 1}</a>`).join(" · ")}</dd>
+    </dl></details>` : ""}
+  </article>`;
+}
+function matrix(list) {
+  const rows = list.filter(t => t.features);
+  if (!rows.length) return "";
+  return `<div class="matrix-wrap"><table><thead><tr><th>Assistant</th>${FEATS.map(f => `<th>${f}</th>`).join("")}<th>From</th></tr></thead><tbody>
+    ${rows.map(t => `<tr><td>${esc(t.name)}</td>${FEATS.map(f => `<td class="m-${t.features[f]}" title="${t.features[f]}">${MARK[t.features[f]]}</td>`).join("")}<td>${t.from == null ? "Free" : money(t.from)}</td></tr>`).join("")}
+  </tbody></table></div><p class="legend">★ standout · ✓ yes · ~ limited · ✗ no. Agent = carries out multi-step tasks for you.</p>`;
+}
+function sorted(list) {
+  if (state.sort === "name") return [...list].sort((a, b) => a.name.localeCompare(b.name));
+  if (state.sort === "price") return [...list].sort((a, b) => (a.from ?? (a.free ? 0 : 1e9)) - (b.from ?? (b.free ? 0 : 1e9)));
+  return list;
+}
+function render() {
+  const shown = DATA.tools.filter(matches);
+  $("count").textContent = `${shown.length} of ${DATA.tools.length} tools`;
+  const html = DATA.categories.map(c => {
+    const list = sorted(shown.filter(t => t.category === c.id));
+    if (!list.length) return "";
+    return `<section class="cat" id="${c.id}"><div class="cat-head"><h2>${esc(c.name)}</h2><p>${esc(c.blurb)}</p></div>
+      ${c.id === "assistant" ? matrix(list) : ""}<div class="grid">${list.map(card).join("")}</div></section>`;
+  }).join("");
+  $("out").innerHTML = html || `<p class="empty">No tools match. Try a shorter search or clear the filters.</p>`;
+  $("cur-usd").setAttribute("aria-pressed", state.cur === "usd");
+  $("cur-aud").setAttribute("aria-pressed", state.cur === "aud");
+  document.querySelectorAll("#cats .chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat === state.cat));
+}
+function setCur(c) { state.cur = c; try { localStorage.setItem("aidb-prefs", JSON.stringify({cur: c})); } catch (e) {} render(); }
+
+$("meta").innerHTML = `<span>Updated ${esc(DATA.asOf)}</span><span>${DATA.tools.length} tools · ${DATA.categories.length} categories</span><span>US$ monthly · A$ ≈ ×${DATA.rate} + GST</span>`;
+$("cats").innerHTML = `<button class="chip" type="button" data-cat="all">All</button>` +
+  DATA.categories.map(c => `<button class="chip" type="button" data-cat="${c.id}">${esc(c.name)}</button>`).join("");
+$("cats").addEventListener("click", e => { const b = e.target.closest(".chip"); if (b) { state.cat = b.dataset.cat; render(); } });
+$("q").addEventListener("input", e => { state.q = e.target.value.trim(); render(); });
+$("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
+$("free").addEventListener("change", e => { state.free = e.target.checked; render(); });
+$("hide-gone").addEventListener("change", e => { state.hideGone = e.target.checked; render(); });
+$("cur-usd").addEventListener("click", () => setCur("usd"));
+$("cur-aud").addEventListener("click", () => setCur("aud"));
+$("foot").innerHTML = `Prices are individual plans in US dollars per month. A$ figures are estimates (US$1 = A$${DATA.rate}, plus 10% GST); app-store and local prices often differ. "Unverified" rows weren't re-checked in this update. AI plans change monthly, so check the maker's site before paying.`;
+const hash = location.hash.slice(1);
+if (DATA.categories.some(c => c.id === hash)) state.cat = hash;
+render();
+</script>
